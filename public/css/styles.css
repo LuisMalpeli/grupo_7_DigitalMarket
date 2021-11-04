@@ -6,3 +6,6 @@
     --color-blanco: #f3f3f3;
 }
 
+main h1 {
+    background: var(--color-azul);
+}
