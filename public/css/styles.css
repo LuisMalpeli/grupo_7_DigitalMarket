@@ -1,3 +1,8 @@
-h1 {
-    background-color: lightblue;
+:root {
+    --color-azulOscuro: #0f2744;
+    --color-azul: #2d4e6a;
+    --color-azulGris: #7a8c9c;
+    --color-gris: #c0c9d1;
+    --color-blanco: #f3f3f3;
 }
+
