@@ -4,10 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <title>Carrito</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <title>Carrito de compras</title>
 </head>
 <body>
+    <header>
+        <h1>Hardware</h1>
+    </header>
+    <main>
+        <div class="header-seccion">
+            <h2>Carrito de compras</h2>
+        </div>
+        <div class="main-content">
+
+            <div class="modulo-izquierda"> 
+                <table>
+                    <thead>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>Producto</td>
+                            <td>Precio</td>
+                            <td>Cantidad</td>
+                            <td>Subtotal</td>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td class="borrar-container"><span class="borrar-item">&times;</span></td>
+                        <td><img src="../public/img/carrito/corei7.png"></td>
+                        <td>Intel Core i7 8303K</td>
+                        <td>$8.999</td>
+                        <td>1</td>
+                        <td>$8.999</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="borrar-container"><span class="borrar-item">&times;</span></td>
+                        <td><img src="../public/img/carrito/gabinete.png"></td>
+                        <td>Gabinete Gamer Ultra</td>
+                        <td>$5.799</td>
+                        <td>1</td>
+                        <td>$5.799</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="borrar-container"><span class="borrar-item">&times;</span></td>
+                        <td><img src="../public/img/carrito/teclado.png"></td>
+                        <td>Teclado y Mouse Gamer</td>
+                        <td>$2.899</td>
+                        <td>1</td>
+                        <td>$2899</td>
+                    </tr>
+
+                </table>
+            </div>
+                
+            <div class="modulo-derecha">
+                <div class="contenedor-total">
+                    <h3>Total del Carrito</h3>
+                    <ul>
+                        <li>
+                            <strong>Subtotal</strong>
+                            <span>$17.697,00</span>
+                        </li>
+                        <li>
+                            <strong>Envio</strong>
+                            <span>$500,00</span>
+                        </li>
+                        <li>
+                            <strong>Total a pagar</strong>
+                            <span>$18.197,00</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="button button-primario">Finalizar Compra</a> 
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2021 Hardware. Todos los derechos reservados.</p>
+    </footer>
     
 </body>
 </html>
