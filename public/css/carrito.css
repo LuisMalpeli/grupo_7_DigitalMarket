@@ -1,0 +1,215 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+  Resetea los estilos para que en todos los navegadores tenga el mismo formato de contenido y se vea por igual en ellos.
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*** ESTILOS GENERALES ***/ 
+header {
+    background-color: #0f2744;
+    color: #fff;
+}
+
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    padding: 20px;
+}
+
+main {
+    background-color: #7a8c9c;
+    display: block;
+    position: relative;
+    padding: 0 0 30px;
+    width: 100%;
+}
+
+.header-seccion {
+    background-color: #2d4e6a;
+    color: #fff;
+}
+
+.header-seccion h2 {
+    padding: 20px;
+    font-size: 24px;
+}
+
+footer {
+    background-color: #0f2744;
+    padding: 12px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+}
+
+/*** ESTILOS CARRITO COMPRAS ***/
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    width: 88%;
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+}
+
+.modulo-izquierda {
+    width: 70%;
+    flex: 70%;
+}
+
+table { width: 100%;}
+table thead { font-weight: bold; font-size: 16px; }
+table td .borrar-item { color: darkred; }
+table td { vertical-align: top; }
+table td.borrar-container { vertical-align: middle; }
+table td img {
+    max-width: 150px;
+}
+table td {
+    padding: 4px;
+}
+table tr {
+    border-bottom: 1px solid #ccc;
+}
+
+
+.modulo-derecha {
+    width: 30%;
+    flex: 30%;
+    border-left: 1px solid #aaa;
+    margin-left: 16px;
+    padding-left: 16px;
+}
+
+.contenedor-total h3 {
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.contenedor-total li {
+    border-bottom: 1px solid #ccc;
+    padding: 6px;
+    margin-bottom: 8px;
+    height: 22px;
+    line-height: 28px;
+    clear: both;
+
+}
+
+.contenedor-total li strong {
+    float: left;
+    font-weight: bold;
+}
+
+.contenedor-total li span {
+    float: right; 
+    color: #555; 
+}
+
+
+
+.contenedor-total ul li:last-child {
+    font-size: 16px;
+}
+
+.modulo-derecha .button-primario {
+    display: block;
+    padding: 12px;
+    background-color: #CFD41F;
+    border: 1px solid #A8AB1D;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: #555;
+    align-self: flex-end;
+}
+
+@media screen and (max-width:830px) {
+  main {
+      padding: 0;
+  }
+  .main-content {
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+  }
+  .header-seccion h2 { font-size: 20px; }
+  .main-content .modulo-derecha,
+  .main-content .modulo-izquierda {
+      width: 100%;
+      border: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #aaa;
+  }
+  table {
+      font-size: 13px;
+  }
+  table thead {
+      font-size: 14px;
+  }
+
+  table td img {
+      max-width: 50px;
+  }
+  .modulo-derecha .button-primario {
+      font-size: 16px;
+      margin: 20px 10px;
+  }
+}
