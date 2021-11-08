@@ -9,22 +9,22 @@ app.use(express.static('public'));
 
 
 app.get('/',(req,res) => {
-    res.sendFile(path.join(pathHTML + 'home.html'))
+    res.sendFile(path.join(pathHTML + 'index.html'))
 })
 
-app.get('/login.html',(req,res) => {
+app.get('/login',(req,res) => {
     res.sendFile(path.join(pathHTML + 'login.html'))
 })
 
-app.get('/register.html',(req,res) => {
+app.get('/register',(req,res) => {
     res.sendFile(path.join(pathHTML + 'register.html'))
 })
 
-app.get('/productDetail.html',(req,res) => {
+app.get('/productDetail',(req,res) => {
     res.sendFile(path.join(pathHTML + 'productDetail.html'))
 })
 
-app.get('/productCart.html',(req,res) => {
+app.get('/productCart',(req,res) => {
     res.sendFile(path.join(pathHTML + 'productCart.html'))
 })
 
