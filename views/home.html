@@ -4,24 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" /> <! No funciona por ahora>
     <link rel="stylesheet" href="/css/styles.css">
     <title>Home</title>
 </head>
 <body>
 
     <header>
-
-        <nav>
-
+        <div class="barra-superior">
+            <div class = "logo-busqueda">
+                <div class="logo">
+                    <img src="" alt="logo">
+                </div>
+                <div class="busqueda">
+                    <form action="/">
+                        <input type="text" placeholder="Buscar productos..." name="busqueda">
+                        <button type="submit" name="busqueda">Buscar</button>
+                    </form>
+                </div>
+            </div>
+            <nav class="login-register">
+                <i class="fa-solid fa-user"></i>
+                <a href="#" class="links">login</a>
+                <a href="#" class="links">register</a>
+                <i class="fa-solid fa-cart-arrow-down" href ="productCart"></i>
+            </nav>
+        </div>
+        <nav class="barra-inferior">
+            <a href="home" class="links">Home</a>
+            <a href="productDetail" class="links">Detail</a>
+            <a href="home" class="links">Vender</a>
+            <a href="productDetail" class="links">Placeholder2</a>
         </nav>
-
     </header>
 
-    <main>
 
-        <h1>HOME (fondo azul para testear el css)</h1>
+    <div class = "home-banner">
+        <img src="/img/img-home-banner.jpg" alt="home-banner">
+    </div>
+    <h3 class = "titulo-ofertas">Basado en tus intereses</h3>
+    <div class = "contenedor-ofertas">
+        <div class = "cuadro-oferta">
+            <div class = "cuadro-oferta-imagenes">
+                <img src="/img/motherboard.jpg" alt="motherboard">
+            </div>
+            <div class = "cuadro-oferta-texto">
+                <i class="fa-solid fa-star"></i> <! Agregar a favoritos>
+                <i class="fa-solid fa-cart-circle-plus"></i><! Agregar al carrito>
+                <p class = "texto-cuotas">Disponible en cuotas</p>
+                <p class = "precio">$20.000</p>
+                <p class = "descuento">10% OFF</p>
+            </div>
+        </div>
+        <div class = "cuadro-oferta">
+            <div class = "cuadro-oferta-imagenes">
+                <img src="/img/motherboard.jpg" alt="motherboard">
+            </div>
+            <div class = "cuadro-oferta-texto">
+                <i class="fa-solid fa-star"></i> <! Agregar a favoritos>
+                <i class="fa-solid fa-cart-circle-plus"></i><! Agregar al carrito>
+                <p class = "texto-cuotas">Disponible en cuotas</p>
+                <p class = "precio">$20.000</p>
+                <p class = "descuento">10% OFF</p>
+            </div>
+        </div>
+        <div class = "cuadro-oferta">
+            <div class = "cuadro-oferta-imagenes">
+                <img src="/img/motherboard.jpg" alt="motherboard">
+            </div>
+            <div class = "cuadro-oferta-texto">
+                <i class="fa-solid fa-star"></i> <! Agregar a favoritos>
+                <i class="fa-solid fa-cart-circle-plus"></i><! Agregar al carrito>
+                <p class = "texto-cuotas">Disponible en cuotas</p>
+                <p class = "precio">$20.000</p>
+                <p class = "descuento">10% OFF</p>
+            </div>
+        </div>
+        <div class = "cuadro-oferta">
+            <div class = "cuadro-oferta-imagenes">
+                <img src="/img/motherboard.jpg" alt="motherboard">
+            </div>
+            <div class = "cuadro-oferta-texto">
+                <i class="fa-solid fa-star"></i> <! Agregar a favoritos>
+                <i class="fa-solid fa-cart-circle-plus"></i><! Agregar al carrito>
+                <p class = "texto-cuotas">Disponible en cuotas</p>
+                <p class = "precio">$20.000</p>
+                <p class = "descuento">10% OFF</p>
+            </div>
+        </div>
+    </div>
+
         
-    </main>
+
 
     <footer>
 

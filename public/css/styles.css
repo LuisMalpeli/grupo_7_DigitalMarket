@@ -6,8 +6,8 @@
 :root {
     --color-azulOscuro: #0f2744;
     --color-azul: #2d4e6a;
-    --color-azulGris: #7a8c9c;
-    --color-gris: #d7d9db;
+    --color-azulGris: #94a2af;
+    --color-gris: #e7e8e9;
     --color-blanco: #f3f3f3;
 }
 
@@ -128,18 +128,18 @@ main h1 {
             }
                 
                 .detail-datos .boton button {
-                    background: #1fd646;;
+                    background: #3483fa;;
                     height: 35px;
                     width: 130px;     
-                    border: 2px solid #1fd646;
+                    border: 2px solid #3483fa;
                     border-radius: 5px;
-                    box-shadow: 1px 1px #117e28d7;
+                    box-shadow: 1px 1px #2359aa;
                 }
 
                     .detail-datos .boton button:hover {
-                        background: #1cc040;;   
-                        border: 2px solid #1cc040;
-                        box-shadow: 1px 1px #117e28d7;
+                        background: #3483fa;;   
+                        border: 2px solid #3483fa;
+                        box-shadow: 1px 1px #2359aa;
                     }
 
 footer {
