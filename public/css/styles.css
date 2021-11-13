@@ -1,7 +1,9 @@
 /*
     FONT-FAMILY, FONT-SIZE 
 */
-
+* {
+    box-sizing: border-box;
+}
 
 :root {
     --color-azulOscuro: #0f2744;
@@ -28,7 +30,19 @@ header {
         justify-content: space-around;
         align-items: center;
     }
-
+        .logo-busqueda {
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+        }
+            .logo {
+                width: 30%;
+            }
+            .busqueda {
+                display:flex;
+                flex-direction: row;
+                width: 70%;
+            }
         .login-register {
             display: flex;
             justify-content: space-around;
@@ -45,7 +59,7 @@ header {
         background: var(--color-azul);
         border: 2px solid var(--color-azul);
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -53,7 +67,46 @@ header {
             text-decoration: none;
             color: white;
         }
+    .home-banner {
+        width: 100%;
+    }
+        .home-banner img {
+            width: 100%;
+            padding-top: 2rem;
+        }
 
+.titulo-ofertas {
+    text-align: left;
+    margin-left: 20px;
+}
+.contenedor-ofertas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+}
+
+    .cuadro-oferta {
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 5px;
+        background-color: var(--color-gris);
+    }
+    .cuadro-oferta-imagenes {
+        position: relative;
+        text-align: justify;
+    }
+        .cuadro-oferta-imagenes img {
+            width: 300px;
+        }
+        .cuadro-oferta-imagenes i {
+            position: absolute;
+        }
+        .cuadro-oferta-texto i {
+            position:absolute;
+        }
 main {
     height: 50rem;
     background: var(--color-gris);
