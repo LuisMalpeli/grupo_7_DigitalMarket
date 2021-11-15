@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 :root {
@@ -117,6 +118,9 @@ login-register: Usuario + login + register + carrito
     }
 /*Fin de sección del banner*/
 
+body {
+    background-color: var(--color-gris);
+}
 .seccion-ofertas {
     display: flex;
     flex-direction: column;
@@ -137,10 +141,11 @@ login-register: Usuario + login + register + carrito
         .cuadro-oferta {
             border: solid black 1px;
             width: 18.75rem;
-            background-color: var(--color-gris);
+            background-color: var(--color-blanco);
         }
             .cuadro-oferta img {
                 width: 100%;
+                height: 288px;
             }
             .cuadro-oferta-texto {
                 position: relative;

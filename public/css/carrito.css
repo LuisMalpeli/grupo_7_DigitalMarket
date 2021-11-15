@@ -4,34 +4,20 @@
   Resetea los estilos para que en todos los navegadores tenga el mismo formato de contenido y se vea por igual en ellos.
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+:root {
+    --color-azulOscuro: #0f2744;
+    --color-azul: #2d4e6a;
+    --color-azulGris: #94a2af;
+    --color-gris: #e7e8e9;
+    --color-blanco: #f3f3f3;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
 	line-height: 1;
+    font-family: sans-serif;
+    margin: 0;
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -66,7 +52,7 @@ header h1 {
 }
 
 main {
-    background-color: #7a8c9c;
+    background-color: var(--color-gris);
     display: block;
     position: relative;
     padding: 0 0 30px;
@@ -100,6 +86,7 @@ footer {
     padding: 20px;
     background-color: white;
     margin: 20px auto;
+    border-radius: 10px;
 }
 
 .modulo-izquierda {
@@ -167,14 +154,14 @@ table tr {
 .modulo-derecha .button-primario {
     display: block;
     padding: 12px;
-    background-color: #CFD41F;
-    border: 1px solid #A8AB1D;
+    background-color: #3483fa;
+    border: 1px solid #3483fa;
+    border-radius: 5px;
     text-decoration: none;
-    text-transform: uppercase;
     font-weight: bold;
     font-size: 24px;
     text-align: center;
-    color: #555;
+    color: #fff;
     align-self: flex-end;
 }
 
@@ -306,3 +293,54 @@ login-register: Usuario + login + register + carrito
             height: 100%;
             text-align: center;
         }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--color-azul);
+            color: white;
+            margin-top: 5px;
+        }
+            .promociones-footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                margin: auto;
+            }
+                .footer-note {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    width: 25%;
+                }
+        
+                    .footer-note-text {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0;
+                        padding: 0;
+                    }
+        
+                        .footer-note-text p {
+                            margin: 0;
+                        }
+        
+                    .footer-note i {
+                        color: var(--color-celeste);
+                        font-size: 2em;
+                    }
+                    .titular-footer {
+                        margin: 0;
+                        font-size: 1.5rem;
+                        color: grey;
+                    }
+        
+                    .copyright {
+                        display: flex;
+                        justify-content: center;
+                    }
+        
+                    .copyright p{
+                        color: var(--color-azulGris);
+                    }
+        

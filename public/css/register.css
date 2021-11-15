@@ -8,16 +8,16 @@
 :root {
     --color-azulOscuro: #0f2744;
     --color-azul: #2d4e6a;
-    --color-azulGris: #94a2af;
-    --color-gris: #e7e8e9;
+    --color-azulGris: #7a8c9c;
+    --color-gris: #d7d9db;
     --color-blanco: #f3f3f3;
 }
 
 body {
     margin: 0;
-    font-family: sans-serif;
 }
 
+/*--------------- Inicio de la sección del header ---------------*/
 header {
     background: var(--color-azulOscuro);
 }
@@ -36,8 +36,8 @@ login-register: Usuario + login + register + carrito
             display:flex;
         }
             .logo img{
-                width: 4rem;
-                padding-right: 1rem;
+                width: 5rem;
+                padding-right: 2rem;
             }
             .busqueda {
                 display: flex;
@@ -112,7 +112,10 @@ login-register: Usuario + login + register + carrito
             text-align: center;
         }
 
-    .home-banner {
+/*--------------- Hasta acá llega la sección del header ---------------*/
+   
+
+.home-banner {
         width: 100%;
     }
         .home-banner img {
@@ -132,27 +135,6 @@ login-register: Usuario + login + register + carrito
     margin: auto;
 }
 
-    .cuadro-oferta {
-        position:relative;
-        display: flex;
-        flex-direction: column;
-        padding: 10px 5px;
-        background-color: var(--color-gris);
-    }
-    .cuadro-oferta-imagenes {
-        position: relative;
-        text-align: justify;
-    }
-        .cuadro-oferta-imagenes img {
-            width: 300px;
-        }
-        .cuadro-oferta-imagenes i {
-            position: absolute;
-        }
-        .cuadro-oferta-texto i {
-            position:absolute;
-        }
-        
 main {
     height: 50rem;
     background: var(--color-gris);
@@ -172,11 +154,7 @@ main h1 {
         margin-bottom: 5rem;
         padding: 1rem;
     }
-
-        .detail-img img{
-            margin: 1rem 2rem;
-            border-bottom: 1px solid var(--color-gris);
-        }
+    
 
         .detail-datos {
             height: fit-content;
@@ -185,117 +163,158 @@ main h1 {
             margin: 2% 0 ;
             border: 1px solid var(--color-gris);
             border-radius: 10px;
+
         }
 
-            .detail-datos .titulo {
-                padding: 10px;
-                margin: 10px;
-            }
+        /* ESTILO DEL lOGIN  */
 
-            .detail-datos .descripcion {
-                padding: 3px;
-                margin: 10px;
-            }
+        .login {
+            height: fit-content;
+            width: 35rem;
+            background: rgb(255, 255, 255);
+            margin: 2% 0 ;
+            border: 1px solid var(--color-gris);
+            border-radius: 10px;
+            display:flex;
+            justify-content: center;
+            margin: 5rem;
+            
 
-            .detail-datos .descripcion ul {
-                margin: 3px 5px;
-                padding: 0 0 0 25px;
-                color: var(--color-azulGris);
-            }
+        }
+        
+        .info-usuario form {
+            height:auto;
+            width: 20rem;
+            display: flex;
+            justify-content: center;
+            flex-direction:column;
+            font-family: Roboto; 
+            line-height: 1;
+            
+        }
 
-            .detail-datos .precio {
-                padding: 10px;
-                margin: 10px;
-            }
+        .bottom {
+            width: 20rem;
+            padding: 20px 20px 20px 0px;
+            
+        }
 
-            .detail-datos .descuento {
-                padding: 10px;
-                margin: 10px;
-            }
+        .opcioncontra {
+            width: 15rem;
+            padding: 30px 0px 20px 70px;
+            
+        }
 
-            .detail-datos .cantidad {
-                padding: 5px;
-                margin: 10px;
-            }
+        /* ESTILO DEL REGISTER  */
 
-            .detail-datos .boton {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 10px;
-                margin: 10px;
-            }
+        .register {
+            height: fit-content;
+            width: 35rem;
+            background: rgb(255, 255, 255);
+            margin: 2% 0 ;
+            border: 2px solid var(--color-gris);
+            border-radius: 10px;
+            display:flex;
+            justify-content: center;
+            margin: 5rem;
+            padding: 0% 3% 3% 3%;
+
+        
+            
+        }
+        .titulo-register {
+            font-size: 30px;
+            font-family: sans-serif;
+        }
+
+        
+        .info-register form input{
+            height: 50px;
+            width: 25rem;
+            display: flex;
+            justify-content:center;
+            flex-direction:column;
+            font-family: sans-serif; 
+            line-height: 1; 
+            align-items: center;
+        }
+        
+        .info-register form .buttom-register input {
+                width: 25rem;
+                color: white;
+                background: #3483fa;   
+                border: 2px solid #3483fa;
+                border-radius: 5px;
+                box-shadow: 1px 1px #3483fa;
+                font-family: sans-serif;
+                font-size: 20px;
+                text-align: center;    
+                font-weight: bold;
                 
-                .detail-datos .boton button {
-                    background: #3483fa;
-                    height: 35px;
-                    width: 130px;     
-                    border: 2px solid #3483fa;
-                    border-radius: 5px;
-                    box-shadow: 1px 1px #2359aa;
-                    color: #fff;
-                    font-weight: bold;
-                }
+        }
 
-                    .detail-datos .boton button:hover {
-                        background: #3483fa;;   
-                        border: 2px solid #3483fa;
-                        box-shadow: 1px 1px #2359aa;
-                    }
+        
+    /* ESTILO DEL FOOTER  */
 
-footer {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-azul);
-    color: white;
-    margin-top: 5px;
-}
-    .promociones-footer {
+    footer {
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin: auto;
+        flex-direction: column;
+        background-color: var(--color-azul);
+        color: white;
+        margin-top: 0;
     }
+        .promociones-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: auto;
+        }
         .footer-note {
             display: flex;
             flex-direction: column;
             text-align: center;
-            width: 25%;
+         }
+        .footer-note i {
+            color: var(--color-celeste);
+            font-size: 2em;
+         }
+        .titular-footer {
+            font-size: 1.5rem;
+            color: grey;
         }
+       
 
-            .footer-note-text {
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-                padding: 0;
-            }
 
-                .footer-note-text p {
-                    margin: 0;
-                }
 
-            .footer-note i {
-                color: var(--color-celeste);
-                font-size: 2em;
-            }
-            .titular-footer {
-                margin: 0;
-                font-size: 1.5rem;
-                color: grey;
-            }
-
-            .copyright {
-                display: flex;
-                justify-content: center;
-            }
-
-            .copyright p{
-                color: var(--color-azulGris);
-            }
+@media (min-width: 576px){
+    .register {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+}
 
 
 @media (min-width: 768px){
-    .productDetail {
+    .register {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+}
+
+
+@media (min-width: 992px){
+    .register {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+}
+
+
+@media (min-width: 1200px){
+    .register {
         display: flex;
         justify-content: space-evenly;
         align-items: flex-start;
