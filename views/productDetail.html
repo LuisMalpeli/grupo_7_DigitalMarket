@@ -4,38 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/264c7358db.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
     <title>Producto</title>
 </head>
 <body>
     <header>
         <div class="barra-superior">
-            <div class="logo">
-                <img src="" alt="logo">
-            </div>
-            <div class="busqueda">
-                <form action="/">
-                    <!--
-                    <select name="categ-dropdown" id="categ-dropdown">
-                        <option value="">Motherboards</option>
-                        <option value="">CPUs</option>
-                        <option value="">GPUs</option>
-                    </select>
-                    -->
-                    <input type="text" placeholder="Buscar productos..." name="busqueda">
-                    <button type="submit" name="busqueda">Buscar</button>
-                </form>
+            <div class = "logo-busqueda">
+                <div class="logo">
+                    <img src="/img/techIconLogo.jpg" alt="logo">
+                </div>
+                <div class="busqueda">
+                    <form action="/" method="GET">
+                        <input type="text" placeholder="Buscar productos..." name="search">
+                        <i class="fa fa-search"></i>
+                    </form>
+                </div>
             </div>
             <nav class="login-register">
-                <a href="#" class="links">login</a>
-                <a href="#" class="links">register</a>
+                <a href="/" class="link-logo"><i class="fas fa-user"></i></a>
+                <a href="/login" class="login-options">login</a>
+                <a href="/register" class="login-options">register</a>
+                <a href="/productCart" class="link-logo"><i class="fas fa-shopping-cart"></i></a>
             </nav>
         </div>
         <nav class="barra-inferior">
-            <a href="home.html" class="links">home</a>
-            <a href="productDetail.html" class="links">detail</a>
-            <a href="productCart.html" class="links">carrito</a>
-            <a href="productDetail.html" class="links">detail</a>
+            <a href="/" class="links">Home</a>
+            <a href="productDetail" class="links">Detail</a>
+            <a href="/" class="links">Vender</a>
+            <a href="productDetail" class="links">Placeholder2</a>
         </nav>
     </header>
     <main>
@@ -81,7 +79,33 @@
         </div>
     </main>
     <footer>
-
-    </footer>
+        <div class="promociones-footer">
+            <section class = "footer-note">
+                <i class="fas fa-credit-card"></i>
+                <div class="footer-note-text">
+                    <h3 class ="titular-footer">Pagá con tarjeta o en efectivo</h3>
+                    <p>En todos los productos, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+                </div>
+            </section>
+            <section class = "footer-note">
+                <i class="fas fa-gift"></i>
+                <div class="footer-note-text">
+                    <h3 class ="titular-footer">Envío gratis desde $ 25.000</h3>
+                    <p>Con compras mayores al monto indicado, no te tenés que preocupar por nada. Nosotros nos hacemos cargo del envío a tu domicilio</p>
+                </div>
+            </section>
+            <section class = "footer-note">
+                <i class="fas fa-user-shield"></i>
+                <div class="footer-note-text">
+                    <h3 class ="titular-footer">Seguridad, de principio a fin</h3>
+                    <p>¿No te gusta? ¡Devolvelo!, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
+                </div>
+            </section>
+        </div>
+        <section class = "copyright">
+            <p>Copyright © 2021 Grupo 7 DH</p>
+        </section>
+            
+    </footer> 
 </body>
 </html>

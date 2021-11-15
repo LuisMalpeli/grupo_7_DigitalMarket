@@ -5,18 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="/css/index.css">
     <title>Carrito de compras</title>
 </head>
 <body>
     <header>
-        <h1>Hardware</h1>
+        <div class="barra-superior">
+            <div class = "logo-busqueda">
+                <div class="logo">
+                    <img src="/img/techIconLogo.jpg" alt="logo">
+                </div>
+                <div class="busqueda">
+                    <form action="/" method="GET">
+                        <input type="text" placeholder="Buscar productos..." name="search">
+                        <i class="fa fa-search"></i>
+                    </form>
+                </div>
+            </div>
+            <nav class="login-register">
+                <a href="/" class="link-logo"><i class="fas fa-user"></i></a>
+                <a href="/login" class="login-options">login</a>
+                <a href="/register" class="login-options">register</a>
+                <a href="/productCart" class="link-logo"><i class="fas fa-shopping-cart"></i></a>
+            </nav>
+        </div>
+        <nav class="barra-inferior">
+            <a href="/" class="links">Home</a>
+            <a href="productDetail" class="links">Detail</a>
+            <a href="/" class="links">Vender</a>
+            <a href="productDetail" class="links">Placeholder2</a>
+        </nav>
     </header>
     <main>
-        <div class="header-seccion">
-            <h2>Carrito de compras</h2>
-        </div>
         <div class="main-content">
-
             <div class="modulo-izquierda"> 
                 <table>
                     <thead>
