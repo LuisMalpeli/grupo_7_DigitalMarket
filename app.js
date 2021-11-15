@@ -7,6 +7,9 @@ const pathHTML = path.join(__dirname, '/views/')
 
 app.use(express.static('public'));
 
+app.listen(process.env.PORT || port, ()=>{
+    console.log('Servidor corriendo en el puerto : ',port);
+});
 
 app.get('/',(req,res) => {
     res.sendFile(path.join(pathHTML + 'index.html'))
