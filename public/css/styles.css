@@ -258,18 +258,36 @@ footer {
             flex-direction: column;
             text-align: center;
             width: 25%;
-            }
+        }
 
             .footer-note-text {
                 display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
             }
+
+                .footer-note-text p {
+                    margin: 0;
+                }
+
             .footer-note i {
                 color: var(--color-celeste);
                 font-size: 2em;
             }
             .titular-footer {
+                margin: 0;
                 font-size: 1.5rem;
                 color: grey;
+            }
+
+            .copyright {
+                display: flex;
+                justify-content: center;
+            }
+
+            .copyright p{
+                color: var(--color-azulGris);
             }
 
 
