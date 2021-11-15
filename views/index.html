@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" /> <! No funciona por ahora>
-    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/264c7358db.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/index.css">
     <title>Home</title>
 </head>
 <body>
@@ -14,20 +15,20 @@
         <div class="barra-superior">
             <div class = "logo-busqueda">
                 <div class="logo">
-                    <img src="" alt="logo">
+                    <img src="/img/techIconLogo.jpg" alt="logo">
                 </div>
                 <div class="busqueda">
-                    <form action="/">
-                        <input type="text" placeholder="Buscar productos..." name="busqueda">
-                        <button type="submit" name="busqueda">Buscar</button>
+                    <form action="/" method="GET">
+                        <input type="text" placeholder="Buscar productos..." name="search">
+                        <i class="fa fa-search"></i>
                     </form>
                 </div>
             </div>
             <nav class="login-register">
-                <i class="fa-solid fa-user"></i>
-                <a href="#" class="links">login</a>
-                <a href="#" class="links">register</a>
-                <i class="fa-solid fa-cart-arrow-down" href ="productCart"></i>
+                <a href="/" class="link-logo"><i class="fas fa-user"></i></a>
+                <a href="/login" class="login-options">login</a>
+                <a href="/register" class="login-options">register</a>
+                <a href="/productCart" class="link-logo"><i class="fas fa-shopping-cart"></i></a>
             </nav>
         </div>
         <nav class="barra-inferior">
@@ -42,64 +43,93 @@
     <div class = "home-banner">
         <img src="/img/img-home-banner.jpg" alt="home-banner">
     </div>
-    <h3 class = "titulo-ofertas">Basado en tus intereses</h3>
-    <div class = "contenedor-ofertas">
-        <div class = "cuadro-oferta">
-            <div class = "cuadro-oferta-imagenes">
-                <img src="/img/motherboard.jpg" alt="motherboard">
-            </div>
-            <div class = "cuadro-oferta-texto">
-                <i class="fa-solid fa-star"></i> <! Agregar a favoritos>
-                <i class="fa-solid fa-cart-circle-plus"></i><! Agregar al carrito>
-                <p class = "texto-cuotas">Disponible en cuotas</p>
-                <p class = "precio">$20.000</p>
-                <p class = "descuento">10% OFF</p>
-            </div>
+    <div class="seccion-ofertas">
+        <div>
+            <h3 class = "titulo-ofertas">Basado en tus intereses</h3>
         </div>
-        <div class = "cuadro-oferta">
-            <div class = "cuadro-oferta-imagenes">
-                <img src="/img/motherboard.jpg" alt="motherboard">
-            </div>
-            <div class = "cuadro-oferta-texto">
-                <i class="fa-solid fa-star"></i> <! Agregar a favoritos>
-                <i class="fa-solid fa-cart-circle-plus"></i><! Agregar al carrito>
-                <p class = "texto-cuotas">Disponible en cuotas</p>
-                <p class = "precio">$20.000</p>
-                <p class = "descuento">10% OFF</p>
-            </div>
-        </div>
-        <div class = "cuadro-oferta">
-            <div class = "cuadro-oferta-imagenes">
-                <img src="/img/motherboard.jpg" alt="motherboard">
-            </div>
-            <div class = "cuadro-oferta-texto">
-                <i class="fa-solid fa-star"></i> <! Agregar a favoritos>
-                <i class="fa-solid fa-cart-circle-plus"></i><! Agregar al carrito>
-                <p class = "texto-cuotas">Disponible en cuotas</p>
-                <p class = "precio">$20.000</p>
-                <p class = "descuento">10% OFF</p>
-            </div>
-        </div>
-        <div class = "cuadro-oferta">
-            <div class = "cuadro-oferta-imagenes">
-                <img src="/img/motherboard.jpg" alt="motherboard">
-            </div>
-            <div class = "cuadro-oferta-texto">
-                <i class="fa-solid fa-star"></i> <! Agregar a favoritos>
-                <i class="fa-solid fa-cart-circle-plus"></i><! Agregar al carrito>
-                <p class = "texto-cuotas">Disponible en cuotas</p>
-                <p class = "precio">$20.000</p>
-                <p class = "descuento">10% OFF</p>
-            </div>
-        </div>
+        <section class = "contenedor-ofertas">
+            <article class = "cuadro-oferta">
+                <div class = "cuadro-oferta-imagenes">
+                    <img src="/img/motherboard.jpg" alt="motherboard">
+                </div>
+                <div class = "cuadro-oferta-texto">
+                    <i class="fas fa-cart-plus"></i>
+                    <div class="precio-descuento">
+                        <p class = "precio">$20.000</p>
+                        <p class = "descuento">10% OFF</p>
+                    </div>
+                    <p class="nombre-producto">Nombre de Producto</p>
+                </div>
+            </article>
+            <article class = "cuadro-oferta">
+                <div class = "cuadro-oferta-imagenes">
+                    <img src="/img/carrito/gabinete.png" alt="gabinete">
+                </div>
+                <div class = "cuadro-oferta-texto">
+                    <i class="fas fa-cart-plus"></i>
+                    <div class="precio-descuento">
+                        <p class = "precio">$20.000</p>
+                        <p class = "descuento">10% OFF</p>
+                    </div>
+                    <p class="nombre-producto">Nombre de Producto</p>
+                </div>
+            </article>
+            <article class = "cuadro-oferta">
+                <div class = "cuadro-oferta-imagenes">
+                    <img src="/img/carrito/corei7.png" alt="procesador-i7">
+                </div>
+                <div class = "cuadro-oferta-texto">
+                    <i class="fas fa-cart-plus"></i>
+                    <div class="precio-descuento">
+                        <p class = "precio">$20.000</p>
+                        <p class = "descuento">10% OFF</p>
+                    </div>
+                    <p class="nombre-producto">Nombre de Producto</p>
+                </div>
+            </article>
+            <article class = "cuadro-oferta">
+                <div class = "cuadro-oferta-imagenes">
+                    <img src="/img/carrito/teclado.png" alt="teclado">
+                </div>
+                <div class = "cuadro-oferta-texto">
+                    <i class="fas fa-cart-plus"></i>
+                    <div class="precio-descuento">
+                        <p class = "precio">$20.000</p>
+                        <p class = "descuento">10% OFF</p>
+                    </div>
+                    <p class="nombre-producto">Nombre de Producto</p>
+                </div>
+            </article>
+        </section>
     </div>
-
-        
-
-
-    <footer>
-
-    </footer>  
-
 </body>
+<footer>
+    <div class="promociones-footer">
+        <section class = "footer-note">
+            <i class="fas fa-credit-card"></i>
+            <div class="footer-note-text">
+                <h3 class ="titular-footer">Pagá con tarjeta o en efectivo</h3>
+                <p>En todos los productos, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+            </div>
+        </section>
+        <section class = "footer-note">
+            <i class="fas fa-gift"></i>
+            <div class="footer-note-text">
+                <h3 class ="titular-footer">Envío gratis desde $ 25.000</h3>
+                <p>Con compras mayores al monto indicado, no te tenés que preocupar por nada. Nosotros nos hacemos cargo del envío a tu domicilio</p>
+            </div>
+        </section>
+        <section class = "footer-note">
+            <i class="fas fa-user-shield"></i>
+            <div class="footer-note-text">
+                <h3 class ="titular-footer">Seguridad, de principio a fin</h3>
+                <p>¿No te gusta? ¡Devolvelo!, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
+            </div>
+        </section>
+    </div>
+    <section class = "copyright">
+        <p>Copyright © 2021 Grupo 7 DH</p>
+    </section>
+        
+</footer>  
 </html>
