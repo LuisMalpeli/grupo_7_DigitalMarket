@@ -30,5 +30,3 @@ app.get('/productDetail',(req,res) => {
 app.get('/productCart',(req,res) => {
     res.sendFile(path.join(pathHTML + 'productCart.html'))
 })
-
-app.listen(port, () => console.log(`Servidor en el puerto: ${port}`))
