@@ -3,6 +3,7 @@ const mainController = {
         res.render('index')
     }
 
+
 }
 
 module.exports = mainController
