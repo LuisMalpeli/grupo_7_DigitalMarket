@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/products.css">
+    <title>Crear Producto</title>
+</head>
+<body>
+    <main>
+        <div class="producto-crear"> 
+            <div class="detail-register">
+                <h3 class="titulo-register">
+                    Agregar Producto
+                </h3>
+                <div class="info-register">
+                    <form action="/" method="get">
+                        <input type="text" name= "nombre-producto" placeholder="Ingrese Nombre del Producto" class="nombre-producto"> <br>
+                        <input type="text" name= "descripcion" placeholder="Ingrese Descripcion del Producto" class="nombre-producto"> <br>
+                        <div class="foto-producto">
+                            <p>Ingrese la foto del producto:</p>
+                            <input type="file" >
+                        </div>
+                        <div class="categoria-producto">
+                            <p>Categoria:</p>
+                            <select name="categoria-producto" id="categoria-producto">
+                                <option value="CPU">Procesador</option>
+                                <option value="Motherboard">Motherboard</option>
+                                <option value="RAM">Memoria RAM</option>
+                                <option value="GPU">Tarjeta Grafica</option>
+                                <option value="Memoria">Memoria SDD/HDD</option>
+                                <option value="Fuente de alimentacion">Fuente de alimentacion</option>
+                                <option value="Ventilacion">Ventilacion</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="extras-producto">
+                            <p>Extras:</p>
+                            <input type="text" name="color-producto" placeholder="Color del Producto" class="color-producto"><br>
+                            <input type="text" name="tamanio-producto" placeholder="Tamanio del Producto" class="tamanio-producto">
+                        </div>
+                        <br>
+                        <div class="precio-producto">
+                            <input type="text" name="precio-producto" placeholder="Precio del Producto" class="precio-producto">
+                        </div>
+                        <div class="buttom-register"> <br>
+                            <input type="submit" value= "Registrar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
