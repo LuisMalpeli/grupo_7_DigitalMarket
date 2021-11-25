@@ -112,34 +112,7 @@ main h1 {
             font-family: sans-serif;  
         }
 
-          /* ESTILO DEL FOOTER  */
 
-        footer {
-            display: flex;
-            flex-direction: column;
-            background-color: var(--color-azul);
-            color: white;
-            margin: 0;
-        }
-            .promociones-footer {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                margin: auto;
-            }
-            .footer-note {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-             }
-            .footer-note i {
-                color: var(--color-celeste);
-                font-size: 2em;
-             }
-            .titular-footer {
-                font-size: 1.5rem;
-                color: grey;
-            }
 
 
 
