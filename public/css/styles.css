@@ -18,99 +18,7 @@ body {
     font-family: sans-serif;
 }
 
-header {
-    background: var(--color-azulOscuro);
-}
-/*La barra superior contiene:
-logo-busqueda:Logo + Barra de búsqueda
-login-register: Usuario + login + register + carrito
- */
-    .barra-superior {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-    }
-        .logo-busqueda {
-            width: 50%;
-            display:flex;
-        }
-            .logo img{
-                width: 4rem;
-                padding-right: 1rem;
-            }
-            .busqueda {
-                display: flex;
-                align-items: center;
-            }
-                .busqueda form {
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-                }
-                    .busqueda input {
-                            border-top: 1px solid rgb(207, 206, 206);
-                            border-left: 1px solid rgb(207, 206, 206);
-                            border-bottom: 1px solid rgb(207, 206, 206);
-                            border-right: none;
-                            border-radius: 8px 0 0 8px;
-                            padding: 0.6px;
-                            width: 100%;
-                            outline: none;
-                    }
-                    .busqueda i {
-                        border-top: 1px solid rgb(207, 206, 206);
-                        border-right: 1px solid rgb(207, 206, 206);
-                        border-bottom: 1px solid rgb(207, 206, 206);
-                        border-left: none;
-                        border-radius: 0 8px 8px 0;
-                        padding: 0.6rem;
-                        background-color: white;
-                        color: rgb(177, 174, 174);
-                    }
-        .login-register {
-            display: flex;
-            width: 30%;
-            align-items: flex-end;
-            justify-content: space-evenly;
-            color: white;
-        }
-            .login-options {
-                background-color: var(--color-azulGris);
-                border: 1px black;
-                text-decoration: none;
-                color: white;
-                padding: 0.5rem 0.8rem;
-                border-radius: 0.5rem;
-                transition: all 100ms;
-            }
-            .login-options:hover {
-                background-color: var(--color-gris);
-                color: black;
-            }
 
-            .login-register i {
-                font-size: 2rem;
-                transition: all 100ms;
-                text-decoration: none;
-                color: white;
-            }
-            .login-register i:hover {
-                color: var(--color-gris);
-            }
-    .barra-inferior {
-        display: flex;
-        background-color: var(--color-azul);
-        padding: 0.5rem;
-        justify-content: space-evenly;
-    }
-        .barra-inferior a{
-            text-decoration: none;
-            color: white;
-            width: 10%;
-            height: 100%;
-            text-align: center;
-        }
 
     .home-banner {
         width: 100%;
@@ -243,55 +151,7 @@ main h1 {
                         box-shadow: 1px 1px #2359aa;
                     }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-azul);
-    color: white;
-    margin-top: 5px;
-}
-    .promociones-footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin: auto;
-    }
-        .footer-note {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            width: 25%;
-        }
 
-            .footer-note-text {
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-                padding: 0;
-            }
-
-                .footer-note-text p {
-                    margin: 0;
-                }
-
-            .footer-note i {
-                color: var(--color-celeste);
-                font-size: 2em;
-            }
-            .titular-footer {
-                margin: 0;
-                font-size: 1.5rem;
-                color: grey;
-            }
-
-            .copyright {
-                display: flex;
-                justify-content: center;
-            }
-
-            .copyright p{
-                color: var(--color-azulGris);
-            }
 
 
 @media (min-width: 768px){
