@@ -128,7 +128,7 @@ footer {
     flex-direction: column;
     background-color: var(--color-azul);
     color: white;
-    margin-top: 5px;
+    
 }
     .promociones-footer {
         display: flex;
