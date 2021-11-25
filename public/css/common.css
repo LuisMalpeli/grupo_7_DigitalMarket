@@ -1,86 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap');
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --color-azulOscuro: #0f2744;
-    --color-azul: #2d4e6a;
-    --color-azulGris: #94a2af;
-    --color-gris: #e7e8e9;
-    --color-blanco: #f3f3f3;
+  --color-azulOscuro: #0f2744;
+  --color-azul: #2d4e6a;
+  --color-azulGris: #94a2af;
+  --color-gris: #e7e8e9;
+  --color-grisOscuro: #c0c0c0;
+  --color-blanco: #fff;
 }
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*--------------- Inicio de la sección del header ---------------*/
 header {
     background: var(--color-azulOscuro);
+    height: 4rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 }
-/*La barra superior contiene:
-logo-busqueda:Logo + Barra de búsqueda
-login-register: Usuario + login + register + carrito
- */
-    .barra-superior {
+
+.barra-superior {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+    /*
+    La barra superior contiene:
+        logo-busqueda:Logo + Barra de búsqueda
+        login-register: Usuario + login + register + carrito
+    */
+
+    .logo-busqueda {
+        width: 80%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
     }
-        .logo-busqueda {
-            width: 50%;
-            display:flex;
-        }
-            .logo img{
-                width: 4rem;
-                padding-right: 1rem;
-            }
-            .busqueda {
-                display: flex;
-                align-items: center;
-            }
-                .busqueda form {
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-                }
-                    .busqueda input {
-                            border-top: 1px solid rgb(207, 206, 206);
-                            border-left: 1px solid rgb(207, 206, 206);
-                            border-bottom: 1px solid rgb(207, 206, 206);
-                            border-right: none;
-                            border-radius: 8px 0 0 8px;
-                            padding: 0.6px;
-                            width: 100%;
-                            outline: none;
-                    }
-                    .busqueda i {
-                        border-top: 1px solid rgb(207, 206, 206);
-                        border-right: 1px solid rgb(207, 206, 206);
-                        border-bottom: 1px solid rgb(207, 206, 206);
-                        border-left: none;
-                        border-radius: 0 8px 8px 0;
-                        padding: 0.6rem;
-                        background-color: white;
-                        color: rgb(177, 174, 174);
-                    }
-        .login-register {
+        .logo {
+            width: 4rem;
+            height: 3.5rem;
+            margin-left: 1rem;
+            padding: 0.3rem;
             display: flex;
-            width: 30%;
-            align-items: flex-end;
-            justify-content: space-evenly;
-            color: white;
+            align-items: center;
         }
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+        .busqueda {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            margin-right: 10rem;
+        }
+            .busqueda-form {
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+                height: 100%;
+                padding: 0.6rem 0;
+            }
+                .barra-busqueda {
+                    background-color: var(--color-azulGris);
+                    border: none;
+                    border-radius: 8px 0 0 8px;
+                    padding: 0;
+                    height: 100%;
+                    width: 100%;
+                    outline: none;
+                }
+                    .busqueda ::placeholder {
+                        color: var(--color-gris);
+                        text-indent: 0.5rem;
+                        font-weight: bold;
+                    }
+                .busqueda button {
+                    padding: 0;
+                    border: none;
+                    border-radius: 0 10px 10px 0;
+                    display: flex;  
+                    align-items: center;
+                }
+                .busqueda i {
+                    background-color: var(--color-azul);
+                    border-radius: 0 8px 8px 0;
+                    padding: 0.6rem;
+                    color: var(--color-gris);
+                    height: 100%;
+                    display: flex;  
+                    align-items: center;
+                }                    
+    .login-register {
+        width: 30%;
+        margin-right: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+    }
             .login-options {
-                background-color: var(--color-azulGris);
-                border: 1px black;
                 text-decoration: none;
-                color: white;
+                color: var(--color-gris);
                 padding: 0.5rem 0.8rem;
                 border-radius: 0.5rem;
                 transition: all 100ms;
+                font-weight: bold;
             }
             .login-options:hover {
                 background-color: var(--color-gris);
@@ -94,83 +130,86 @@ login-register: Usuario + login + register + carrito
                 color: white;
             }
             .login-register i:hover {
-                color: var(--color-gris);
+                color: var(--color-azulGris);
             }
-    .barra-inferior {
+            .link-cart i{
+                color: var(--color-gris)
+            }
+            .botones-login-register {
+                width: 100%;
+                margin-left: 50%;
+                display: flex;
+                padding: 0;
+            }
+            .botones-login-register a :hover{
+                background-color: var(--color-azul);
+            }
+            .link-user {
+                width: fit-content;
+                display: flex;
+                justify-content: flex-end;
+            }
+.barra-inferior {
+    background-color: var(--color-azulGris);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+    .links {
         display: flex;
-        background-color: var(--color-azul);
-        padding: 0.5rem;
-        justify-content: space-evenly;
+        justify-content: center;
     }
-        .barra-inferior a{
-            text-decoration: none;
-            color: white;
-            width: 10%;
-            height: 100%;
-            text-align: center;
-        }
 /*--------------- Hasta acá llega la sección del header ---------------*/
-
 /*--------------- Inicio de la sección del main ---------------*/
-
 main {
     height: 50rem;
     background: var(--color-gris);
     display: flex;
-    justify-content: center;
+        justify-content: center;
 }
-
 /*--------------- Hasta acá llega la sección del main ---------------*/
-
 /*--------------- Inicio de la sección del footer ---------------*/
 footer {
     display: flex;
     flex-direction: column;
     background-color: var(--color-azul);
     color: white;
-    
 }
-    .promociones-footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin: auto;
-    }
-        .footer-note {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            width: 25%;
-        }
-
-            .footer-note-text {
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-                padding: 0;
-            }
-
-                .footer-note-text p {
-                    margin: 0;
-                }
-
-            .footer-note i {
-                color: var(--color-celeste);
-                font-size: 2em;
-            }
-            .titular-footer {
-                margin: 0;
-                font-size: 1.5rem;
-                color: grey;
-            }
-
-            .copyright {
-                display: flex;
-                justify-content: center;
-            }
-
-            .copyright p{
-                color: var(--color-azulGris);
-            }
-
+.promociones-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+margin: auto;
+}
+.footer-note {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 25%;
+}
+.footer-note-text {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.footer-note-text p {
+    margin: 0;
+}
+.footer-note i {
+    color: var(--color-celeste);
+    font-size: 2em;
+}
+.titular-footer {
+    margin: 0;
+    font-size: 1.5rem;
+    color: grey;
+}
+.copyright {
+    display: flex;
+    justify-content: center;
+}
+.copyright p {
+    color: var(--color-azulGris);
+}
 /*--------------- Hasta acá llega la sección del footer ---------------*/

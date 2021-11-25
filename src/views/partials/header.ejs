@@ -2,26 +2,27 @@
     <div class="barra-superior">
         <div class = "logo-busqueda">
             <div class="logo">
-                <img src="/img/techIconLogo.jpg" alt="logo">
+                <a href="/"><img src="/img/logo2.png" alt="logo"></a>
             </div>
             <div class="busqueda">
-                <form action="/" method="GET">
-                    <input type="text" placeholder="Buscar productos..." name="search">
-                    <i class="fa fa-search"></i>
+                <form action="/" method="GET" class="busqueda-form">
+                    <input type="text" placeholder="Buscar productos..." name="search" class="barra-busqueda">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
         </div>
         <nav class="login-register">
-            <a href="/" class="link-logo"><i class="fas fa-user"></i></a>
-            <a href="/user/login" class="login-options">login</a>
-            <a href="/user/register" class="login-options">register</a>
-            <a href="/product/productCart" class="link-logo"><i class="fas fa-shopping-cart"></i></a>
+            <a href="/product/productCart" class="link-cart"><i class="fas fa-shopping-cart"></i></a>
+            <div class="botones-login-register">
+                <a href="/user/login" class="login-options">login</a>
+                <a href="/user/register" class="login-options">register</a>
+            </div>
+            <a href="/" class="link-user"><i class="fas fa-user"></i></a>
         </nav>
     </div>
     <nav class="barra-inferior">
-        <a href="/" class="links">Home</a>
-        <a href="/product/productDetail" class="links">Detail</a>
-        <a href="/" class="links">Vender</a>
-        <a href="/product/productDetail" class="links">Placeholder2</a>
+        
+        AGREGAR DROPDOWNS, CATEGORIAS, NAV
+        
     </nav>
 </header>
