@@ -50,7 +50,6 @@ header {
         .logo {
             width: 4rem;
             height: 3.5rem;
-            margin-left: 1rem;
             padding: 0.3rem;
             display: flex;
             align-items: center;
@@ -101,10 +100,11 @@ header {
                     height: 100%;
                     display: flex;  
                     align-items: center;
-                }                    
+                }
+    .link-cart {
+        /* css del icono del carrito */
+    }                    
     .login-register {
-        width: 30%;
-        margin-right: 1%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -127,7 +127,7 @@ header {
                 font-size: 2rem;
                 transition: all 100ms;
                 text-decoration: none;
-                color: white;
+                
             }
             .login-register i:hover {
                 color: var(--color-azulGris);
@@ -136,18 +136,18 @@ header {
                 color: var(--color-gris)
             }
             .botones-login-register {
-                width: 100%;
-                margin-left: 50%;
                 display: flex;
                 padding: 0;
+                color: var(--color-grisOscuro);
             }
             .botones-login-register a :hover{
                 background-color: var(--color-azul);
             }
             .link-user {
                 width: fit-content;
+                margin-right: 0.5rem;
                 display: flex;
-                justify-content: flex-end;
+                color: var(--color-azulGris);
             }
 .barra-inferior {
     background-color: var(--color-azulGris);
