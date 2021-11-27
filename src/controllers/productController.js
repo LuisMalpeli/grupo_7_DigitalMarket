@@ -5,7 +5,10 @@ const productController = {
     },
     productCart: function(req, res) {
         res.render('products/productCart')
-    }
+    },
+    productCreate: function(req,res) {
+        res.render('products/productCreate')
+    },
 
 }
 
