@@ -1,34 +1,55 @@
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/public/css/products.css">
+    <link rel="stylesheet" href="/css/products-edit.css">
     <title>Crear Producto</title>
 </head>
 <body>
+
+    <%- include('../partials/header') %>
+    <%- include('../partials/nav') %>
+
     <main>
         <div class="producto-crear"> 
-            <div class="detail-register">
+            <div class="producto-detail">
                 <h3 class="titulo-register">
                     Agregar Producto
                 </h3>
                 <div class="info-register">
                     <form action="/" method="get">
-                        <input type="text" name= "nombre-producto" placeholder="Ingrese Nombre del Producto" class="nombre-producto"> <br>
-                        <input type="text" name= "descripcion" placeholder="Ingrese Descripcion del Producto" class="nombre-producto"> <br>
+                        <span>Nombre del producto:</span> 
+                        <br>
+                        <input type="text" name= "nombre-producto" placeholder="Ingrese Nombre del Producto" class="nombre-producto">
+                        <br>
+                        <span>Descripcion del producto:</span>
+                        <br>
+                        <input type="text" name= "descripcion" placeholder="Ingrese Descripcion del Producto" class="descripcion-producto"> 
+                        <br>
                         <div class="foto-producto">
-                            <p>Ingrese la foto del producto:</p>
-                            <input type="file" >
+                            <span>Ingrese la foto del producto: <input type="file"></span>
                         </div>
-                        <div class="categoria-producto">
-                            <p>Categoria:</p>
-                            <select name="categoria-producto" id="categoria-producto">
-                                <option value="CPU">Procesador</option>
-                                <option value="Motherboard">Motherboard</option>
-                                <option value="RAM">Memoria RAM</option>
-                                <option value="GPU">Tarjeta Grafica</option>
-                                <option value="Memoria">Memoria SDD/HDD</option>
-                                <option value="Fuente de alimentacion">Fuente de alimentacion</option>
-                                <option value="Ventilacion">Ventilacion</option>
+                        <form action="/" class="producto-categorias">
+                            <span>Seleccione la categoria del producto:</span>
+                            <br>
+                            <input type="radio" id="Motherboard" name="Motherboard" value="Motherboard">
+                            <label for="Motherboard">Motherboard</label>
+                            <br>
+                            <input type="radio" id="Procesador" name="Procesador" value="Procesador">
+                            <label for="Procesador">Procesador</label>
+                            <br>
+                            <input type="radio" id="GPU" name="GPU" value="GPU">
+                            <label for="GPU">GPU</label>
+                            <br>
+                            <input type="radio" id="RAM" name="RAM" value="RAM">
+                            <label for="RAM">RAM</label>
+                            <br>
+                            <span>Tipo de memoria:</span>
+                            <select name="Memoria" id="Memoria">
+                                <option value="SSD">SSD</option>
+                                <option value="HDD">HDD</option>
                             </select>
-                        </div>
+                            <br>
+                            <input type="radio" id="Fuente de alimentacion" name="Fuente de alimentacion" value="Fuente de alimentacion">
+                            <label for="Fuente de alimentacion">Fuente de alimentacion</label>
+                        </form>
                         <br>
                         <div class="extras-producto">
                             <p>Extras:</p>
@@ -36,10 +57,12 @@
                             <input type="text" name="tamanio-producto" placeholder="Tamanio del Producto" class="tamanio-producto">
                         </div>
                         <br>
-                        <div class="precio-producto">
+                        <div class="precio">
+                            <span>Precio:</span>
+                            <br>
                             <input type="text" name="precio-producto" placeholder="Precio del Producto" class="precio-producto">
                         </div>
-                        <div class="buttom-register"> <br>
+                        <div class="buttom-submit"> <br>
                             <input type="submit" value= "Registrar">
                         </div>
                     </form>
@@ -47,5 +70,8 @@
             </div>
         </div>
     </main>
+
+    <%- include('../partials/footer') %>
+
 </body>
 </html>
