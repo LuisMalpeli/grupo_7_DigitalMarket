@@ -96,10 +96,7 @@ header {
                     height: 100%;
                     display: flex;  
                     align-items: center;
-                }
-    .link-cart {
-        /* css del icono del carrito */
-    }                    
+                }               
     .login-register {
         display: flex;
         align-items: center;
