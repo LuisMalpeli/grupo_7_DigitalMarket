@@ -72,7 +72,7 @@ main h1 {
 
     .productDetail {
         width: fit-content;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         background: rgb(255, 255, 255);
         margin-top: 1rem;
         margin-bottom: 5rem;

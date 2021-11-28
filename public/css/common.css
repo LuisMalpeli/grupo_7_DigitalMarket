@@ -22,7 +22,7 @@ body {
 /*--------------- Inicio de la sección del header ---------------*/
 header {
     background: var(--color-azulOscuro);
-    height: 4rem;
+    height: 3rem;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -33,7 +33,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5px;
 }
 
     /*
@@ -48,27 +47,24 @@ header {
         justify-content: space-between;
     }
         .logo {
-            width: 4rem;
-            height: 3.5rem;
+            width: 3rem;
             padding: 0.3rem;
             display: flex;
             align-items: center;
         }
         .logo img {
             width: 100%;
-            height: 100%;
         }
         .busqueda {
             display: flex;
-            align-items: center;
             width: 50%;
-            margin-right: 10rem;
+            margin-right: 20%;
         }
             .busqueda-form {
                 display: flex;
                 justify-content: space-evenly;
                 width: 100%;
-                height: 100%;
+                height: 90%;
                 padding: 0.6rem 0;
             }
                 .barra-busqueda {
@@ -82,7 +78,7 @@ header {
                 }
                     .busqueda ::placeholder {
                         color: var(--color-gris);
-                        text-indent: 0.5rem;
+                        padding-right: 0.5rem;
                         font-weight: bold;
                     }
                 .busqueda button {
@@ -169,7 +165,7 @@ main {
     height: 50rem;
     background: var(--color-gris);
     display: flex;
-        justify-content: center;
+    justify-content: center;
 }
 /*--------------- Hasta acá llega la sección del main ---------------*/
 /*--------------- Inicio de la sección del footer ---------------*/

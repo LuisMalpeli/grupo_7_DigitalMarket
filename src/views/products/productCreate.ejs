@@ -17,28 +17,36 @@
                     <form action="/" method="get">
                         <span>Nombre del producto:</span> 
                         <br>
-                        <input type="text" name= "nombre-producto" placeholder="Ingrese Nombre del Producto" class="nombre-producto">
+                        <input type="text" name= "nombre-producto" class="nombre-producto">
                         <br>
                         <span>Descripcion del producto:</span>
                         <br>
-                        <input type="text" name= "descripcion" placeholder="Ingrese Descripcion del Producto" class="descripcion-producto"> 
+                        <input type="text" name= "descripcion" class="descripcion-producto"> 
+                        <br>
+                        <span>Marca: </span>
+                        <br>
+                        <input type="text" name="marca-producto" class="marca-producto">
+                        <br>
+                        <span>Modelo: </span>
+                        <br>
+                        <input type="text" name="modelo-producto" class="modelo-producto">                                                  
                         <br>
                         <div class="foto-producto">
                             <span>Ingrese la foto del producto: <input type="file"></span>
-                        </div>
-                        <form action="/" class="producto-categorias">
+                        </div class="categoria">
                             <span>Seleccione la categoria del producto:</span>
                             <br>
-                            <input type="radio" id="Motherboard" name="Motherboard" value="Motherboard">
+                            <div class="div-radio">
+                            <input type="checkbox" id="Motherboard" name="Motherboard" value="Motherboard">
                             <label for="Motherboard">Motherboard</label>
                             <br>
-                            <input type="radio" id="Procesador" name="Procesador" value="Procesador">
+                            <input type="checkbox" id="Procesador" name="Procesador" value="Procesador">
                             <label for="Procesador">Procesador</label>
                             <br>
-                            <input type="radio" id="GPU" name="GPU" value="GPU">
+                            <input type="checkbox" id="GPU" name="GPU" value="GPU">
                             <label for="GPU">GPU</label>
                             <br>
-                            <input type="radio" id="RAM" name="RAM" value="RAM">
+                            <input type="checkbox" id="RAM" name="RAM" value="RAM">
                             <label for="RAM">RAM</label>
                             <br>
                             <span>Tipo de memoria:</span>
@@ -47,23 +55,24 @@
                                 <option value="HDD">HDD</option>
                             </select>
                             <br>
-                            <input type="radio" id="Fuente de alimentacion" name="Fuente de alimentacion" value="Fuente de alimentacion">
+                            <input type="checkbox" id="Fuente de alimentacion" name="Fuente de alimentacion" value="Fuente de alimentacion">
                             <label for="Fuente de alimentacion">Fuente de alimentacion</label>
-                        </form>
-                        <br>
-                        <div class="extras-producto">
-                            <p>Extras:</p>
-                            <input type="text" name="color-producto" placeholder="Color del Producto" class="color-producto"><br>
-                            <input type="text" name="tamanio-producto" placeholder="Tamanio del Producto" class="tamanio-producto">
                         </div>
                         <br>
                         <div class="precio">
-                            <span>Precio:</span>
+                            <span>Precio del producto:</span>
                             <br>
-                            <input type="text" name="precio-producto" placeholder="Precio del Producto" class="precio-producto">
+                            <div class="moneda-precio">
+                                <select name="moneda" id="moneda">
+                                    <option value="BIT">BIT</option>
+                                    <option value="USD">USD</option>
+                                    <option value="EUR">EUR</option>
+                                </select>
+                                <input type="text" name="precio-producto" class="precio-producto">
+                            </div> 
                         </div>
-                        <div class="buttom-submit"> <br>
-                            <input type="submit" value= "Registrar">
+                        <div class="boton-agregar-div"> 
+                            <button type="submit" class="boton-agregar">Agregar producto</button>
                         </div>
                     </form>
                 </div>
