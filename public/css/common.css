@@ -171,6 +171,7 @@ main {
 footer {
     display: flex;
     flex-direction: column;
+   
     background-color: var(--color-azul);
     color: white;
 
@@ -178,6 +179,7 @@ footer {
 .promociones-footer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     margin: auto;
     font-size: 30px;
@@ -218,5 +220,12 @@ footer {
 }
 .pb-6 {
     padding-bottom: 40px !important;
+    flex-wrap: wrap;
     }
 /*--------------- Hasta acá llega la sección del footer ---------------*/
+
+@media (max-width: 400px) {
+    .promociones-footer {
+        flex-direction: column;
+    }
+}

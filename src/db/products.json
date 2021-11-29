@@ -1,29 +1,30 @@
-[{
-    "id": 1,
-    "titulo": "Motherboard ASUS Prime Z590-A",
-    "tipo": "Motherboard",
-    "marca": "ASUS",
-    "modelo": "Prime Z590-A",
-    "taggs": ["Componentes", "Computación", "Gaming"],
-    "descripcion": "descripcion",
-    "moneda": "ARS",
-    "precio": 20000,
-    "enPromocion": true,
-    "descuento": 0.1,
-    "img": "motherboard.jpg"
-},
-{
-    "id": 2,
-    "titulo": "Procesador Intel CoreI7",
-    "tipo": "Procesador",
-    "marca": "Intel",
-    "modelo": "Core i7",
-    "taggs": ["Componentes", "Computación", "Gaming"],
-    "descripcion": "descripcion",
-    "moneda": "ARS",
-    "precio": 20000,
-    "enPromocion": true,
-    "descuento": 0.1,
-    "img": "corei7.png"
-}
+[
+    {
+        "id": 1,
+        "titulo": "Motherboard ASUS Prime Z590-A",
+        "tipo": "Motherboard",
+        "marca": "ASUS",
+        "modelo": "Prime Z590-A",
+        "taggs": ["Componentes", "Computación", "Gaming"],
+        "descripcion": "descripcion",
+        "moneda": "ARS",
+        "precio": 20000,
+        "enPromocion": true,
+        "descuento": 0.1,
+        "img": "motherboard.jpg"
+    },
+    {
+        "id": 2,
+        "titulo": "Procesador Intel CoreI7",
+        "tipo": "Procesador",
+        "marca": "Intel",
+        "modelo": "Core i7",
+        "taggs": ["Componentes", "Computación", "Gaming"],
+        "descripcion": "descripcion",
+        "moneda": "ARS",
+        "precio": 20000,
+        "enPromocion": true,
+        "descuento": 0.1,
+        "img": "corei7.png"
+    }
 ]
