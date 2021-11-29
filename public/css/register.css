@@ -102,47 +102,48 @@ main h1 {
 
         .register {
             height: fit-content;
-            width: 35rem;
+            width: 50rem;
             background: rgb(255, 255, 255);
             margin: 2% 0 ;
             border: 2px solid var(--color-gris);
             border-radius: 10px;
             display:flex;
             justify-content: center;
-            margin: 5rem;
+            margin: 3rem;
             padding: 0% 3% 3% 3%;
-
-        
+            font-size: 25px;
+            font-family: sans-serif;
             
         }
         .titulo-register {
-            font-size: 30px;
+            font-size: 45px;
             font-family: sans-serif;
         }
 
         
         .info-register form input{
-            height: 50px;
-            width: 25rem;
+            width: 40rem;
             display: flex;
             justify-content:center;
             flex-direction:column;
             font-family: sans-serif; 
             line-height: 1; 
             align-items: center;
+            height: 4rem;
+              
         }
         
         .info-register form .buttom-register input {
-                width: 25rem;
+                width: 40rem;
                 color: white;
                 background: #3483fa;   
                 border: 2px solid #3483fa;
                 border-radius: 5px;
                 box-shadow: 1px 1px #3483fa;
                 font-family: sans-serif;
-                font-size: 20px;
                 text-align: center;    
                 font-weight: bold;
+                font-size: 25px;
                 
         }
 

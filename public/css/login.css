@@ -55,26 +55,28 @@ main h1 {
 
         .login {
             height: fit-content;
-            width: 35rem;
+            width: 50rem;
             background: rgb(255, 255, 255);
             margin: 2% 0 ;
             border: 2px solid var(--color-gris);
             border-radius: 10px;
             display:flex;
             justify-content: center;
-            margin: 5rem;            
+            margin: 5rem;
+            font-size: 25px;
+            font-family: sans-serif;            
 
         }
 
         .titulo-cuenta{
-            font-size: 30px;
+            font-size: 45px;
             font-family: sans-serif;
         }
 
         
         .info-usuario form {
             height:auto;
-            width: 25rem;
+            width: 40rem;
             display: flex;
             justify-content: center;
             flex-direction:column;
@@ -84,7 +86,7 @@ main h1 {
         }
 
         .info-usuario form .datos {
-          height: 3rem;
+          height: 5rem;
         }
            
     
@@ -92,15 +94,15 @@ main h1 {
     
 
         .detail-cuenta .buttom-login .boton {
-            width: 25rem;
-            height: 3rem;
+            width: 40rem;
+            height: 4rem;
             color: white;
             background: #3483fa;   
             border: 2px solid #3483fa;
             border-radius: 5px;
             box-shadow: 1px 1px #3483fa;
             font-family: sans-serif;
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
             
         }
@@ -112,7 +114,11 @@ main h1 {
             font-family: sans-serif;  
         }
 
+        .caja-checkbox {
 
+            padding: 10px;
+            justify-content: center;
+        }
 
 
 
