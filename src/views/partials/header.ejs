@@ -1,9 +1,9 @@
 <header>
+    <!--------header-------->
     <div class="barra-superior">
         <div class = "logo-busqueda"> 
             <div class="logo">
-                <a href="/"><img src="/img/logo2.png" alt="logo"></a>
-                
+                <a href="/"><img src="/img/logo2.png" alt="logo"></a> 
             </div>
             <div class="busqueda">
                 <form action="/" method="GET" class="busqueda-form">
@@ -12,13 +12,49 @@
                 </form>
             </div>
         </div>
-        <a href="/product/productCart" class="link-cart"><i class="fas fa-shopping-cart"></i></a>
-        <div class="login-register">
-            <div class="botones-login-register">
-                <a href="/user/login" class="login-options">login</a>
-                <a href="/user/register" class="login-options">register</a>
+        <div class="links-carrito">
+            <div class="login-register">
+                <a href="/" class="link-user"><i class="fas fa-user"></i></a>
+                <div class="botones-login-register">
+                    <span>Bienvenido!</span>
+                    <div class="links">
+                        <a href="/user/login" class="login-options" id="login">Login</a>
+                        <span>/</span>
+                        <a href="/user/register" class="login-options" id="register">Register</a>
+                    </div>
+                </div>
+            </div>
+            <div class="link-cart">
+                <a href="/product/productCart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            
+        </div>
+    </div>
+    <!--------header-------->
+    <!--------nav--------
+    <div class="barra-inferior">
+        <div class="dropdown">
+            <div class="menu">
+                <i class="fas fa-chevron-circle-down"></i>
+                <span>Menu</span>
+            </div>
+            <div class="dropdown-contenido">   
+                <ul>
+                    <li><a href="">Todos los productos</a></li>
+                    <li> 
+                        Categorias: 
+                        <ul>
+                            <li>Motherboard</li>
+                            <li>CPU</li>
+                            <li>GPU</li>
+                            <li>RAM</li>
+                            <li>Memoria</li>
+                            <li>Fuente de alimentacion</li>
+                        </ul> 
+                    </li> 
+                </ul>
             </div>
         </div>
-        <a href="/" class="link-user"><i class="fas fa-user"></i></a>
     </div>
+    --------nav-------->
 </header>

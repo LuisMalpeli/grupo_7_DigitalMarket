@@ -4,14 +4,6 @@
   Resetea los estilos para que en todos los navegadores tenga el mismo formato de contenido y se vea por igual en ellos.
 */
 
-:root {
-    --color-azulOscuro: #0f2744;
-    --color-azul: #2d4e6a;
-    --color-azulGris: #94a2af;
-    --color-gris: #e7e8e9;
-    --color-blanco: #f3f3f3;
-}
-
 body {
 	line-height: 1;
     font-family: sans-serif;

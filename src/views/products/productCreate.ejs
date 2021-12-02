@@ -1,12 +1,9 @@
-    <%- include('../partials/head') %>
+    <%- include('../partials/head', {title: 'Create'}) %>
     <link rel="stylesheet" href="/css/products-edit.css">
     <title>Crear Producto</title>
 </head>
 <body>
-
-    <%- include('../partials/header', {title: 'Create'}) %>
-    <%- include('../partials/nav') %>
-
+    <%- include('../partials/header') %>
     <main>
         <div class="producto-crear"> 
             <div class="producto-detail">
@@ -79,8 +76,6 @@
             </div>
         </div>
     </main>
-
     <%- include('../partials/footer') %>
-
 </body>
 </html>

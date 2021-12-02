@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color-azulOscuro: #0f2744;
+  --color-azulOscuro: #081729;
   --color-azul: #2d4e6a;
   --color-azulGris: #94a2af;
   --color-gris: #e7e8e9;
@@ -22,34 +22,31 @@ body {
 /*--------------- Inicio de la sección del header ---------------*/
 header {
     background: var(--color-azulOscuro);
-    height: 7rem;
+    font-family: Arial, Helvetica;
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
-    font-size: 30px;
+    box-shadow: -1rem,1rem,var(--color-azul);
 }
-
 .barra-superior {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding-top: 0.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-
     /*
     La barra superior contiene:
         logo-busqueda:Logo + Barra de búsqueda
         login-register: Usuario + login + register + carrito
     */
-
     .logo-busqueda {
         width: 80%;
         display: flex;
         justify-content: space-between;
     }
         .logo {
-            width: 5rem;
+            width: 4rem;
             padding: 0.3rem;
             display: flex;
             align-items: center;
@@ -60,26 +57,29 @@ header {
         .busqueda {
             display: flex;
             width: 50%;
-            margin-right: 20%;
+            margin-right: 15%;
         }
             .busqueda-form {
                 display: flex;
-                justify-content: space-evenly;
-                width: 100%;
+                justify-content: flex-end;
+                width: 80%;
                 height: 90%;
                 padding: 0.6rem 0;
+                position: relative;
+                left: 6rem;
             }
                 .barra-busqueda {
-                    background-color: var(--color-azulGris);
+                    background-color: #FFF;
                     border: none;
                     border-radius: 8px 0 0 8px;
                     padding: 0;
                     height: 100%;
                     width: 100%;
                     outline: none;
+                    text-indent: 0.5rem;
                 }
                     .busqueda ::placeholder {
-                        color: var(--color-gris);
+                        font-size: medium;
                         padding-right: 0.5rem;
                         font-weight: bold;
                     }
@@ -98,66 +98,121 @@ header {
                     height: 100%;
                     display: flex;  
                     align-items: center;
-                }               
+                }  
+    .links-carrito {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 20%;
+    }           
     .login-register {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         color: white;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
     }
-            .login-options {
-                text-decoration: none;
-                color: var(--color-gris);
-                padding: 0.5rem 0.8rem;
-                border-radius: 0.5rem;
-                transition: all 100ms;
-                font-weight: bold;
+        .login-register:hover {
+            background: rgba(161, 161, 161, 0.322);
+            border-radius: 15px;
+        }
+        .link-user {
+            margin-right: 1rem;
+        }
+            .link-user i {
+                color: #FFF;
+                font-size: 32px;
             }
-            .login-options:hover {
-                background-color: var(--color-gris);
-                color: black;
-            }
-
-            .login-register i {
-                font-size: 2rem;
-                transition: all 100ms;
-                text-decoration: none;
-                
-            }
-            .login-register i:hover {
-                color: var(--color-azulGris);
-            }
-            .link-cart i{
-                color: var(--color-gris)
-            }
-            .botones-login-register {
-                display: flex;
-                padding: 0;
+        .botones-login-register {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            color: var(--color-grisOscuro);
+        }
+            .botones-login-register span {
+                width: 100%;
                 color: var(--color-grisOscuro);
-            }
-            .botones-login-register a :hover{
-                background-color: var(--color-azul);
-            }
-            .link-user {
-                width: fit-content;
-                margin-right: 0.5rem;
+            }  
+            .links {
                 display: flex;
-                color: var(--color-azulGris);
+                font-weight: 600;
             }
+                .links span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .login-options {
+                    width: 50%;
+                    text-decoration: none;
+                    color: var(--color-gris);
+                    padding: 0.5rem 0.8rem;
+                    border-radius: 0.5rem;
+                    transition: all 100ms;
+                    font-weight: 600;
+                }
+                #login {
+                    padding: 0;
+                }
+                #register {
+                    padding: 0;
+                }
+            .link-cart {
+                background: var(--color-azulOscuro);
+                height: 68.8px;
+                width: 68.8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+            }
+            .link-cart i {
+                color: #FFF;
+                font-size: 32px;
+                margin: 0.5rem;
+            }
+            .link-cart:hover {
+                background: rgba(161, 161, 161, 0.322);
+                border-radius: 20px;
+            }
+/*---------------------------------nav---------------------------------------*/
 .barra-inferior {
-    background-color: var(--color-azulGris);
     display: flex;
     justify-content: center;
     width: 100%;
 }
-    .links {
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .menu {
         display: flex;
         justify-content: center;
+        margin: 0.5rem;
     }
-
-    /*---------------------------------nav---------------------------------------*/
-
-    /*--------------------------------fin_nav--------------------------------------*/
+        .menu i {
+            color: #FFF;
+            margin-right: 0.5rem;
+        }
+        .menu i:hover {
+            transform: rotate(180deg);
+        }
+        .menu span {
+            color: var(--color-gris);
+        }
+    .dropdown-contenido {
+        background-color: var(--color-blanco);
+        display: none;
+        position: absolute;
+        width: 70%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+/*--------------------------------fin_nav--------------------------------------*/
 /*--------------- Hasta acá llega la sección del header ---------------*/
 /*--------------- Inicio de la sección del main ---------------*/
 main {
@@ -174,8 +229,6 @@ footer {
     background-color: var(--color-azul);
     color: white;
 }
-
-
 .promociones-footer {
     display: flex;
     flex-direction: row;
@@ -187,26 +240,6 @@ footer {
         width: 20%; 
         height: fit-content;
     }
-/*
-        .footer-note-text {
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            padding: 0;  
-        }
-        .footer-note-text p {
-            margin: 0;
-        }
-        .footer-note i {
-            color: var(--color-celeste);
-            font-size: 2em;
-        }
-        .titular-footer {
-            margin: 0;
-            font-size: 1.5rem;
-            color: grey;
-        }
-*/
         .footer-titulo {
             color: var(--color-gris);
             font-size: large;

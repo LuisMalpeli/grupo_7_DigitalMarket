@@ -2,15 +2,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --color-azulOscuro: #0f2744;
-    --color-azul: #2d4e6a;
-    --color-azulGris: #7a8c9c;
-    --color-gris: #d7d9db;
-    --color-blanco: #f3f3f3;
-}
-
-
 /*Sección del banner. Por ahora hay un placeholder de mercadoliebre*/
 .home-banner {
     display: flex;
@@ -40,9 +31,6 @@ main {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
-    .seccion-productos {
-
-    }
     .seccion-ofertas h3, .seccion-intereses h3 {
         color: var(--color-azulGris);
         font-size: 1.5rem;
@@ -94,8 +82,7 @@ main {
                         color:rgb(60, 255, 0);
                     }
                 .nombre-producto {
-                    padding-left: 5%;
-                    
+                    padding-left: 5%;                    
                 }
 
 
