@@ -19,45 +19,55 @@
     padding: 1rem;
 }
     .home-banner img {
-        width:90%;
+        width:80%;
     }
 /*Fin de sección del banner*/
 
 body {
     background-color: var(--color-gris);
 }
-.seccion-ofertas {
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productos {
+    width: 80%;
+}
+.seccion-ofertas, .seccion-intereses {
     display: flex;
     flex-direction: column;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
-    .seccion-ofertas h3 {
+    .seccion-productos {
+
+    }
+    .seccion-ofertas h3, .seccion-intereses h3 {
         color: var(--color-azulGris);
         font-size: 1.5rem;
     }
     .contenedor-ofertas {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         width: 90%;
+        margin-bottom: 2rem;
     }
         .cuadro-oferta {
-            border: solid black 1px;
-            width: 18.75rem;
             background-color: var(--color-blanco);
+            width: 20%;
+            margin: 0.1% 0.5% 0.5% 0.1%;
         }
             .cuadro-oferta img {
                 width: 100%;
-                height: 288px;
             }
             .cuadro-oferta-texto {
                 position: relative;
                 background-color: white;
                 padding-top: 1px;
                 padding-bottom: 1px;
-
             }
             .cuadro-oferta-texto i {
                 /*logo de agregar al carrito*/
@@ -85,6 +95,7 @@ body {
                     }
                 .nombre-producto {
                     padding-left: 5%;
+                    
                 }
 
 

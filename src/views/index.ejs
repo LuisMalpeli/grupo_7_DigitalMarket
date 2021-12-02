@@ -1,76 +1,70 @@
 
-<%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/index.css">
+<%- include('./partials/head', {title: 'Home'}) %>
+<link rel="stylesheet" href="/css/index.css">
     
-    <title>Home</title>
 </head>
 <body>
-    
+
     <%- include('./partials/header') %>
     <%- include('./partials/nav') %>
 
-    <div class = "home-banner">
-        <img src="/img/banner.jpg" alt="home-banner">
-    </div>
-    <div class="seccion-ofertas">
-        <div>
-            <h3 class = "titulo-ofertas">Basado en tus intereses</h3>
+    <main>
+        <div class = "home-banner">
+            <img src="/img/banner.jpg" alt="home-banner">
         </div>
-        <section class = "contenedor-ofertas">
-            <article class = "cuadro-oferta">
-                <div class = "cuadro-oferta-imagenes">
-                    <img src="/img/productos/motherboard.jpg" alt="motherboard">
+        <div class="productos">
+            <div class="seccion-ofertas">
+                <div>
+                    <h3 class = "titulo-ofertas">Productos con descuento</h3>
                 </div>
-                <div class = "cuadro-oferta-texto">
-                    <i class="fas fa-cart-plus"></i>
-                    <div class="precio-descuento">
-                        <p class = "precio">$20.000</p>
-                        <p class = "descuento">10% OFF</p>
-                    </div>
-                    <p class="nombre-producto">Nombre de Producto</p>
+                <section class = "contenedor-ofertas">
+                    <% for (i=0; i< productos.length; i++) { %>
+                        <% if (productos[i].enPromocion == true) { %>
+                            <article class = "cuadro-oferta">
+                                <div class = "cuadro-oferta-imagenes">
+                                    <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                </div>
+                                <div class = "cuadro-oferta-texto">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <div class="precio-descuento">
+                                        <p class = "precio">$<%= productos[i].precio %></p>
+                                        <p class = "descuento"><%= productos[i].descuento * 100 %>% OFF</p>
+                                    </div>
+                                    <p class="nombre-producto"><%= productos[i].titulo %></p>
+                                </div>
+                            </article>
+                        <% } %>
+                    <% } %>
+                </section>
+            </div>
+            <div class="seccion-intereses">
+                <div>
+                    <h3 class = "titulo-ofertas">Basado en tus intereses</h3>
                 </div>
-            </article>
-            <article class = "cuadro-oferta">
-                <div class = "cuadro-oferta-imagenes">
-                    <img src="/img/productos/gabinete.png" alt="gabinete">
-                </div>
-                <div class = "cuadro-oferta-texto">
-                    <i class="fas fa-cart-plus"></i>
-                    <div class="precio-descuento">
-                        <p class = "precio">$20.000</p>
-                        <p class = "descuento">10% OFF</p>
-                    </div>
-                    <p class="nombre-producto">Nombre de Producto</p>
-                </div>
-            </article>
-            <article class = "cuadro-oferta">
-                <div class = "cuadro-oferta-imagenes">
-                    <img src="/img/productos/corei7.png" alt="procesador-i7">
-                </div>
-                <div class = "cuadro-oferta-texto">
-                    <i class="fas fa-cart-plus"></i>
-                    <div class="precio-descuento">
-                        <p class = "precio">$20.000</p>
-                        <p class = "descuento">10% OFF</p>
-                    </div>
-                    <p class="nombre-producto">Nombre de Producto</p>
-                </div>
-            </article>
-            <article class = "cuadro-oferta">
-                <div class = "cuadro-oferta-imagenes">
-                    <img src="/img/productos/teclado.png" alt="teclado">
-                </div>
-                <div class = "cuadro-oferta-texto">
-                    <i class="fas fa-cart-plus"></i>
-                    <div class="precio-descuento">
-                        <p class = "precio">$20.000</p>
-                        <p class = "descuento">10% OFF</p>
-                    </div>
-                    <p class="nombre-producto">Nombre de Producto</p>
-                </div>
-            </article>
-        </section>
-    </div>
+                <section class = "contenedor-ofertas">
+                    <% for (i=0; i< productos.length; i++) { %>
+                        <article class = "cuadro-oferta">
+                            <div class = "cuadro-oferta-imagenes">
+                                <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                            </div>
+                            <div class = "cuadro-oferta-texto">
+                                <i class="fas fa-cart-plus"></i>
+                                <div class="precio-descuento">
+                                    <p class = "precio">$<%= productos[i].precio %></p>
+                                    <% if (productos[i].enPromocion == true) { %>
+                                        <p class = "descuento"><%= productos[i].descuento * 100 %>% OFF</p>
+                                    <% } %>
+                                </div>
+                                <p class="nombre-producto"><%= productos[i].titulo %></p>
+                            </div>
+                        </article>
+                    <% } %>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+
 </body>
-<%- include('./partials/footer') %>
 </html>

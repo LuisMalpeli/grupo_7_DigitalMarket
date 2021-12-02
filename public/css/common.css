@@ -161,7 +161,7 @@ header {
 /*--------------- Hasta acá llega la sección del header ---------------*/
 /*--------------- Inicio de la sección del main ---------------*/
 main {
-    height: 50rem;
+    /*height: 50rem;*/
     background: var(--color-gris);
     display: flex;
     justify-content: center;
@@ -171,46 +171,69 @@ main {
 footer {
     display: flex;
     flex-direction: column;
-   
     background-color: var(--color-azul);
     color: white;
-
 }
+
+
 .promociones-footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: auto;
     font-size: 30px;
-
 }
-.footer-note {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 25%;
-    
-}
-.footer-note-text {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    
-}
-.footer-note-text p {
-    margin: 0;
-}
-.footer-note i {
-    color: var(--color-celeste);
-    font-size: 2em;
-}
-.titular-footer {
-    margin: 0;
-    font-size: 1.5rem;
-    color: grey;
-}
+    .footer-note {
+        width: 20%; 
+        height: fit-content;
+    }
+/*
+        .footer-note-text {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;  
+        }
+        .footer-note-text p {
+            margin: 0;
+        }
+        .footer-note i {
+            color: var(--color-celeste);
+            font-size: 2em;
+        }
+        .titular-footer {
+            margin: 0;
+            font-size: 1.5rem;
+            color: grey;
+        }
+*/
+        .footer-titulo {
+            color: var(--color-gris);
+            font-size: large;
+            display: flex;
+            justify-content: center;
+        }
+        .footer-lista {
+            list-style: circle inside;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+            .footer-lista-li {
+                font-size: medium;
+                margin-bottom: 0.4rem;
+                display: flex;
+                justify-content: center;
+            }
+            .footer-lista-a {
+                text-decoration: none;
+                color: var(--color-grisOscuro);
+                font-size: medium;
+            }
+            .footer-lista-a:hover {
+                text-decoration: underline;
+            }
 .copyright {
     display: flex;
     justify-content: center;
@@ -226,6 +249,6 @@ footer {
 
 @media (max-width: 400px) {
     .promociones-footer {
-        flex-direction: column;
+        flex-direction: row;
     }
 }
