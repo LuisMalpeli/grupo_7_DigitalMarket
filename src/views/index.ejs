@@ -4,7 +4,7 @@
     
 </head>
 <body>
-    <%- include('./parti~als/header') %>
+    <%- include('./partials/header') %>
     <main>
         <div class = "home-banner">
             <img src="/img/banner.jpg" alt="home-banner">
@@ -58,6 +58,28 @@
                     <% } %>
                 </section>
             </div>
+        </div> <!--fin productos-->
+        <div class="promociones">
+            <div class="email">
+                <div class="email-texto">
+                    <h2>Registrese con su email para recibir novedades de nuestra tienda!</h2>
+                    <span>
+                        Nunca se perdera de ofertas exclusivas para clientes registrados.
+                    </span>
+                    <div class="email-inputs">
+                        <input type="email" placeholder="Ingrese su email" name="subscribe-email" class="barra-email">
+                        <button>Enviar</button>
+                        <!-- 
+                            1. AGREGAR CODIGO PARA GUARDAR EL MAIL EN UNA DB DE GENTE SUSCRITA
+                            2. DIRECTO A REGISTER CON EL MAIL YA COMPLETADO
+                        -->
+                    </div>
+                </div>
+                <div class="email-img">
+                    <img src="/img/bg_subscribe_box.png" alt="">
+                </div>
+            </div> 
+        </div>
         </div>
     </main>
     <%- include('./partials/footer') %>

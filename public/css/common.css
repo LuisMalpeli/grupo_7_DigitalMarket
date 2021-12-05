@@ -25,7 +25,6 @@ header {
     font-family: Arial, Helvetica;
     display: flex;
     flex-direction: column;
-    box-shadow: -1rem,1rem,var(--color-azul);
 }
 .barra-superior {
     width: 100%;

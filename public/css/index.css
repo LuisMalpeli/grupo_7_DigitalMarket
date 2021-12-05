@@ -24,6 +24,7 @@ main {
 }
 .productos {
     width: 80%;
+    
 }
 .seccion-ofertas, .seccion-intereses {
     display: flex;
@@ -36,20 +37,17 @@ main {
         font-size: 1.5rem;
     }
     .contenedor-ofertas {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+        display: block;
         width: 90%;
         margin-bottom: 2rem;
     }
         .cuadro-oferta {
             background-color: var(--color-blanco);
-            width: 20%;
-            margin: 0.1% 0.5% 0.5% 0.1%;
+            margin: 0.5% 2%;
         }
-            .cuadro-oferta img {
-                width: 100%;
+            .cuadro-oferta-imagenes img {
+                width: 261px;
+                height: 261px;
             }
             .cuadro-oferta-texto {
                 position: relative;
@@ -84,6 +82,71 @@ main {
                 .nombre-producto {
                     padding-left: 5%;                    
                 }
+                .promociones {
+                    width: 90%;
+                    margin-bottom: 2rem;
+                    display: flex;
+                }
+                    .email {
+                        background-color: #fff;
+                        border-radius: 5px;
+                        width: 50%;
+                        height: 200px;
+                        display: flex;
+                    }
+                        .email-texto {
+                            width: 80%;
+                            padding:  0.5rem 0 0 1rem;
+                            position: relative; 
+                            order: 1;
+                            z-index: 2;
+                        }
+                        .email-inputs {
+                            margin-top: 1rem;
+                            width: 80%;
+                            display: flex;
+                            height: 2.5rem;
+                        }
+                        .email-inputs input {
+                            width: 80%;
+                            text-indent: 0.2rem;;
+                            border-right: none;
+                            border-radius: 5px 0 0 5px;
+                            outline: none;
+                        }
+                        .email-inputs button {
+                            padding: 0;
+                            border-left: none;
+                            border-radius: 0 5px 5px 0;
+                            display: flex;  
+                            justify-content: center;
+                            align-items: center;
+                            width: 15%;
+                            color: #fff;
+                            background: var(--color-azul);
+                        }
+                        .email-img {
+                            opacity: .50;
+                            position: absolute;
+                            order: 2;
+                            z-index: 1;
+                            left: 10px;
+                        }
 
-
+@media (min-width: 400px) {
+    .contenedor-ofertas {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 1500px) {
+    .promociones {
+        display: none;
+    }
+    .email img {
+        display: none;
+    }
+}
     
