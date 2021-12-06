@@ -2,6 +2,9 @@
     {
         "id": 1,
         "userName": "user 1",
+        "firstName": "nombre",
+        "lastName": "apellido",
+        "gender": "M",
         "tipo": "usuario",
         "pass": "1234",
         "activo": true,

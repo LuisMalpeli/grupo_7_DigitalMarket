@@ -11,17 +11,25 @@ const productController = {
             {productos: productos}
             )
     },
-    productDetail: function(req, res) {
+    detail: function(req, res) {
         res.render('products/productDetail') //Dentro de la carpeta products, busca product Detail
     },
-    productCart: function(req, res) {
+    cart: function(req, res) {
         res.render('products/productCart')
     },
-    productCreate: function(req,res) {
+    create: function(req,res) {
         res.render('products/productCreate')
     },
-    productEdit: function(req,res) {
+    createSend:function(req,res) {
+        res.send('envio de formulario de creación de producto');//Placeholder
+        //Insertar lógica de creación y validación del formulario acá
+    },
+
+    edit: function(req,res) {
         res.render('products/productEdit')
+    },
+    editSend:function(req,res) {
+        res.send('Envío del formulario de edición de producto')
     },
 }
 
