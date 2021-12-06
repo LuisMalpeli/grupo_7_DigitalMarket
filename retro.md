@@ -24,4 +24,4 @@ Página formulario de creación y edición de productos en formato .ejs con esti
 
 SE ESTAN PROBANDO COSAS EN EL CARRITO...
 
-
+daily 6/12 -> se agrego en el archivo daily.md lo que se resolvio durante la semana
