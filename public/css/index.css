@@ -37,17 +37,28 @@ main {
         font-size: 1.5rem;
     }
     .contenedor-ofertas {
-        display: block;
-        width: 90%;
+        display: flex;
+        width: 100%;
         margin-bottom: 2rem;
     }
+
         .cuadro-oferta {
             background-color: var(--color-blanco);
             margin: 0.5% 2%;
+            /*Fijo altura y ancho de los cuadros de oferta, las imágenes ocuparán % de esto así quedan todos iguales*/
+            width:261px;
+            height: 290px;
+            transition: 0.5s all;
+        }
+        .cuadro-oferta:hover {
+            box-shadow: 2px 2px 5px grey;
+        }
+        .cuadro-oferta-imagenes {
+            /*ocupará el 65% de cuadro-oferta*/
+            height: 65%;
         }
             .cuadro-oferta-imagenes img {
-                width: 261px;
-                height: 261px;
+                width: 100%; /*ocupará el 100% de cuadro-oferta-imagenes*/
             }
             .cuadro-oferta-texto {
                 position: relative;

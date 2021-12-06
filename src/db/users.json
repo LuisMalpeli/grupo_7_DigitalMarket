@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "userName": "user 1",
+        "tipo": "usuario",
+        "pass": "1234",
+        "activo": true,
+        "mail": "a@b.com",
+        "intereses": ["Componentes", "Computación", "Gaming"],
+        "medioDePago": true,
+        "avatar": "user.jpg"
+        
+    }
+]

@@ -13,12 +13,17 @@
                     </h3>
                     <div class="info-register">
                         <form action="/" method="get">
-                            <input type="text" name= "Nombre y apellido" placeholder="Nombre y Apellido"> <br>
+                            <input type="text" name= "firstName" placeholder="Ingrese su nombre"> <br>
+                            <input type="text" name= "lastName" placeholder="Ingrese su apellido"> <br>
+                            <div class="radio-options">
+                                <label>Hombre<input type="radio" name= "gender" value="M"></label>
+                                <label>Mujer<input type="radio" name= "gender" value="F"></label>
+                            </div><br>
                             <input type="email" name= "email" placeholder="E-mail"> <br>
                             <input type="email" name= "email" placeholder="Confirmar E-mail"><br>
                             <input type="password" name= "password" placeholder="Contraseña"><br>
-                            <input type="file">
-                            <div class="buttom-register">
+                            <input type="file" name="avatar"><br>
+                            <div class="button-register">
                                 <input type="submit" value= "Registrar">
                             </div>
                         </form>
