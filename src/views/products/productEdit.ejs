@@ -14,19 +14,19 @@
                 <form action="/products/edit?_method=PUT" method="POST">
                     <span>Nombre del producto:</span> 
                     <br>
-                    <input type="text" name= "titulo" class="nombre-producto">
+                    <input type="text" name= "titulo" class="nombre-producto" value="<%=productos.titulo %>">
                     <br>
                     <span>Descripcion del producto:</span>
                     <br>
-                    <input type="text" name= "descripcion" class="descripcion-producto"> 
+                    <input type="text" name= "descripcion" class="descripcion-producto" value="<%=productos.descripcion %>"> 
                     <br>
                     <span>Marca: </span>
                     <br>
-                    <input type="text" name="marca" class="marca-producto">
+                    <input type="text" name="marca" class="marca-producto" value="<%=productos.marca %>">
                     <br>
                     <span>Modelo: </span>
                     <br>
-                    <input type="text" name="modelo" class="modelo-producto">                                                  
+                    <input type="text" name="modelo" class="modelo-producto" value="<%=productos.modelo %>">                                                  
                     <br>
                     <div class="foto-producto">
                         <span>Ingrese la foto del producto: <input type="file"></span>
@@ -34,16 +34,16 @@
                         <span>Seleccione la categoria del producto:</span>
                         <br>
                         <div class="div-radio">
-                        <input type="checkbox" id="Motherboard" name="Motherboard" value="Motherboard">
+                        <input type="checkbox" id="Motherboard" name="tipo" value="Motherboard">
                         <label for="Motherboard">Motherboard</label>
                         <br>
-                        <input type="checkbox" id="Procesador" name="Procesador" value="Procesador">
+                        <input type="checkbox" id="Procesador" name="tipo" value="Procesador">
                         <label for="Procesador">Procesador</label>
                         <br>
-                        <input type="checkbox" id="GPU" name="GPU" value="GPU">
+                        <input type="checkbox" id="GPU" name="tipo" value="GPU">
                         <label for="GPU">GPU</label>
                         <br>
-                        <input type="checkbox" id="RAM" name="RAM" value="RAM">
+                        <input type="checkbox" id="RAM" name="tipo" value="RAM">
                         <label for="RAM">RAM</label>
                         <br>
                         <span>Tipo de memoria:</span>
@@ -52,30 +52,37 @@
                             <option value="HDD">HDD</option>
                         </select>
                         <br>
-                        <input type="checkbox" id="Fuente de alimentacion" name="Fuente de alimentacion" value="Fuente de alimentacion">
+                        <input type="checkbox" id="Fuente de alimentacion" name="tipo" value="Fuente de alimentacion">
                         <label for="Fuente de alimentacion">Fuente de alimentacion</label>
                     </div>
                     <br>
                     <div class="descuento-promo">
                         <span>Aplicar promocion: </span>
                         <select name="enPromocion" id="enPromocion">
-                            <option value="true">Si</option>
-                            <option value="false">No</option>
+                            <option v-bind:value="true"<% if(productos.enPromocion==true){%>
+                                selected
+                                <%}%>>Si</option>
+                            <option v-bind:value="false"<% if(productos.enPromocion==false){%>
+                                selected
+                                <%}%>>No</option>
                         </select>
                         <br>
                         <span>Porcentaje (%) de descuento</span>
-                        <input type="text" name="descuento" class="descuento">
+                        <input type="text" name="descuento" class="descuento" value="<%=productos.descuento*100%>">
                     </div>
                     <div class="precio">
                         <span>Precio del producto:</span>
                         <br>
                         <div class="moneda-precio">
                             <select name="moneda" id="moneda">
-                                <option value="BIT">BIT</option>
-                                <option value="USD">USD</option>
-                                <option value="EUR">EUR</option>
+                                <option value="USD"<% if(productos.moneda=="USD"){%>
+                                    selected
+                                    <%}%>>USD</option>
+                                <option value="ARS"<% if(productos.moneda=="ARS"){%>
+                                    selected
+                                    <%}%>>ARS</option>
                             </select>
-                            <input type="text" name="precio-producto" class="precio-producto">
+                            <input type="text" name="precio-producto" class="precio-producto"value="<%=productos.precio %>">>
                         </div> 
                     </div>
                     <div class="boton-agregar-div"> 

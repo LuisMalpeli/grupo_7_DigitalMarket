@@ -23,16 +23,24 @@ const productController = {
         res.render('products/productCart')
     },
     create: function(req,res) {
+        //Muestra el formulario de creación de producto
         res.render('products/productCreate')
     },
     createSend:function(req,res) {
+        //Crea un producto y lo agrega a la base de datos JSON
+        
         res.send('envio de formulario de creación de producto');//Placeholder
         //Insertar lógica de creación y validación del formulario acá
     },
 
-    edit: function(req,res) {
-        res.render('products/productEdit')
-    },
+    edit: (req, res) => {
+		//Pido el parámetro que viene en la url bajo el nombre id
+		let idProducto = req.params.id
+		//encuentro el producto particular que me coincide con el id que quiero mostrar
+		let productoAMostrar = productos.find(element => element.id == idProducto)
+		//Paso el producto que encontré al ejs
+		res.render('products/productEdit',{productos: productoAMostrar});
+	},
     editSend:function(req,res) {
         res.send('Envío del formulario de edición de producto')
     },
