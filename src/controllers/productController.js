@@ -32,6 +32,7 @@ const productController = {
         res.send('envio de formulario de creación de producto');//Placeholder
         //Insertar lógica de creación y validación del formulario acá
     },
+<<<<<<< HEAD
 
     edit: (req, res) => {
 		//Pido el parámetro que viene en la url bajo el nombre id
@@ -41,6 +42,11 @@ const productController = {
 		//Paso el producto que encontré al ejs
 		res.render('products/productEdit',{productos: productoAMostrar});
 	},
+=======
+    edit: function(req,res) {
+        res.render('products/productEdit')
+    },
+>>>>>>> a64e8cf67a5e64488f2b036a5e8f56629dfbe3cb
     editSend:function(req,res) {
         res.send('Envío del formulario de edición de producto')
     },
