@@ -9,23 +9,28 @@
                 <div>
                     <h3 class = "titulo-ofertas">Todos los productos</h3>
                 </div>
-                <section class = "contenedor-ofertas">
-                    <% for (i=0; i< productos.length; i++) { %>
-                            <article class = "cuadro-oferta">
-                                <div class = "cuadro-oferta-imagenes">
-                                    <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
-                                </div>
-                                <div class = "cuadro-oferta-texto">
-                                    <i class="fas fa-cart-plus"></i>
-                                    <div class="precio-descuento">
-                                        <p class = "precio">$<%= productos[i].precio %></p>
-                                        <p class = "descuento"><%= productos[i].descuento * 100 %>% OFF</p>
+                
+                    <section class = "contenedor-ofertas">
+                        <% for (i=0; i< productos.length; i++) { %>
+                                <article class = "cuadro-oferta">
+                                    <div class = "cuadro-oferta-imagenes">
+                                    <a href="/products/<%=productos[i].id%>">
+                                        <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                    </a>
                                     </div>
-                                    <p class="nombre-producto"><%= productos[i].titulo %></p>
-                                </div>
-                            </article>
-                    <% } %>
-                </section>
+                                    <div class = "cuadro-oferta-texto">
+                                        <i class="fas fa-cart-plus"></i>
+                                        <div class="precio-descuento">
+                                            <p class = "precio">$<%= productos[i].precio %></p>
+                                            <% if (productos[i].enPromocion == true) { %>
+                                                <p class = "descuento"><%= productos[i].descuento * 100 %>% OFF</p>
+                                            <% } %>
+                                        </div>
+                                        <p class="nombre-producto"><%= productos[i].titulo %></p>
+                                    </div>
+                                </article>
+                        <% } %>
+                    </section>
             </div>
         </div> <!--fin productos-->
     </main>
