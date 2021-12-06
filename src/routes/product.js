@@ -20,7 +20,6 @@ router.get('/edit/:id',productController.edit);
 //2-Envío del formulario
 router.put('/:id',productController.editSend);
 
-
 router.get('/productCart',productController.cart);
 
 

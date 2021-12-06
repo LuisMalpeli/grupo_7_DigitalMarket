@@ -24,7 +24,6 @@ const productController = {
         res.send('envio de formulario de creación de producto');//Placeholder
         //Insertar lógica de creación y validación del formulario acá
     },
-
     edit: function(req,res) {
         res.render('products/productEdit')
     },
