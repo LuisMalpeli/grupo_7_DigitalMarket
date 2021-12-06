@@ -60,7 +60,7 @@
                 margin: 10px;
             }
                 
-                .detail-datos .boton button {
+                .detail-datos .boton button, .action-button-edit, .action-button-delete {
                     background: #3483fa;
                     height: 35px;
                     width: 130px;     
@@ -76,7 +76,16 @@
                         border: 2px solid #3483fa;
                         box-shadow: 1px 1px #2359aa;
                     }
-
+                .action-button-edit {
+                    background: #f7fa34;    
+                    border: 2px solid #f7fa34;
+                    box-shadow: 1px 1px #9fa122;
+                }
+                .action-button-delete {
+                    background: #fa3434;    
+                    border: 2px solid #fa3434;
+                    box-shadow: 1px 1px #a01f1f;
+                }
 
 
 
