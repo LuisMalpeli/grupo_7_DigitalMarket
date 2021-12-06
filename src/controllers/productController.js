@@ -12,7 +12,12 @@ const productController = {
             )
     },
     detail: function(req, res) {
-        res.render('products/productDetail') //Dentro de la carpeta products, busca product Detail
+        let productoAMostrar = productos.find(element=> element.id == req.params.id)
+        res.render(
+            'products/productDetail',
+            {productos: productoAMostrar}
+        ) //Dentro de la carpeta products, busca product Detail
+
     },
     cart: function(req, res) {
         res.render('products/productCart')
@@ -30,6 +35,9 @@ const productController = {
     },
     editSend:function(req,res) {
         res.send('Envío del formulario de edición de producto')
+    },
+    delete:function(req,res) {
+        res.send('Envío del formulario eliminación de un producto')
     },
 }
 

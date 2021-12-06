@@ -14,11 +14,13 @@ router.post('/create',productController.createSend)//Mostrar el formulario
 //Muestra el detalle del producto
 router.get('/:id', productController.detail);
 
+router.delete('/:id',productController.delete)
 //Edición de un producto
 //1-Vista del formulario
 router.get('/edit/:id',productController.edit);
 //2-Envío del formulario
 router.put('/:id',productController.editSend);
+
 
 
 router.get('/productCart',productController.cart);
