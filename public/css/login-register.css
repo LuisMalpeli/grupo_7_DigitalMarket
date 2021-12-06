@@ -1,0 +1,96 @@
+/*CAJA PADRE*/
+.login-register-user {
+    height: fit-content;
+    width: 50rem;
+    background: rgb(255, 255, 255);
+    margin: 2% 0 ;
+    border: 2px solid var(--color-gris);
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    margin: 5rem;
+    font-size: 25px;        
+}
+    .detail-cuenta {
+        width:90%;
+    }
+        .titulo-cuenta {
+            font-size: 45px;
+        }
+        .info-usuario form {
+            height:auto;
+            width: 40rem;
+            display: flex;
+            justify-content: center;
+            flex-direction:column; 
+            line-height: 1;   
+            margin-bottom: 1rem;
+        }
+            .datos {
+                width:100%;
+                display: flex;
+                justify-content:center;
+                flex-direction:column;
+                line-height: 1; 
+                align-items: center;
+                height: 4rem;
+                border: 1px solid lightslategray;
+                border-radius: 5px;   
+                text-indent: 0.3rem;
+            }
+            /*Seleccion de genero - SOLO REGISTER*/
+            .opciones-genero {
+                width:100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+            .opciones-genero input {
+                margin: 0.3rem;
+            }
+            /*------------------------------------*/
+            .button-user .boton {
+                width: 40rem;
+                height: 4rem;
+                color: white;
+                background: #3483fa;   
+                border: 2px solid #3483fa;
+                border-radius: 5px;
+                box-shadow: 1px 1px #3483fa;
+                font-size: 25px;
+                font-weight: bold;
+                
+            }
+            /*Olvido crontasenia - SOLO LOGIN*/
+            .opcioncontra {
+                display: flex;
+                justify-content: center;
+                padding: 10%;  
+            }
+            .caja-checkbox {
+                padding: 10px;
+                display: flex; 
+                align-items: center;
+            }
+                .caja-checkbox span {
+                    margin-right: 0.3rem;
+                }
+                .caja-checkbox input {
+                    min-width: 20px;
+                    min-height: 20px;
+                }
+            /*-----------------------------------*/
+@media (min-width: 576px){
+    .login-register-user {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+}  
+@media (min-width: 768px){
+    .login-register-user {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+}            

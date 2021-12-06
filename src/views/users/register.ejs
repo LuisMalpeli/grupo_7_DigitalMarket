@@ -1,30 +1,32 @@
 <%- include('../partials/head', {title: 'Register'}) %>
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/login-register.css">
     <title>Registrarse</title>
 </head>
 <body>
     <body>
         <%- include('../partials/header') %>
         <main>
-            <div class="register"> 
-                <div class="detail-register">
-                    <h3 class="titulo-register">
+            <div class="login-register-user"> 
+                <div class="detail-cuenta">
+                    <h3 class="titulo-cuenta">
                         Crear cuenta
                     </h3>
-                    <div class="info-register">
+                    <div class="info-usuario">
                         <form action="/" method="get">
-                            <input type="text" name= "firstName" placeholder="Ingrese su nombre"> <br>
-                            <input type="text" name= "lastName" placeholder="Ingrese su apellido"> <br>
-                            <div class="radio-options">
+                            <input class="datos" type="text" name= "firstName" placeholder="Ingrese su nombre"> <br>
+                            <input class="datos" type="text" name= "lastName" placeholder="Ingrese su apellido"> <br>
+                            <span>Seleccione su genero:</span><br>
+                            <div class="opciones-genero">
                                 <label>Hombre<input type="radio" name= "gender" value="M"></label>
                                 <label>Mujer<input type="radio" name= "gender" value="F"></label>
+                                <label>Otro<input type="radio" name= "gender" value="X"></label>
                             </div><br>
-                            <input type="email" name= "email" placeholder="E-mail"> <br>
-                            <input type="email" name= "email" placeholder="Confirmar E-mail"><br>
-                            <input type="password" name= "password" placeholder="Contraseña"><br>
-                            <input type="file" name="avatar"><br>
-                            <div class="button-register">
-                                <input type="submit" value= "Registrar">
+                            <input class="datos" type="email" name= "email" placeholder="E-mail"> <br>
+                            <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail"><br>
+                            <input class="datos" type="password" name= "password" placeholder="Contraseña"><br>
+                            <input class="datos" type="file" name="avatar"><br>
+                            <div class="button-user">
+                                <input class="boton" type="submit" value= "Registrar">
                             </div>
                         </form>
                     </div>

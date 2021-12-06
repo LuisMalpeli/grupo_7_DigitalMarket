@@ -97,8 +97,10 @@ main {
                     width: 90%;
                     margin-bottom: 2rem;
                     display: flex;
+                    justify-content: space-around;
                 }
                     .email {
+                        position: relative;
                         background-color: #fff;
                         border-radius: 5px;
                         width: 50%;
@@ -136,14 +138,45 @@ main {
                             color: #fff;
                             background: var(--color-azul);
                         }
-                        .email-img {
-                            opacity: .50;
+                        .email img {
+                            opacity: .35;
                             position: absolute;
                             order: 2;
-                            z-index: 1;
-                            left: 10px;
+                            right: 0;
+                            top: -20px;
                         }
-
+                    .apps {
+                        position: relative;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        width: 30%;
+                        height: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0.5rem;
+                    }
+                        .apps .titulo {
+                            width: 100%;
+                            font-size: small;
+                        }
+                        .app-img {
+                            display: flex;
+                            flex-direction: row;
+                        }
+                            .app-stores{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-around;
+                                height: 100px;
+                            }
+                            .app-bg {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                            }
+                                .app-bg img {
+                                    height: 200px;
+                                }
 @media (min-width: 400px) {
     .contenedor-ofertas {
         display: flex;
