@@ -6,7 +6,9 @@
         margin-bottom: 5rem;
         padding: 1rem;
     }
-
+        .detail-img {
+            width: 100%;
+        }
         .detail-img img{
             margin: 1rem 2rem;
             border-bottom: 1px solid var(--color-gris);
