@@ -153,7 +153,7 @@ main {
                         height: 200px;
                         display: flex;
                         flex-direction: column;
-                        padding: 0.5rem;
+                        padding: 0.5rem 1rem;
                     }
                         .apps .titulo {
                             width: 100%;
