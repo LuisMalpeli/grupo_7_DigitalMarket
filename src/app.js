@@ -27,5 +27,5 @@ app.listen(process.env.PORT || port, ()=>{
 app.use(express.static(path.resolve(__dirname,'../public')));
 
 app.use('/',mainRouter)
-app.use('/product', productRouter)
+app.use('/products', productRouter)
 app.use('/user',userRouter)

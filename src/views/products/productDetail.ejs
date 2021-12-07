@@ -1,4 +1,4 @@
-    <%- include('../partials/head', {title: 'Detail'}) %>
+    <%- include('../partials/head', {title: productos.titulo}) %>
     <link rel="stylesheet" href="/css/product-detail.css">
 </head>
 <body>
@@ -6,25 +6,17 @@
     <main>
         <div class="productDetail">
             <div class="detail-img">
-                <img src="/img/productos/motherboard.jpg" alt="motherboard">
+                <img src="/img/productos/<%= productos.img %>" alt="<%= productos.titulo %>">
             </div>        
             <div class="detail-datos">
                 <h3 class="titulo">
-                    Motherboard ASUS Prime Z590-A
+                    <%= productos.titulo %>
                 </h3>
                 <div class="descripcion">
-                    <ul>
-                        <li>Socket Intel® LGA 1200: Listo para procesadores Intel® Core™ de ​​10a y 11a generación.</li>
-                        <li>Solución de potencia mejorada: 14 + 2 fases de poder DrMOS, PCB de seis capas, puertos ProCool, chokes de aleación y condensadores duraderos para una entrega de potencia estable.</li>
-                        <li>AI Overclocking: Optimiza el rendimiento de la CPU en función del disipador logrando resultados que se acercan mucho al ajuste manual realizado por expertos.</li>
-                        <li>AI Cooling: Administra y controla todos los ventiladores de la tarjeta madre, optimizando automáticamente la configuración según la carga y la temperatura actual del sistema.</li>
-                        <li>Cancelación de ruido IA de dos vías: Reduce el ruido de fondo del micrófono y la salida de audio para una comunicación nítida en juegos o videoconferencias.</li>
-                        <li>Refrigeración completa: Gran disipador de VRM, disipador de M.2, puertos de ventilador híbridos y Fan Xpert 4.</li>
-                        <li>Conectividad de próxima generación: PCIe® 4.0, Intel® 2.5 Gb Ethernet, USB 3.2 Gen 2x2 Type-C®, USB 3.2 Gen 1 Type-C® en panel frontal, soporte Thunderbolt ™ 4.</li>
-                    </ul>
+                    <%= productos.descripcion %>
                 </div>
                 <div class="precio">
-                    $20.000
+                    <%=  productos.precio %>
                 </div>
                 <div class="descuento">
                     -- Extras o descuento --
@@ -42,10 +34,21 @@
                         <button type="submit">Agregar al carrito</button>
                     </div>
                 </form>
+<<<<<<< HEAD
                 <a href="/products/edit" class="boton">EDITAR PRODUCTO</a>
 				<form action="/products/delete/" method="POST" style="display: inline-flex">
 					<button type="submit" class="boton-delete">ELIMINAR</button>
 				</form>    
+=======
+                <div class="edit-delete">
+                    <form action="/products/edit/<%= productos.id %>" method="GET" >
+                        <button type="submit" class="action-button-edit">EDITAR PRODUCTO</button>
+                    </form>
+                    <form action="/products/<%= productos.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="action-button-delete">ELIMINAR</button>
+                    </form>
+                </div>
+>>>>>>> main
             </div>
         </div>
     </main>
