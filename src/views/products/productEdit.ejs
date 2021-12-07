@@ -29,7 +29,9 @@
                     <input type="text" name="modelo" class="modelo-producto" value="<%=productos.modelo %>">                                                  
                     <br>
                     <div class="foto-producto">
-                        <span>Ingrese la foto del producto: <input type="file" value="<%=productos.img %>"></span>
+                        <label for="file-upload" class="custom-file"><i class="fa fa-cloud-upload"></i> Ingrese la foto del producto</label>
+                        <input type="file">
+                    </div>
                     </div class="categoria">
                         <span>Seleccione la categoria del producto:</span>
                         <br>
