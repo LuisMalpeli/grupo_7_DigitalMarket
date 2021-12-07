@@ -182,36 +182,7 @@ header {
     justify-content: center;
     width: 100%;
 }
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    .menu {
-        display: flex;
-        justify-content: center;
-        margin: 0.5rem;
-    }
-        .menu i {
-            color: #FFF;
-            margin-right: 0.5rem;
-        }
-        .menu i:hover {
-            transform: rotate(180deg);
-        }
-        .menu span {
-            color: var(--color-gris);
-        }
-    .dropdown-contenido {
-        background-color: var(--color-blanco);
-        display: none;
-        position: absolute;
-        width: 70%;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
+
 /*--------------------------------fin_nav--------------------------------------*/
 /*--------------- Hasta acá llega la sección del header ---------------*/
 /*--------------- Inicio de la sección del main ---------------*/
