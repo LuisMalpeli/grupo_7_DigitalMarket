@@ -11,7 +11,7 @@
                 Editar Producto
             </h3>
             <div class="info-register">
-                <form action="/products/edit?_method=PUT" method="POST">
+                <form action="/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                     <span>Nombre del producto:</span> 
                     <br>
                     <input type="text" name= "titulo" class="nombre-producto" value="<%=productos.titulo %>">
@@ -29,7 +29,7 @@
                     <input type="text" name="modelo" class="modelo-producto" value="<%=productos.modelo %>">                                                  
                     <br>
                     <div class="foto-producto">
-                        <span>Ingrese la foto del producto: <input type="file"></span>
+                        <span>Ingrese la foto del producto: <input type="file" value="<%=productos.img %>"></span>
                     </div class="categoria">
                         <span>Seleccione la categoria del producto:</span>
                         <br>
@@ -59,10 +59,10 @@
                     <div class="descuento-promo">
                         <span>Aplicar promocion: </span>
                         <select name="enPromocion" id="enPromocion">
-                            <option v-bind:value="true"<% if(productos.enPromocion==true){%>
+                            <option value="1"<% if(productos.enPromocion==true){%>
                                 selected
                                 <%}%>>Si</option>
-                            <option v-bind:value="false"<% if(productos.enPromocion==false){%>
+                            <option value="0"<% if(productos.enPromocion==false){%>
                                 selected
                                 <%}%>>No</option>
                         </select>
@@ -82,7 +82,7 @@
                                     selected
                                     <%}%>>ARS</option>
                             </select>
-                            <input type="text" name="precio-producto" class="precio-producto"value="<%=productos.precio %>">>
+                            <input type="number" name="precio" class="precio-producto"value="<%=productos.precio %>">
                         </div> 
                     </div>
                     <div class="boton-agregar-div"> 

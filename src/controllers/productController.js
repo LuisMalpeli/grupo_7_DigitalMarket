@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const upload = require('../middleware/multer');
 
 const productsFilePath = path.join(__dirname, '../db/products.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -32,7 +33,6 @@ const productController = {
         res.send('envio de formulario de creación de producto');//Placeholder
         //Insertar lógica de creación y validación del formulario acá
     },
-<<<<<<< HEAD
 
     edit: (req, res) => {
 		//Pido el parámetro que viene en la url bajo el nombre id
@@ -42,13 +42,18 @@ const productController = {
 		//Paso el producto que encontré al ejs
 		res.render('products/productEdit',{productos: productoAMostrar});
 	},
-=======
-    edit: function(req,res) {
-        res.render('products/productEdit')
-    },
->>>>>>> a64e8cf67a5e64488f2b036a5e8f56629dfbe3cb
     editSend:function(req,res) {
-        res.send('Envío del formulario de edición de producto')
+        let id = req.params.id
+        let newProduct = {
+			id:id,
+			...req.body,
+            enPromocion:req.body.enPromocion == 0 ? false : true,
+            descuento:Number.parseInt(req.body.descuento)/100,
+            precio:Number.parseInt(req.body.precio)
+
+			//img: req.file == undefined ? "default-image.png": req.file.filename
+		}
+        res.send(newProduct)
     },
     delete:function(req,res) {
         res.send('Envío del formulario eliminación de un producto')
