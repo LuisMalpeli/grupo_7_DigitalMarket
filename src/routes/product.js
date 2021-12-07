@@ -1,6 +1,10 @@
 const express = require('express')
 const router = express.Router();
-const productController = require('../controllers/productController')
+const productController = require('../controllers/productController');
+const upload = require('../middleware/multer');
+
+
+
 
 //Capturo lo que venga a products y le muestro la lista de productos completa
 router.get('/', productController.main);
@@ -19,7 +23,7 @@ router.delete('/:id',productController.delete)
 //1-Vista del formulario
 router.get('/edit/:id',productController.edit);
 //2-Envío del formulario
-router.put('/:id',productController.editSend);
+router.put('/:id',upload.any(),productController.editSend);
 
 
 

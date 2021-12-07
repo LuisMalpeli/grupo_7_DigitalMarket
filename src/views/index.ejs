@@ -19,7 +19,9 @@
                         <% if (productos[i].enPromocion == true) { %>
                             <article class = "cuadro-oferta">
                                 <div class = "cuadro-oferta-imagenes">
-                                    <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                    <a href="/products/<%=productos[i].id%>">
+                                        <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                    </a>
                                 </div>
                                 <div class = "cuadro-oferta-texto">
                                     <i class="fas fa-cart-plus"></i>
@@ -42,7 +44,9 @@
                     <% for (i=0; i< productos.length; i++) { %>
                         <article class = "cuadro-oferta">
                             <div class = "cuadro-oferta-imagenes">
-                                <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                <a href="/products/<%=productos[i].id%>">
+                                    <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                </a>
                             </div>
                             <div class = "cuadro-oferta-texto">
                                 <i class="fas fa-cart-plus"></i>
