@@ -1,27 +1,66 @@
 <header>
+    <!--------header-------->
     <div class="barra-superior">
-        <div class = "logo-busqueda">
+        <div class = "logo-busqueda"> 
             <div class="logo">
-                <img src="/img/techIconLogo.jpg" alt="logo">
+                <a href="/"><img src="/img/logo2.png" alt="logo"></a> 
             </div>
             <div class="busqueda">
-                <form action="/" method="GET">
-                    <input type="text" placeholder="Buscar productos..." name="search">
-                    <i class="fa fa-search"></i>
+                <form action="/" method="GET" class="busqueda-form">
+                    <input type="text" placeholder="Buscar productos..." name="search" class="barra-busqueda">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
         </div>
-        <nav class="login-register">
-            <a href="/" class="link-logo"><i class="fas fa-user"></i></a>
-            <a href="/user/login" class="login-options">login</a>
-            <a href="/user/register" class="login-options">register</a>
-            <a href="/product/productCart" class="link-logo"><i class="fas fa-shopping-cart"></i></a>
-        </nav>
+        <div class="links-carrito">
+            <div class="login-register">
+                <a href="/" class="link-user"><i class="fas fa-user"></i></a>
+                <div class="botones-login-register">
+                    <span>Bienvenido!</span>
+                    <div class="links">
+                        <a href="/user/login" class="login-options" id="login">Login</a>
+                        <span>/</span>
+                        <a href="/user/register" class="login-options" id="register">Register</a>
+                    </div>
+                </div>
+            </div>
+            <div class="link-cart">
+                <a href="/product/productCart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            
+        </div>
     </div>
-    <nav class="barra-inferior">
-        <a href="/" class="links">Home</a>
-        <a href="/product/productDetail" class="links">Detail</a>
-        <a href="/" class="links">Vender</a>
-        <a href="/product/productDetail" class="links">Placeholder2</a>
-    </nav>
+    <!--------header-------->
+    <div class="barra-inferior">
+        <ul>
+            <li><a href="/products/create">Vender</a></li>
+            <li><a href="/products">Todos los productos</a></li>
+        </ul>
+    </div>
+    <!--------nav--------
+    <div class="barra-inferior">
+        <div class="dropdown">
+            <div class="menu">
+                <i class="fas fa-chevron-circle-down"></i>
+                <span>Menu</span>
+            </div>
+            <div class="dropdown-contenido">   
+                <ul>
+                    <li><a href="">Todos los productos</a></li>
+                    <li> 
+                        Categorias: 
+                        <ul>
+                            <li>Motherboard</li>
+                            <li>CPU</li>
+                            <li>GPU</li>
+                            <li>RAM</li>
+                            <li>Memoria</li>
+                            <li>Fuente de alimentacion</li>
+                        </ul> 
+                    </li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+    --------nav-------->
 </header>

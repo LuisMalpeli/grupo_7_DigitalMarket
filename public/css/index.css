@@ -1,16 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
 }
-
-:root {
-    --color-azulOscuro: #0f2744;
-    --color-azul: #2d4e6a;
-    --color-azulGris: #7a8c9c;
-    --color-gris: #d7d9db;
-    --color-blanco: #f3f3f3;
-}
-
 
 /*Sección del banner. Por ahora hay un placeholder de mercadoliebre*/
 .home-banner {
@@ -20,45 +10,61 @@
     padding: 1rem;
 }
     .home-banner img {
-        width:90%;
+        width:80%;
     }
 /*Fin de sección del banner*/
 
 body {
     background-color: var(--color-gris);
 }
-.seccion-ofertas {
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productos {
+    width: 80%;
+    
+}
+.seccion-ofertas, .seccion-intereses {
     display: flex;
     flex-direction: column;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
-    .seccion-ofertas h3 {
+    .seccion-ofertas h3, .seccion-intereses h3 {
         color: var(--color-azulGris);
         font-size: 1.5rem;
     }
     .contenedor-ofertas {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        width: 90%;
+        width: 100%;
+        margin-bottom: 2rem;
     }
+
         .cuadro-oferta {
-            border: solid black 1px;
-            width: 18.75rem;
             background-color: var(--color-blanco);
+            margin: 0.5% 2%;
+            /*Fijo altura y ancho de los cuadros de oferta, las imágenes ocuparán % de esto así quedan todos iguales*/
+            width:261px;
+            height: 290px;
+            transition: 0.5s all;
         }
-            .cuadro-oferta img {
-                width: 100%;
-                height: 288px;
+        .cuadro-oferta:hover {
+            box-shadow: 2px 2px 5px grey;
+        }
+        .cuadro-oferta-imagenes {
+            /*ocupará el 65% de cuadro-oferta*/
+            height: 65%;
+        }
+            .cuadro-oferta-imagenes img {
+                width: 100%; /*ocupará el 100% de cuadro-oferta-imagenes*/
             }
             .cuadro-oferta-texto {
                 position: relative;
                 background-color: white;
                 padding-top: 1px;
                 padding-bottom: 1px;
-
             }
             .cuadro-oferta-texto i {
                 /*logo de agregar al carrito*/
@@ -85,8 +91,106 @@ body {
                         color:rgb(60, 255, 0);
                     }
                 .nombre-producto {
-                    padding-left: 5%;
+                    padding-left: 5%;                    
                 }
-
-
+                .promociones {
+                    width: 90%;
+                    margin-bottom: 2rem;
+                    display: flex;
+                    justify-content: space-around;
+                }
+                    .email {
+                        position: relative;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        width: 50%;
+                        height: 200px;
+                        display: flex;
+                    }
+                        .email-texto {
+                            width: 80%;
+                            padding:  0.5rem 0 0 1rem;
+                            position: relative; 
+                            order: 1;
+                            z-index: 2;
+                        }
+                        .email-inputs {
+                            margin-top: 1rem;
+                            width: 80%;
+                            display: flex;
+                            height: 2.5rem;
+                        }
+                        .email-inputs input {
+                            width: 80%;
+                            text-indent: 0.2rem;;
+                            border-right: none;
+                            border-radius: 5px 0 0 5px;
+                            outline: none;
+                        }
+                        .email-inputs button {
+                            padding: 0;
+                            border-left: none;
+                            border-radius: 0 5px 5px 0;
+                            display: flex;  
+                            justify-content: center;
+                            align-items: center;
+                            width: 15%;
+                            color: #fff;
+                            background: var(--color-azul);
+                        }
+                        .email img {
+                            opacity: .35;
+                            position: absolute;
+                            order: 2;
+                            right: 0;
+                            top: -20px;
+                        }
+                    .apps {
+                        position: relative;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        width: 30%;
+                        height: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0.5rem 1rem;
+                    }
+                        .apps .titulo {
+                            width: 100%;
+                            font-size: small;
+                        }
+                        .app-img {
+                            display: flex;
+                            flex-direction: row;
+                        }
+                            .app-stores{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-around;
+                                height: 100px;
+                            }
+                            .app-bg {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                            }
+                                .app-bg img {
+                                    height: 200px;
+                                }
+@media (min-width: 400px) {
+    .contenedor-ofertas {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 1500px) {
+    .promociones {
+        display: none;
+    }
+    .email img {
+        display: none;
+    }
+}
     

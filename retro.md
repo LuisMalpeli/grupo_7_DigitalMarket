@@ -19,8 +19,9 @@ tablero Trello actualizado => realizado.
 Motor templates con sus respectivos archivos .ejs => realizado.
 Separacion de vistas "products y users" con sus respectivos archivos extensión .ejs (opcional) => realizado.
 Separación de componentes repetitivos head, header, footer => realizado.
-Formulario de registro y login => ...
-Página formulario de creación y edición de productos en formato .ejs con estilos e imágenes => ...
+Formulario de registro y login => realizado
+Página formulario de creación y edición de productos en formato .ejs con estilos e imágenes => realizado
 
+SE ESTAN PROBANDO COSAS EN EL CARRITO...
 
-
+daily 6/12 -> se agrego en el archivo daily.md lo que se resolvio durante la semana

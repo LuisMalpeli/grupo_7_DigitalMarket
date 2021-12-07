@@ -1,176 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap');
+
+/*----------------------------------INCIO COMMON-------------------------------------------*/
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --color-azulOscuro: #0f2744;
-    --color-azul: #2d4e6a;
-    --color-azulGris: #94a2af;
-    --color-gris: #e7e8e9;
-    --color-blanco: #f3f3f3;
+  --color-azulOscuro: #081729;
+  --color-azul: #2d4e6a;
+  --color-azulGris: #94a2af;
+  --color-gris: #e7e8e9;
+  --color-grisOscuro: #c0c0c0;
+  --color-blanco: #fff;
 }
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*--------------- Inicio de la sección del header ---------------*/
 header {
     background: var(--color-azulOscuro);
+    font-family: Arial, Helvetica;
+    display: flex;
+    flex-direction: column;
 }
-/*La barra superior contiene:
-logo-busqueda:Logo + Barra de búsqueda
-login-register: Usuario + login + register + carrito
- */
-    .barra-superior {
+.barra-superior {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+    /*
+    La barra superior contiene:
+        logo-busqueda:Logo + Barra de búsqueda
+        login-register: Usuario + login + register + carrito
+    */
+    .logo-busqueda {
+        width: 80%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
     }
-        .logo-busqueda {
-            width: 50%;
-            display:flex;
+        .logo {
+            width: 4rem;
+            padding: 0.3rem;
+            display: flex;
+            align-items: center;
         }
-            .logo img{
-                width: 4rem;
-                padding-right: 1rem;
+        .logo img {
+            width: 100%;
+        }
+        .busqueda {
+            display: flex;
+            width: 50%;
+            margin-right: 15%;
+        }
+            .busqueda-form {
+                display: flex;
+                justify-content: flex-end;
+                width: 80%;
+                height: 90%;
+                padding: 0.6rem 0;
+                position: relative;
+                left: 6rem;
             }
-            .busqueda {
+                .barra-busqueda {
+                    background-color: #FFF;
+                    border: none;
+                    border-radius: 8px 0 0 8px;
+                    padding: 0;
+                    height: 100%;
+                    width: 100%;
+                    outline: none;
+                    text-indent: 0.5rem;
+                }
+                    .busqueda ::placeholder {
+                        font-size: medium;
+                        padding-right: 0.5rem;
+                        font-weight: bold;
+                    }
+                .busqueda button {
+                    padding: 0;
+                    border: none;
+                    border-radius: 0 10px 10px 0;
+                    display: flex;  
+                    align-items: center;
+                }
+                .busqueda i {
+                    background-color: var(--color-azul);
+                    border-radius: 0 8px 8px 0;
+                    padding: 0.6rem;
+                    color: var(--color-gris);
+                    height: 100%;
+                    display: flex;  
+                    align-items: center;
+                }  
+    .links-carrito {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 20%;
+    }           
+    .login-register {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+        .login-register:hover {
+            background: rgba(161, 161, 161, 0.322);
+            border-radius: 15px;
+        }
+        .link-user {
+            margin-right: 1rem;
+        }
+            .link-user i {
+                color: #FFF;
+                font-size: 32px;
+            }
+        .botones-login-register {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            color: var(--color-grisOscuro);
+        }
+            .botones-login-register span {
+                width: 100%;
+                color: var(--color-grisOscuro);
+            }  
+            .links {
+                display: flex;
+                font-weight: 600;
+            }
+                .links span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .login-options {
+                    width: 50%;
+                    text-decoration: none;
+                    color: var(--color-gris);
+                    padding: 0.5rem 0.8rem;
+                    border-radius: 0.5rem;
+                    transition: all 100ms;
+                    font-weight: 600;
+                }
+                #login {
+                    padding: 0;
+                }
+                #register {
+                    padding: 0;
+                }
+            .link-cart {
+                background: var(--color-azulOscuro);
+                height: 68.8px;
+                width: 68.8px;
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
             }
-                .busqueda form {
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-                }
-                    .busqueda input {
-                            border-top: 1px solid rgb(207, 206, 206);
-                            border-left: 1px solid rgb(207, 206, 206);
-                            border-bottom: 1px solid rgb(207, 206, 206);
-                            border-right: none;
-                            border-radius: 8px 0 0 8px;
-                            padding: 0.6px;
-                            width: 100%;
-                            outline: none;
-                    }
-                    .busqueda i {
-                        border-top: 1px solid rgb(207, 206, 206);
-                        border-right: 1px solid rgb(207, 206, 206);
-                        border-bottom: 1px solid rgb(207, 206, 206);
-                        border-left: none;
-                        border-radius: 0 8px 8px 0;
-                        padding: 0.6rem;
-                        background-color: white;
-                        color: rgb(177, 174, 174);
-                    }
-        .login-register {
-            display: flex;
-            width: 30%;
-            align-items: flex-end;
-            justify-content: space-evenly;
-            color: white;
-        }
-            .login-options {
-                background-color: var(--color-azulGris);
-                border: 1px black;
-                text-decoration: none;
-                color: white;
-                padding: 0.5rem 0.8rem;
-                border-radius: 0.5rem;
-                transition: all 100ms;
+            .link-cart i {
+                color: #FFF;
+                font-size: 32px;
+                margin: 0.5rem;
             }
-            .login-options:hover {
-                background-color: var(--color-gris);
-                color: black;
+            .link-cart:hover {
+                background: rgba(161, 161, 161, 0.322);
+                border-radius: 20px;
             }
-
-            .login-register i {
-                font-size: 2rem;
-                transition: all 100ms;
-                text-decoration: none;
-                color: white;
-            }
-            .login-register i:hover {
-                color: var(--color-gris);
-            }
-    .barra-inferior {
-        display: flex;
-        background-color: var(--color-azul);
-        padding: 0.5rem;
-        justify-content: space-evenly;
+/*---------------------------------nav---------------------------------------*/
+.barra-inferior {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+    .dropdown {
+        position: relative;
+        display: inline-block;
     }
-        .barra-inferior a{
-            text-decoration: none;
-            color: white;
-            width: 10%;
-            height: 100%;
-            text-align: center;
+    .menu {
+        display: flex;
+        justify-content: center;
+        margin: 0.5rem;
+    }
+        .menu i {
+            color: #FFF;
+            margin-right: 0.5rem;
         }
+        .menu i:hover {
+            transform: rotate(180deg);
+        }
+        .menu span {
+            color: var(--color-gris);
+        }
+    .dropdown-contenido {
+        background-color: var(--color-blanco);
+        display: none;
+        position: absolute;
+        width: 70%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+/*--------------------------------fin_nav--------------------------------------*/
 /*--------------- Hasta acá llega la sección del header ---------------*/
-
 /*--------------- Inicio de la sección del main ---------------*/
-
 main {
-    height: 50rem;
+    /*height: 50rem;*/
     background: var(--color-gris);
     display: flex;
     justify-content: center;
 }
-
 /*--------------- Hasta acá llega la sección del main ---------------*/
-
 /*--------------- Inicio de la sección del footer ---------------*/
 footer {
     display: flex;
     flex-direction: column;
     background-color: var(--color-azul);
     color: white;
-    
 }
-    .promociones-footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin: auto;
+.promociones-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+    .footer-note {
+        width: 20%; 
+        height: fit-content;
     }
-        .footer-note {
+        .footer-titulo {
+            color: var(--color-gris);
+            font-size: large;
+            display: flex;
+            justify-content: center;
+        }
+        .footer-lista {
+            list-style: circle inside;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            text-align: center;
-            width: 25%;
+            justify-content: center;
         }
-
-            .footer-note-text {
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-                padding: 0;
-            }
-
-                .footer-note-text p {
-                    margin: 0;
-                }
-
-            .footer-note i {
-                color: var(--color-celeste);
-                font-size: 2em;
-            }
-            .titular-footer {
-                margin: 0;
-                font-size: 1.5rem;
-                color: grey;
-            }
-
-            .copyright {
+            .footer-lista-li {
+                font-size: medium;
+                margin-bottom: 0.4rem;
                 display: flex;
                 justify-content: center;
             }
-
-            .copyright p{
-                color: var(--color-azulGris);
+            .footer-lista-a {
+                text-decoration: none;
+                color: var(--color-grisOscuro);
+                font-size: medium;
             }
-
+            .footer-lista-a:hover {
+                text-decoration: underline;
+            }
+.copyright {
+    display: flex;
+    justify-content: center;
+}
+.copyright p {
+    color: var(--color-azulGris);
+}
+.pb-6 {
+    padding-bottom: 40px !important;
+    flex-wrap: wrap;
+    }
 /*--------------- Hasta acá llega la sección del footer ---------------*/
+
+@media (max-width: 400px) {
+    .promociones-footer {
+        flex-direction: row;
+    }
+}

@@ -1,75 +1,102 @@
 
-<%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/index.css">
+<%- include('./partials/head', {title: 'Home'}) %>
+<link rel="stylesheet" href="/css/index.css">
     
-    <title>Home</title>
 </head>
 <body>
     <%- include('./partials/header') %>
-
-
-    <div class = "home-banner">
-        <img src="/img/img-home-banner.jpg" alt="home-banner">
-    </div>
-    <div class="seccion-ofertas">
-        <div>
-            <h3 class = "titulo-ofertas">Basado en tus intereses</h3>
+    <main>
+        <div class = "home-banner">
+            <img src="/img/banner.jpg" alt="home-banner">
         </div>
-        <section class = "contenedor-ofertas">
-            <article class = "cuadro-oferta">
-                <div class = "cuadro-oferta-imagenes">
-                    <img src="/img/motherboard.jpg" alt="motherboard">
+        <div class="productos">
+            <div class="seccion-ofertas">
+                <div>
+                    <h3 class = "titulo-ofertas">Productos con descuento</h3>
                 </div>
-                <div class = "cuadro-oferta-texto">
-                    <i class="fas fa-cart-plus"></i>
-                    <div class="precio-descuento">
-                        <p class = "precio">$20.000</p>
-                        <p class = "descuento">10% OFF</p>
+                <section class = "contenedor-ofertas">
+                    <% for (i=0; i< productos.length; i++) { %>
+                        <% if (productos[i].enPromocion == true) { %>
+                            <article class = "cuadro-oferta">
+                                <div class = "cuadro-oferta-imagenes">
+                                    <a href="/products/<%=productos[i].id%>">
+                                        <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                    </a>
+                                </div>
+                                <div class = "cuadro-oferta-texto">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <div class="precio-descuento">
+                                        <p class = "precio">$<%= productos[i].precio %></p>
+                                        <p class = "descuento"><%= productos[i].descuento * 100 %>% OFF</p>
+                                    </div>
+                                    <p class="nombre-producto"><%= productos[i].titulo %></p>
+                                </div>
+                            </article>
+                        <% } %>
+                    <% } %>
+                </section>
+            </div>
+            <div class="seccion-intereses">
+                <div>
+                    <h3 class = "titulo-ofertas">Basado en tus intereses</h3>
+                </div>
+                <section class = "contenedor-ofertas">
+                    <% for (i=0; i< productos.length; i++) { %>
+                        <article class = "cuadro-oferta">
+                            <div class = "cuadro-oferta-imagenes">
+                                <a href="/products/<%=productos[i].id%>">
+                                    <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                </a>
+                            </div>
+                            <div class = "cuadro-oferta-texto">
+                                <i class="fas fa-cart-plus"></i>
+                                <div class="precio-descuento">
+                                    <p class = "precio">$<%= productos[i].precio %></p>
+                                    <% if (productos[i].enPromocion == true) { %>
+                                        <p class = "descuento"><%= productos[i].descuento * 100 %>% OFF</p>
+                                    <% } %>
+                                </div>
+                                <p class="nombre-producto"><%= productos[i].titulo %></p>
+                            </div>
+                        </article>
+                    <% } %>
+                </section>
+            </div>
+        </div> <!--fin productos-->
+        <div class="promociones">
+            <div class="email">
+                <div class="email-texto">
+                    <h2>Registrese con su email para recibir novedades de nuestra tienda!</h2>
+                    <span>
+                        Nunca se perdera de ofertas exclusivas para clientes registrados.
+                    </span>
+                    <div class="email-inputs">
+                        <input type="email" placeholder="Ingrese su email" name="subscribe-email" class="barra-email">
+                        <button>Enviar</button>
+                        <!-- 
+                            1. AGREGAR CODIGO PARA GUARDAR EL MAIL EN UNA DB DE GENTE SUSCRITA
+                            2. DIRECTO A REGISTER CON EL MAIL YA COMPLETADO
+                        -->
                     </div>
-                    <p class="nombre-producto">Nombre de Producto</p>
                 </div>
-            </article>
-            <article class = "cuadro-oferta">
-                <div class = "cuadro-oferta-imagenes">
-                    <img src="/img/carrito/gabinete.png" alt="gabinete">
+                <img src="/img/bg_subscribe_box.png" alt="">
+            </div> 
+            <div class="apps">
+                <div class="titulo">
+                    <h2>Descarga nuestra app</h2>
                 </div>
-                <div class = "cuadro-oferta-texto">
-                    <i class="fas fa-cart-plus"></i>
-                    <div class="precio-descuento">
-                        <p class = "precio">$20.000</p>
-                        <p class = "descuento">10% OFF</p>
+                <div class="app-img">
+                    <div class="app-stores">
+                        <a href="https://www.apple.com/la/app-store/"><img src="/img/app-img/appStore.png" alt=""></a>
+                        <a href="https://play.google.com/store?hl=es_AR&gl=US"><img src="/img/app-img/playStore.png" alt=""></a>
                     </div>
-                    <p class="nombre-producto">Nombre de Producto</p>
-                </div>
-            </article>
-            <article class = "cuadro-oferta">
-                <div class = "cuadro-oferta-imagenes">
-                    <img src="/img/carrito/corei7.png" alt="procesador-i7">
-                </div>
-                <div class = "cuadro-oferta-texto">
-                    <i class="fas fa-cart-plus"></i>
-                    <div class="precio-descuento">
-                        <p class = "precio">$20.000</p>
-                        <p class = "descuento">10% OFF</p>
+                    <div class="app-bg">
+                        <img src="/img/app-img/bg_our_app.png" alt="">
                     </div>
-                    <p class="nombre-producto">Nombre de Producto</p>
-                </div>
-            </article>
-            <article class = "cuadro-oferta">
-                <div class = "cuadro-oferta-imagenes">
-                    <img src="/img/carrito/teclado.png" alt="teclado">
-                </div>
-                <div class = "cuadro-oferta-texto">
-                    <i class="fas fa-cart-plus"></i>
-                    <div class="precio-descuento">
-                        <p class = "precio">$20.000</p>
-                        <p class = "descuento">10% OFF</p>
-                    </div>
-                    <p class="nombre-producto">Nombre de Producto</p>
-                </div>
-            </article>
-        </section>
-    </div>
+                </div> 
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
 </body>
-<%- include('./partials/footer') %>
 </html>

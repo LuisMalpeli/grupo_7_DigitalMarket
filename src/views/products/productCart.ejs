@@ -1,9 +1,8 @@
-    <%- include('../partials/head') %>
-    <!--<link rel="stylesheet" href="/css/index.css">-->
+    <%- include('../partials/head', {title : 'Carrito'}) %>
     <link rel="stylesheet" href="/css/carrito.css">
     <title>Carrito de compras</title>
 </head>
-<body>
+<body></body>  
     <%- include('../partials/header') %>
     <main>
         <div class="main-content">
@@ -11,8 +10,8 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td></td>
+                            <td></td>
                             <td>Producto</td>
                             <td>Precio</td>
                             <td>Cantidad</td>
@@ -21,7 +20,7 @@
                     </thead>
                     <tr>
                         <td class="borrar-container"><span class="borrar-item">&times;</span></td>
-                        <td><img src="/img/carrito/corei7.png"></td>
+                        <td><img src="/img/productos/corei7.png"></td>
                         <td>Intel Core i7 8303K</td>
                         <td>$8.999</td>
                         <td>1</td>
@@ -30,7 +29,7 @@
                     
                     <tr>
                         <td class="borrar-container"><span class="borrar-item">&times;</span></td>
-                        <td><img src="/img/carrito/gabinete.png"></td>
+                        <td><img src="/img/productos/gabinete.png"></td>
                         <td>Gabinete Gamer Ultra</td>
                         <td>$5.799</td>
                         <td>1</td>
@@ -39,7 +38,7 @@
                     
                     <tr>
                         <td class="borrar-container"><span class="borrar-item">&times;</span></td>
-                        <td><img src="/img/carrito/teclado.png"></td>
+                        <td><img src="/img/productos/teclado.png"></td>
                         <td>Teclado y Mouse Gamer</td>
                         <td>$2.899</td>
                         <td>1</td>
@@ -71,9 +70,7 @@
             </div>
 
         </div>
-    </main>
-    
-    <%- include('../partials/footer') %>
-    
+    </main> 
+    <%- include('../partials/footer') %>  
 </body>
 </html>
