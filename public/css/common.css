@@ -316,7 +316,6 @@ footer {
     flex-wrap: wrap;
     }
 /*--------------- Hasta acá llega la sección del footer ---------------*/
-
 @media (max-width: 400px) {
     .promociones-footer {
         flex-direction: row;
