@@ -33,10 +33,26 @@
     <!--------header-------->
     <!--------nav-------->
     <div class="barra-inferior">
-        <ul>
-            <li><a href="/products/create">Vender</a></li>
-            <li><a href="/products">Todos los productos</a></li>
-        </ul>
+        <div class="menu-nav">
+            <div class="dropdown">
+                <span class="drop">Categorias</span>
+                <i class="fas fa-angle-up"></i>
+                <div class="contenido-dropdown">
+                    <a href="">Motherboards</a>
+                    <a href="">Procesadores</a>
+                    <a href="">RAMs</a>
+                    <a href="">GPUs</a>
+                    <a href="">Memorias</a>
+                    <a href="">Fuentes de alimentacion </a>
+                </div>
+            </div>
+            <div class="boton-nav">
+                <a href="/products" class="link-nav">Todos los productos</a>
+            </div>
+            <div class="boton-nav">
+                <a href="/products/create" class="link-nav">Vender</a>
+            </div>
+        </div>   
     </div>
     <!--------nav-------->
 </header>
