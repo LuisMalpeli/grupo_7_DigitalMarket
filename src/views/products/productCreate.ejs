@@ -12,64 +12,21 @@
                 </h3>
                 <div class="info-register">
                     <form action="/products/create" method="POST">
-                        <label>Nombre del producto:</label> 
-                        <br>
-                        <input type="text" name= "titulo" class="nombre-producto">
-                        <br>
-                        <span>Descripcion del producto:</span>
-                        <br>
-                        <input type="text" name= "descripcion" class="descripcion-producto"> 
-                        <br>
-                        <span>Marca: </span>
-                        <br>
-                        <input type="text" name="marca" class="marca-producto">
-                        <br>
-                        <span>Modelo: </span>
-                        <br>
-                        <input type="text" name="modelo" class="modelo-producto">                                                  
-                        <br>
-                        <div class="foto-producto">
-                            <span>Ingrese la foto del producto: <input type="file" name="img"></span>
-                        </div class="categoria">
-                            <span>Seleccione la categoria del producto:</span>
-                            <br>
-                            <div class="div-radio">
-                            <input type="radio" id="Motherboard" name="tipo" value="Motherboard">
-                            <label for="Motherboard">Motherboard</label>
-                            <br>
-                            <input type="radio" id="Procesador" name="tipo" value="Procesador">
-                            <label for="Procesador">Procesador</label>
-                            <br>
-                            <input type="radio" id="GPU" name="tipo" value="GPU">
-                            <label for="GPU">GPU</label>
-                            <br>
-                            <input type="radio" id="RAM" name="tipo" value="RAM">
-                            <label for="RAM">RAM</label>
-                            <br>
-                            <!--
-                            <span>Tipo de memoria:</span>
-                            <select name="memoria" id="Memoria">
-                                <option value="SSD">SSD</option>
-                                <option value="HDD">HDD</option>
-                            </select>
-                            <br>
-                            <input type="checkbox" id="Fuente de alimentacion" name="Fuente de alimentacion" value="Fuente de alimentacion">
-                            <label for="Fuente de alimentacion">Fuente de alimentacion</label>
-                        </div>
-                        <br> -->
-                        <div class="precio">
-                            <span>Precio del producto:</span>
-                            <br>
-                            <div class="moneda-precio">
-                                <select name="moneda" id="moneda">
-                                    <option value="BIT">BIT</option>
-                                    <option value="USD">USD</option>
-                                    <option value="EUR">EUR</option>
-                                    <option value="ARS">ARS</option>
-                                </select>
-                                <input type="text" name="precio" class="precio-producto">
-                            </div> 
-                        </div>
+                        <label for="">titulo</label>
+                        <input type="text" name="titulo">
+                        <label for="">tipo</label>
+                        <input type="text" name="tipo">
+                        <label for="">marca</label>
+                        <input type="text" name="marca">
+                        <label for="">modelo</label>
+                        <input type="text" name="modelo">
+                        <label for="">descripcion</label>
+                        <input type="text" name="descripcion">
+                        <label for="">moneda</label>
+                        <input type="text" name="moneda">
+                        <label for="">precio</label>
+                        <input type="text" name="precio">
+                        <input type="file">
                         <div class="boton-agregar-div"> 
                             <button type="submit" class="boton-agregar">Agregar producto</button>
                         </div>

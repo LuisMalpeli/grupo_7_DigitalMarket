@@ -31,6 +31,7 @@ const productController = {
     },
     createSend:function(req,res) {
         //Crea un producto y lo agrega a la base de datos JSON
+        res.send(req.body);
         let productToCreate = {
             ...req.body,
             titulo: req.body.titulo,
@@ -40,7 +41,7 @@ const productController = {
         console.log(req.body)
         console.log(productToCreate)
         Products.create(productToCreate);
-        res.redirect('/');
+        
         //res.send('envio de formulario de creación de producto');//Placeholder
         //Insertar lógica de creación y validación del formulario acá
     },
@@ -60,9 +61,8 @@ const productController = {
 			...req.body,
             enPromocion:req.body.enPromocion == 0 ? false : true,
             descuento:Number.parseInt(req.body.descuento)/100,
-           precio:Number.parseInt(req.body.precio)
-
-			//img: req.file == undefined ? "default-image.png": req.file.filename
+            precio:Number.parseInt(req.body.precio)
+		    //img: req.file == undefined ? "default-image.png": req.file.filename
 		}
         res.send(newProduct)
     },

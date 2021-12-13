@@ -92,5 +92,30 @@
   "id": 6,
   "enPromocion": false,
   "descuento": 0
+ },
+ {
+  "id": 7,
+  "enPromocion": false,
+  "descuento": 0
+ },
+ {
+  "id": 8,
+  "enPromocion": false,
+  "descuento": 0
+ },
+ {
+  "id": 9,
+  "enPromocion": false,
+  "descuento": 0
+ },
+ {
+  "id": 10,
+  "enPromocion": false,
+  "descuento": 0
+ },
+ {
+  "id": 11,
+  "enPromocion": false,
+  "descuento": 0
  }
 ]
