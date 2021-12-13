@@ -3,7 +3,7 @@ const path = require ('path');
 
 const Products = {
     fileName:path.resolve (__dirname, '../db/products.json'),
-    
+
     getData: function () {
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
     },
@@ -45,6 +45,20 @@ const Products = {
         let finalProductList = allProducts.filter(product => product.id != id);
         fs.writeFileSync(this.fileName,JSON.stringify(finalProductList, null, ' '));
         return true; //retorna true para validar que todo funcionó
+    },
+    edit: function (product) {
+        let allProducts = this.findAll();
+        let productsEdited = allProducts.map(function (element) {
+            // encuentra y edita el producto deseado
+            if (element.id == product.id) {
+                element = product
+            }
+            return element
+        })
+        //guardar la BBDD
+        fs.writeFileSync(this.fileName,JSON.stringify(productsEdited, null, ' '));
+        return true;
+        
     }
 
 }

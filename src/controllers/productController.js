@@ -34,12 +34,10 @@ const productController = {
         res.send(req.body);
         let productToCreate = {
             ...req.body,
-            titulo: req.body.titulo,
+            precio: Number.parseInt(req.body.precio),
             enPromocion: false,
             descuento: 0,
         };
-        console.log(req.body)
-        console.log(productToCreate)
         Products.create(productToCreate);
         
         //res.send('envio de formulario de creación de producto');//Placeholder
@@ -55,16 +53,19 @@ const productController = {
 		res.render('products/productEdit',{productos: productoAMostrar});
 	},
     editSend:function(req,res) {
-        let id = req.params.id
+        let id = Number.parseInt(req.params.id)
         let newProduct = {
 			id:id,
 			...req.body,
             enPromocion:req.body.enPromocion == 0 ? false : true,
             descuento:Number.parseInt(req.body.descuento)/100,
             precio:Number.parseInt(req.body.precio)
-		    //img: req.file == undefined ? "default-image.png": req.file.filename
+
+			//img: req.file == undefined ? "default-image.png": req.file.filename
 		}
-        res.send(newProduct)
+        Products.edit(newProduct)
+        //res.send(newProduct)
+        res.redirect('/')
     },
     delete:function(req,res) {
         res.send('Envío del formulario eliminación de un producto')

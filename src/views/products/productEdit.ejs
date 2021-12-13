@@ -1,4 +1,4 @@
-<%- include('../partials/head', {title: 'Crear'}) %>
+<%- include('../partials/head', {title: 'Editar'}) %>
 <link rel="stylesheet" href="/css/products-edit.css">
 <title>Crear Producto</title>
 </head>
@@ -11,7 +11,7 @@
                 Editar Producto
             </h3>
             <div class="info-register">
-                <form action="/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <span>Nombre del producto:</span> 
                     <br>
                     <input type="text" name= "titulo" class="nombre-producto" value="<%=productos.titulo %>">
