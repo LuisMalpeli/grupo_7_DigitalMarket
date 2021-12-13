@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const upload = require('../middleware/multer');
+const Products = require('../models/Products')
 
 const productsFilePath = path.join(__dirname, '../db/products.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -13,7 +14,8 @@ const productController = {
             )
     },
     detail: function(req, res) {
-        let productoAMostrar = productos.find(element=> element.id == req.params.id)
+        let productoAMostrar = Products.findByPk(req.params.id)
+        console.log(productoAMostrar);
         res.render(
             'products/productDetail',
             {productos: productoAMostrar}
@@ -29,8 +31,17 @@ const productController = {
     },
     createSend:function(req,res) {
         //Crea un producto y lo agrega a la base de datos JSON
-        
-        res.send('envio de formulario de creación de producto');//Placeholder
+        let productToCreate = {
+            ...req.body,
+            titulo: req.body.titulo,
+            enPromocion: false,
+            descuento: 0,
+        };
+        console.log(req.body)
+        console.log(productToCreate)
+        Products.create(productToCreate);
+        res.redirect('/');
+        //res.send('envio de formulario de creación de producto');//Placeholder
         //Insertar lógica de creación y validación del formulario acá
     },
 
@@ -49,7 +60,7 @@ const productController = {
 			...req.body,
             enPromocion:req.body.enPromocion == 0 ? false : true,
             descuento:Number.parseInt(req.body.descuento)/100,
-            precio:Number.parseInt(req.body.precio)
+           precio:Number.parseInt(req.body.precio)
 
 			//img: req.file == undefined ? "default-image.png": req.file.filename
 		}

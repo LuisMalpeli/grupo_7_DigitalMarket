@@ -10,9 +10,9 @@ const upload = require('../middleware/multer');
 router.get('/', productController.main);
 
 //Creación de un producto:
-//1-Vista del formulario
+//  1-Vista del formulario
 router.get('/create',productController.create); //Mostrar el formulario
-//2-Envío del formulario
+//  2-Envío del formulario
 router.post('/create',productController.createSend)//Mostrar el formulario
 
 //Muestra el detalle del producto
@@ -20,9 +20,9 @@ router.get('/:id', productController.detail);
 
 router.delete('/:id',productController.delete)
 //Edición de un producto
-//1-Vista del formulario
+//  1-Vista del formulario
 router.get('/edit/:id',productController.edit);
-//2-Envío del formulario
+//  2-Envío del formulario
 router.put('/:id',upload.any(),productController.editSend);
 
 
