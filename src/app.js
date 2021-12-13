@@ -15,6 +15,8 @@ app.set('views', path.resolve(__dirname,'views'));
 
 //JSON
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
 app.use(cookieParser());
 
 //METODOS
