@@ -3,7 +3,7 @@ const path = require('path');
 const upload = require('../middleware/multer');
 const Products = require('../models/Products')
 
-const productsFilePath = path.join(__dirname, '../db/products.json');
+const productsFilePath = path.join(__dirname, '../db/products-data/products.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productController = {
@@ -31,7 +31,6 @@ const productController = {
     },
     createSend:function(req,res) {
         //Crea un producto y lo agrega a la base de datos JSON
-        res.send(req.body);
         let productToCreate = {
             ...req.body,
             precio: Number.parseInt(req.body.precio),
@@ -40,7 +39,7 @@ const productController = {
             img: req.file.filename
         };
         Products.create(productToCreate);
-        
+        res.redirect('/')
         //res.send('envio de formulario de creación de producto');//Placeholder
         //Insertar lógica de creación y validación del formulario acá
     },
