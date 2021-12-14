@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-//const upload = require('../middleware/multer');
+const upload = require('../middleware/multer');
 const Products = require('../models/Products')
 
 const productsFilePath = path.join(__dirname, '../db/products.json');
@@ -31,15 +31,17 @@ const productController = {
     },
     createSend:function(req,res) {
         //Crea un producto y lo agrega a la base de datos JSON
+        res.send(req.body);
         let productToCreate = {
             ...req.body,
             precio: Number.parseInt(req.body.precio),
             enPromocion: false,
             descuento: 0,
-            img: req.file == undefined ? "default-image.png": req.file.filename
+            img: req.file.filename
         };
         Products.create(productToCreate);
-        res.send('envio de formulario de creación de producto');//Placeholder
+        
+        //res.send('envio de formulario de creación de producto');//Placeholder
         //Insertar lógica de creación y validación del formulario acá
     },
 
@@ -58,7 +60,7 @@ const productController = {
 			...req.body,
             enPromocion:req.body.enPromocion == 0 ? false : true,
             descuento:Number.parseInt(req.body.descuento)/100,
-            precio:Number.parseInt(req.body.precio)
+            precio:Number.parseInt(req.body.precio),
             //img: req.file == undefined ? "default-image.png": req.file.filename
 		}
         Products.edit(newProduct)
