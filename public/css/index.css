@@ -5,9 +5,9 @@
 /*Sección del banner. Por ahora hay un placeholder de mercadoliebre*/
 .home-banner {
     display: flex;
-    width: 100%;
+    width: 100%; 
     justify-content: space-around;
-    padding: 1rem;
+    padding: 3rem;
 }
     .home-banner img {
         width:80%;
