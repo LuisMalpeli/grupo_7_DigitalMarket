@@ -1,72 +1,102 @@
 [
-    {
-        "id": 1,
-        "titulo": "Motherboard ASUS Prime Z590-A",
-        "tipo": "Motherboard",
-        "marca": "ASUS",
-        "modelo": "Prime Z590-A",
-        "taggs": ["Componentes", "Computación", "Gaming"],
-        "descripcion": "descripcion",
-        "moneda": "ARS",
-        "precio": 20000,
-        "enPromocion": true,
-        "descuento": 0.1,
-        "img": "motherboard.jpg"
-    },
-    {
-        "id": 2,
-        "titulo": "Procesador Intel CoreI7",
-        "tipo": "Procesador",
-        "marca": "Intel",
-        "modelo": "Core i7",
-        "taggs": ["Componentes", "Computación", "Gaming"],
-        "descripcion": "descripcion",
-        "moneda": "ARS",
-        "precio": 20000,
-        "enPromocion": false,
-        "descuento": 0.1,
-        "img": "corei7.png"
-    },
-    {
-        "id": 3,
-        "titulo": "Gabinete",
-        "tipo": "Gabinete",
-        "marca": "GamerTech",
-        "modelo": "A450-G",
-        "taggs": ["Gabinete", "Computación", "Gaming"],
-        "descripcion": "descripcion",
-        "moneda": "ARS",
-        "precio": 6000,
-        "enPromocion": true,
-        "descuento": 0.1,
-        "img": "gabinete.png"
-    },
-    {
-        "id": 4,
-        "titulo": "VS Series VS450",
-        "tipo": "Fuente de alimentacion",
-        "marca": "Corsair",
-        "modelo": "VS450",
-        "taggs": ["Fuente", "Corsair"],
-        "descripcion": "Las fuentes de alimentación CORSAIR CV son perfectas para alimentar su nuevo PC en casa o en la oficina, con la eficacia 80 PLUS Bronze garantizada para proporcionar una potencia plena continuamente al sistema.",
-        "moneda": "ARS",
-        "precio": 8000,
-        "enPromocion": true,
-        "descuento": 0.1,
-        "img": "fuente.jpg"
-    },
-    {
-        "id": 5,
-        "titulo": "Geforce RTX 3090",
-        "tipo": "GPU",
-        "marca": "Nvidia",
-        "modelo": "RTX 3090",
-        "taggs": ["GPU", "Grafica", "Gaming"],
-        "descripcion": "La GeForce RTX™ 3090 es increíblemente potente en todas las formas, por lo que te brinda un nivel de rendimiento completamente nuevo. Está impulsada por Ampere, la arquitectura de segunda generación de NVIDIA RTX, que duplica el rendimiento de IA y de ray tracing gracias a los Núcleos RT y Núcleos Tensor mejorados y los nuevos multiprocesadores de transmisión. Además, cuenta con 24 GB de memoria G6X para brindar la experiencia de juego definitiva.",
-        "moneda": "ARS",
-        "precio": 1000000,
-        "enPromocion": false,
-        "descuento": 0.1,
-        "img": "3090.png"
-    }
+ {
+  "id": 1,
+  "titulo": "Motherboard ASUS Prime Z590-A",
+  "tipo": "Motherboard",
+  "marca": "ASUS",
+  "modelo": "Prime Z590-A",
+  "taggs": [
+   "Componentes",
+   "Computación",
+   "Gaming"
+  ],
+  "descripcion": "descripcion",
+  "moneda": "ARS",
+  "precio": 20000,
+  "enPromocion": true,
+  "descuento": 0.1,
+  "img": "motherboard.jpg"
+ },
+ {
+  "id": 2,
+  "titulo": "Procesador Intel CoreI7",
+  "tipo": "Procesador",
+  "marca": "Intel",
+  "modelo": "Core i7",
+  "taggs": [
+   "Componentes",
+   "Computación",
+   "Gaming"
+  ],
+  "descripcion": "descripcion",
+  "moneda": "ARS",
+  "precio": 20000,
+  "enPromocion": false,
+  "descuento": 0.1,
+  "img": "corei7.png"
+ },
+ {
+  "id": 3,
+  "titulo": "Gabinete",
+  "tipo": "Gabinete",
+  "marca": "GamerTech",
+  "modelo": "A450-G",
+  "taggs": [
+   "Gabinete",
+   "Computación",
+   "Gaming"
+  ],
+  "descripcion": "descripcion",
+  "moneda": "ARS",
+  "precio": 6000,
+  "enPromocion": true,
+  "descuento": 0.1,
+  "img": "gabinete.png"
+ },
+ {
+  "id": 4,
+  "titulo": "VS Series VS450",
+  "tipo": "Fuente de alimentacion",
+  "marca": "Corsair",
+  "modelo": "VS450",
+  "taggs": [
+   "Fuente",
+   "Corsair"
+  ],
+  "descripcion": "Las fuentes de alimentación CORSAIR CV son perfectas para alimentar su nuevo PC en casa o en la oficina, con la eficacia 80 PLUS Bronze garantizada para proporcionar una potencia plena continuamente al sistema.",
+  "moneda": "ARS",
+  "precio": 8000,
+  "enPromocion": true,
+  "descuento": 0.1,
+  "img": "fuente.jpg"
+ },
+ {
+  "id": 5,
+  "titulo": "Geforce RTX 3090",
+  "tipo": "GPU",
+  "marca": "Nvidia",
+  "modelo": "RTX 3090",
+  "taggs": [
+   "GPU",
+   "Grafica",
+   "Gaming"
+  ],
+  "descripcion": "La GeForce RTX™ 3090 es increíblemente potente en todas las formas, por lo que te brinda un nivel de rendimiento completamente nuevo. Está impulsada por Ampere, la arquitectura de segunda generación de NVIDIA RTX, que duplica el rendimiento de IA y de ray tracing gracias a los Núcleos RT y Núcleos Tensor mejorados y los nuevos multiprocesadores de transmisión. Además, cuenta con 24 GB de memoria G6X para brindar la experiencia de juego definitiva.",
+  "moneda": "ARS",
+  "precio": 1000000,
+  "enPromocion": false,
+  "descuento": 0.1,
+  "img": "3090.png"
+ },
+ {
+  "id": 6,
+  "titulo": "",
+  "descripcion": "",
+  "marca": "",
+  "modelo": "",
+  "moneda": "BIT",
+  "precio": null,
+  "enPromocion": false,
+  "descuento": 0
+ }
 ]
