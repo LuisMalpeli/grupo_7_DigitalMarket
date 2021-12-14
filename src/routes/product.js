@@ -11,9 +11,9 @@ router.get('/', productController.main);
 
 //Creación de un producto:
 //  1-Vista del formulario
-router.get('/create',productController.create); //Mostrar el formulario
+router.get('/create', productController.create); //Mostrar el formulario
 //  2-Envío del formulario
-router.post('/create',productController.createSend)//Mostrar el formulario
+router.post('/create',upload.any(), productController.createSend)//Mostrar el formulario
 
 //Muestra el detalle del producto
 router.get('/:id', productController.detail);

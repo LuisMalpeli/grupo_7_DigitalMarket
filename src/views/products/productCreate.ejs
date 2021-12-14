@@ -11,7 +11,7 @@
                     Agregar Producto
                 </h3>
                 <div class="info-register">
-                    <form action="/products/create" method="POST">
+                    <form action="/products/create" method="POST" enctype="multipart/form-data">
                         <label>Nombre del producto:</label> 
                         <br>
                             <input type="text" name="titulo" class="nombre-producto">
@@ -28,9 +28,10 @@
                         <br>
                             <input type="text" name="modelo" class="modelo-producto">                                                  
                         <br>
-                        <!-- <div class="foto-producto">
-                            <span>Ingrese la foto del producto: <input type="file" name="img"></span>
-                        </div> -->
+                        <div class="foto-producto">
+                            <span>Ingrese la foto del producto:</span>
+                                <input type="file" name="img">
+                        </div>
                         <div class="categoria">
                             <span>Seleccione la categoria del producto:</span>
                             <br>

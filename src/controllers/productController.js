@@ -36,6 +36,7 @@ const productController = {
             precio: Number.parseInt(req.body.precio),
             enPromocion: false,
             descuento: 0,
+            img: req.file.filename
         };
         Products.create(productToCreate);
         res.redirect('/');
