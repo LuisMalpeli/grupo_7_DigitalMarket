@@ -14,19 +14,19 @@
                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <span>Nombre del producto:</span> 
                     <br>
-                    <input type="text" name= "titulo" class="nombre-producto" value="<%=productos.titulo %>">
+                    <input type="text" name= "titulo" class="nombre-producto" value="<%= productos.titulo %>">
                     <br>
                     <span>Descripcion del producto:</span>
                     <br>
-                    <input type="text" name= "descripcion" class="descripcion-producto" value="<%=productos.descripcion %>"> 
+                    <input type="text" name= "descripcion" class="descripcion-producto" value="<%= productos.descripcion %>"> 
                     <br>
                     <span>Marca: </span>
                     <br>
-                    <input type="text" name="marca" class="marca-producto" value="<%=productos.marca %>">
+                    <input type="text" name="marca" class="marca-producto" value="<%= productos.marca %>">
                     <br>
                     <span>Modelo: </span>
                     <br>
-                    <input type="text" name="modelo" class="modelo-producto" value="<%=productos.modelo %>">                                                  
+                    <input type="text" name="modelo" class="modelo-producto" value="<%= productos.modelo %>">                                                  
                     <br>
                     <div class="foto-producto">
                         <label for="file-upload" class="custom-file"><i class="fa fa-cloud-upload"></i> Ingrese la foto del producto</label>
@@ -36,16 +36,24 @@
                         <span>Seleccione la categoria del producto:</span>
                         <br>
                         <div class="div-radio">
-                        <input type="checkbox" id="Motherboard" name="tipo" value="Motherboard">
+                        <input type="radio" id="Motherboard" name="tipo" value="Motherboard" <% if (productos.tipo == 'Motherboard') { %> 
+                            checked
+                            <% } %> >
                         <label for="Motherboard">Motherboard</label>
                         <br>
-                        <input type="checkbox" id="Procesador" name="tipo" value="Procesador">
+                        <input type="radio" id="Procesador" name="tipo" value="Procesador" <% if (productos.tipo == 'Procesador') { %> 
+                            checked
+                            <% } %> >
                         <label for="Procesador">Procesador</label>
                         <br>
-                        <input type="checkbox" id="GPU" name="tipo" value="GPU">
+                        <input type="radio" id="GPU" name="tipo" value="GPU" <% if (productos.tipo == 'GPU') { %> 
+                            checked
+                            <% } %> >
                         <label for="GPU">GPU</label>
-                        <br>
-                        <input type="checkbox" id="RAM" name="tipo" value="RAM">
+                        <br> 
+                        <input type="radio" id="RAM" name="tipo" value="RAM" <% if (productos.tipo == 'RAM') { %> 
+                            checked
+                            <% } %> >
                         <label for="RAM">RAM</label>
                         <br>
                     </div>
