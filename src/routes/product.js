@@ -13,7 +13,7 @@ router.get('/', productController.main);
 //  1-Vista del formulario
 router.get('/create', productController.create); //Mostrar el formulario
 //  2-Envío del formulario
-router.post('/create',upload.any(), productController.createSend)//Mostrar el formulario
+router.post('/create',upload.single('img'), productController.createSend)//Mostrar el formulario
 
 //Muestra el detalle del producto
 router.get('/:id', productController.detail);
@@ -23,7 +23,7 @@ router.delete('/:id',productController.delete);
 //  1-Vista del formulario
 router.get('/edit/:id',productController.edit);
 //  2-Envío del formulario
-router.put('/:id',upload.any(),productController.editSend);
+router.put('/:id',upload.single('img'),productController.editSend);
 
 
 

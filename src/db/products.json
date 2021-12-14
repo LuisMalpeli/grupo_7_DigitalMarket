@@ -90,16 +90,15 @@
  },
  {
   "id": 6,
-<<<<<<< HEAD
-=======
-  "titulo": "",
-  "descripcion": "",
-  "marca": "",
-  "modelo": "",
+  "titulo": "A",
+  "descripcion": "asd",
+  "marca": "asd",
+  "modelo": "asd",
+  "tipo": "Motherboard",
   "moneda": "BIT",
->>>>>>> 545c41d81763b9d3b937c5f61d3bb9b928568ed0
   "precio": null,
   "enPromocion": false,
-  "descuento": 0
+  "descuento": 0,
+  "img": "default-image.png"
  }
 ]
