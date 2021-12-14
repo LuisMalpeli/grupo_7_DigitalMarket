@@ -12,7 +12,7 @@
                         Crear cuenta
                     </h3>
                     <div class="info-usuario">
-                        <form action="/" method="get">
+                        <form action="/" method="get" enctype="multipart/form-data">
                             <input class="datos" type="text" name= "firstName" placeholder="Ingrese su nombre"> <br>
                             <input class="datos" type="text" name= "lastName" placeholder="Ingrese su apellido"> <br>
                             <span>Seleccione su genero:</span><br>
@@ -22,7 +22,10 @@
                                 <label>Otro<input type="radio" name= "gender" value="X"></label>
                             </div><br>
                             <input class="datos" type="email" name= "email" placeholder="E-mail"> <br>
-                            <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail"><br>
+                            <!--
+                                --------Confirmar email a travez de validaciones-----------
+                                <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail"><br>
+                            -->
                             <input class="datos" type="password" name= "password" placeholder="Contraseña"><br>
                             <input class="datos" type="file" name="avatar"><br>
                             <div class="button-user">
