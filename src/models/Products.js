@@ -51,6 +51,10 @@ const Products = {
         let productsEdited = allProducts.map(function (element) {
             // encuentra y edita el producto deseado
             if (element.id == product.id) {
+                let oldImg = element.img
+                if (product.img == null) {
+                    product.img = oldImg
+                }
                 element = product
             }
             return element

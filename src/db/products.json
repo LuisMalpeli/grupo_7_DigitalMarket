@@ -89,16 +89,16 @@
   "img": "3090.png"
  },
  {
-  "id": 6,
-  "titulo": "A",
-  "descripcion": "asd",
-  "marca": "asd",
-  "modelo": "asd",
-  "tipo": "Motherboard",
-  "moneda": "BIT",
-  "precio": null,
+  "id": 7,
+  "titulo": "Fury HyperX 8gb",
+  "descripcion": "HyperX® FURY DDR4 brinda un poderoso impulso para gaming, edición de video y renderización con velocidades de hasta 3733MHz. Esta actualización de bajo costo está disponible en velocidades 2400MHz-3733MHz, latencias CL15–19, capacidades de módulo simple de 4GB-32GB y capacidades de kit de 16GB-128GB. Cuenta con overclocking automático Plug N Play1 a velocidades de 2400MHz y 2666MHz y es compatible tanto para Intel XMP-ready como para Ready for AMD Ryzen. HyperX FURY DDR4 mantiene fría a tu máquina con su elegante disipador de calor y de bajo consumo. 100% testeada a la velocidad publicada y con una garantía de por vida; es una actualización fácil y sin problemas para tu sistema basado en Intel o AMD.",
+  "marca": "HyperX",
+  "modelo": "Fury",
+  "tipo": "RAM",
   "enPromocion": false,
   "descuento": 0,
-  "img": "default-image.png"
+  "moneda": "ARS",
+  "precio": 5500,
+  "img": "img-1639506562712-356482011.jpg"
  }
 ]
