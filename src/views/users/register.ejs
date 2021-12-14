@@ -12,21 +12,27 @@
                         Crear cuenta
                     </h3>
                     <div class="info-usuario">
-                        <form action="/" method="get" enctype="multipart/form-data">
-                            <input class="datos" type="text" name= "firstName" placeholder="Ingrese su nombre"> <br>
-                            <input class="datos" type="text" name= "lastName" placeholder="Ingrese su apellido"> <br>
+                        <form action="/user/register" method="POST" enctype="multipart/form-data">
+                            <input class="datos" type="text" name= "user" placeholder="Ingrese su usuario"> 
+                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.user ? errors.user.msg : null %> </p>
+                            <input class="datos" type="text" name= "fullName" placeholder="Ingrese su nombre y apellido"> <br>
+                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.fullName ? errors.fullName.msg : null %> </p>
                             <span>Seleccione su genero:</span><br>
                             <div class="opciones-genero">
                                 <label>Hombre<input type="radio" name= "gender" value="M"></label>
                                 <label>Mujer<input type="radio" name= "gender" value="F"></label>
                                 <label>Otro<input type="radio" name= "gender" value="X"></label>
-                            </div><br>
-                            <input class="datos" type="email" name= "email" placeholder="E-mail"> <br>
+                            </div>
+                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.gender ? errors.gender.msg : null %> </p>
+                            <br>
+                            <input class="datos" type="email" name= "email" placeholder="E-mail">
+                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p> <br>
                             <!--
                                 --------Confirmar email a travez de validaciones-----------
                                 <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail"><br>
                             -->
-                            <input class="datos" type="password" name= "password" placeholder="Contraseña"><br>
+                            <input class="datos" type="password" name="pass" placeholder="Contraseña"><br>
+                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.pass ? errors.pass.msg : null %> </p>
                             <input class="datos" type="file" name="avatar"><br>
                             <div class="button-user">
                                 <input class="boton" type="submit" value= "Registrar">
