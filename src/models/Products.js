@@ -7,6 +7,9 @@ const Products = {
     getData: function () {
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
     },
+    pushData: function (productList) {
+        fs.writeFileSync(this.fileName,JSON.stringify(productList, null, ' '));
+    },
     findAll: function () {
         return this.getData();
     },
@@ -37,13 +40,14 @@ const Products = {
             ...product
         }
         allProducts.push(newProduct);
-        fs.writeFileSync(this.fileName,JSON.stringify(allProducts, null, ' '));
+        this.pushData(allProducts);
         return newProduct; //retorna el producto para utilizarlo luego
     },
     delete: function (id) {
         let allProducts = this.findAll();
         let finalProductList = allProducts.filter(product => product.id != id);
-        fs.writeFileSync(this.fileName,JSON.stringify(finalProductList, null, ' '));
+        this.pushData(finalProductList)
+        //fs.writeFileSync(this.fileName,JSON.stringify(finalProductList, null, ' '));
         return true; //retorna true para validar que todo funcionó
     },
     edit: function (product) {
@@ -60,9 +64,8 @@ const Products = {
             return element
         })
         //guardar la BBDD
-        fs.writeFileSync(this.fileName,JSON.stringify(productsEdited, null, ' '));
+        this.pushData(productsEdited);
         return true;
-        
     }
 
 }
