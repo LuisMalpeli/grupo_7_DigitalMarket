@@ -87,19 +87,5 @@
   "enPromocion": false,
   "descuento": 0.1,
   "img": "3090.png"
- },
- {
-  "id": 6,
-<<<<<<< HEAD
-=======
-  "titulo": "",
-  "descripcion": "",
-  "marca": "",
-  "modelo": "",
-  "moneda": "BIT",
->>>>>>> 545c41d81763b9d3b937c5f61d3bb9b928568ed0
-  "precio": null,
-  "enPromocion": false,
-  "descuento": 0
  }
 ]
