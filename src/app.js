@@ -4,9 +4,9 @@ const methodOverride =  require('method-override');
 const app = express()
 const path = require('path')
 const port = 3000
-const mainRouter = require('./routes/main')
-const productRouter = require('./routes/product')
-const userRouter = require('./routes/user')
+const mainRouter = require('./routes/mainRouter')
+const productRouter = require('./routes/productsRouter')
+const userRouter = require('./routes/usersRouter')
 
 
 //Seteo de EJS yu dónde están las views
@@ -15,6 +15,7 @@ app.set('views', path.resolve(__dirname,'views'));
 
 //JSON
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 
 //METODOS

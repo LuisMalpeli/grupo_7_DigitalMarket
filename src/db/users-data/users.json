@@ -1,0 +1,27 @@
+[
+ {
+  "id": 1,
+  "user": "user 1",
+  "fullName": "nombre",
+  "gender": "M",
+  "email": "a@b.com",
+  "pass": "1234",
+  "avatar": "user.jpg",
+  "tipo": "usuario",
+  "activo": true,
+  "intereses": [
+   "Componentes",
+   "Computación",
+   "Gaming"
+  ],
+  "medioDePago": true
+ },
+ {
+  "id": 2,
+  "fullName": "Luis ",
+  "gender": "X",
+  "email": "malpeliluis@gmail.com",
+  "pass": "$2a$10$49aAajauTZ.kMhke/8mR7OiKE3QDpvJXB6J3JWmeRe357PU32zSs6",
+  "avatar": "default-user.png"
+ }
+]

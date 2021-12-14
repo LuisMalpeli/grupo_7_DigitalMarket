@@ -4,58 +4,52 @@
 </head>
 <body>
     <%- include('../partials/header') %>
-    <main>
+    <main> 
         <div class="producto-crear"> 
             <div class="producto-detail">
                 <h3 class="titulo-register">
                     Agregar Producto
                 </h3>
                 <div class="info-register">
-                    <form action="/products/create" method="post">
-                        <span>Nombre del producto:</span> 
+                    <form action="/products/create" method="POST" enctype="multipart/form-data">
+                        <label>Nombre del producto:</label> 
                         <br>
-                        <input type="text" name= "nombre-producto" class="nombre-producto">
+                            <input type="text" name="titulo" class="nombre-producto">
                         <br>
                         <span>Descripcion del producto:</span>
                         <br>
-                        <input type="text" name= "descripcion" class="descripcion-producto"> 
+                            <input type="text" name="descripcion" class="descripcion-producto"> 
                         <br>
                         <span>Marca: </span>
                         <br>
-                        <input type="text" name="marca-producto" class="marca-producto">
+                            <input type="text" name="marca" class="marca-producto">
                         <br>
                         <span>Modelo: </span>
                         <br>
-                        <input type="text" name="modelo-producto" class="modelo-producto">                                                  
+                            <input type="text" name="modelo" class="modelo-producto">                                                  
                         <br>
                         <div class="foto-producto">
-                            <span>Ingrese la foto del producto: <input type="file"></span>
-                        </div class="categoria">
+                            <!--<label for="file-upload" class="custom-file"><i class="fa fa-cloud-upload"></i> Ingrese la foto del producto</label>-->
+                            <input type="file" name="img">
+                        </div>
+                        <div class="categoria">
                             <span>Seleccione la categoria del producto:</span>
                             <br>
                             <div class="div-radio">
-                            <input type="checkbox" id="Motherboard" name="Motherboard" value="Motherboard">
-                            <label for="Motherboard">Motherboard</label>
-                            <br>
-                            <input type="checkbox" id="Procesador" name="Procesador" value="Procesador">
-                            <label for="Procesador">Procesador</label>
-                            <br>
-                            <input type="checkbox" id="GPU" name="GPU" value="GPU">
-                            <label for="GPU">GPU</label>
-                            <br>
-                            <input type="checkbox" id="RAM" name="RAM" value="RAM">
-                            <label for="RAM">RAM</label>
-                            <br>
-                            <span>Tipo de memoria:</span>
-                            <select name="Memoria" id="Memoria">
-                                <option value="SSD">SSD</option>
-                                <option value="HDD">HDD</option>
-                            </select>
-                            <br>
-                            <input type="checkbox" id="Fuente de alimentacion" name="Fuente de alimentacion" value="Fuente de alimentacion">
-                            <label for="Fuente de alimentacion">Fuente de alimentacion</label>
+                                <input type="radio" id="Motherboard" name="tipo" value="Motherboard">
+                                <label for="Motherboard">Motherboard</label>
+                                <br>
+                                <input type="radio" id="Procesador" name="tipo" value="Procesador">
+                                <label for="Procesador">Procesador</label>
+                                <br>
+                                <input type="radio" id="GPU" name="tipo" value="GPU">
+                                <label for="GPU">GPU</label>
+                                <br>
+                                <input type="radio" id="RAM" name="tipo" value="RAM">
+                                <label for="RAM">RAM</label>
+                                <br>
+                            </div>
                         </div>
-                        <br>
                         <div class="precio">
                             <span>Precio del producto:</span>
                             <br>
@@ -64,8 +58,9 @@
                                     <option value="BIT">BIT</option>
                                     <option value="USD">USD</option>
                                     <option value="EUR">EUR</option>
+                                    <option value="ARS">ARS</option>
                                 </select>
-                                <input type="text" name="precio-producto" class="precio-producto">
+                                <input type="text" name="precio" class="precio-producto">
                             </div> 
                         </div>
                         <div class="boton-agregar-div"> 
