@@ -65,6 +65,10 @@ module.exports = {
         this.pushData(userEdited);
         return true;
     },
+    //Login usuario y comprobacion de datos
+    login: function(user) {
+        //magia
+    },
     //Eliminar usuarios
     delete: function (id) {
         let allUsers = this.findAll();
