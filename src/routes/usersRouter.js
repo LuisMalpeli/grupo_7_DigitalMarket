@@ -10,5 +10,6 @@ router.post('/register', upload.single('avatar'), validator, userController.regi
 
 //Login de usuario
 router.get('/login', userController.login)
+router.post('/login', validator, userController.loginSend)
 
 module.exports = router

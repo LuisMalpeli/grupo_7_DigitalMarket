@@ -24,7 +24,21 @@ const userController = {
     },
     login: function(req, res) {
         res.render('users/login')
-    }
+    }, 
+    loginSend : function(req,res) {   
+        const errores = validationResult(req)
+        if (errores.errors.length > 0) {
+            return res.render('users/login', {errors: errores.mapped()})
+        } else {
+            let userlogin = {
+                ...req.body,
+                //avatar: req.file == undefined ? "default-user.png" : req.file.filename,
+                pass: bcrypt.hashSync(req.body.pass,10)
+            }
+            Users.login(userlogin)
+            res.redirect('/')
+        }
+    },
 
 }
 
