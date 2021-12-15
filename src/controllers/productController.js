@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const upload = require('../middleware/multer');
 const Products = require('../models/Products')
+const {validationResult}  = require('express-validator')
 
 const productsFilePath = path.join(__dirname, '../db/products-data/products.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -31,17 +32,22 @@ const productController = {
     },
     createSend:function(req,res) {
         //Crea un producto y lo agrega a la base de datos JSON
-        let productToCreate = {
-            ...req.body,
-            precio: Number.parseInt(req.body.precio),
-            enPromocion: false,
-            descuento: 0,
-            img: req.file.filename
-        };
-        Products.create(productToCreate);
-        res.redirect('/')
-        //res.send('envio de formulario de creación de producto');//Placeholder
-        //Insertar lógica de creación y validación del formulario acá
+        const errores = validationResult(req)
+        if (errores.errors.length > 0) {
+            return res.render('products/productCreate', {errors: errores.mapped()})
+        } else {
+            let productToCreate = {
+                ...req.body,
+                precio: Number.parseInt(req.body.precio),
+                enPromocion: false,
+                descuento: 0,
+                img: req.file.filename
+            };
+            Products.create(productToCreate);
+            res.redirect('/')
+            //res.send('envio de formulario de creación de producto');//Placeholder
+            //Insertar lógica de creación y validación del formulario acá
+        }
     },
 
     edit: (req, res) => {
@@ -53,18 +59,23 @@ const productController = {
 		res.render('products/productEdit',{productos: productoAMostrar});
 	},
     editSend:function(req,res) {
-        let id = Number.parseInt(req.params.id)
-        let newProduct = {
-			id:id,
-			...req.body,
-            enPromocion:req.body.enPromocion == 0 ? false : true,
-            descuento:Number.parseInt(req.body.descuento)/100,
-            precio:Number.parseInt(req.body.precio),
-            img: req.file != undefined ? req.file.filename : null
-		}
-        Products.edit(newProduct)
-        //res.send(newProduct)
-        res.redirect('/')
+        const errores = validationResult(req)
+        if (errores.errors.length > 0) {
+            return res.render('products/productEdit', {errors: errores.mapped()})
+        } else {
+            let id = Number.parseInt(req.params.id)
+            let newProduct = {
+                id:id,
+                ...req.body,
+                enPromocion:req.body.enPromocion == 0 ? false : true,
+                descuento:Number.parseInt(req.body.descuento)/100,
+                precio:Number.parseInt(req.body.precio),
+                img: req.file != undefined ? req.file.filename : null
+		    }
+            Products.edit(newProduct)
+            //res.send(newProduct)
+            res.redirect('/')
+        }
     },
     delete:function(req,res) {
         Products.delete(req.params.id)
