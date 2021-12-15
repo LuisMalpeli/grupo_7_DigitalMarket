@@ -4,6 +4,9 @@ const path = require ('path');
 module.exports = {
     //Path de la DB de los usuarios :
     fileName:path.resolve (__dirname, '../db/users-data/users.json'),
+    getData: function () {
+        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+    },
     pushData: function (userList) {
         fs.writeFileSync(this.fileName,JSON.stringify(userList, null, ' '));
     },
