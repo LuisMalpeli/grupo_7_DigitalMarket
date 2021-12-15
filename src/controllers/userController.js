@@ -32,13 +32,12 @@ const userController = {
         } else {
             let userlogin = {
                 ...req.body,
-                //avatar: req.file == undefined ? "default-user.png" : req.file.filename,
                 pass: bcrypt.hashSync(req.body.pass,10)
             }
             Users.login(userlogin)
             res.redirect('/')
         }
-    },
+    }
 
 }
 
