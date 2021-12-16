@@ -31,11 +31,22 @@ const userController = {
             return res.render('users/login', {errors: errores.mapped()})
         } else {
             let userlogin = {
-                ...req.body,
-                pass: bcrypt.hashSync(req.body.pass,10)
+                ...req.body
             }
-            Users.login(userlogin)
-            res.redirect('/')
+            console.log(userlogin)
+            console.log(Users.login(userlogin))
+            if (Users.login(userlogin)) {
+                res.redirect('/')
+            }
+            res.render(
+                'users/login', 
+                {errors: 
+                    {
+                        email: {msg: 'Las creendenciales son incorrectas'}, 
+                        pass: {msg: 'Las creendenciales son incorrectas'}
+                    } 
+                }
+            )
         }
     }
 

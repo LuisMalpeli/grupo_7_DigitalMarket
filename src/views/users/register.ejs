@@ -14,48 +14,36 @@
                     <div class="info-usuario">
                         <form action="/user/register" method="POST" enctype="multipart/form-data">
 
-                            <div class="label-error">
-                                <label for="">Ingrese su usuario: </label>
-                                <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.user ? errors.user.msg : null %> </p> 
-                            </div>                            
-                            <input class="datos" type="text" name= "user" placeholder="Usuario">
-
-                            <div class="label-error">
-                                <label for="">Ingrese su nombre y apellido: </label>
-                                <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.fullName ? errors.fullName.msg : null %> </p> 
-                            </div>  
+                            <label for="">Ingrese su usuario: </label>
+                            <input class="datos" type="text" name= "user" placeholder="Usuario">    
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.user ? errors.user.msg : null %> </p>                            
+                            
+                            <label for="">Ingrese su nombre y apellido: </label>
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.fullName ? errors.fullName.msg : null %> </p> 
                             <input class="datos" type="text" name= "fullName" placeholder="Nombre y apellido">
                             
-                            <div class="label-error">
-                                <label>Seleccione su genero: </label>
-                                <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.gender ? errors.gender.msg : null %> </p> 
-                            </div> 
+                            <label>Seleccione su genero: </label>
                             <div class="opciones-genero">
                                 <label>Hombre<input type="radio" name= "gender" value="M"></label>
                                 <label>Mujer<input type="radio" name= "gender" value="F"></label>
                                 <label>Otro<input type="radio" name= "gender" value="X"></label>
                             </div>
-                            
-                            <div class="label-error">
-                                <label>Ingrese su email: </label>
-                                <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p> 
-                            </div>
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.gender ? errors.gender.msg : null %> </p>
+
+                            <label>Ingrese su email: </label>
                             <input class="datos" type="email" name= "email" placeholder="E-mail">
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p>
 
                             <!--
                                 --------Confirmar email a travez de validaciones-----------
                                 <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail">
                             -->
 
-                            <div class="label-error">
-                                <label>Ingrese su contraseña: </label>
-                                <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.pass ? errors.pass.msg : null %> </p> 
-                            </div>
+                            <label>Ingrese su contraseña: </label>
                             <input class="datos" type="password" name="pass" placeholder="Contraseña">
-                            
-                            <div class="label-error">
-                                <label>Ingrese una foto de perfil: </label> 
-                            </div>
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.pass ? errors.pass.msg : null %> </p>
+
+                            <label>Ingrese una foto de perfil: </label> 
                             <input class="avatar" type="file" name="avatar">
 
                             <div class="button-user">

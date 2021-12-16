@@ -26,10 +26,8 @@
             line-height: 1;   
             margin-bottom: 1rem;
         }
-            .label-error {
-                display: flex;
-                align-items: center;
-                font-size: 1.5rem;
+            .errores {
+                /*codigo de errors*/
             }
             .datos {
                 width:100%;

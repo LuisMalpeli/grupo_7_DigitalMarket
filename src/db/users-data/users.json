@@ -18,37 +18,11 @@
  },
  {
   "id": 2,
-  "fullName": "Luis ",
-  "gender": "X",
+  "user": "luis123",
+  "fullName": "Luis Malpeli",
+  "gender": "M",
   "email": "malpeliluis@gmail.com",
-  "pass": "$2a$10$49aAajauTZ.kMhke/8mR7OiKE3QDpvJXB6J3JWmeRe357PU32zSs6",
-  "avatar": "default-user.png"
- },
- {
-  "id": 3,
-  "user": "leimer ",
-  "fullName": "leimer delgado",
-  "gender": "M",
-  "email": "leimer.agelvis@gmail.com",
-  "pass": "$2a$10$YU5LTjL8lST0tSslW7vdOei1h2tSCcLUNQ3.GSXT2R8fv9SdtNvWe",
-  "avatar": "default-user.png"
- },
- {
-  "id": 4,
-  "user": "leimer ",
-  "fullName": "leimer delgado",
-  "gender": "M",
-  "email": "leimer.agelvis@gmail.com",
-  "pass": "$2a$10$sBKaHj4Ml2gzSw.yHtZBhe8eeYn34/ENsnZsWH8tYv49FQjT3PffC",
-  "avatar": "default-user.png"
- },
- {
-  "id": 5,
-  "user": "leimer ",
-  "fullName": "leimer delgado",
-  "gender": "M",
-  "email": "leimer.agelvis@gmail.com",
-  "pass": "$2a$10$MK93n4N.7bYjjS/0bU64yO0Rvimw2tAVHFe54Go7n0OaH5rgbAm7i",
+  "pass": "$2a$10$2xIW0fp83r2unQcil66wue.9Yj.NY2S29yjhlVHqZOrlGlcw9yBuK",
   "avatar": "default-user.png"
  }
 ]

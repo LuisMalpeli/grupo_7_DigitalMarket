@@ -1,5 +1,6 @@
 const fs = require ('fs');
 const path = require ('path');
+const bcrypt = require('bcryptjs')
 
 module.exports = {
     //Path de la DB de los usuarios :
@@ -67,7 +68,12 @@ module.exports = {
     },
     //Login usuario y comprobacion de datos
     login: function(user) {
-        //magia
+        let allUsers = this.findAll()
+        if (allUsers.find(element => element.email == user.email && bcrypt.compareSync(user.pass, element.pass)) != undefined) {
+            //Encuentra el usuario y comprueba su contrasenia
+            return true
+        }  
+        return false
     },
     //Eliminar usuarios
     delete: function (id) {
