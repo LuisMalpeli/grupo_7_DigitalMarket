@@ -19,10 +19,10 @@
                             <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.user ? errors.user.msg : null %> </p>                            
                             
                             <label for="">Ingrese su nombre y apellido: </label>
-                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.fullName ? errors.fullName.msg : null %> </p> 
                             <input class="datos" type="text" name= "fullName" placeholder="Nombre y apellido">
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.fullName ? errors.fullName.msg : null %> </p>
                             
-                            <label>Seleccione su genero: </label>
+                            <label>Seleccione su genero: </label> <br>
                             <div class="opciones-genero">
                                 <label>Hombre<input type="radio" name= "gender" value="M"></label>
                                 <label>Mujer<input type="radio" name= "gender" value="F"></label>
