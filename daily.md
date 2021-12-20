@@ -15,3 +15,5 @@ Daily 6/12 :
     Merge de css repetidos
     arreglo de estilos en paginas ya hechas
 
+Daily 13/12
+    Revision de la entrega del sprint 4
