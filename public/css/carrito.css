@@ -33,14 +33,6 @@ table {
 
 
 
-main {
-    background-color: rgba(231, 232, 233, 20%);
-    background-image: url('../img/fondotecno.jpg');
-    position: relative;
-    padding: 0 0 30px;
-    width: 100%;
-    height: 50rem;
-}
 
 
 
@@ -48,7 +40,7 @@ main {
 
 /*** ESTILOS CARRITO COMPRAS ***/
 
-.main-content {
+.cart {
     display: flex;
     flex-direction: row;
     width: 88%;
