@@ -1,4 +1,4 @@
-<%- include('../partials/head', {title: 'Register'}) %>
+ <%- include('../partials/head', {title: 'Register'}) %>
     <link rel="stylesheet" href="/css/login-register.css">
     <title>Registrarse</title>
 </head>
@@ -13,30 +13,43 @@
                     </h3>
                     <div class="info-usuario">
                         <form action="/user/register" method="POST" enctype="multipart/form-data">
-                            <input class="datos" type="text" name= "user" placeholder="Ingrese su usuario"> 
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.user ? errors.user.msg : null %> </p>
-                            <input class="datos" type="text" name= "fullName" placeholder="Ingrese su nombre y apellido"> <br>
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.fullName ? errors.fullName.msg : null %> </p>
-                            <span>Seleccione su genero:</span><br>
+
+                            <label for="">Ingrese su usuario: </label>
+                            <input class="datos" type="text" name= "user" placeholder="Usuario">    
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.user ? errors.user.msg : null %> </p>                            
+                            
+                            <label for="">Ingrese su nombre y apellido: </label>
+                            <input class="datos" type="text" name= "fullName" placeholder="Nombre y apellido">
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.fullName ? errors.fullName.msg : null %> </p>
+                            
+                            <label>Seleccione su genero: </label> <br>
                             <div class="opciones-genero">
                                 <label>Hombre<input type="radio" name= "gender" value="M"></label>
                                 <label>Mujer<input type="radio" name= "gender" value="F"></label>
                                 <label>Otro<input type="radio" name= "gender" value="X"></label>
                             </div>
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.gender ? errors.gender.msg : null %> </p>
-                            <br>
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.gender ? errors.gender.msg : null %> </p>
+
+                            <label>Ingrese su email: </label>
                             <input class="datos" type="email" name= "email" placeholder="E-mail">
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p> <br>
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p>
+
                             <!--
                                 --------Confirmar email a travez de validaciones-----------
-                                <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail"><br>
+                                <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail">
                             -->
-                            <input class="datos" type="password" name="pass" placeholder="Contraseña"><br>
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.pass ? errors.pass.msg : null %> </p>
-                            <input class="datos" type="file" name="avatar"><br>
+
+                            <label>Ingrese su contraseña: </label>
+                            <input class="datos" type="password" name="pass" placeholder="Contraseña">
+                            <p style="color: red;" class="errores"> <%= typeof errors != 'undefined' && errors.pass ? errors.pass.msg : null %> </p>
+
+                            <label>Ingrese una foto de perfil: </label> 
+                            <input class="avatar" type="file" name="avatar">
+
                             <div class="button-user">
                                 <input class="boton" type="submit" value= "Registrar">
                             </div>
+
                         </form>
                     </div>
                    
