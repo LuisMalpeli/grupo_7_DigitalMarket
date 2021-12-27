@@ -31,15 +31,4 @@ router.get('/edit/:id', productController.edit);
 router.put('/:id', upload.single('img'), validator, productController.editSend);
 
 
-
-<<<<<<< HEAD
-router.get('/cart', productController.cart);
-=======
->>>>>>> f1ac53ff47d2f60946f794a399d091499fad0271
-
-
-
-
-
-
 module.exports = router
