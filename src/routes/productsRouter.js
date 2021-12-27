@@ -15,6 +15,9 @@ router.get('/create', productController.create); //Mostrar el formulario
 //  2-Envío del formulario
 router.post('/create', upload.single('img'), validator, productController.createSend)//Mostrar el formulario
 
+
+router.get('/cart', productController.cart);
+
 //Muestra el detalle del producto
 router.get('/:id', productController.detail);
 
@@ -29,7 +32,10 @@ router.put('/:id', upload.single('img'), validator, productController.editSend);
 
 
 
+<<<<<<< HEAD
 router.get('/cart', productController.cart);
+=======
+>>>>>>> f1ac53ff47d2f60946f794a399d091499fad0271
 
 
 

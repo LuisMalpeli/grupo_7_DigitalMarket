@@ -24,7 +24,7 @@ const productController = {
 
     },
     cart: function(req, res) {
-        res.render('products/productCart')
+        res.render('products/cart');
     },
     create: function(req,res) {
         //Muestra el formulario de creación de producto
