@@ -11,7 +11,10 @@ const userController = {
     registerSend : function(req,res) {   
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
-            return res.render('users/register', {errors: errores.mapped()})
+            return res.render('users/register', {
+                errors: errores.mapped(),
+                oldData: req.body
+            })
         } else {
             let userCreate = {
                 ...req.body,
@@ -19,10 +22,12 @@ const userController = {
                 pass: bcrypt.hashSync(req.body.pass,10)
             }
             Users.create(userCreate)
-            res.redirect('/')
+            
+            res.redirect('success')
         }
     },
     login: function(req, res) {
+        
         res.render('users/login')
     }, 
     loginSend : function(req,res) {   
@@ -30,14 +35,23 @@ const userController = {
         if (errores.errors.length > 0) {
             return res.render('users/login', {errors: errores.mapped()})
         } else {
-            let userlogin = {
+            //No hay errores en el form de login
+            let userLogin = {
                 ...req.body
             }
-            console.log(userlogin)
-            console.log(Users.login(userlogin))
-            if (Users.login(userlogin)) {
-                res.redirect('/')
+            //Users.login valida las credenciales del usuario y retorna true
+            if (Users.login(userLogin)) {
+                //Busca la información del usuario y la almacena en session
+                req.session.usuarioLogueado = Users.findByField("email",userLogin.email)
+                //creación de cookie de usuario
+                if(userLogin.recordarme != undefined) {
+                    //Si el usuario chequeó la casilla de Recordar Usuario, crea la cookie con el usuario
+                    res.cookie('recordarme',userLogin.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
+                }
+                
+                return res.redirect('profile')
             }
+            //Si las credenciales son incorrectas
             res.render(
                 'users/login', 
                 {errors: 
@@ -48,6 +62,18 @@ const userController = {
                 }
             )
         }
+    },
+    userRegistered:function(req,res) {   
+        res.render('users/success')
+    },    
+    profile: function(req,res){
+        res.render('users/userProfile')
+    },
+    logout: function(req, res) {
+        res.clearCookie('recordarme');
+        req.session.destroy();
+        return res.redirect ('/');
+
     }
 
 }

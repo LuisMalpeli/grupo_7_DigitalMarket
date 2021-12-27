@@ -26,8 +26,14 @@
             line-height: 1;   
             margin-bottom: 1rem;
         }
+        .info-usuario form label {
+            padding-bottom: 10px;
+            padding-top: 15px;
+        }
             .errores {
                 /*codigo de errors*/
+                color:red;
+                font-size: 20px;
             }
             .datos {
                 width:100%;
@@ -40,6 +46,12 @@
                 border: 1px solid lightslategray;
                 border-radius: 5px;   
                 text-indent: 0.3rem;
+
+            }
+            .con-error {
+                /*Agrega formato de error a los input*/
+                border: 1px solid red;
+                box-shadow: 0.1px 0.1px 1px red;
             }
             /*Seleccion de genero - SOLO REGISTER*/
                 .opciones-genero {
@@ -86,6 +98,28 @@
                     min-height: 20px;
                 }
             /*-----------------------------------*/
+
+/*---------------------Sección de confirmación de registro de usuario----------------------------------*/
+.success-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.success-title {
+    font-size: 2.5rem;
+    color: rgb(58,206,58);
+
+}
+.fa-check-circle {
+    font-size: 8rem;
+    padding-bottom: 2rem;
+    color: rgb(58,206,58);
+    
+}
+/*----------------------------------------------------------------------------*/
 @media (min-width: 576px){
     .login-register-user {
         display: flex;

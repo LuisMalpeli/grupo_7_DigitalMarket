@@ -125,6 +125,10 @@ header {
                 color: #FFF;
                 font-size: 32px;
             }
+            .link-user img {
+                width: 32px;
+                border-radius: 25%;
+            }
         .botones-login-register {
             display: flex;
             flex-direction: column;

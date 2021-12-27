@@ -29,7 +29,7 @@ router.put('/:id', upload.single('img'), validator, productController.editSend);
 
 
 
-router.get('/productCart', productController.cart);
+router.get('/cart', productController.cart);
 
 
 

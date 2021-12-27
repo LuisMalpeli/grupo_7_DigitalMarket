@@ -38,7 +38,7 @@ module.exports = {
     },
     //Crear usuarios
     create: function (user) {
-        //recibe un producto como objeto literal
+        //recibe un usuario como objeto literal
         let allUsers = this.findAll();
         let newUser = {
             id: this.generateId(),
@@ -48,7 +48,7 @@ module.exports = {
         this.pushData(allUsers);
         return newUser; //retorna el producto para utilizarlo luego
     },
-    //editar usuarios -- Pendiente de cambiso según los settings que configuremos en el ejs
+    //editar usuarios -- Pendiente de cambio según los settings que configuremos en el ejs
     edit: function (user) {
         let allUsers = this.findAll();
         let userEdited = allUsers.map(function (element) {
