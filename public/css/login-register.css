@@ -65,7 +65,26 @@
                 }
                 .avatar {
                     margin-bottom: 0.5rem;
+                    /*opacity: 0; Con opacity 0 se vuelve invisible pero no se oculta (se sigue pudiendo presionar*/
+                    z-index: 3;
                 }
+               /*Código para dejar mas prolijo el botón de seleccionar archivo
+               .avatar-container {
+                    width: 100%;
+                    border: 1px solid lightslategray;
+                    border-radius: 5px;   
+                    margin-bottom: 15px;
+                
+                }
+                .file-search {
+                    Botón para busar
+                    width: 10%;
+                    height: 3rem;
+                    border: #3483fa solid 1px;
+                    border-radius: 5px 0px 0px 5px;
+                    position: absolute;
+                    z-index: 1;
+                } */
             /*------------------------------------*/
             .button-user .boton {
                 width: 40rem;
