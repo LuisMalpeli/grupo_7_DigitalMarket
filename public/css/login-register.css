@@ -65,7 +65,18 @@
                 }
                 .avatar {
                     margin-bottom: 0.5rem;
+                    opacity: 0;
                 }
+                .avatar-conatiner {
+                    width: 100%;
+                    border: 1px solid lightslategray;
+                    border-radius: 5px; 
+
+                }
+                .select-buton {
+                    border-radius: 5px 0px 0px 5px;
+                }
+
             /*------------------------------------*/
             .button-user .boton {
                 width: 40rem;
