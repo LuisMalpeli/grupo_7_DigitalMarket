@@ -17,3 +17,33 @@ Daily 6/12 :
 
 Daily 13/12
     Revision de la entrega del sprint 4
+
+27/12
+    Vistas:
+        •    Creada la vista de success ante la registración
+        •    Creada la vista de perfil de usuario  Dummie
+        •    Modificado el header para mostrar as opciones de login/register solo si el usuario no está logueado.
+        o    Si está logueado muestra la información del usuario junto con las opciones:
+            "Mi Cuenta"
+            "Logout"
+        •    login.ejs: Cambiado el checkbox a "Recordar usuario"
+        o    renombrado a "recordarme"
+        •    register.ejs:
+        o    Agregada la función de recordar los campos completados en caso de no tener error
+        o    Cambiado el formato de las cajas para que se muestren en rojo si hay errores (más llamativo)
+        o    Cambio en los párrafos para que aparezcan de forma variable. Si no hay errores ni siquiera ocupan   espacio en la pantalla (habría que ajustar el css que los tenía invisibles)
+        o    El formulario deja almacenada la información anterior en caso de error en los formularios
+            No pude hacer que guarde la selección del género
+
+    Controller de Usuarios:
+        •    Agregada la creación de una cookie que guarda el mail del usuario (si el mismo indicó que quiere ser recordado)
+        •    Agregado el almacenamiento en session del usuario recién logueado
+        •    Agregada funcionalidad de logout:
+        o    Limpia la cookie de “recordarme”
+        o    Limpia la session
+
+    Middlewares:
+        •    Creado Middlware de Guest para evitar que un usuario logueado acceda a los formularios de login y register
+        •    Creado middleware que valida si hay cookie de login creada
+        •    Multer:
+        •    Agregada variabilidad en el path. Las imagenes se estaban routeando todas a productos, armé un if que si la imagen es un avatar, la guarde en usuarios
