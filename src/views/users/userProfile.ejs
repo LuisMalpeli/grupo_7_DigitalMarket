@@ -1,11 +1,47 @@
 <%- include('../partials/head', {title: 'Profile'}) %>
-    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="stylesheet" href="/css/perfil.css">
     <title>Perfil de usuario</title>
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-        
+        <div class="opciones">
+            <div class="mi-cuenta">
+                <i class="fas fa-user"></i>
+                <span>Mi Cuenta</span>
+            </div>
+            <div class="opciones-cuenta">   
+                <ul>
+                    <li><a href="">Editar datos</a></li>
+                    <li><a href="">Compras</a></li>
+                    <li><a href="">Ventas</a></li>
+                </ul>
+            </div>
+        </div>  
+        <div class="datos">
+            <h2>Mis Datos</h2>
+            <div class="datos-cuenta">
+                <span class="subtitulos">Datos de la cuenta</span>
+                <div class="muestro-datos">
+                    <div><%= locals.usuarioLogueado.fullName%></div>
+                    <div><%= locals.usuarioLogueado.email%></div>
+                </div>
+            </div>
+            <div class="datos-cuenta">
+                <span class="subtitulos">Datos de la cuenta</span>
+                <div class="muestro-datos">
+                    <div><%= locals.usuarioLogueado.fullName%></div>
+                    <div><%= locals.usuarioLogueado.email%></div>
+                </div>
+            </div>
+            <div class="datos-cuenta">
+                <span class="subtitulos">Datos de la cuenta</span>
+                <div class="muestro-datos">
+                    <div><%= locals.usuarioLogueado.fullName%></div>
+                    <div><%= locals.usuarioLogueado.email%></div>
+                </div>
+            </div>
+        </div>     
     </main>
     <%- include('../partials/footer') %>
 </body>

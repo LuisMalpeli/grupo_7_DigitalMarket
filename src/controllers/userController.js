@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const Users = require('../models/Users')
 const bcrypt = require('bcryptjs')
-const {validationResult}  = require('express-validator')
+const {validationResult}  = require('express-validator');
+const session = require('express-session');
 
 const userController = {
     register: function(req, res) {
