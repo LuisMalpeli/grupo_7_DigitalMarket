@@ -48,8 +48,7 @@ const userController = {
                 if(userLogin.recordarme != undefined) {
                     //Si el usuario chequeó la casilla de Recordar Usuario, crea la cookie con el usuario
                     res.cookie('recordarme',userLogin.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
-                }
-                
+                }                
                 return res.redirect('profile')
             }
             //Si las credenciales son incorrectas
@@ -68,7 +67,7 @@ const userController = {
         res.render('users/success')
     },    
     profile: function(req,res){
-        res.render('users/userProfile')
+        res.render('users/userProfile', {usuario : req.session.usuarioLogueado})
     },
     logout: function(req, res) {
         res.clearCookie('recordarme');

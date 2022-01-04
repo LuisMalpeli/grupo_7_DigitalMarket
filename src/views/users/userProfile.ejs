@@ -23,22 +23,31 @@
             <div class="datos-cuenta">
                 <span class="subtitulos">Datos de la cuenta</span>
                 <div class="muestro-datos">
-                    <div><%= locals.usuarioLogueado.fullName%></div>
-                    <div><%= locals.usuarioLogueado.email%></div>
+                    <div class="campos"><span>Nombre Completo:</span><%= usuario.fullName%></div>
+                    <div class="campos"><span>Email:</span><%= usuario.email%></div>
                 </div>
             </div>
             <div class="datos-cuenta">
-                <span class="subtitulos">Datos de la cuenta</span>
+                <span class="subtitulos">Datos personales</span>
                 <div class="muestro-datos">
-                    <div><%= locals.usuarioLogueado.fullName%></div>
-                    <div><%= locals.usuarioLogueado.email%></div>
+                    <div class="campos">
+                        <span>Genero:</span>
+                        <% if (usuario.gender == 'M') { %>
+                            <%= 'Masculino'%>
+                        <% } else if (usuario.gender == 'F') { %>
+                            <%= 'Femenino'%>
+                        <% } else { %>
+                            <%= 'Otro'%>
+                        <% } %>
+                    </div>
+                    <div class="campos">EDAD ?</div>
                 </div>
             </div>
             <div class="datos-cuenta">
-                <span class="subtitulos">Datos de la cuenta</span>
+                <span class="subtitulos">TEST</span>
                 <div class="muestro-datos">
-                    <div><%= locals.usuarioLogueado.fullName%></div>
-                    <div><%= locals.usuarioLogueado.email%></div>
+                    <div class="campos">TEST</div>
+                    <div class="campos">TEST</div>
                 </div>
             </div>
         </div>     

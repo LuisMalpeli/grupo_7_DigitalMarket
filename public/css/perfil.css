@@ -23,8 +23,6 @@ main {
             font-size: larger;
             color: var(--color-azulOscuro); 
         }
-    .opciones-cuenta {
-    }
 .datos {
     width: 100%;
     display: flex;
@@ -32,14 +30,29 @@ main {
     padding: 30px;
     padding-left: 100px;
 }
-    .subtitulos {
-        color: rgb(98, 98, 98);
-        font-size:  larger; 
-    }
     .datos-cuenta {
         width: 50%;
+        margin-left: 15px;
+        margin-bottom: 25px;
     }
-    .datos-personales {
-        width: 50%;
-    }
-    
+        .subtitulos {
+            color: rgb(98, 98, 98);
+            font-size:  larger;     
+        }
+        .muestro-datos {
+            margin-top: 5px;
+            background-color: var(--color-blanco);   
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        .campos {
+            width: 100%;
+            height: 35px;
+            display: flex;
+            align-items: center;
+        }
+            .campos span {
+                margin-left: 5px;
+                margin-right: 10px;
+            }
