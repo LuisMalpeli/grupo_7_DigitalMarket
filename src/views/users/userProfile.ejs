@@ -6,6 +6,9 @@
     <%- include('../partials/header') %>
     <main>
         <div class="opciones">
+            <div class="imagen">
+                <img src="/img/users/<%= usuario.avatar%>" alt="">
+            </div>
             <div class="mi-cuenta">
                 <i class="fas fa-user"></i>
                 <span>Mi Cuenta</span>
@@ -23,8 +26,12 @@
             <div class="datos-cuenta">
                 <span class="subtitulos">Datos de la cuenta</span>
                 <div class="muestro-datos">
-                    <div class="campos"><span>Nombre Completo:</span><%= usuario.fullName%></div>
-                    <div class="campos"><span>Email:</span><%= usuario.email%></div>
+                    <div class="campo-nombre">
+                        <div class="campos"><span>Nombre Completo:</span><%= usuario.fullName%></div>
+                    </div>
+                    <div class="campo-cuerpo">
+                        <div class="campos"><span>Email:</span><%= usuario.email%></div>
+                    </div>
                 </div>
             </div>
             <div class="datos-cuenta">

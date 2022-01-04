@@ -9,6 +9,12 @@ main {
     padding: 30px;
     padding-top: 50px;
 }
+    .imagen {
+        margin-bottom: 5px;
+    }
+        .imagen img{
+            width: 100%;
+        }
     .mi-cuenta {
         width: 100%;
         border-bottom: 1px solid var(--color-grisOscuro);
