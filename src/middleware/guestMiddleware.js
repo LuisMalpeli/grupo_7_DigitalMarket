@@ -1,8 +1,8 @@
 function guestMiddleware (req, res, next) {
     if(req.session.usuarioLogueado) { 
-        return res.redirect('user/profile')
-        //esta función debería redirecctionar al usuario a su perfil
-        //return res.redirect('/user/profile') -->Todavía no esta creada
+        return res.redirect('profile')
+        //Redurecciona a 'profile' porque cuando el usuario accede a este middleware, ya está ingresando por '/user', desde el login o register
+
     }
     next ();
 }
