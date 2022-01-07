@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const upload = require('../middleware/multer');
 const Products = require('../models/Products')
 const {validationResult}  = require('express-validator')
 
@@ -16,7 +15,6 @@ const productController = {
     },
     detail: function(req, res) {
         let productoAMostrar = Products.findByPk(req.params.id)
-        console.log(productoAMostrar);
         res.render(
             'products/productDetail',
             {productos: productoAMostrar}
@@ -41,7 +39,7 @@ const productController = {
                 precio: Number.parseInt(req.body.precio),
                 enPromocion: false,
                 descuento: 0,
-                img: req.file.filename
+                img: req.file == undefined ? "fff.jpg" : req.file.filename,
             };
             Products.create(productToCreate);
             res.redirect('/')
@@ -70,7 +68,7 @@ const productController = {
                 enPromocion:req.body.enPromocion == 0 ? false : true,
                 descuento:Number.parseInt(req.body.descuento)/100,
                 precio:Number.parseInt(req.body.precio),
-                img: req.file != undefined ? req.file.filename : null
+                img: req.file != undefined ? req.file.filename : "fff.png"
 		    }
             Products.edit(newProduct)
             //res.send(newProduct)

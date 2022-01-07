@@ -2,28 +2,43 @@
     <link rel="stylesheet" href="/css/product-detail.css">
 </head>
 <body>
-    <%- include('../partials/header') %>
+    <%- include('../partials/header')%>
     <main>
         <div class="productDetail">
             <div class="detail-img">
-                <img src="/img/productos/<%= productos.img %>" alt="<%= productos.titulo %>">
+                <img src="/img/productos/<%= productos.img %>" alt="<%= productos.titulo%>">
             </div>        
             <div class="detail-datos">
                 <h3 class="titulo">
                     <%= productos.titulo %>
                 </h3>
+                    <% if (productos.enPromocion) { %>
+                        <div class="precio">
+                            <div>
+                                <span class="aplica-descuento">$ <%=  productos.precio%></span>
+                                <% if (productos.descuento < 1) { %>
+                                    <span class="descuento"><%= (productos.descuento * 100)%>% OFF</span>
+                                <% } else { %>
+                                    <span class="descuento"><%= productos.descuento%>% OFF</span>
+                                <% } %>
+                            </div>
+                            <% if (productos.descuento < 1) { %>
+                                <span>$ <%= productos.precio / (productos.descuento * 100)%></span>
+                            <% } else { %>
+                                <span>$ <%= productos.precio / productos.descuento%></span>
+                            <% } %>
+                        </div>
+                    <% } else { %>    
+                        <div class="precio">
+                            <span>$ <%=  productos.precio%></span>
+                        </div>
+                    <% } %>
                 <div class="descripcion">
                     <%= productos.descripcion %>
                 </div>
-                <div class="precio">
-                    <%=  productos.precio %>
-                </div>
-                <div class="descuento">
-                    -- Extras o descuento --
-                </div>
                 <form action="/" class="cantidad">
                     <label for="cantidad-productos">Cantidad: </label>
-                    <select name="cantidad-productos" id="cantidad-productos">
+                    <select name="cantidad-productos">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

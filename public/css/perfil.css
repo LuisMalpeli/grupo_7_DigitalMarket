@@ -21,14 +21,16 @@ main {
         display: flex;
         justify-content: center ;
     }
-        .mi-cuenta i {
-            color: var(--color-azulOscuro); 
-            margin-right: 5px;   
-        }
         .mi-cuenta span {
             font-size: larger;
             color: var(--color-azulOscuro); 
         }
+    .opciones-cuenta li{
+        list-style: none;
+    }
+    .opciones-cuenta a {
+        text-decoration: none;
+    }
 .datos {
     width: 100%;
     display: flex;
@@ -57,8 +59,12 @@ main {
             height: 35px;
             display: flex;
             align-items: center;
+
+        }
+        #campo1 {
+            border-bottom: 1px solid var(--color-grisOscuro);
         }
             .campos span {
-                margin-left: 5px;
+                margin-left: 8px;
                 margin-right: 10px;
             }

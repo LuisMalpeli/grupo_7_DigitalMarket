@@ -29,7 +29,7 @@
                                         <p class = "precio">$<%= productos[i].precio %></p>
                                         <p class = "descuento"><%= productos[i].descuento * 100 %>% OFF</p>
                                     </div>
-                                    <p class="nombre-producto"><%= productos[i].titulo %></p>
+                                    <a href="/products/<%=productos[i].id%>" class="nombre-producto"><%= productos[i].titulo %></a>
                                 </div>
                             </article>
                         <% } %>
@@ -53,10 +53,14 @@
                                 <div class="precio-descuento">
                                     <p class = "precio">$<%= productos[i].precio %></p>
                                     <% if (productos[i].enPromocion == true) { %>
-                                        <p class = "descuento"><%= productos[i].descuento * 100 %>% OFF</p>
+                                        <% if (productos[i].descuento < 1) { %>
+                                            <span class = "descuento"><%= (productos[i].descuento * 100)%>% OFF</span>
+                                        <% } else { %>
+                                            <span class = "descuento"><%= productos[i].descuento%>% OFF</span>
+                                        <% } %>
                                     <% } %>
                                 </div>
-                                <p class="nombre-producto"><%= productos[i].titulo %></p>
+                                <a href="/products/<%=productos[i].id%>" class="nombre-producto"><%= productos[i].titulo %></a>
                             </div>
                         </article>
                     <% } %>

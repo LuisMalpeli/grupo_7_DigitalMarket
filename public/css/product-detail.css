@@ -1,46 +1,56 @@
     .productDetail {
-        width: fit-content;
+        width: 100%;
         border-radius: 0.5rem;
-        background: rgb(255, 255, 255);
         margin-top: 1rem;
         margin-bottom: 5rem;
         padding: 1rem;
+        flex-direction: column;
     }
         .detail-img {
             width: 100%;
+            display: grid;
+            justify-items: center;
         }
         .detail-img img{
-            margin: 1rem 2rem;
-            border-bottom: 1px solid var(--color-gris);
+            width: 80%;
         }
         .detail-datos {
             height: fit-content;
-            width: 40rem;
+            width: 100%;
             background: rgb(255, 255, 255);
-            margin: 2% 0 ;
             border: 1px solid var(--color-gris);
             border-radius: 10px;
         }
-             .detail-datos .titulo {
+            .titulo {
                 padding: 10px;
                 margin: 10px;
+                border-bottom: 1px solid var(--color-grisOscuro);
             }
+            .precio {
+                padding-left: 10px;
+                padding-bottom: 10px;
+                margin: 10px;
+                font-size: large;
+                border-bottom: 1px solid var(--color-grisOscuro);
+            }
+                .aplica-descuento {
+                    text-decoration: line-through;
+                    color: var(--color-grisOscuro);
+                    margin-right: 5px;
+                }
+                .descuento {
+                    color: rgb(24, 192, 33);
+                    margin-left: 5px;
+                }
             .detail-datos .descripcion {
                 padding: 3px;
                 margin: 10px;
+                border-bottom: 1px solid var(--color-grisOscuro);
             }
             .detail-datos .descripcion ul {
                 margin: 3px 5px;
                 padding: 0 0 0 25px;
                 color: var(--color-azulGris);
-            }
-            .detail-datos .precio {
-                padding: 10px;
-                margin: 10px;
-            }
-            .detail-datos .descuento {
-                padding: 10px;
-                margin: 10px;
             }
             .detail-datos .cantidad {
                 padding: 5px;
@@ -93,10 +103,11 @@
                         border: 2px solid #a01f1f;
                         box-shadow: 1px 1px #a01f1f;
                     }
-@media (min-width: 768px){
+@media (min-width: 800px){
     .productDetail {
         display: flex;
         justify-content: space-evenly;
         align-items: flex-start;
+        flex-direction: row;
     }
 }

@@ -10,7 +10,6 @@
                 <img src="/img/users/<%= usuario.avatar%>" alt="">
             </div>
             <div class="mi-cuenta">
-                <i class="fas fa-user"></i>
                 <span>Mi Cuenta</span>
             </div>
             <div class="opciones-cuenta">   
@@ -27,7 +26,7 @@
                 <span class="subtitulos">Datos de la cuenta</span>
                 <div class="muestro-datos">
                     <div class="campo-nombre">
-                        <div class="campos"><span>Nombre Completo:</span><%= usuario.fullName%></div>
+                        <div class="campos" id="campo1"><span>Nombre Completo:</span><%= usuario.fullName%></div>
                     </div>
                     <div class="campo-cuerpo">
                         <div class="campos"><span>Email:</span><%= usuario.email%></div>
@@ -37,7 +36,7 @@
             <div class="datos-cuenta">
                 <span class="subtitulos">Datos personales</span>
                 <div class="muestro-datos">
-                    <div class="campos">
+                    <div class="campos" id="campo1">
                         <span>Genero:</span>
                         <% if (usuario.gender == 'M') { %>
                             <%= 'Masculino'%>
@@ -47,14 +46,14 @@
                             <%= 'Otro'%>
                         <% } %>
                     </div>
-                    <div class="campos">EDAD ?</div>
+                    <div class="campos"><span>Edad:</span>?</div>
                 </div>
             </div>
             <div class="datos-cuenta">
                 <span class="subtitulos">TEST</span>
                 <div class="muestro-datos">
-                    <div class="campos">TEST</div>
-                    <div class="campos">TEST</div>
+                    <div class="campos" id="campo1"><span>test</span>test</div>
+                    <div class="campos"><span>test</span>test</div>
                 </div>
             </div>
         </div>     
