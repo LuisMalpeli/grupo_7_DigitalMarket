@@ -77,7 +77,6 @@ main {
                     text-align: start;
                 }
                     .precio {
-                        width: 30%;
                         padding-left: 5%;
                     }
                     .descuento {
@@ -85,6 +84,7 @@ main {
                         color:rgb(52, 224, 0);
                         display: flex;
                         align-items: center;
+                        margin-left: 10px;
                     }
                 .nombre-producto {
                     padding-left: 5%;  

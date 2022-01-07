@@ -47,3 +47,10 @@ Daily 13/12
         •    Creado middleware que valida si hay cookie de login creada
         •    Multer:
         •    Agregada variabilidad en el path. Las imagenes se estaban routeando todas a productos, armé un if que si la imagen es un avatar, la guarde en usuarios
+
+7/12
+    Arregle problemas con productDetail que no se veia bien en movil
+    Correccion a los precios y descuentos en index y productDetail
+
+    falta el middleware validator-product
+    falta arreglar precios y descuentos en todos los productos

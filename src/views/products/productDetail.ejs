@@ -23,9 +23,9 @@
                                 <% } %>
                             </div>
                             <% if (productos.descuento < 1) { %>
-                                <span>$ <%= productos.precio / (productos.descuento * 100)%></span>
+                                <span>$ <%= productos.precio - (productos.precio * productos.descuento)%></span>
                             <% } else { %>
-                                <span>$ <%= productos.precio / productos.descuento%></span>
+                                <span>$ <%= productos.precio - (productos.precio / productos.descuento)%></span>
                             <% } %>
                         </div>
                     <% } else { %>    
