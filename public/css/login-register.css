@@ -1,7 +1,7 @@
 /*CAJA PADRE*/
 .login-register-user {
     height: fit-content;
-    width: 50rem;
+    width: fit-content;
     background: rgb(255, 255, 255);
     margin: 2% 0 ;
     border: 2px solid var(--color-gris);
@@ -36,7 +36,7 @@
                 font-size: 20px;
             }
             .datos {
-                width:100%;
+                width:90%;
                 display: flex;
                 justify-content:center;
                 flex-direction:column;
@@ -87,7 +87,7 @@
                 } */
             /*------------------------------------*/
             .button-user .boton {
-                width: 40rem;
+                width: 90%;
                 height: 4rem;
                 color: white;
                 background: #3483fa;   

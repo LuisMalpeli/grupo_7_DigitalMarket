@@ -22,38 +22,40 @@
         </div>  
         <div class="datos">
             <h2>Mis Datos</h2>
-            <div class="datos-cuenta">
-                <span class="subtitulos">Datos de la cuenta</span>
-                <div class="muestro-datos">
-                    <div class="campo-nombre">
-                        <div class="campos" id="campo1"><span>Nombre Completo:</span><%= usuario.fullName%></div>
-                    </div>
-                    <div class="campo-cuerpo">
-                        <div class="campos"><span>Email:</span><%= usuario.email%></div>
+            <div class="caja">
+                <div class="datos-cuenta">
+                    <span class="subtitulos">Datos de la cuenta</span>
+                    <div class="muestro-datos">
+                        <div class="campo-nombre">
+                            <div class="campos" id="campo1"><span>Nombre Completo:</span><%= usuario.fullName%></div>
+                        </div>
+                        <div class="campo-cuerpo">
+                            <div class="campos"><span>Email:</span><%= usuario.email%></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="datos-cuenta">
-                <span class="subtitulos">Datos personales</span>
-                <div class="muestro-datos">
-                    <div class="campos" id="campo1">
-                        <span>Genero:</span>
-                        <% if (usuario.gender == 'M') { %>
-                            <%= 'Masculino'%>
-                        <% } else if (usuario.gender == 'F') { %>
-                            <%= 'Femenino'%>
-                        <% } else { %>
-                            <%= 'Otro'%>
-                        <% } %>
+                <div class="datos-cuenta">
+                    <span class="subtitulos">Datos personales</span>
+                    <div class="muestro-datos">
+                        <div class="campos" id="campo1">
+                            <span>Genero:</span>
+                            <% if (usuario.gender == 'M') { %>
+                                <%= 'Masculino'%>
+                            <% } else if (usuario.gender == 'F') { %>
+                                <%= 'Femenino'%>
+                            <% } else { %>
+                                <%= 'Otro'%>
+                            <% } %>
+                        </div>
+                        <div class="campos"><span>Edad:</span>?</div>
                     </div>
-                    <div class="campos"><span>Edad:</span>?</div>
                 </div>
-            </div>
-            <div class="datos-cuenta">
-                <span class="subtitulos">TEST</span>
-                <div class="muestro-datos">
-                    <div class="campos" id="campo1"><span>test</span>test</div>
-                    <div class="campos"><span>test</span>test</div>
+                <div class="datos-cuenta">
+                    <span class="subtitulos">TEST</span>
+                    <div class="muestro-datos">
+                        <div class="campos" id="campo1"><span>test</span>test</div>
+                        <div class="campos"><span>test</span>test</div>
+                    </div>
                 </div>
             </div>
         </div>     

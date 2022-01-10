@@ -52,5 +52,10 @@ Daily 13/12
     Arregle problemas con productDetail que no se veia bien en movil
     Correccion a los precios y descuentos en index y productDetail
 
-    falta el middleware validator-product
-    falta arreglar precios y descuentos en todos los productos
+8/12 - 9/12
+    todas las vistas adaptativas
+
+10/12
+    hecho el middleware validator-product
+    arregle de precios y descuentos en 'todos los productos' e 'index'
+    falta revisar barra de busqueda con @media menor a 450px

@@ -14,8 +14,7 @@
                 </div>
                 <section class = "contenedor-ofertas">
                     <% for (i=0; i< productos.length; i++) { %>
-                        <% if (productos[i].descuento != 0) { %>
-                            <% if (productos[i].enPromocion) { %>
+                        <% if ((productos[i].enPromocion) && (productos[i].descuento != 0)) { %>
                                 <article class = "cuadro-oferta">
                                     <div class = "cuadro-oferta-imagenes">
                                         <a href="/products/<%=productos[i].id%>">
@@ -26,20 +25,11 @@
                                         <i class="fas fa-cart-plus"></i>
                                         <div class="precio-descuento">
                                             <p class = "precio">$<%= productos[i].precio %></p>
-                                            <% if (productos[i].descuento != 0) { %>
-                                                <!-- REVISAR -->
-                                                    <% if (productos[i].descuento < 1) { %>
-                                                        <span class = "descuento"><%= (productos[i].descuento * 100)%>% OFF</span>
-                                                    <% } else { %>
-                                                        <span class = "descuento"><%= productos[i].descuento%>% OFF</span>
-                                                    <% } %>
-                                                <!-- REVISAR -->
-                                                <% } %>
+                                            <span class = "descuento"><%= productos[i].descuento%>% OFF</span>
                                         </div>
                                         <a href="/products/<%=productos[i].id%>" class="nombre-producto"><%= productos[i].titulo %></a>
                                     </div>
                                 </article>
-                            <% } %>
                         <% } %>
                     <% } %>
                 </section>
@@ -60,14 +50,8 @@
                                 <i class="fas fa-cart-plus"></i>
                                 <div class="precio-descuento">
                                     <p class = "precio">$ <%= productos[i].precio %></p>
-                                    <% if (productos[i].enPromocion) { %>
-                                    <!-- REVISAR -->
-                                        <% if ((productos[i].descuento < 1) && (productos[i].descuento > 0)) { %>
-                                            <span class = "descuento"><%= (productos[i].descuento * 100)%>% OFF</span>
-                                        <% } else if (productos[i].descuento > 1) { %>
-                                            <span class = "descuento"><%= productos[i].descuento%>% OFF</span>
-                                        <% } %>
-                                    <!-- REVISAR -->
+                                    <% if ((productos[i].enPromocion) && (productos[i].descuento != 0)){ %>
+                                        <span class = "descuento"><%= productos[i].descuento%>% OFF</span>
                                     <% } %>
                                 </div>
                                 <a href="/products/<%=productos[i].id%>" class="nombre-producto"><%= productos[i].titulo %></a>

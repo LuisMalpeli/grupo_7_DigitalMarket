@@ -14,54 +14,78 @@
                     <form action="/products/create" method="POST" enctype="multipart/form-data">
                         <label>Nombre del producto:</label> 
                         <br>
-                            <input type="text" name="titulo" class="nombre-producto">
+                        <% if(locals.errors && errors.titulo) { %>
+                            <p class= "errores"> <%= errors.titulo.msg %> </p>
+                        <% } %> 
+                        <input class="input-producto" type="text" name= "titulo" value="<%= locals.oldData ? oldData.titulo: null %>">        
                         <br>
                         <span>Descripcion del producto:</span>
                         <br>
-                            <input type="text" name="descripcion" class="descripcion-producto"> 
+                        <% if(locals.errors && errors.descripcion) { %>
+                            <p class= "errores"> <%= errors.descripcion.msg %> </p>
+                        <% } %>
+                        <textarea class="input-producto" rows= "10" cols="50" name= "descripcion" value="<%= locals.oldData ? oldData.descripcion: null %>"></textarea>  
                         <br>
                         <span>Marca: </span>
                         <br>
-                            <input type="text" name="marca" class="marca-producto">
+                        <% if(locals.errors && errors.marca) { %>
+                            <p class= "errores"> <%= errors.marca.msg %> </p>
+                        <% } %>
+                        <input class="input-producto" type="text" name= "marca" value="<%= locals.oldData ? oldData.marca: null %>">    
                         <br>
                         <span>Modelo: </span>
-                        <br>
-                            <input type="text" name="modelo" class="modelo-producto">                                                  
-                        <br>
-                        
-                        <div class="foto-producto">
-                            <!--<label for="file-upload" class="custom-file"><i class="fa fa-cloud-upload"></i> Ingrese la foto del producto</label>-->
-                            <input type="file" name="img">
+                        <br>  
+                        <% if(locals.errors && errors.modelo) { %>
+                            <p class= "errores"> <%= errors.modelo.msg %> </p>
+                        <% } %>        
+                        <input class="input-producto" type="text" name= "modelo" value="<%= locals.oldData ? oldData.modelo: null %>">                               
+                        <br> 
+                        <div class="caja">
+                            <span>Imagen:</span>
+                            <% if(locals.errors && errors.img) { %>
+                                <p class= "errores"> <%= errors.img.msg %> </p>
+                            <% } %>
+                            <input class="img" type="file" name= "img" value="<%= locals.oldData ? oldData.img: null %>">    
                         </div>
-                        <div class="categoria">
+                        <div class="caja">
                             <span>Seleccione la categoria del producto:</span>
-                            <br>
+                            <% if(locals.errors && errors.tipo) { %>
+                                <p class= "errores"> <%= errors.tipo.msg %> </p>
+                            <% } %>
                             <div class="div-radio">
-                                <input type="radio" id="Motherboard" name="tipo" value="Motherboard">
+                                <input type="radio" name="tipo" value="Motherboard">
                                 <label for="Motherboard">Motherboard</label>
                                 <br>
-                                <input type="radio" id="Procesador" name="tipo" value="Procesador">
+                                <input type="radio" name="tipo" value="Procesador">
                                 <label for="Procesador">Procesador</label>
                                 <br>
-                                <input type="radio" id="GPU" name="tipo" value="GPU">
+                                <input type="radio" name="tipo" value="GPU">
                                 <label for="GPU">GPU</label>
                                 <br>
-                                <input type="radio" id="RAM" name="tipo" value="RAM">
+                                <input type="radio" name="tipo" value="RAM">
                                 <label for="RAM">RAM</label>
                                 <br>
                             </div>
                         </div>
-                        <div class="precio">
+                        <div class="caja">
                             <span>Precio del producto:</span>
-                            <br>
                             <div class="moneda-precio">
+                                <label for="moneda">Moneda:</label>
                                 <select name="moneda" id="moneda">
+                                    <option value="" unchecked>$$$</option>
                                     <option value="BIT">BIT</option>
                                     <option value="USD">USD</option>
                                     <option value="EUR">EUR</option>
                                     <option value="ARS">ARS</option>
                                 </select>
+                                <% if(locals.errors && errors.moneda) { %>
+                                    <p class= "errores"> <%= errors.moneda.msg %> </p>
+                                <% } %>
+                                <label for="precio">Precio:</label>
                                 <input type="text" name="precio" class="precio-producto">
+                                <% if(locals.errors && errors.precio) { %>
+                                    <p class= "errores"> <%= errors.precio.msg %> </p>
+                                <% } %>
                             </div> 
                         </div>
                         <div class="boton-agregar-div"> 
