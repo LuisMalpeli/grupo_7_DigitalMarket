@@ -54,8 +54,8 @@ Daily 13/12
 
 8/12 - 9/12
     todas las vistas adaptativas
-
-10/12
     hecho el middleware validator-product
-    arregle de precios y descuentos en 'todos los productos' e 'index'
+    
+10/12
+    arregle los precios y descuentos en 'todos los productos' e 'index'
     falta revisar barra de busqueda con @media menor a 450px
