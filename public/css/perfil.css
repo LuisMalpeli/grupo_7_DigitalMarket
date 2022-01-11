@@ -26,23 +26,22 @@ main {
             color: var(--color-azulOscuro); 
         }
     .opciones-cuenta li{
-        list-style: none;
+        list-style: circle;
     }
     .opciones-cuenta a {
         text-decoration: none;
     }
 .datos {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     padding: 30px;
     padding-left: 100px;
 }
-    /* .caja{
-
-    } */
+    .caja{
+        width: 100%;
+    }
         .datos-cuenta {
-            width: 100%;
             margin-left: 15px;
             margin-bottom: 25px;
         }
@@ -71,3 +70,16 @@ main {
                     margin-left: 8px;
                     margin-right: 10px;
                 }
+.caja-boton {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+    .boton {
+        width: fit-content;
+        padding: 5px 3pxs;
+        background-color: rgb(60, 60, 255);
+        color: white;
+        border: none;
+        border-radius: 2px;
+    }

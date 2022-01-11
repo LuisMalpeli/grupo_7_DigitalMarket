@@ -65,8 +65,6 @@ header {
                 width: 80%;
                 height: 90%;
                 padding: 0.6rem 0;
-                position: relative;
-                left: 6rem;
             }
                 .barra-busqueda {
                     background-color: #FFF;
@@ -100,6 +98,9 @@ header {
                     align-items: center;
                     cursor: pointer;
                 }  
+    .links-adaptativo {
+        display: none;
+    }
     .links-carrito {
         display: flex;
         justify-content: space-evenly;
@@ -192,6 +193,24 @@ header {
     .links-carrito {
         display: none
     }    
+    .links-adaptativo {
+        display: flex;
+        justify-content: center;
+        margin-right: 5%;
+        color: var(--color-blanco);
+        font-size: larger;
+    }
+        .links-adaptativo span {
+            margin-right: 5px;
+            display: flex;
+            align-items: center;
+        }
+}
+@media (max-width: 560px) {
+    .logo-busqueda {
+        width: 75%;
+        display: flex;
+    }
 }
 /*---------------------------------nav---------------------------------------*/
 .barra-inferior {

@@ -18,7 +18,7 @@ Daily 6/12 :
 Daily 13/12
     Revision de la entrega del sprint 4
 
-27/12
+27/12 - RETRO DEL SPRINT 5
     Vistas:
         •    Creada la vista de success ante la registración
         •    Creada la vista de perfil de usuario  Dummie
@@ -49,13 +49,14 @@ Daily 13/12
         •    Agregada variabilidad en el path. Las imagenes se estaban routeando todas a productos, armé un if que si la imagen es un avatar, la guarde en usuarios
 
 7/12
-    Arregle problemas con productDetail que no se veia bien en movil
-    Correccion a los precios y descuentos en index y productDetail
+    problemas con productDetail - no se veia bien en movil
+    correccion a los precios y descuentos en index y productDetail
 
 8/12 - 9/12
-    todas las vistas adaptativas
+    vistas adaptativas
+    hecho el middleware validator-product
+    finaliza precios y descuentos en 'todos los productos' e 'index'
 
 10/12
-    hecho el middleware validator-product
-    arregle de precios y descuentos en 'todos los productos' e 'index'
-    falta revisar barra de busqueda con @media menor a 450px
+    revisado barra de busqueda con @media menor a 450px
+    terminado 'perfil'
