@@ -66,7 +66,7 @@ const productController = {
                 id:id,
                 ...req.body,
                 enPromocion:req.body.enPromocion == 0 ? false : true,
-                descuento:Number.parseInt(req.body.descuento)/100,
+                descuento:Number.parseInt(req.body.descuento),
                 precio:Number.parseInt(req.body.precio),
                 img: req.file != undefined ? req.file.filename : "fff.png"
 		    }

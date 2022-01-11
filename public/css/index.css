@@ -23,7 +23,8 @@ main {
     align-items: center;
 }
 .productos {
-    width: 80%;
+    width: 95%;
+    margin-top: 20px;
 }
 .seccion-ofertas, .seccion-intereses {
     display: flex;
@@ -36,6 +37,7 @@ main {
         font-size: 1.5rem;
     }
         .cuadro-oferta {
+            position: relative;
             background-color: var(--color-blanco);
             margin: 0.5% 2%;
             /*Fijo altura y ancho de los cuadros de oferta, las imágenes ocuparán % de esto así quedan todos iguales*/
@@ -47,6 +49,13 @@ main {
         .cuadro-oferta:hover {
             box-shadow: 2px 2px 5px grey;
         }
+            .cuadro-oferta i {
+                color: #00FF00;
+                position: absolute;
+                font-size: 2.3rem;
+                top: -8px;
+                right: -15px;
+            }
         .cuadro-oferta-imagenes {
             /*ocupará el 65% de cuadro-oferta*/
             height: 65%;
@@ -59,18 +68,6 @@ main {
                 background-color: white;
                 padding-top: 1px;
                 padding-bottom: 1px;
-            }
-            .cuadro-oferta-texto i {
-                /*logo de agregar al carrito*/
-                position:absolute;
-                padding: 0.4rem;
-                font-size: 1.3rem;
-                background-color: white;
-                top: -1.5rem;
-                right: 1rem;
-                border: var(--color-azulOscuro) 1px solid;
-                color: var(--color-azulOscuro);
-                border-radius: 50%;
             }
                 .precio-descuento {
                     display: flex;
@@ -89,7 +86,9 @@ main {
                 .nombre-producto {
                     padding-left: 5%;  
                     text-decoration: none;  
-                    color: black;                
+                    color: black;  
+                    margin-top: 5px;
+                    margin-bottom: 0;              
                 }
         .promociones {
             display: none;

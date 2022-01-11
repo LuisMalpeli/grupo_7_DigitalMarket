@@ -53,7 +53,6 @@ Daily 13/12
     correccion a los precios y descuentos en index y productDetail
 
 8/12 - 9/12
-<<<<<<< HEAD
     vistas adaptativas
     hecho el middleware validator-product
     finaliza precios y descuentos en 'todos los productos' e 'index'
@@ -61,11 +60,36 @@ Daily 13/12
 10/12
     revisado barra de busqueda con @media menor a 450px
     terminado 'perfil'
-=======
-    todas las vistas adaptativas
-    hecho el middleware validator-product
-    
-10/12
-    arregle los precios y descuentos en 'todos los productos' e 'index'
-    falta revisar barra de busqueda con @media menor a 450px
->>>>>>> 7fe05bb0eaf3c386a4e689446a60df05f2061d4a
+
+falta
+    validator product edit
+    revisar error*
+    revisar icono de descuento en index y en todos los productos
+
+*REVISAR PRODUCT EDIT -> 
+
+ReferenceError: C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\src\views\products\productEdit.ejs:14
+    12|             </h3>
+
+    13|             <div class="info-register">
+
+ >> 14|                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+    15|                     <span>Nombre del producto:</span> 
+
+    16|                     <br>
+
+    17|                     <input type="text" name= "titulo" class="nombre-producto" value="<%= productos.titulo %>">
+
+
+productos is not defined
+    at eval (eval at compile (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\ejs\lib\ejs.js:633:12), <anonymous>:15:26)
+    at returnedFn (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\ejs\lib\ejs.js:668:17)
+    at tryHandleCache (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\ejs\lib\ejs.js:254:36)
+    at View.exports.renderFile [as engine] (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\ejs\lib\ejs.js:485:10)
+    at View.render (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\application.js:640:10)
+    at Function.render (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\application.js:592:3)
+    at ServerResponse.render (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\response.js:1008:7)
+    at editSend (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\src\controllers\productController.js:62:24)
+    at Layer.handle [as handle_request] (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\router\layer.js:95:5)

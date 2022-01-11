@@ -32,7 +32,7 @@
   "moneda": "ARS",
   "precio": 20000,
   "enPromocion": false,
-  "descuento": 0.1,
+  "descuento": 0,
   "img": "corei7.png"
  },
  {
@@ -50,7 +50,7 @@
   "moneda": "ARS",
   "precio": 6000,
   "enPromocion": false,
-  "descuento": 0.1,
+  "descuento": 0,
   "img": "gabinete.png"
  },
  {
@@ -95,7 +95,7 @@
   "marca": "HyperX",
   "modelo": "Fury",
   "tipo": "RAM",
-  "enPromocion": true,
+  "enPromocion": false,
   "descuento": 0,
   "moneda": "ARS",
   "precio": 5500,
