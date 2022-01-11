@@ -53,6 +53,7 @@ Daily 13/12
     correccion a los precios y descuentos en index y productDetail
 
 8/12 - 9/12
+<<<<<<< HEAD
     vistas adaptativas
     hecho el middleware validator-product
     finaliza precios y descuentos en 'todos los productos' e 'index'
@@ -60,3 +61,11 @@ Daily 13/12
 10/12
     revisado barra de busqueda con @media menor a 450px
     terminado 'perfil'
+=======
+    todas las vistas adaptativas
+    hecho el middleware validator-product
+    
+10/12
+    arregle los precios y descuentos en 'todos los productos' e 'index'
+    falta revisar barra de busqueda con @media menor a 450px
+>>>>>>> 7fe05bb0eaf3c386a4e689446a60df05f2061d4a
