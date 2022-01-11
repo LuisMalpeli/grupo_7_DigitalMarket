@@ -54,7 +54,7 @@ const productController = {
 		//encuentro el producto particular que me coincide con el id que quiero mostrar
 		let productoAMostrar = productos.find(element => element.id == idProducto)
 		//Paso el producto que encontré al ejs
-		res.render('products/productEdit',{productos: productoAMostrar});
+		res.render('products/productEdit',{producto: productoAMostrar});
 	},
     editSend:function(req,res) {
         const errores = validationResult(req)
