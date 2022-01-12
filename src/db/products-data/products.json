@@ -7,10 +7,17 @@
   "modelo": "Prime Z590-A",
   "tipo": "Motherboard",
   "enPromocion": true,
+<<<<<<< HEAD
   "descuento": 35,
   "moneda": "ARS",
   "precio": 20000,
   "img": "img-1642022201749-29786042.jpg"
+=======
+  "descuento": 10,
+  "moneda": "ARS",
+  "precio": 20000,
+  "img": "img-1642026406616-706179192.jpg"
+>>>>>>> 507cde0ca918505914ae47c76940657284d9921c
  },
  {
   "id": 2,
@@ -51,19 +58,15 @@
  {
   "id": 4,
   "titulo": "VS Series VS450",
-  "tipo": "Fuente de alimentacion",
+  "descripcion": "Las fuentes de alimentación CORSAIR CV son perfectas para alimentar su nuevo PC en casa o en la oficina, con la eficacia 80 PLUS Bronze garantizada para proporcionar una potencia plena continuamente al sistema.",
   "marca": "Corsair",
   "modelo": "VS450",
-  "taggs": [
-   "Fuente",
-   "Corsair"
-  ],
-  "descripcion": "Las fuentes de alimentación CORSAIR CV son perfectas para alimentar su nuevo PC en casa o en la oficina, con la eficacia 80 PLUS Bronze garantizada para proporcionar una potencia plena continuamente al sistema.",
+  "tipo": "Motherboard",
+  "enPromocion": true,
+  "descuento": 20,
   "moneda": "ARS",
   "precio": 8000,
-  "enPromocion": true,
-  "descuento": 0.2,
-  "img": "fuente.jpg"
+  "img": "img-1642026388479-269520340.jpg"
  },
  {
   "id": 5,

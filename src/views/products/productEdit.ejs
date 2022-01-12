@@ -14,26 +14,30 @@
             <div class="info-register">
                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <span>Nombre del producto:</span> 
+                    <br>
                     <% if(locals.errors && errors.titulo) { %>
                         <p class= "errores"> <%= errors.titulo.msg %> </p>
                     <% } %> 
                     <input type="text" name= "titulo" class="nombre-producto" value="<%= productos.titulo %>">
                     <br>
                     <span>Descripcion del producto:</span>
+                    <br>
                     <% if(locals.errors && errors.descripcion) { %>
                         <p class= "errores"> <%= errors.descripcion.msg %> </p>
-                    <% } %>        
+                    <% } %> 
                     <input type="text" name= "descripcion" class="descripcion-producto" value="<%= productos.descripcion %>"> 
                     <br>
                     <span>Marca: </span>
-                    <% if(locals.errors && errors.titulo) { %>
-                        <p class= "errores"> <%= errors.titulo.msg %> </p>
+                    <br>
+                    <% if(locals.errors && errors.marca) { %>
+                        <p class= "errores"> <%= errors.marca.msg %> </p>
                     <% } %> 
                     <input type="text" name="marca" class="marca-producto" value="<%= productos.marca %>">
                     <br>
                     <span>Modelo: </span>
-                    <% if(locals.errors && errors.titulo) { %>
-                        <p class= "errores"> <%= errors.titulo.msg %> </p>
+                    <br>
+                    <% if(locals.errors && errors.modelo) { %>
+                        <p class= "errores"> <%= errors.modelo.msg %> </p>
                     <% } %> 
                     <input type="text" name="modelo" class="modelo-producto" value="<%= productos.modelo %>">                                                  
                     <br>
@@ -43,8 +47,9 @@
                     </div>
                     </div class="categoria">
                         <span>Seleccione la categoria del producto:</span>
-                        <% if(locals.errors && errors.titulo) { %>
-                            <p class= "errores"> <%= errors.titulo.msg %> </p>
+                        <br>
+                        <% if(locals.errors && errors.tipo) { %>
+                            <p class= "errores"> <%= errors.tipo.msg %> </p>
                         <% } %> 
                         <div class="div-radio">
                         <input type="radio" id="Motherboard" name="tipo" value="Motherboard" <% if (productos.tipo == 'Motherboard') { %> 
@@ -71,6 +76,9 @@
                     <br>
                     <div class="descuento-promo">
                         <span>Aplicar promocion: </span>
+                        <% if(locals.errors && errors.enPromocion) { %>
+                            <p class= "errores"> <%= errors.enPromocion.msg %> </p>
+                        <% } %> 
                         <select name="enPromocion" id="enPromocion">
                             <option value="1"<% if(productos.enPromocion==true){%>
                                 selected
@@ -81,11 +89,17 @@
                         </select>
                         <br>
                         <span>Porcentaje (%) de descuento</span>
+                        <% if(locals.errors && errors.descuento) { %>
+                            <p class= "errores"> <%= errors.descuento.msg %> </p>
+                        <% } %> 
                         <input type="text" name="descuento" class="descuento" value="<%=productos.descuento%>">
                     </div>
                     <div class="precio">
                         <span>Precio del producto:</span>
                         <br>
+                        <% if(locals.errors && errors.precio) { %>
+                            <p class= "errores"> <%= errors.precio.msg %> </p>
+                        <% } %> 
                         <div class="moneda-precio">
                             <select name="moneda" id="moneda">
                                 <option value="USD"<% if(productos.moneda=="USD"){%>

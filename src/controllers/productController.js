@@ -43,8 +43,6 @@ const productController = {
             };
             Products.create(productToCreate);
             res.redirect('/')
-            //res.send('envio de formulario de creación de producto');//Placeholder
-            //Insertar lógica de creación y validación del formulario acá
         }
     },
 
@@ -61,7 +59,7 @@ const productController = {
         let id = Number.parseInt(req.params.id)
         if (errores.errors.length > 0) {
             return res.render('products/productEdit', {errors: errores.mapped(), productos:{
-                id: id,
+                id: Number.parseInt(req.params.id),
                 ...req.body}})
         } else {
             let newProduct = {
@@ -73,7 +71,6 @@ const productController = {
                 img: req.file != undefined ? req.file.filename : "fff.png"
 		    }
             Products.edit(newProduct)
-            //res.send(newProduct)
             res.redirect('/')
         }
     },

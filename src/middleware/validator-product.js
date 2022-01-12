@@ -15,9 +15,6 @@ module.exports = [
     check('modelo')
         .notEmpty().withMessage('* Debe completar el campo modelo').bail()
     ,
-    check('img')
-        .notEmpty().withMessage('* Debe completar el campo imagen').bail()
-    ,
     check('tipo')
         .notEmpty().withMessage('* Debe completar el campo tipo (categoria)').bail()
     ,

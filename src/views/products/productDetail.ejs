@@ -16,17 +16,9 @@
                         <div class="precio">
                             <div>
                                 <span class="aplica-descuento">$ <%=  productos.precio%></span>
-                                <% if (productos.descuento < 1) { %>
-                                    <span class="descuento"><%= (productos.descuento * 100)%>% OFF</span>
-                                <% } else { %>
-                                    <span class="descuento"><%= productos.descuento%>% OFF</span>
-                                <% } %>
+                                <span class="descuento"><%= productos.descuento%>% OFF</span>
                             </div>
-                            <% if (productos.descuento < 1) { %>
-                                <span>$ <%= productos.precio - (productos.precio * productos.descuento)%></span>
-                            <% } else { %>
-                                <span>$ <%= productos.precio - (productos.precio / productos.descuento)%></span>
-                            <% } %>
+                            <span>$ <%= productos.precio - (productos.precio / productos.descuento)%></span>
                         </div>
                     <% } else { %>    
                         <div class="precio">
