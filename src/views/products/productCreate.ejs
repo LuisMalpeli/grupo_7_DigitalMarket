@@ -42,10 +42,7 @@
                         <br> 
                         <div class="caja">
                             <span>Imagen:</span>
-                            <% if(locals.errors && errors.img) { %>
-                                <p class= "errores"> <%= errors.img.msg %> </p>
-                            <% } %>
-                            <input class="img" type="file" name= "img" value="<%= locals.oldData ? oldData.img: null %>">    
+                            <input class="img" type="file" name= "img">    
                         </div>
                         <div class="caja">
                             <span>Seleccione la categoria del producto:</span>

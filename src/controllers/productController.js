@@ -43,8 +43,6 @@ const productController = {
             };
             Products.create(productToCreate);
             res.redirect('/')
-            //res.send('envio de formulario de creación de producto');//Placeholder
-            //Insertar lógica de creación y validación del formulario acá
         }
     },
 
@@ -73,7 +71,6 @@ const productController = {
                 img: req.file != undefined ? req.file.filename : "fff.png"
 		    }
             Products.edit(newProduct)
-            //res.send(newProduct)
             res.redirect('/')
         }
     },

@@ -15,9 +15,6 @@ module.exports = [
     check('modelo')
         .notEmpty().withMessage('* Debe completar el campo modelo').bail()
     ,
-    check('img')
-        .notEmpty().withMessage('* Debe completar el campo imagen').bail()
-    ,
     check('tipo')
         .notEmpty().withMessage('* Debe completar el campo tipo (categoria)').bail()
     ,
@@ -26,6 +23,7 @@ module.exports = [
     ,
     check('precio')
         .notEmpty().withMessage('* Debe completar el campo precio').bail()
-        .isInt({min:0,max:100}).withMessage('* El descuento debe estar entre 0 y 100')
     ,
+    check('descuento')
+        .isInt({min:0,max:100}).withMessage('* El descuento debe estar entre 0 y 100')
 ]
