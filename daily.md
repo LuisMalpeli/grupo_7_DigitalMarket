@@ -62,24 +62,34 @@ Daily 13/12
     terminado 'perfil'
 
 falta
-    validator product edit
-    revisar error* -> sacar validator del editSend 
     revisar icono de descuento en index y en todos los productos
+    revisar error* -> sacar validator del editSend
+    validator product edit 
 
-*REVISAR PRODUCT EDIT -> sacar validator del editSend 
+    *REVISAR PRODUCT EDIT -> sacar validator del editSend 
 
-ReferenceError: C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\src\views\products\productEdit.ejs:14
-    12|             </h3>
+        ReferenceError: C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\src\views\products\productEdit.ejs:14
+            12|             </h3>
 
-    13|             <div class="info-register">
+            13|             <div class="info-register">
 
- >> 14|                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        >> 14|                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-    15|                     <span>Nombre del producto:</span> 
+            15|                     <span>Nombre del producto:</span> 
 
-    16|                     <br>
+            16|                     <br>
 
-    17|                     <input type="text" name= "titulo" class="nombre-producto" value="<%= productos.titulo %>">
+            17|                     <input type="text" name= "titulo" class="nombre-producto" value="<%= productos.titulo %>">
 
+    productos is not defined
 
-productos is not defined
+    -> no le llega el objeto producto cuando el validator encuentra un error en el if del controller
+
+falta 
+    validator de product edit *
+    revisar header y poner a user en vez de menu en el index @media (width < px)
+    nav bar
+
+cosas para hablar
+    busqueda por categorias
+    

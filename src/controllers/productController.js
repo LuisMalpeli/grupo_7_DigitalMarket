@@ -59,7 +59,7 @@ const productController = {
     editSend:function(req,res) {
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
-            return res.render('products/productEdit', {errors: errores.mapped()})
+            return res.render('products/productEdit', {errors: errores.mapped()}, {producto : req.body})
         } else {
             let id = Number.parseInt(req.params.id)
             let newProduct = {

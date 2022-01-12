@@ -28,7 +28,7 @@ router.delete('/:id', productController.delete);
 //  1-Vista del formulario
 router.get('/edit/:id', productController.edit);
 //  2-Envío del formulario
-router.put('/:id', upload.single('img'), productController.editSend);
+router.put('/:id', upload.single('img'), validator, productController.editSend);//REVISAR VALIDATOR
 
 
 module.exports = router

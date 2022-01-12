@@ -9,13 +9,16 @@
         <div class="producto-detail">
             <h3 class="titulo-register">
                 <label for="h3">Editar Producto: </label>  
-                <span name="h3"> <%= producto.titulo%></span>
+                <span name="h3"> <%= productos.titulo%></span>
             </h3>
             <div class="info-register">
                 <form action="/products/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <span>Nombre del producto:</span> 
                     <br>
                     <input type="text" name= "titulo" class="nombre-producto" value="<%= producto.titulo %>">
+                    <% if(locals.errors && errors.titulo) { %>
+                        <p class= "errores"> <%= errors.titulo.msg %> </p>
+                    <% } %> 
                     <br>
                     <span>Descripcion del producto:</span>
                     <br>
