@@ -15,7 +15,7 @@ router.post('/register', upload.single('avatar'), validatorReg, userController.r
 router.get('/login', guestMiddleware, userController.login);
 router.post('/login', validatorLogin, userController.loginSend);
 
-router.get('/success', userController.userRegistered);
+router.get('/success', guestMiddleware, userController.userRegistered);
 
 router.get('/profile', loggedMiddleware, userController.profile);
 

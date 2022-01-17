@@ -52,5 +52,14 @@
   "email": "nicolasgonzap@gmail.com",
   "pass": "$2a$10$w3HO0aDh3YUXARdiRfscyuz3.wH0abOFHp/bnKiG08apwctnpxvVa",
   "avatar": "avatar-1640641811898-149917189.jpg"
+ },
+ {
+  "id": 6,
+  "user": "prueba",
+  "fullName": "prueba nombre",
+  "gender": "M",
+  "email": "prueba@gmail.com",
+  "pass": "$2a$10$Y/IeQebKLt3yYtnGIyKsiu6s29KdH8RPStwo.GDEtcTcZk78ymGxq",
+  "avatar": "avatar-1642458951882-981333798.jpg"
  }
 ]
