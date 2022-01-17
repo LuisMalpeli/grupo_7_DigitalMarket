@@ -8,8 +8,8 @@
     <div class="producto-crear"> 
         <div class="producto-detail">
             <h3 class="titulo-register">
-                Editar Producto: 
-                <span> <%= productos.titulo%></span>
+                <label for="h3">Editar Producto: </label>  
+                <span name="h3"> <%= productos.titulo%></span>
             </h3>
             <div class="info-register">
                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -43,9 +43,6 @@
                     <br>
                     <div class="foto-producto">
                         <label for="file-upload" class="custom-file"><i class="fa fa-cloud-upload"></i> Ingrese la foto del producto</label>
-                        <% if(locals.errors && errors.img) { %>
-                            <p class= "errores"> <%= errors.img.msg %> </p>
-                        <% } %> 
                         <input type="file" name="img">
                     </div>
                     </div class="categoria">

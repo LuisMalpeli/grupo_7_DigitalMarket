@@ -62,34 +62,34 @@ Daily 13/12
     terminado 'perfil'
 
 falta
-    validator product edit
-    revisar error*
     revisar icono de descuento en index y en todos los productos
+    revisar error* -> sacar validator del editSend
+    validator product edit 
 
-*REVISAR PRODUCT EDIT -> 
+    *REVISAR PRODUCT EDIT -> sacar validator del editSend 
 
-ReferenceError: C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\src\views\products\productEdit.ejs:14
-    12|             </h3>
+        ReferenceError: C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\src\views\products\productEdit.ejs:14
+            12|             </h3>
 
-    13|             <div class="info-register">
+            13|             <div class="info-register">
 
- >> 14|                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        >> 14|                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-    15|                     <span>Nombre del producto:</span> 
+            15|                     <span>Nombre del producto:</span> 
 
-    16|                     <br>
+            16|                     <br>
 
-    17|                     <input type="text" name= "titulo" class="nombre-producto" value="<%= productos.titulo %>">
+            17|                     <input type="text" name= "titulo" class="nombre-producto" value="<%= productos.titulo %>">
 
+    productos is not defined
 
-productos is not defined
-    at eval (eval at compile (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\ejs\lib\ejs.js:633:12), <anonymous>:15:26)
-    at returnedFn (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\ejs\lib\ejs.js:668:17)
-    at tryHandleCache (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\ejs\lib\ejs.js:254:36)
-    at View.exports.renderFile [as engine] (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\ejs\lib\ejs.js:485:10)
-    at View.render (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\view.js:135:8)
-    at tryRender (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\application.js:640:10)
-    at Function.render (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\application.js:592:3)
-    at ServerResponse.render (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\response.js:1008:7)
-    at editSend (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\src\controllers\productController.js:62:24)
-    at Layer.handle [as handle_request] (C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\node_modules\express\lib\router\layer.js:95:5)
+    -> no le llega el objeto producto cuando el validator encuentra un error en el if del controller
+
+falta 
+    revisar error create no crea
+    revisar header y poner a user en vez de menu en el index @media (width < px)
+    nav bar
+
+cosas para hablar
+    busqueda por categorias
+    

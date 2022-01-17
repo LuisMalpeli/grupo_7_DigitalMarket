@@ -30,7 +30,6 @@ const productController = {
     },
     createSend:function(req,res) {
         //Crea un producto y lo agrega a la base de datos JSON
-        const errores = validationResult(req)
         if (errores.errors.length > 0) {
             return res.render('products/productCreate', {errors: errores.mapped()})
         } else {
@@ -41,6 +40,7 @@ const productController = {
                 descuento: 0,
                 img: req.file == undefined ? "fff.jpg" : req.file.filename,
             };
+            console.log(productToCreate);
             Products.create(productToCreate);
             res.redirect('/')
         }
@@ -63,7 +63,7 @@ const productController = {
                 ...req.body}})
         } else {
             let newProduct = {
-                id:id,
+                id: req.params.id,
                 ...req.body,
                 enPromocion:req.body.enPromocion == 0 ? false : true,
                 descuento:Number.parseInt(req.body.descuento),

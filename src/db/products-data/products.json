@@ -7,10 +7,10 @@
   "modelo": "Prime Z590-A",
   "tipo": "Motherboard",
   "enPromocion": true,
-  "descuento": 10,
+  "descuento": 35,
   "moneda": "ARS",
   "precio": 20000,
-  "img": "img-1642026406616-706179192.jpg"
+  "img": "img-1642022201749-29786042.jpg"
  },
  {
   "id": 2,
@@ -208,5 +208,44 @@
   "enPromocion": false,
   "descuento": 90,
   "img": "fff.jpg"
+ },
+ {
+  "id": "16",
+  "titulo": "test",
+  "descripcion": "test",
+  "marca": "test",
+  "modelo": "test",
+  "tipo": "Motherboard",
+  "enPromocion": true,
+  "descuento": 15,
+  "moneda": "ARS",
+  "precio": 1,
+  "img": "fff.png"
+ },
+ {
+  "id": "17",
+  "titulo": "test",
+  "descripcion": "test",
+  "marca": "test",
+  "modelo": "test",
+  "tipo": "Motherboard",
+  "enPromocion": true,
+  "descuento": 25,
+  "moneda": "ARS",
+  "precio": 1,
+  "img": "fff.png"
+ },
+ {
+  "id": "18",
+  "titulo": "test",
+  "descripcion": "test",
+  "marca": "test",
+  "modelo": "test",
+  "tipo": "Motherboard",
+  "enPromocion": false,
+  "descuento": 0,
+  "moneda": "ARS",
+  "precio": 1,
+  "img": "fff.png"
  }
 ]
