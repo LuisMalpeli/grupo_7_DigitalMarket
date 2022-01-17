@@ -84,12 +84,11 @@ falta
     productos is not defined
 
     -> no le llega el objeto producto cuando el validator encuentra un error en el if del controller
-
-falta 
-    revisar error create no crea
-    revisar header y poner a user en vez de menu en el index @media (width < px)
-    nav bar
-
-cosas para hablar
-    busqueda por categorias
     
+17/1
+    terminamos sprint 5
+    
+falta 17/1
+    notificacion de descuento -> rectangulo con el descuento adentro
+    css de vender y editar producto
+    revisar header y poner a user en vez de menu en el index @media (width < px) -> menu hamburguesa del header (celu - tablet)
