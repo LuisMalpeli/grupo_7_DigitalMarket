@@ -87,8 +87,8 @@ falta
     
 17/1
     terminamos sprint 5
-    
+
 falta 17/1
     notificacion de descuento -> rectangulo con el descuento adentro
-    css de vender y editar producto
+    css de vender y editar producto (hablar con javi)
     revisar header y poner a user en vez de menu en el index @media (width < px) -> menu hamburguesa del header (celu - tablet)
