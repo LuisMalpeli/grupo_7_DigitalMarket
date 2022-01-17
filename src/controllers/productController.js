@@ -41,6 +41,7 @@ const productController = {
                 descuento: 0,
                 img: req.file == undefined ? "fff.jpg" : req.file.filename,
             };
+            console.log(productToCreate);
             Products.create(productToCreate);
             res.redirect('/')
         }
@@ -52,7 +53,7 @@ const productController = {
 		//encuentro el producto particular que me coincide con el id que quiero mostrar
 		let productoAMostrar = productos.find(element => element.id == idProducto)
 		//Paso el producto que encontré al ejs
-		res.render('products/productEdit',{producto: productoAMostrar});
+		res.render('products/productEdit',{productos: productoAMostrar});
 	},
     editSend:function(req,res) {
         const errores = validationResult(req)
@@ -63,7 +64,7 @@ const productController = {
                 ...req.body}})
         } else {
             let newProduct = {
-                id:id,
+                id: req.params.id,
                 ...req.body,
                 enPromocion:req.body.enPromocion == 0 ? false : true,
                 descuento:Number.parseInt(req.body.descuento),

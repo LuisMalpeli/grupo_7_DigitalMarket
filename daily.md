@@ -86,7 +86,7 @@ falta
     -> no le llega el objeto producto cuando el validator encuentra un error en el if del controller
 
 falta 
-    validator de product edit *
+    revisar error create no crea
     revisar header y poner a user en vez de menu en el index @media (width < px)
     nav bar
 
