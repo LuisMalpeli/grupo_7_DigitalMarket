@@ -30,7 +30,6 @@ const productController = {
     },
     createSend:function(req,res) {
         //Crea un producto y lo agrega a la base de datos JSON
-        const errores = validationResult(req)
         if (errores.errors.length > 0) {
             return res.render('products/productCreate', {errors: errores.mapped()})
         } else {
