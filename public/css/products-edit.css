@@ -31,9 +31,16 @@
             margin:0 1rem;
         }
             .input-producto {
-                border: none;
-                border-bottom: 1px solid var(--color-azulGris);
-                width: 80%;
+                width:90%;
+                display: flex;
+                justify-content:center;
+                flex-direction:column;
+                line-height: 1; 
+                align-items: center;
+                
+                border: 1px solid lightslategray;
+                border-radius: 5px;   
+                text-indent: 0.3rem;
                 margin-top: 0.2rem;
                 margin-bottom: 0.5rem;
             }
