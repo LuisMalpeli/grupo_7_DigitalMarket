@@ -5,31 +5,41 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             type:dataTypes.INTEGER
         },
-        userName: {
+        titulo: {
             type: dataTypes.STRING
         },
-        fullName: {
+        descripcion: {
             type: dataTypes.STRING
         },
-        gender: {
+        marca: {
             type: dataTypes.STRING
         },
-        email: {
+        modelo: {
             type: dataTypes.STRING
             
         },
-        pass:{
+        tipo:{
             type: dataTypes.STRING
         },
-        avatar: {
+        moneda: {
+            type: dataTypes.STRING
+        },
+        precio: {
+            type: dataTypes.INTEGER
+        },
+        enPromocion: {
+            type: dataTypes.INTEGER
+        },
+        descuento: {
+            type: dataTypes.INTEGER
+        },
+        img: {
             type: dataTypes.STRING
         }
-
-
     };
     const config = {
 
     };
-    const Usuario = sequelize.define('Usuarios',data, config);
-    return Usuario
+    const Producto = sequelize.define('Productos',data, config);
+    return Producto
 }

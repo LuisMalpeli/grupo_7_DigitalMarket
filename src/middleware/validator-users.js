@@ -2,7 +2,7 @@ const {check} = require('express-validator')
 
 module.exports = [
     //Validar Users
-    check('user')
+    check('userName')
         .notEmpty().withMessage('Debe completar el campo usuario').bail()
         .isLength({min:5, max:20}).withMessage('El usuario debe tener un minimo de 5 caracteres y maximo de 20'),
     check('fullName')
