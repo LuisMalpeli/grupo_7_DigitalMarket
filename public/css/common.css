@@ -7,11 +7,10 @@
 
 :root {
     --color-azulOscuro: #070717;
-    /*--color-azulOscuro: rgb(8, 23, 41);*/
     --color-azul: #2d4e6a;
     --color-azulGris: #94a2af;
     --color-gris: #e7e8e9;
-    --color-grisOscuro: #c0c0c0;
+    --color-grisOscuro: #1f1f1f;
     --color-blanco: #fff;
 }
 
@@ -97,10 +96,7 @@ header {
                     display: flex;  
                     align-items: center;
                     cursor: pointer;
-                }  
-    .links-adaptativo {
-        display: none;
-    }
+                } 
     .links-carrito {
         display: flex;
         justify-content: space-evenly;
@@ -119,6 +115,9 @@ header {
             background-color: var(--color-azul);
             border-radius: 10px;
         }
+        .links {
+            display: flex;
+        }
         .link-user {
             margin-right: 1rem;
         }
@@ -135,30 +134,27 @@ header {
             flex-direction: column;
             padding: 0;
             color: var(--color-grisOscuro);
+            font-weight: 600;
         }
             .botones-login-register span {
                 width: 100%;
                 color: var(--color-grisOscuro);
             }  
-            .links {
+            .links span {
                 display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 5px;
+            }
+            .login-options {
+                width: 50%;
+                text-decoration: none;
+                color: var(--color-gris);
+                padding: 0.5rem 0.8rem;
+                border-radius: 0.5rem;
+                transition: all 100ms;
                 font-weight: 600;
             }
-                .links span {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin: 0 5px;
-                }
-                .login-options {
-                    width: 50%;
-                    text-decoration: none;
-                    color: var(--color-gris);
-                    padding: 0.5rem 0.8rem;
-                    border-radius: 0.5rem;
-                    transition: all 100ms;
-                    font-weight: 600;
-                }
                 #login {
                     padding: 0;
                 }
@@ -184,6 +180,37 @@ header {
                 background-color: var(--color-azul);
                 border-radius: 15px;   
             }
+
+
+            .links-adaptativo {
+                display: none;
+            }
+                .user-adap {
+                    display: flex;
+                    justify-content: center;
+                }
+                .menu-js {
+                    display: none;
+                    color: black;
+                    min-width: 160px;
+                    padding: 10px;
+                    position: absolute;
+                    z-index: 1;
+                    right: -22px;
+                    top: 64px;
+                    border-bottom: 3px solid var(--color-azulGris);
+                    border-left: 3px solid var(--color-azulGris);
+                }
+                    .menu-js ul {
+                        text-decoration: none;
+                        list-style: none;
+                        padding: 0;
+                    }
+                .mostrar-menu {
+                    display: inline-block;
+                    background-color: var(--color-gris);
+                }
+
 @media (max-width: 850px) {
     .busqueda {
         display: flex;
@@ -194,17 +221,15 @@ header {
         display: none
     }    
     .links-adaptativo {
+        position: relative;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        margin-right: 5%;
+        margin-right: 3%;
         color: var(--color-blanco);
         font-size: larger;
+        top: 50%;
     }
-        .links-adaptativo span {
-            margin-right: 5px;
-            display: flex;
-            align-items: center;
-        }
 }
 @media (max-width: 560px) {
     .logo-busqueda {
@@ -286,6 +311,8 @@ header {
             color: #146dbb;
             transform: rotateX(180deg);
         }
+
+        
 
 @media (max-width: 850px) {
     .menu-nav {

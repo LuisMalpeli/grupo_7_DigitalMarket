@@ -99,10 +99,16 @@
             }
             /*Olvido contrasenia - SOLO LOGIN*/
             .opcioncontra {
-                display: flex;
+                width: 90%;
+                display: grid;
                 justify-content: center;
                 padding: 10%;  
             }
+                .crear-cuenta {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+                }
             .caja-checkbox {
                 padding: 10px;
                 display: flex; 
