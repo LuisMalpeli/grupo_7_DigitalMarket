@@ -90,5 +90,11 @@ falta
 
 falta 17/1
     notificacion de descuento -> rectangulo con el descuento adentro
-    css de vender y editar producto (hablar con javi)
     revisar header y poner a user en vez de menu en el index @media (width < px) -> menu hamburguesa del header (celu - tablet)
+
+19/1
+    diagrama de base de dato
+    
+24/1
+    script structure.sql
+    modelos de database

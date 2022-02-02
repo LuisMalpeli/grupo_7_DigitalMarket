@@ -46,7 +46,6 @@
                 border: 1px solid lightslategray;
                 border-radius: 5px;   
                 text-indent: 0.3rem;
-
             }
             .con-error {
                 /*Agrega formato de error a los input*/
@@ -98,12 +97,18 @@
                 font-weight: bold;
                 
             }
-            /*Olvido crontasenia - SOLO LOGIN*/
+            /*Olvido contrasenia - SOLO LOGIN*/
             .opcioncontra {
-                display: flex;
+                width: 90%;
+                display: grid;
                 justify-content: center;
                 padding: 10%;  
             }
+                .crear-cuenta {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+                }
             .caja-checkbox {
                 padding: 10px;
                 display: flex; 

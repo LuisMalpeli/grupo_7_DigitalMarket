@@ -18,36 +18,35 @@
                     <% if(locals.errors && errors.titulo) { %>
                         <p class= "errores"> <%= errors.titulo.msg %> </p>
                     <% } %> 
-                    <input type="text" name= "titulo" class="nombre-producto" value="<%= productos.titulo %>">
+                    <input type="text" name= "titulo" class="input-producto" value="<%= productos.titulo %>">
                     <br>
                     <span>Descripcion del producto:</span>
                     <br>
                     <% if(locals.errors && errors.descripcion) { %>
                         <p class= "errores"> <%= errors.descripcion.msg %> </p>
                     <% } %> 
-                    <input type="text" name= "descripcion" class="descripcion-producto" value="<%= productos.descripcion %>"> 
+                    <textarea class="input-producto" rows= "10" cols="50" name= "descripcion"><%= productos.descripcion %></textarea>
                     <br>
                     <span>Marca: </span>
                     <br>
                     <% if(locals.errors && errors.marca) { %>
                         <p class= "errores"> <%= errors.marca.msg %> </p>
                     <% } %> 
-                    <input type="text" name="marca" class="marca-producto" value="<%= productos.marca %>">
+                    <input type="text" name="marca" class="input-producto" value="<%= productos.marca %>">
                     <br>
                     <span>Modelo: </span>
                     <br>
                     <% if(locals.errors && errors.modelo) { %>
                         <p class= "errores"> <%= errors.modelo.msg %> </p>
                     <% } %> 
-                    <input type="text" name="modelo" class="modelo-producto" value="<%= productos.modelo %>">                                                  
+                    <input type="text" name="modelo" class="input-producto" value="<%= productos.modelo %>">                                                  
                     <br>
-                    <div class="foto-producto">
-                        <label for="file-upload" class="custom-file"><i class="fa fa-cloud-upload"></i> Ingrese la foto del producto</label>
-                        <input type="file" name="img">
+                    <div class="caja">
+                        <span>Imagen:</span>
+                        <input class="img" type="file" name= "img">    
                     </div>
-                    </div class="categoria">
+                    <div class="categoria">
                         <span>Seleccione la categoria del producto:</span>
-                        <br>
                         <% if(locals.errors && errors.tipo) { %>
                             <p class= "errores"> <%= errors.tipo.msg %> </p>
                         <% } %> 
