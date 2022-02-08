@@ -5,32 +5,32 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             type:dataTypes.INTEGER
         },
-        titulo: {
+        title: {
             type: dataTypes.STRING
         },
-        descripcion: {
+        description: {
             type: dataTypes.STRING
         },
-        marca: {
-            type: dataTypes.STRING
-        },
-        modelo: {
+        // marca: {
+        //     type: dataTypes.STRING
+        // },
+        model: {
             type: dataTypes.STRING
             
         },
-        tipo:{
+        product_type:{
             type: dataTypes.STRING
         },
-        moneda: {
+        has_discount: {
+            type: dataTypes.INTEGER
+        },
+        discount: {
+            type: dataTypes.INTEGER
+        },
+        currency: {
             type: dataTypes.STRING
         },
-        precio: {
-            type: dataTypes.INTEGER
-        },
-        enPromocion: {
-            type: dataTypes.INTEGER
-        },
-        descuento: {
+        price: {
             type: dataTypes.INTEGER
         },
         img: {
@@ -38,7 +38,10 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     const config = {
-
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false
     };
     const Producto = sequelize.define('Productos',data, config);
     return Producto
