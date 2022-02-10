@@ -1,0 +1,85 @@
+main {
+    justify-content: flex-start;
+}
+.opciones {
+    background-color: var(--color-azulGris);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-top: 50px;
+}
+    .imagen {
+        margin-bottom: 5px;
+    }
+        .imagen img{
+            width: 100%;
+        }
+    .mi-cuenta {
+        width: 100%;
+        border-bottom: 1px solid var(--color-grisOscuro);
+        display: flex;
+        justify-content: center ;
+    }
+        .mi-cuenta span {
+            font-size: larger;
+            color: var(--color-azulOscuro); 
+        }
+    .opciones-cuenta li{
+        list-style: circle;
+    }
+    .opciones-cuenta a {
+        text-decoration: none;
+    }
+.datos {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-left: 100px;
+}
+    .caja{
+        width: 100%;
+    }
+        .datos-cuenta {
+            margin-left: 15px;
+            margin-bottom: 25px;
+        }
+            .subtitulos {
+                color: rgb(98, 98, 98);
+                font-size:  larger;     
+            }
+            .muestro-datos {     
+                width: 90%;
+                margin-top: 5px;
+                background-color: var(--color-blanco);   
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+            }
+            .campos {  
+                height: 35px;
+                display: flex;
+                align-items: center;
+
+            }
+            #campo1 {
+                border-bottom: 1px solid var(--color-grisOscuro);
+            }
+                .campos span {
+                    margin-left: 8px;
+                    margin-right: 10px;
+                }
+.caja-boton {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+    .boton {
+        width: fit-content;
+        padding: 5px 3pxs;
+        background-color: rgb(60, 60, 255);
+        color: white;
+        border: none;
+        border-radius: 2px;
+    }

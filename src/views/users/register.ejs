@@ -1,4 +1,4 @@
-<%- include('../partials/head', {title: 'Register'}) %>
+ <%- include('../partials/head', {title: 'Register'}) %>
     <link rel="stylesheet" href="/css/login-register.css">
     <title>Registrarse</title>
 </head>
@@ -13,30 +13,67 @@
                     </h3>
                     <div class="info-usuario">
                         <form action="/user/register" method="POST" enctype="multipart/form-data">
-                            <input class="datos" type="text" name= "user" placeholder="Ingrese su usuario"> 
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.user ? errors.user.msg : null %> </p>
-                            <input class="datos" type="text" name= "fullName" placeholder="Ingrese su nombre y apellido"> <br>
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.fullName ? errors.fullName.msg : null %> </p>
-                            <span>Seleccione su genero:</span><br>
+
+                            <label for="user">Ingrese su usuario: </label>
+                            <input class="datos <%= locals.errors && errors.user ? "con-error": null %>" type="text" name= "user" placeholder="Usuario" value="<%= locals.oldData ? oldData.user: null %>">    
+                            <% if(locals.errors && errors.user) { %>
+                                <p class="errores"> <%= errors.user.msg %> </p>
+                            <% } %>                    
+                            
+                            <label for="">Ingrese su nombre y apellido: </label>
+                            <input class="datos <%= locals.errors && errors.fullName ? "con-error": null %>" type="text" name= "fullName" placeholder="Nombre y apellido" value="<%= locals.oldData ? oldData.fullName: null %>">
+                            <% if(locals.errors && errors.fullName) { %>
+                                <p class="errores"> <%= errors.fullName.msg %> </p>
+                            <% } %>     
+                            
+                            
+                            <label>Seleccione su genero: </label> <br>
+                            <% const opcionesGenero = ['M','F','X'] %> 
+                            <% const generoKeys = ["Hombre","Mujer","Otro"] %> 
                             <div class="opciones-genero">
-                                <label>Hombre<input type="radio" name= "gender" value="M"></label>
-                                <label>Mujer<input type="radio" name= "gender" value="F"></label>
-                                <label>Otro<input type="radio" name= "gender" value="X"></label>
+                                <% for(let i = 0; i < generoKeys.length; i++) {%>
+                                    <label><%=generoKeys[i]%>
+                                        <input
+                                            type="radio"
+                                            name= "gender"
+                                            value="<%=opcionesGenero[i] %>"
+                                            <%= locals.oldData && (oldData.gender == opcionesGenero[i]) ? 'checked': null %>
+                                        >
+                                    </label>
+                                    
+                                <%} %> 
+                                
                             </div>
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.gender ? errors.gender.msg : null %> </p>
-                            <br>
-                            <input class="datos" type="email" name= "email" placeholder="E-mail">
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p> <br>
+                            <% if(locals.errors && errors.gender) { %>
+                                <p class="errores"> <%= errors.gender.msg %> </p>
+                            <% } %>     
+                        
+                            <label>Ingrese su email: </label>
+                            <input class="datos <%= locals.errors && errors.email ? "con-error": null %>" type="email" name= "email" placeholder="E-mail" value="<%= locals.oldData ? oldData.email: null %>">
+                            <% if(locals.errors && errors.email) { %>
+                                <p class="errores"> <%= errors.email.msg %> </p>
+                            <% } %>     
+
                             <!--
                                 --------Confirmar email a travez de validaciones-----------
-                                <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail"><br>
+                                <input class="datos" type="email" name= "email" placeholder="Confirmar E-mail">
                             -->
-                            <input class="datos" type="password" name="pass" placeholder="Contraseña"><br>
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.pass ? errors.pass.msg : null %> </p>
-                            <input class="datos" type="file" name="avatar"><br>
-                            <div class="button-user">
-                                <input class="boton" type="submit" value= "Registrar">
+
+                            <label>Ingrese su contraseña: </label>
+                            <input class="datos <%= locals.errors && errors.pass ? "con-error": null %>" type="password" name="pass" placeholder="Contraseña">
+                            <% if(locals.errors && errors.pass) { %>
+                                <p class="errores"> <%= errors.pass.msg %> </p>
+                            <% } %>     
+                            
+                            <label>Ingrese una foto de perfil: </label> 
+                            <div class="avatar-container">
+                                <div class="file-search"></div>
+                                <input class="avatar" type="file" name="avatar">
                             </div>
+                            <div class="button-user">
+                                <input class="boton" type="submit" value= "registrar">
+                            </div>
+
                         </form>
                     </div>
                    

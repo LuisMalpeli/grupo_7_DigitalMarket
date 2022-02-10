@@ -12,20 +12,78 @@
                 </form>
             </div>
         </div>
+        <div class="links-adaptativo">
+
+            <% if(locals.isLogged) { %>
+                <div class="link-user  user-adap"><img src="/img/users/<%= locals.usuarioLogueado.avatar %>"></div>
+            <% } else { %>     
+                <div class="link-user user-adap"><i class="fas fa-user"></i></div>
+            <% } %> 
+            
+            <div class="menu-js">
+                <span>Menu</span>
+                <%  if (locals.isLogged) { %>
+                    <ul>
+                        <li><a href="/user/profile">Perfil</a></li>
+                        <li><a href="/products/create">Vender</a></li>
+                        <li><a href="user/logout">Cerrar sesion</a></li>
+                    </ul>
+                <% } else { %>
+                    <ul>
+                        <li><a href="/user/register">Registrarse</a></li>
+                        <li><a href="user/login">Iniciar sesion</a></li>
+                    </ul>
+                <% } %>
+                <div class="dark-mode"><i class="far fa-square"></i>Modo oscuro</div>
+            </div>
+
+            <!-- <div class="login-register login-register-adap">
+                <% if(locals.isLogged) { %>
+                    <a href="/" class="link-user"><img src="/img/users/<%= locals.usuarioLogueado.avatar %>"></a>
+                    <div class="botones-login-register">
+                        <span>Menu</span>
+                        <div class="links">
+                            <a href="/user/profile" class="login-options" id="login">Perfil</a>
+                            <span> / </span>
+                            <a href="/user/logout" class="login-options" id="register">Logout</a>
+                        </div>
+                    </div>
+                <% } else { %> 
+                    <a href="/" class="link-user"><i class="fas fa-user"></i></a>
+                    <span>Menu</span>
+                    <div class="botones-login-register botones-adap">
+                        <a href="/user/register" class="login-options options-adap" id="register">Register</a>
+                        <a href="/user/login" class="login-options options-adap" id="login">Login</a>
+                    </div>
+                <%} %> 
+            </div> -->
+        </div>
         <div class="links-carrito">
             <div class="login-register">
-                <a href="/" class="link-user"><i class="fas fa-user"></i></a>
-                <div class="botones-login-register">
-                    <span>Bienvenido!</span>
-                    <div class="links">
-                        <a href="/user/login" class="login-options" id="login">Login</a>
-                        <span>/</span>
-                        <a href="/user/register" class="login-options" id="register">Register</a>
+                <% if(locals.isLogged) { %>
+                    <a href="/" class="link-user"><img src="/img/users/<%= locals.usuarioLogueado.avatar %>"></a>
+                    <div class="botones-login-register">
+                        <span><%= locals.usuarioLogueado.userName %></span>
+                        <div class="links">
+                            <a href="/user/profile" class="login-options" id="login">Perfil</a>
+                            <span> / </span>
+                            <a href="/user/logout" class="login-options" id="register">Logout</a>
+                        </div>
                     </div>
-                </div>
+                <% } else { %> 
+                    <a href="/" class="link-user"><i class="fas fa-user"></i></a>
+                    <div class="botones-login-register">
+                        <span>Bienvenido!</span>
+                        <div class="links">
+                            <a href="/user/login" class="login-options" id="login">Login</a>
+                            <span>/</span>
+                            <a href="/user/register" class="login-options" id="register">Register</a>
+                        </div>
+                    </div>
+                <%} %> 
             </div>
             <div class="link-cart">
-                <a href="/product/productCart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
             </div>
             
         </div>
@@ -52,7 +110,21 @@
             <div class="boton-nav">
                 <a href="/products/create" class="link-nav">Vender</a>
             </div>
-        </div>   
+        </div>  
+        <div class="menu-nav2">
+            <div class="dropdown">
+                <span class="drop">Categorias</span>
+                <i class="fas fa-angle-up"></i>
+                <div class="contenido-dropdown">
+                    <a href="">Motherboards</a>
+                    <a href="">Procesadores</a>
+                    <a href="">RAMs</a>
+                    <a href="">GPUs</a>
+                    <a href="">Memorias</a>
+                    <a href="">Fuentes de alimentacion </a>
+                </div>
+            </div>
+        </div> 
     </div>
     <!--------nav-------->
 </header>

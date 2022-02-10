@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const upload = require('../middleware/multer');
 const Products = require('../models/Products')
 const {validationResult}  = require('express-validator')
 
@@ -16,7 +15,6 @@ const productController = {
     },
     detail: function(req, res) {
         let productoAMostrar = Products.findByPk(req.params.id)
-        console.log(productoAMostrar);
         res.render(
             'products/productDetail',
             {productos: productoAMostrar}
@@ -24,7 +22,7 @@ const productController = {
 
     },
     cart: function(req, res) {
-        res.render('products/productCart')
+        res.render('products/cart');
     },
     create: function(req,res) {
         //Muestra el formulario de creación de producto
@@ -32,7 +30,6 @@ const productController = {
     },
     createSend:function(req,res) {
         //Crea un producto y lo agrega a la base de datos JSON
-        const errores = validationResult(req)
         if (errores.errors.length > 0) {
             return res.render('products/productCreate', {errors: errores.mapped()})
         } else {
@@ -41,12 +38,11 @@ const productController = {
                 precio: Number.parseInt(req.body.precio),
                 enPromocion: false,
                 descuento: 0,
-                img: req.file.filename
+                img: req.file == undefined ? "default-product.png" : req.file.filename,
             };
+            console.log(productToCreate);
             Products.create(productToCreate);
             res.redirect('/')
-            //res.send('envio de formulario de creación de producto');//Placeholder
-            //Insertar lógica de creación y validación del formulario acá
         }
     },
 
@@ -60,20 +56,21 @@ const productController = {
 	},
     editSend:function(req,res) {
         const errores = validationResult(req)
+        let id = Number.parseInt(req.params.id)
         if (errores.errors.length > 0) {
-            return res.render('products/productEdit', {errors: errores.mapped()})
+            return res.render('products/productEdit', {errors: errores.mapped(), productos:{
+                id: Number.parseInt(req.params.id),
+                ...req.body}})
         } else {
-            let id = Number.parseInt(req.params.id)
             let newProduct = {
-                id:id,
+                id: req.params.id,
                 ...req.body,
                 enPromocion:req.body.enPromocion == 0 ? false : true,
-                descuento:Number.parseInt(req.body.descuento)/100,
+                descuento:Number.parseInt(req.body.descuento),
                 precio:Number.parseInt(req.body.precio),
-                img: req.file != undefined ? req.file.filename : null
+                img: req.file != undefined ? req.file.filename : "default-product.png"
 		    }
             Products.edit(newProduct)
-            //res.send(newProduct)
             res.redirect('/')
         }
     },

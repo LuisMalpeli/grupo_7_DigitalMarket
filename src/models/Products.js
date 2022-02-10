@@ -39,6 +39,7 @@ const Products = {
             id: this.generateId(),
             ...product
         }
+        console.log('nuevo: ' + newProduct)
         allProducts.push(newProduct);
         this.pushData(allProducts);
         return newProduct; //retorna el producto para utilizarlo luego

@@ -1,5 +1,6 @@
 const fs = require ('fs');
 const path = require ('path');
+const bcrypt = require('bcryptjs')
 
 module.exports = {
     //Path de la DB de los usuarios :
@@ -37,7 +38,7 @@ module.exports = {
     },
     //Crear usuarios
     create: function (user) {
-        //recibe un producto como objeto literal
+        //recibe un usuario como objeto literal
         let allUsers = this.findAll();
         let newUser = {
             id: this.generateId(),
@@ -47,7 +48,7 @@ module.exports = {
         this.pushData(allUsers);
         return newUser; //retorna el producto para utilizarlo luego
     },
-    //editar usuarios -- Pendiente de cambiso según los settings que configuremos en el ejs
+    //editar usuarios -- Pendiente de cambio según los settings que configuremos en el ejs
     edit: function (user) {
         let allUsers = this.findAll();
         let userEdited = allUsers.map(function (element) {
@@ -64,6 +65,15 @@ module.exports = {
         //guardar la BBDD
         this.pushData(userEdited);
         return true;
+    },
+    //Login usuario y comprobacion de datos
+    login: function(user) {
+        let allUsers = this.findAll()
+        if (allUsers.find(element => element.email == user.email && bcrypt.compareSync(user.pass, element.pass)) != undefined) {
+            //Encuentra el usuario y comprueba su contrasenia
+            return true
+        }  
+        return false
     },
     //Eliminar usuarios
     delete: function (id) {

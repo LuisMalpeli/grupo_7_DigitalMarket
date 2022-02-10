@@ -1,8 +1,67 @@
 <%- include('../partials/head', {title: 'Profile'}) %>
-    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="stylesheet" href="/css/perfil.css">
     <title>Perfil de usuario</title>
 </head>
 <body>
-    
+    <%- include('../partials/header') %>
+    <main>
+        <div class="opciones">
+            <div class="imagen">
+                <img src="/img/users/<%= usuario.avatar%>" alt="">
+            </div>
+            <div class="mi-cuenta">
+                <span>Mi Cuenta</span>
+            </div>
+            <div class="opciones-cuenta">   
+                <ul>
+                    <li><a href="">Compras</a></li>
+                    <li><a href="">Ventas</a></li>
+                </ul>
+            </div>
+        </div>  
+        <div class="datos">
+            <h2>Mis Datos</h2>
+            <div class="caja">
+                <div class="datos-cuenta">
+                    <span class="subtitulos">Datos de la cuenta</span>
+                    <div class="muestro-datos">
+                        <div class="campo-nombre">
+                            <div class="campos" id="campo1"><span>Nombre Completo:</span><%= usuario.fullName%></div>
+                        </div>
+                        <div class="campo-cuerpo">
+                            <div class="campos"><span>Email:</span><%= usuario.email%></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="datos-cuenta">
+                    <span class="subtitulos">Datos personales</span>
+                    <div class="muestro-datos">
+                        <div class="campos" id="campo1">
+                            <span>Genero:</span>
+                            <% if (usuario.gender == 'M') { %>
+                                <%= 'Masculino'%>
+                            <% } else if (usuario.gender == 'F') { %>
+                                <%= 'Femenino'%>
+                            <% } else { %>
+                                <%= 'Otro'%>
+                            <% } %>
+                        </div>
+                        <div class="campos"><span>Edad:</span>?</div>
+                    </div>
+                </div>
+                <div class="datos-cuenta">
+                    <span class="subtitulos">TEST</span>
+                    <div class="muestro-datos">
+                        <div class="campos" id="campo1"><span>test</span>test</div>
+                        <div class="campos"><span>test</span>test</div>
+                    </div>
+                </div>
+            </div>
+            <div class="caja-boton">
+                <button class="boton">Editar datos</button>
+            </div>
+        </div>     
+    </main>
+    <%- include('../partials/footer') %>
 </body>
 </html>

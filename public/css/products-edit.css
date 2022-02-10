@@ -1,11 +1,16 @@
 /* SOLO PARA EL USER LOGEADO */
+.errores {
+    color: red;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
 .producto-crear {
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: fit-content;
-    width: 30%;
+    width: fit-content;
     margin-top: 1rem;
     margin-bottom: 3rem;
     border-radius: 0.5rem;
@@ -25,78 +30,27 @@
         .info-register {
             margin:0 1rem;
         }
-        .info-register input::placeholder {
-            padding-right: 0.5rem;
-            font-weight:  lighter;
-        }
-            .nombre-producto {
-                border: none;
-                border-bottom: 1px solid var(--color-azulGris);
-                width: 80%;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
+            .input-producto {
+                width:90%;
+                display: flex;
+                justify-content:center;
+                flex-direction:column;
+                line-height: 1; 
+                align-items: center;
+                
+                border: 1px solid lightslategray;
+                border-radius: 5px;   
+                text-indent: 0.3rem;
+                margin-top: 0.2rem;
+                margin-bottom: 0.5rem;
             }
-            .descripcion-producto {
-                border: none;
-                border-bottom: 1px solid var(--color-azulGris);
-                width: 80%;
-                height: 8rem;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
+            .caja {
+                margin-top: 0.2rem;
+                margin-bottom: 0.5rem;
             }
-            .marca-producto {
-                border: none;
-                border-bottom: 1px solid var(--color-azulGris);
-                width: 80%;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-            }
-            .modelo-producto {
-                border: none;
-                border-bottom: 1px solid var(--color-azulGris);
-                width: 80%;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-            }
-            .foto-producto {
-                margin-bottom: 1rem;
-            }
-            .foto-producto i {
-                margin-right: 0.3rem;
-            }
-            /*input[type="file"] {
-                display: none;
-            }*/
-            .custom-file {
-                border: 1px solid #ccc;
-                display: inline-block;
-                padding: 6px 12px;
-            }             
             .div-radio {
-                margin-top: 0.4rem;
+                margin-top: 0;
                 margin-left: 1rem;
-            }
-            .color-producto{
-                border: none;
-                border-bottom: 1px solid var(--color-azulGris);
-                width: 80%;
-                margin-bottom: 1rem;
-            }
-            .tamanio-producto {
-                border: none;
-                border-bottom: 1px solid var(--color-azulGris);
-                width: 80%;
-                margin-bottom: 1rem;
-            }
-            .descuento-promo select{
-                margin-bottom: 1rem;
-            }
-            .descuento {
-                border: none;
-                border-bottom: 1px solid var(--color-azulGris);
-                width: 80%;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
             }
             .moneda-precio {
                 margin-top: 0.5rem;

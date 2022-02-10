@@ -18,37 +18,48 @@
  },
  {
   "id": 2,
-  "fullName": "Luis ",
-  "gender": "X",
+  "user": "luis123",
+  "fullName": "Luis Malpeli",
+  "gender": "M",
   "email": "malpeliluis@gmail.com",
-  "pass": "$2a$10$49aAajauTZ.kMhke/8mR7OiKE3QDpvJXB6J3JWmeRe357PU32zSs6",
+  "pass": "$2a$10$2xIW0fp83r2unQcil66wue.9Yj.NY2S29yjhlVHqZOrlGlcw9yBuK",
   "avatar": "default-user.png"
  },
  {
   "id": 3,
-  "user": "leimer ",
-  "fullName": "leimer delgado",
+  "user": "testUser",
+  "fullName": "Usuario de Prueba",
   "gender": "M",
-  "email": "leimer.agelvis@gmail.com",
-  "pass": "$2a$10$YU5LTjL8lST0tSslW7vdOei1h2tSCcLUNQ3.GSXT2R8fv9SdtNvWe",
+  "email": "prueba@mail.com",
+  "pass": "$2a$10$ZMmLsN1wiepeWIQhYBZ8kOiFzx4wiaooyzXAOQO39I3UNKs0S4.Ey",
+  "realPass": "TestUser",
   "avatar": "default-user.png"
  },
  {
   "id": 4,
-  "user": "leimer ",
-  "fullName": "leimer delgado",
+  "user": "NicoGP",
+  "fullName": "Nicolas Gonzalez Pedrini",
   "gender": "M",
-  "email": "leimer.agelvis@gmail.com",
-  "pass": "$2a$10$sBKaHj4Ml2gzSw.yHtZBhe8eeYn34/ENsnZsWH8tYv49FQjT3PffC",
-  "avatar": "default-user.png"
+  "email": "nicolasgonzap@gmail.com",
+  "pass": "$2a$10$Q7pyQrhTqzolE.siX.4poub2wFF4f2FyMxYWZDx7eAjhCesOB9Ki6",
+  "avatar": "avatar-1640640826919-52565262.jpg"
  },
  {
   "id": 5,
-  "user": "leimer ",
-  "fullName": "leimer delgado",
+  "user": "NicoUsuariodeprueba",
+  "fullName": "usuariodepruebaparafoto",
   "gender": "M",
-  "email": "leimer.agelvis@gmail.com",
-  "pass": "$2a$10$MK93n4N.7bYjjS/0bU64yO0Rvimw2tAVHFe54Go7n0OaH5rgbAm7i",
-  "avatar": "default-user.png"
+  "email": "nicolasgonzap@gmail.com",
+  "pass": "$2a$10$w3HO0aDh3YUXARdiRfscyuz3.wH0abOFHp/bnKiG08apwctnpxvVa",
+  "avatar": "avatar-1640641811898-149917189.jpg"
+ },
+ {
+  "id": 6,
+  "user": "prueba",
+  "fullName": "prueba nombre",
+  "gender": "M",
+  "email": "prueba@gmail.com",
+  "pass": "$2a$10$Y/IeQebKLt3yYtnGIyKsiu6s29KdH8RPStwo.GDEtcTcZk78ymGxq",
+  "avatar": "avatar-1642458951882-981333798.jpg"
  }
 ]

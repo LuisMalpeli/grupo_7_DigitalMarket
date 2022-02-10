@@ -6,12 +6,12 @@
 }
 
 :root {
-  --color-azulOscuro: #081729;
-  --color-azul: #2d4e6a;
-  --color-azulGris: #94a2af;
-  --color-gris: #e7e8e9;
-  --color-grisOscuro: #c0c0c0;
-  --color-blanco: #fff;
+    --color-azulOscuro: #070717;
+    --color-azul: #2d4e6a;
+    --color-azulGris: #94a2af;
+    --color-gris: #e7e8e9;
+    --color-grisOscuro: #1f1f1f;
+    --color-blanco: #fff;
 }
 
 body {
@@ -43,7 +43,6 @@ header {
     .logo-busqueda {
         width: 80%;
         display: flex;
-        justify-content: space-between;
     }
         .logo {
             width: 4rem;
@@ -56,8 +55,8 @@ header {
         }
         .busqueda {
             display: flex;
-            width: 50%;
-            margin-right: 15%;
+            justify-content: space-around;
+            width: 100%;
         }
             .busqueda-form {
                 display: flex;
@@ -65,16 +64,14 @@ header {
                 width: 80%;
                 height: 90%;
                 padding: 0.6rem 0;
-                position: relative;
-                left: 6rem;
             }
                 .barra-busqueda {
                     background-color: #FFF;
                     border: none;
-                    border-radius: 8px 0 0 8px;
+                    border-radius: 4px 0 0 4px;
                     padding: 0;
                     height: 100%;
-                    width: 100%;
+                    width: 60%;
                     outline: none;
                     text-indent: 0.5rem;
                 }
@@ -86,25 +83,25 @@ header {
                 .busqueda button {
                     padding: 0;
                     border: none;
-                    border-radius: 0 10px 10px 0;
+                    border-radius: 0 4px 4px 0;
                     display: flex;  
                     align-items: center;
                 }
                 .busqueda i {
                     background-color: var(--color-azul);
-                    border-radius: 0 8px 8px 0;
+                    border-radius: 0 4px 4px 0;
                     padding: 0.6rem;
                     color: var(--color-gris);
                     height: 100%;
                     display: flex;  
                     align-items: center;
                     cursor: pointer;
-                }  
+                } 
     .links-carrito {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        width: 20%;
+        width: 30%;
     }           
     .login-register {
         display: flex;
@@ -115,8 +112,11 @@ header {
         margin-bottom: 0.5rem;
     }
         .login-register:hover {
-            background: rgba(161, 161, 161, 0.322);
-            border-radius: 15px;
+            background-color: var(--color-azul);
+            border-radius: 10px;
+        }
+        .links {
+            display: flex;
         }
         .link-user {
             margin-right: 1rem;
@@ -125,34 +125,36 @@ header {
                 color: #FFF;
                 font-size: 32px;
             }
+            .link-user img {
+                width: 32px;
+                border-radius: 25%;
+            }
         .botones-login-register {
             display: flex;
             flex-direction: column;
             padding: 0;
             color: var(--color-grisOscuro);
+            font-weight: 600;
         }
             .botones-login-register span {
                 width: 100%;
                 color: var(--color-grisOscuro);
             }  
-            .links {
+            .links span {
                 display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 5px;
+            }
+            .login-options {
+                width: 50%;
+                text-decoration: none;
+                color: var(--color-gris);
+                padding: 0.5rem 0.8rem;
+                border-radius: 0.5rem;
+                transition: all 100ms;
                 font-weight: 600;
             }
-                .links span {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .login-options {
-                    width: 50%;
-                    text-decoration: none;
-                    color: var(--color-gris);
-                    padding: 0.5rem 0.8rem;
-                    border-radius: 0.5rem;
-                    transition: all 100ms;
-                    font-weight: 600;
-                }
                 #login {
                     padding: 0;
                 }
@@ -170,14 +172,71 @@ header {
                 cursor: pointer;
             }
             .link-cart i {
-                color: #FFF;
+                color: var(--color-gris);
                 font-size: 32px;
                 margin: 0.5rem;
             }
             .link-cart:hover {
-                background: rgba(161, 161, 161, 0.322);
-                border-radius: 20px;
+                background-color: var(--color-azul);
+                border-radius: 15px;   
             }
+
+
+            .links-adaptativo {
+                display: none;
+            }
+                .user-adap {
+                    display: flex;
+                    justify-content: center;
+                }
+                .menu-js {
+                    display: none;
+                    color: black;
+                    min-width: 160px;
+                    padding: 10px;
+                    position: absolute;
+                    z-index: 1;
+                    right: -22px;
+                    top: 64px;
+                    border-bottom: 3px solid var(--color-azulGris);
+                    border-left: 3px solid var(--color-azulGris);
+                }
+                    .menu-js ul {
+                        text-decoration: none;
+                        list-style: none;
+                        padding: 0;
+                    }
+                .mostrar-menu {
+                    display: inline-block;
+                    background-color: var(--color-gris);
+                }
+
+@media (max-width: 850px) {
+    .busqueda {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .links-carrito {
+        display: none
+    }    
+    .links-adaptativo {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 3%;
+        color: var(--color-blanco);
+        font-size: larger;
+        top: 50%;
+    }
+}
+@media (max-width: 560px) {
+    .logo-busqueda {
+        width: 75%;
+        display: flex;
+    }
+}
 /*---------------------------------nav---------------------------------------*/
 .barra-inferior {
     display: flex;
@@ -185,12 +244,17 @@ header {
     width: 100%;
     background-color: var(--color-azulOscuro);
 }
+    .menu-nav2 {
+        display: none;
+    }
     .menu-nav {
         font-size: medium;
         font-weight: 400;
         display: flex;
         flex-direction: row;
         padding: 0 0.5rem;
+        width: 45%;
+        justify-content: space-around;
     }
     .boton-nav {
         margin:  0 0.5rem 0.3rem;
@@ -225,7 +289,7 @@ header {
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(8, 8, 8, 0.363);
             z-index: 1;
-            left: -12px;
+            left: -30px;
             top: 28px;
         }
         .contenido-dropdown a {
@@ -247,6 +311,18 @@ header {
             color: #146dbb;
             transform: rotateX(180deg);
         }
+
+        
+
+@media (max-width: 850px) {
+    .menu-nav {
+        display: none;
+    }        
+    .menu-nav2 {
+        display: block;
+    }
+
+}
 /*--------------------------------fin_nav--------------------------------------*/
 
 /*--------------- Inicio de la sección del main ---------------*/
@@ -262,14 +338,15 @@ main {
 footer {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-azul);
+    background: #2d4e6a;
+    /*background-color: var(--color-azul);*/
     color: white;
 }
 .promociones-footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     font-size: 30px;
 }
     .footer-note {
@@ -316,9 +393,9 @@ footer {
     flex-wrap: wrap;
     }
 /*--------------- Hasta acá llega la sección del footer ---------------*/
-
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .promociones-footer {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center
     }
 }

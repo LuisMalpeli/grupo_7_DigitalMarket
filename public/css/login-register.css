@@ -1,7 +1,7 @@
 /*CAJA PADRE*/
 .login-register-user {
     height: fit-content;
-    width: 50rem;
+    width: fit-content;
     background: rgb(255, 255, 255);
     margin: 2% 0 ;
     border: 2px solid var(--color-gris);
@@ -26,31 +26,67 @@
             line-height: 1;   
             margin-bottom: 1rem;
         }
+        .info-usuario form label {
+            padding-bottom: 10px;
+            padding-top: 15px;
+        }
+            .errores {
+                /*codigo de errors*/
+                color:red;
+                font-size: 20px;
+            }
             .datos {
-                width:100%;
+                width:90%;
                 display: flex;
                 justify-content:center;
                 flex-direction:column;
                 line-height: 1; 
                 align-items: center;
-                height: 4rem;
+                height: 3rem;
                 border: 1px solid lightslategray;
                 border-radius: 5px;   
                 text-indent: 0.3rem;
             }
+            .con-error {
+                /*Agrega formato de error a los input*/
+                border: 1px solid red;
+                box-shadow: 0.1px 0.1px 1px red;
+            }
             /*Seleccion de genero - SOLO REGISTER*/
-            .opciones-genero {
-                width:100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-            }
-            .opciones-genero input {
-                margin: 0.3rem;
-            }
+                .opciones-genero {
+                    width:100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                }
+                .opciones-genero input {
+                    margin: 0.3rem;
+                }
+                .avatar {
+                    margin-bottom: 0.5rem;
+                    /*opacity: 0; Con opacity 0 se vuelve invisible pero no se oculta (se sigue pudiendo presionar*/
+                    z-index: 3;
+                }
+               /*Código para dejar mas prolijo el botón de seleccionar archivo
+               .avatar-container {
+                    width: 100%;
+                    border: 1px solid lightslategray;
+                    border-radius: 5px;   
+                    margin-bottom: 15px;
+                
+                }
+                .file-search {
+                    Botón para busar
+                    width: 10%;
+                    height: 3rem;
+                    border: #3483fa solid 1px;
+                    border-radius: 5px 0px 0px 5px;
+                    position: absolute;
+                    z-index: 1;
+                } */
             /*------------------------------------*/
             .button-user .boton {
-                width: 40rem;
+                width: 90%;
                 height: 4rem;
                 color: white;
                 background: #3483fa;   
@@ -61,12 +97,18 @@
                 font-weight: bold;
                 
             }
-            /*Olvido crontasenia - SOLO LOGIN*/
+            /*Olvido contrasenia - SOLO LOGIN*/
             .opcioncontra {
-                display: flex;
+                width: 90%;
+                display: grid;
                 justify-content: center;
                 padding: 10%;  
             }
+                .crear-cuenta {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+                }
             .caja-checkbox {
                 padding: 10px;
                 display: flex; 
@@ -80,6 +122,29 @@
                     min-height: 20px;
                 }
             /*-----------------------------------*/
+
+/*---------------------Sección de confirmación de registro de usuario----------------------------------*/
+.success-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0 1rem;
+}
+.success-title {
+    font-size: 2.5rem;
+    color: rgb(58,206,58);
+
+}
+.fa-check-circle {
+    font-size: 8rem;
+    padding-bottom: 2rem;
+    color: rgb(58,206,58);
+    
+}
+/*----------------------------------------------------------------------------*/
 @media (min-width: 576px){
     .login-register-user {
         display: flex;
