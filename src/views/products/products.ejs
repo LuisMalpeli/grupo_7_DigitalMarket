@@ -10,23 +10,23 @@
                 <section class = "contenedor-ofertas">
                     <% for (i=0; i< productos.length; i++) { %>
                         <article class = "cuadro-oferta">
-                            <% if (productos[i].enPromocion == true) { %>
+                            <% if (productos[i].has_promotion == true) { %>
                                 <i class="fas fa-exclamation-circle"></i>
                             <% } %>
                             <div class = "cuadro-oferta-imagenes">
                                 <a href="/products/<%=productos[i].id%>">
-                                    <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].titulo %>">
+                                    <img src="/img/productos/<%= productos[i].img %>" alt="<%= productos[i].title %>">
                                 </a>
                             </div>
                             <div class = "cuadro-oferta-texto">
                                 <!--<i class="fas fa-cart-plus"></i>-->
                                 <div class="precio-descuento">
-                                    <p class = "precio">$<%= productos[i].precio %></p>
-                                    <% if ((productos[i].enPromocion == true) && (productos[i].descuento != 0)) { %>
-                                        <p class = "descuento"><%= productos[i].descuento%>% OFF</p>
+                                    <p class = "precio">$<%= productos[i].price %></p>
+                                    <% if ((productos[i].has_promotion == true) && (productos[i].discount != 0)) { %>
+                                        <p class = "descuento"><%= productos[i].discount%>% OFF</p>
                                     <% } %>
                                 </div>
-                                <p class="nombre-producto"><%= productos[i].titulo %></p>
+                                <p class="nombre-producto"><%= productos[i].title %></p>
                             </div>
                         </article>
                     <% } %>

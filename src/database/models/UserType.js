@@ -15,12 +15,12 @@ module.exports = (sequelize, dataTypes) => {
     };
     const UserType = sequelize.define('UserTypes',data, config);
 
-    UserType.associate = function (models) {
-        UserType.hasMany(models.Usuarios, {
-            foreingKey: 'id',
-            as: 'usuarios'
-        })
-    }
+    // UserType.associate = function (models) {
+    //     UserType.hasMany(models.Usuarios, {
+    //         foreingKey: 'id',
+    //         as: 'usuarios'
+    //     })
+    // }
 
     return UserType
 }

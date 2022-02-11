@@ -29,7 +29,10 @@ module.exports = {
                 type_id: 3
             }
             db.Usuarios.create(nuevoUsuario)
-            .then(res.redirect('success'))
+            .then(
+                alert('Registro exitoso'),
+                res.redirect('/')
+            )
             .catch(error => console.log(error.message))
         }
     },
@@ -59,15 +62,15 @@ module.exports = {
                 // comprobar password
                 if (bcrypt.compareSync(req.body.password, usuario.password) != undefined) {
                     // cookies
-                    req.session.usuarioLogueado = usuario.email
+                    req.session.usuarioLogueado = usuario
                     if (req.body.recordarme != undefined) {
-                        res.cookie('recordarme',userLogin.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
+                        res.cookie('recordarme',usuario.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
                     }
                     // envia a perfil
-                    return res.redirect('profile')
+                    res.redirect('/')
                 } else {
                     // email-password incorrectas
-                    return res.render(
+                    res.render(
                         'users/login', 
                         {errors: 
                             {
@@ -87,7 +90,14 @@ module.exports = {
     }, 
 
     profile: function(req,res){
-        res.render('users/userProfile', {usuario : req.session.usuarioLogueado})
+        db.Usuarios.findOne({
+            where: {email: req.session.usuarioLogueado}
+        })
+        .then(usuario => {
+            res.render('users/userProfile', {usuario : usuario})
+        })
+        .catch(error => console.log(error.message))
+        
     },
 
     logout: function(req, res) {
