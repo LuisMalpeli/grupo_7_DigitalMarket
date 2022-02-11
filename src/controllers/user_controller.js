@@ -58,9 +58,15 @@ module.exports = {
             .then(usuario => {
                 // comprobar password
                 if (bcrypt.compareSync(req.body.password, usuario.password) != undefined) {
+                    // cookies
+                    req.session.usuarioLogueado = usuario.email
+                    if (req.body.recordarme != undefined) {
+                        res.cookie('recordarme',userLogin.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
+                    }
+                    // envia a perfil
                     return res.redirect('profile')
                 } else {
-                    // email/password incorrectas
+                    // email-password incorrectas
                     return res.render(
                         'users/login', 
                         {errors: 

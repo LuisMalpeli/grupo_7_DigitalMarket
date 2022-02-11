@@ -47,7 +47,7 @@ const userController = {
                 //creación de cookie de usuario
                 if(userLogin.recordarme != undefined) {
                     //Si el usuario chequeó la casilla de Recordar Usuario, crea la cookie con el usuario
-                    res.cookie('recordarme',userLogin.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
+                    res.cookie('recocrdarme',userLogin.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
                 }                
                 return res.redirect('profile')
             }

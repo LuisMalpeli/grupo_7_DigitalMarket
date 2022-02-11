@@ -9,23 +9,23 @@
         <div class="producto-detail">
             <h3 class="titulo-register">
                 <label for="h3">Editar Producto: </label>  
-                <span name="h3"> <%= productos.titulo%></span>
+                <span name="h3"> <%= productos.title%></span>
             </h3>
             <div class="info-register">
                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <span>Nombre del producto:</span> 
                     <br>
-                    <% if(locals.errors && errors.titulo) { %>
-                        <p class= "errores"> <%= errors.titulo.msg %> </p>
+                    <% if(locals.errors && errors.title) { %>
+                        <p class= "errores"> <%= errors.title.msg %> </p>
                     <% } %> 
-                    <input type="text" name= "titulo" class="input-producto" value="<%= productos.titulo %>">
+                    <input type="text" name= "title" class="input-producto" value="<%= productos.title %>">
                     <br>
                     <span>Descripcion del producto:</span>
                     <br>
-                    <% if(locals.errors && errors.descripcion) { %>
-                        <p class= "errores"> <%= errors.descripcion.msg %> </p>
+                    <% if(locals.errors && errors.description) { %>
+                        <p class= "errores"> <%= errors.description.msg %> </p>
                     <% } %> 
-                    <textarea class="input-producto" rows= "10" cols="50" name= "descripcion"><%= productos.descripcion %></textarea>
+                    <textarea class="input-producto" rows= "10" cols="50" name= "description"><%= productos.description %></textarea>
                     <br>
                     <span>Marca: </span>
                     <br>
@@ -36,10 +36,10 @@
                     <br>
                     <span>Modelo: </span>
                     <br>
-                    <% if(locals.errors && errors.modelo) { %>
-                        <p class= "errores"> <%= errors.modelo.msg %> </p>
+                    <% if(locals.errors && errors.model) { %>
+                        <p class= "errores"> <%= errors.model.msg %> </p>
                     <% } %> 
-                    <input type="text" name="modelo" class="input-producto" value="<%= productos.modelo %>">                                                  
+                    <input type="text" name="model" class="input-producto" value="<%= productos.model %>">                                                  
                     <br>
                     <div class="caja">
                         <span>Imagen:</span>
@@ -47,68 +47,68 @@
                     </div>
                     <div class="categoria">
                         <span>Seleccione la categoria del producto:</span>
-                        <% if(locals.errors && errors.tipo) { %>
-                            <p class= "errores"> <%= errors.tipo.msg %> </p>
+                        <% if(locals.errors && errors.product_type) { %>
+                            <p class= "errores"> <%= errors.product_type.msg %> </p>
                         <% } %> 
                         <div class="div-radio">
-                        <input type="radio" id="Motherboard" name="tipo" value="Motherboard" <% if (productos.tipo == 'Motherboard') { %> 
+                        <input type="radio" id="Motherboard" name="product_type" value="Motherboard" <% if (productos.product_type == 'Motherboard') { %> 
                             checked
                             <% } %> >
                         <label for="Motherboard">Motherboard</label>
                         <br>
-                        <input type="radio" id="Procesador" name="tipo" value="Procesador" <% if (productos.tipo == 'Procesador') { %> 
+                        <input type="radio" id="Procesador" name="product_type" value="Procesador" <% if (productos.product_type == 'Procesador') { %> 
                             checked
                             <% } %> >
                         <label for="Procesador">Procesador</label>
                         <br>
-                        <input type="radio" id="GPU" name="tipo" value="GPU" <% if (productos.tipo == 'GPU') { %> 
+                        <input type="radio" id="GPU" name="product_type" value="GPU" <% if (productos.product_type == 'GPU') { %> 
                             checked
                             <% } %> >
                         <label for="GPU">GPU</label>
                         <br> 
-                        <input type="radio" id="RAM" name="tipo" value="RAM" <% if (productos.tipo == 'RAM') { %> 
+                        <input type="radio" id="RAM" name="product_type" value="RAM" <% if (productos.product_type == 'RAM') { %> 
                             checked
                             <% } %> >
                         <label for="RAM">RAM</label>
                         <br>
                     </div>
                     <br>
-                    <div class="descuento-promo">
+                    <div class="discount-promo">
                         <span>Aplicar promocion: </span>
-                        <% if(locals.errors && errors.enPromocion) { %>
-                            <p class= "errores"> <%= errors.enPromocion.msg %> </p>
+                        <% if(locals.errors && errors.has_discount) { %>
+                            <p class= "errores"> <%= errors.has_discount.msg %> </p>
                         <% } %> 
-                        <select name="enPromocion" id="enPromocion">
-                            <option value="1"<% if(productos.enPromocion==true){%>
+                        <select name="has_discount" id="has_discount">
+                            <option value="1"<% if(productos.has_discount==true){%>
                                 selected
                                 <%}%>>Si</option>
-                            <option value="0"<% if(productos.enPromocion==false){%>
+                            <option value="0"<% if(productos.has_discount==false){%>
                                 selected
                                 <%}%>>No</option>
                         </select>
                         <br>
                         <span>Porcentaje (%) de descuento</span>
-                        <% if(locals.errors && errors.descuento) { %>
-                            <p class= "errores"> <%= errors.descuento.msg %> </p>
+                        <% if(locals.errors && errors.discount) { %>
+                            <p class= "errores"> <%= errors.discount.msg %> </p>
                         <% } %> 
-                        <input type="text" name="descuento" class="descuento" value="<%=productos.descuento%>">
+                        <input type="text" name="discount" class="discount" value="<%=productos.discount%>">
                     </div>
                     <div class="precio">
                         <span>Precio del producto:</span>
                         <br>
-                        <% if(locals.errors && errors.precio) { %>
-                            <p class= "errores"> <%= errors.precio.msg %> </p>
+                        <% if(locals.errors && errors.price) { %>
+                            <p class= "errores"> <%= errors.price.msg %> </p>
                         <% } %> 
                         <div class="moneda-precio">
-                            <select name="moneda" id="moneda">
-                                <option value="USD"<% if(productos.moneda=="USD"){%>
+                            <select name="currency" id="moneda">
+                                <option value="USD"<% if(productos.currency=="USD"){%>
                                     selected
                                     <%}%>>USD</option>
-                                <option value="ARS"<% if(productos.moneda=="ARS"){%>
+                                <option value="ARS"<% if(productos.currency=="ARS"){%>
                                     selected
                                     <%}%>>ARS</option>
                             </select>
-                            <input type="number" name="precio" class="precio-producto"value="<%=productos.precio %>">
+                            <input type="number" name="price" class="precio-producto"value="<%=productos.price %>">
                         </div> 
                     </div>
                     <div class="boton-agregar-div"> 
