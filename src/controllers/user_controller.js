@@ -39,7 +39,7 @@ module.exports = {
     },
 
     loginSend: function(req, res) {
-        // con erorres de credenciales
+        // validar credenciales
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
             // con erorres de credenciales
@@ -59,17 +59,18 @@ module.exports = {
                 // comprobar password
                 if (bcrypt.compareSync(req.body.password, usuario.password) != undefined) {
                     return res.redirect('profile')
+                } else {
+                    // email/password incorrectas
+                    return res.render(
+                        'users/login', 
+                        {errors: 
+                            {
+                                email: {msg: 'Las creendenciales son incorrectas'}, 
+                                pass: {msg: 'Las creendenciales son incorrectas'}
+                            } 
+                        }
+                    )
                 }
-                // email/password incorrectas
-                return res.render(
-                    'users/login', 
-                    {errors: 
-                        {
-                            email: {msg: 'Las creendenciales son incorrectas'}, 
-                            pass: {msg: 'Las creendenciales son incorrectas'}
-                        } 
-                    }
-                )
             })
             .catch(error => console.log(error.message))
         }
