@@ -166,6 +166,7 @@ UNLOCK TABLES;
 --*/
 LOCK TABLES product_brands WRITE;
 INSERT INTO product_brands VALUES 
+
 (1,NULL,NULL,"Redragon"),
 (2,NULL,NULL,"Seagate"),
 (3,NULL,NULL,"Thermaltake"),

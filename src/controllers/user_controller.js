@@ -28,7 +28,6 @@ module.exports = {
                 // automaticamente asigna el tipo de usuario 'pro' 
                 type_id: 3
             }
-            console.log(nuevoUsuario)
             db.Usuarios.create(nuevoUsuario)
             .then(res.redirect('success'))
             .catch(error => console.log(error.message))
