@@ -11,9 +11,6 @@ module.exports = (sequelize, dataTypes) => {
         description: {
             type: dataTypes.STRING
         },
-        // marca: {
-        //     type: dataTypes.STRING
-        // },
         model: {
             type: dataTypes.STRING
             
@@ -35,6 +32,16 @@ module.exports = (sequelize, dataTypes) => {
         },
         img: {
             type: dataTypes.STRING
+        },
+        category_id: {
+            type: dataTypes.INTEGER
+        },
+        created_by: {
+            type: dataTypes.INTEGER
+        }
+        ,
+        brand_id: {
+            type: dataTypes.INTEGER
         }
     };
 

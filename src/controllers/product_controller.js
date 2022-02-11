@@ -34,8 +34,6 @@ const productController = {
             description: req.body.description,
             model: req.body.model,
             product_type: req.body.product_type,
-            has_discount: req.body.has_discount,
-            discount: req.body.discount,
             currency: req.body.currency,
             price: req.body.price,
             img: req.body.img,
