@@ -8,7 +8,10 @@ module.exports = (sequelize, dataTypes) => {
         userName: {
             type: dataTypes.STRING
         },
-        fullName: {
+        firstName: {
+            type: dataTypes.STRING
+        },
+        lastName: {
             type: dataTypes.STRING
         },
         gender: {
@@ -16,20 +19,28 @@ module.exports = (sequelize, dataTypes) => {
         },
         email: {
             type: dataTypes.STRING
-            
         },
-        pass:{
+        password:{
             type: dataTypes.STRING
         },
         avatar: {
             type: dataTypes.STRING
+        },
+        type_id: {
+            type: dataTypes.INTEGER
         }
-
-
     };
     const config = {
-
+        tableName: 'users',
     };
     const Usuario = sequelize.define('Usuarios',data, config);
+
+    Usuario.associate = function (models) {
+        Usuario.belongsTo(models.UserTypes, {
+            foreingKey: 'type_id',
+            as: 'user_type'
+        })
+    }
+
     return Usuario
 }

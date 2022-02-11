@@ -12,10 +12,13 @@
                 </h3> 
                     <div class="info-usuario"> 
                         <form action="/user/login" method="post">
+
                             <input class="datos" type="email" name="email" placeholder="Ingrese su E-mail"> 
                             <p style="color: red;"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p>
-                            <input class="datos" type="password" name="pass" placeholder="Ingrese su Contraseña">
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.pass ? errors.pass.msg : null %> </p><br>
+                            <input class="datos" type="password" name="password" placeholder="Ingrese su Contraseña">
+                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.password ? errors.password.msg : null %> </p><br>
+
+                            
                             <div class="caja-checkbox">
                                 <span>Recordar usuario</span>
                                 <input type= "checkbox" name="recordarme" value="recordarme">

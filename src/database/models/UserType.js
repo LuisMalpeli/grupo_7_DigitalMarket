@@ -1,17 +1,25 @@
 module.exports = (sequelize, dataTypes) => {
     const data = {
-        idUserType:{
+        id:{
             autoIncrement: true,
             primaryKey: true,
             type:dataTypes.INTEGER
         },
-        tipo: {
+        user_type: {
             type: dataTypes.STRING
         }
     };
     const config = {
-
+        tableName: 'user_type',
     };
     const UserType = sequelize.define('UserTypes',data, config);
+
+    UserType.associate = function (models) {
+        UserType.hasMany(models.Usuarios, {
+            foreingKey: 'id',
+            as: 'usuarios'
+        })
+    }
+
     return UserType
 }

@@ -14,10 +14,10 @@
                     <div class="info-usuario">
                         <form action="/user/register" method="POST" enctype="multipart/form-data">
 
-                            <label for="user">Ingrese su usuario: </label>
-                            <input class="datos <%= locals.errors && errors.user ? "con-error": null %>" type="text" name= "user" placeholder="Usuario" value="<%= locals.oldData ? oldData.user: null %>">    
-                            <% if(locals.errors && errors.user) { %>
-                                <p class="errores"> <%= errors.user.msg %> </p>
+                            <label for="userName">Ingrese su usuario: </label>
+                            <input class="datos <%= locals.errors && errors.userName ? "con-error": null %>" type="text" name= "userName" placeholder="Usuario" value="<%= locals.oldData ? oldData.userName: null %>">    
+                            <% if(locals.errors && errors.userName) { %>
+                                <p class="errores"> <%= errors.userName.msg %> </p>
                             <% } %>                    
                             
                             <label for="">Ingrese su nombre y apellido: </label>
@@ -28,7 +28,6 @@
                             
                             
                             <label>Seleccione su genero: </label> <br>
-                            <% const opcionesGenero = ['M','F','X'] %> 
                             <% const generoKeys = ["Hombre","Mujer","Otro"] %> 
                             <div class="opciones-genero">
                                 <% for(let i = 0; i < generoKeys.length; i++) {%>
@@ -36,8 +35,8 @@
                                         <input
                                             type="radio"
                                             name= "gender"
-                                            value="<%=opcionesGenero[i] %>"
-                                            <%= locals.oldData && (oldData.gender == opcionesGenero[i]) ? 'checked': null %>
+                                            value="<%=generoKeys[i] %>"
+                                            <%= locals.oldData && (oldData.gender == generoKeys[i]) ? 'checked': null %>
                                         >
                                     </label>
                                     
@@ -60,9 +59,9 @@
                             -->
 
                             <label>Ingrese su contraseña: </label>
-                            <input class="datos <%= locals.errors && errors.pass ? "con-error": null %>" type="password" name="pass" placeholder="Contraseña">
-                            <% if(locals.errors && errors.pass) { %>
-                                <p class="errores"> <%= errors.pass.msg %> </p>
+                            <input class="datos <%= locals.errors && errors.password ? "con-error": null %>" type="password" name="password" placeholder="Contraseña">
+                            <% if(locals.errors && errors.password) { %>
+                                <p class="errores"> <%= errors.password.msg %> </p>
                             <% } %>     
                             
                             <label>Ingrese una foto de perfil: </label> 

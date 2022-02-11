@@ -37,12 +37,31 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         }
     };
+
     const config = {
+        tableName: 'products',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
     };
+
     const Producto = sequelize.define('Productos',data, config);
+
+    Producto.associate = function (models) {
+        Producto.belongsTo(models.Categorias, {
+            foreingKey: 'categorie_id',
+            as: 'categoria'
+        })
+        Producto.belongsTo(models.Marcas, {
+            foreingKey: 'brand_id',
+            as: 'marca'
+        })
+        Producto.belongsTo(models.Usuarios, {
+            foreingKey: 'created_by',
+            as: 'creador'
+        })
+    }
+
     return Producto
 }

@@ -1,17 +1,25 @@
 module.exports = (sequelize, dataTypes) => {
     const data = {
-        idMarca:{
+        id:{
             autoIncrement: true,
             primaryKey: true,
             type:dataTypes.INTEGER
         },
-        marca: {
+        brand_name: {
             type: dataTypes.STRING
         }
     };
     const config = {
-
+        tableName: 'product_brand',
     };
     const Marca = sequelize.define('Marcas',data, config);
+
+    Marca.associate = function (models) {
+        Marca.hasMany(models.Productos, {
+            foreingKey: 'id',
+            as: 'productos'
+        })
+    }
+
     return Marca
 }

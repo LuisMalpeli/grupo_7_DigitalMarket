@@ -138,7 +138,7 @@ header {
         }
             .botones-login-register span {
                 width: 100%;
-                color: var(--color-grisOscuro);
+                color: white;
             }  
             .links span {
                 display: flex;

@@ -52,6 +52,7 @@ const userController = {
                 return res.redirect('profile')
             }
             //Si las credenciales son incorrectas
+            
             res.render(
                 'users/login', 
                 {errors: 
