@@ -14,31 +14,31 @@
                     <form action="/products/create" method="POST" enctype="multipart/form-data">
                         <label>Nombre del producto:</label> 
                         <br>
-                        <% if(locals.errors && errors.titulo) { %>
-                            <p class= "errores"> <%= errors.titulo.msg %> </p>
+                        <% if(locals.errors && errors.title) { %>
+                            <p class= "errores"> <%= errors.title.msg %> </p>
                         <% } %> 
-                        <input class="input-producto" type="text" name= "titulo" value="<%= locals.oldData ? oldData.titulo: null %>">        
+                        <input class="input-producto" type="text" name= "title" value="<%= locals.oldData ? oldData.title: null %>">        
                         <br>
                         <span>Descripcion del producto:</span>
                         <br>
-                        <% if(locals.errors && errors.descripcion) { %>
-                            <p class= "errores"> <%= errors.descripcion.msg %> </p>
+                        <% if(locals.errors && errors.description) { %>
+                            <p class= "errores"> <%= errors.description.msg %> </p>
                         <% } %>
-                        <textarea class="input-producto" rows= "10" cols="50" name= "descripcion" value="<%= locals.oldData ? oldData.descripcion: null %>"></textarea>  
+                        <textarea class="input-producto" rows= "10" cols="50" name= "description" value="<%= locals.oldData ? oldData.description: null %>"></textarea>  
                         <br>
-                        <span>Marca: </span>
+                        <!-- <span>Marca: </span>
                         <br>
                         <% if(locals.errors && errors.marca) { %>
                             <p class= "errores"> <%= errors.marca.msg %> </p>
                         <% } %>
                         <input class="input-producto" type="text" name= "marca" value="<%= locals.oldData ? oldData.marca: null %>">    
-                        <br>
+                        <br> -->
                         <span>Modelo: </span>
                         <br>  
-                        <% if(locals.errors && errors.modelo) { %>
-                            <p class= "errores"> <%= errors.modelo.msg %> </p>
+                        <% if(locals.errors && errors.model) { %>
+                            <p class= "errores"> <%= errors.model.msg %> </p>
                         <% } %>        
-                        <input class="input-producto" type="text" name= "modelo" value="<%= locals.oldData ? oldData.modelo: null %>">                               
+                        <input class="input-producto" type="text" name= "model" value="<%= locals.oldData ? oldData.model: null %>">                               
                         <br> 
                         <div class="caja">
                             <span>Imagen:</span>
@@ -46,42 +46,49 @@
                         </div>
                         <div class="caja">
                             <span>Seleccione la categoria del producto:</span>
-                            <% if(locals.errors && errors.tipo) { %>
-                                <p class= "errores"> <%= errors.tipo.msg %> </p>
+                            <% if(locals.errors && errors.product_type) { %>
+                                <p class= "errores"> <%= errors.product_type.msg %> </p>
                             <% } %>
                             <div class="div-radio">
-                                <input type="radio" name="tipo" value="Motherboard">
+                                <input type="radio" name="product_type" value="Motherboard">
                                 <label for="Motherboard">Motherboard</label>
                                 <br>
-                                <input type="radio" name="tipo" value="Procesador">
+                                <input type="radio" name="product_type" value="Procesadores">
                                 <label for="Procesador">Procesador</label>
                                 <br>
-                                <input type="radio" name="tipo" value="GPU">
-                                <label for="GPU">GPU</label>
+                                <input type="radio" name="product_type" value="Placas de Video">
+                                <label for="Placas de Video">Placas de Video</label>
                                 <br>
-                                <input type="radio" name="tipo" value="RAM">
+                                <input type="radio" name="product_type" value="Memorias RAM">
                                 <label for="RAM">RAM</label>
                                 <br>
+                                <input type="radio" name="product_type" value="Almacenamiento">
+                                <label for="Almacenamiento">Almacenamiento</label>
+                                <br>
+                                <input type="radio" name="product_type" value="Fuentes de Poder">
+                                <label for="Fuentes de Poder">Fuentes de Poder</label>
+                                <br>
+                                
                             </div>
                         </div>
                         <div class="caja">
                             <span>Precio del producto:</span>
                             <div class="moneda-precio">
                                 <label for="moneda">Moneda:</label>
-                                <select name="moneda" id="moneda">
+                                <select name="currency" id="moneda">
                                     <option value="" unchecked>$$$</option>
                                     <option value="BIT">BIT</option>
                                     <option value="USD">USD</option>
                                     <option value="EUR">EUR</option>
                                     <option value="ARS">ARS</option>
                                 </select>
-                                <% if(locals.errors && errors.moneda) { %>
-                                    <p class= "errores"> <%= errors.moneda.msg %> </p>
+                                <% if(locals.errors && errors.currency) { %>
+                                    <p class= "errores"> <%= errors.currency.msg %> </p>
                                 <% } %>
                                 <label for="precio">Precio:</label>
-                                <input type="text" name="precio" class="precio-producto">
-                                <% if(locals.errors && errors.precio) { %>
-                                    <p class= "errores"> <%= errors.precio.msg %> </p>
+                                <input type="text" name="price" class="precio-producto">
+                                <% if(locals.errors && errors.price) { %>
+                                    <p class= "errores"> <%= errors.price.msg %> </p>
                                 <% } %>
                             </div> 
                         </div>

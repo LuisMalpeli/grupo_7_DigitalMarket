@@ -9,9 +9,9 @@ module.exports = [
     check('description')
         .notEmpty().withMessage('* Debe completar el campo descripcion').bail()
     ,
-    check('marca')
-        .notEmpty().withMessage('* Debe completar el campo marca').bail()
-    ,
+    // check('marca')
+    //     .notEmpty().withMessage('* Debe completar el campo marca').bail()
+    // ,
     check('model')
         .notEmpty().withMessage('* Debe completar el campo modelo').bail()
     ,

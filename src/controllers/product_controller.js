@@ -1,14 +1,15 @@
+const { validationResult } = require('express-validator')
 const db = require('../database/models')
 
 module.exports = {
     list: (req,res) => {
         db.Productos.findAll({
-            include: [{association: 'categoria', association: 'marca', association: 'creador'}]
+            //include: [{association: 'categoria', association: 'marca', association: 'creador'}]
         })
         .then(producto => {
             res.render(
                 'products/products',
-                producto
+                {productos: producto}
             )
         })
         .catch(error => {
@@ -17,11 +18,11 @@ module.exports = {
         })
     },
     detail: (req,res) => {
-        db.Producto.findByPk(req.params.id)
+        db.Productos.findByPk(req.params.id)
         .then(producto => {
             res.render(
                 'products/productDetail',
-                producto
+               {productos: producto}
             )
         })
     },
@@ -32,6 +33,7 @@ module.exports = {
         res.render('products/productCreate')
     },
     createSend: (req,res) => {
+        const errores = validationResult(req)
         if (errores.errors.length > 0) {
             return res.render('products/productCreate', {errors: errores.mapped()})
         } else {
@@ -42,23 +44,24 @@ module.exports = {
                 product_type: req.body.product_type,
                 currency: req.body.currency,
                 price: req.body.price,
-                img: req.body.img
-                // created by - category type(product type?) - brand id
+                img: req.file == undefined ? "fff.jpg" : req.file.filename,
             }
-            db.Producto.create(nuevoProducto)
+            db.Productos.create(nuevoProducto)
             .then(
                 res.redirect('/')
             )
+            .catch(error => console.log(error.message))
         }
     },
     edit: (req, res) => {
-        db.Producto.findByPk(req.params.id)
-        .then(product => {
+        db.Productos.findByPk(req.params.id)
+        .then(producto => {
             res.render(
                 'products/productEdit', 
-                product
+                {productos: producto}
             )
         })
+        .catch(error => console.log)
 		
 	},
     editSend:function(req,res) {
@@ -76,31 +79,30 @@ module.exports = {
             )
         } else {
              // editar producto
-            db.Producto.update()
-            .then(
-               {
+            db.Productos.update(
+                {
                     id: req.params.id,
                     ...req.body,
-                    has_discount:req.body.enPromocion == 0 ? false : true,
-                    discount:Number.parseInt(req.body.descuento),
-                    price:Number.parseInt(req.body.precio),
+                    has_discount:req.body.has_discount == 0 ? false : true,
+                    discount:Number.parseInt(req.body.discount),
+                    price:Number.parseInt(req.body.price),
                     img: req.file != undefined ? req.file.filename : "default-product.png" 
-               },
-               {
+                },
+                {
                     where: {
-                        id: req.params.id
-                    }
-               }
-            )
+                    id: req.params.id
+                }
+           })
+           .then(res.redirect('/'))
             .catch(error=>{console.log(error.message)})
         }
     },
     delete:function(req,res) {
-        db.Producto.destroy({
+        db.Productos.destroy({
             where: {
                 id: req.params.id
             }
         })
-        res.send('Envío del formulario eliminación de un producto')
+        .then(res.redirect('/'))
     },
 }

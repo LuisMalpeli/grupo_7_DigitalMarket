@@ -1,4 +1,4 @@
-    <%- include('../partials/head', {title: productos.titulo}) %>
+    <%- include('../partials/head', {title: productos.title}) %>
     <link rel="stylesheet" href="/css/product-detail.css">
 </head>
 <body>
@@ -6,23 +6,23 @@
     <main>
         <div class="productDetail">
             <div class="detail-img">
-                <img src="/img/productos/<%= productos.img %>" alt="<%= productos.titulo%>">
+                <img src="/img/productos/<%= productos.img %>" alt="<%= productos.title%>">
             </div>        
             <div class="detail-datos">
                 <h3 class="titulo">
-                    <%= productos.titulo %>
+                    <%= productos.title %>
                 </h3>
-                    <% if (productos.enPromocion) { %>
+                    <% if (productos.has_discount) { %>
                         <div class="precio">
                             <div>
-                                <span class="aplica-descuento">$ <%=  productos.precio%></span>
-                                <span class="descuento"><%= productos.descuento%>% OFF</span>
+                                <span class="aplica-descuento">$ <%=  productos.price%></span>
+                                <span class="descuento"><%= productos.discount%>% OFF</span>
                             </div>
-                            <span>$ <%= productos.precio - (productos.precio / productos.descuento)%></span>
+                            <span>$ <%= productos.price - (productos.price / productos.discount)%></span>
                         </div>
                     <% } else { %>    
                         <div class="precio">
-                            <span>$ <%=  productos.precio%></span>
+                            <span>$ <%=  productos.price%></span>
                         </div>
                     <% } %>
                 <div class="descripcion">

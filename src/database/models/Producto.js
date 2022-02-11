@@ -15,8 +15,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
             
         },
-        product_type:{
-            type: dataTypes.STRING
+        product_type: {
+            type: dataTypes.INTEGER
         },
         has_discount: {
             type: dataTypes.INTEGER
@@ -33,14 +33,7 @@ module.exports = (sequelize, dataTypes) => {
         img: {
             type: dataTypes.STRING
         },
-        category_id: {
-            type: dataTypes.INTEGER
-        },
-        created_by: {
-            type: dataTypes.INTEGER
-        }
-        ,
-        brand_id: {
+        user_id: {
             type: dataTypes.INTEGER
         }
     };
@@ -52,20 +45,16 @@ module.exports = (sequelize, dataTypes) => {
 
     const Producto = sequelize.define('Productos',data, config);
 
-    Producto.associate = function (models) {
-        Producto.belongsTo(models.Categorias, {
-            foreingKey: 'categorie_id',
-            as: 'categoria'
-        })
-        Producto.belongsTo(models.Marcas, {
-            foreingKey: 'brand_id',
-            as: 'marca'
-        })
-        Producto.belongsTo(models.Usuarios, {
-            foreingKey: 'created_by',
-            as: 'creador'
-        })
-    }
+    // Producto.associate = function (models) {
+    //     Producto.hasOne(models.Categorias, {
+    //         foreingKey: 'product_type',
+    //         as: 'categoria'
+    //     })
+    //     Producto.hasOne(models.Usuarios, {
+    //         foreingKey: 'user_id',
+    //         as: 'creador'
+    //     })
+    // }
 
     return Producto
 }

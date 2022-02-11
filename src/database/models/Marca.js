@@ -11,15 +11,16 @@ module.exports = (sequelize, dataTypes) => {
     };
     const config = {
         tableName: 'product_brand',
+        timestamps: false
     };
     const Marca = sequelize.define('Marcas',data, config);
 
-    Marca.associate = function (models) {
-        Marca.hasMany(models.Productos, {
-            foreingKey: 'id',
-            as: 'productos'
-        })
-    }
+    // Marca.associate = function (models) {
+    //     Marca.hasMany(models.Productos, {
+    //         foreingKey: 'id',
+    //         as: 'productos'
+    //     })
+    // }
 
     return Marca
 }

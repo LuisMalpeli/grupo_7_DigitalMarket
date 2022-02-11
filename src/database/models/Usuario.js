@@ -33,12 +33,16 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Usuario = sequelize.define('Usuarios',data, config);
 
-    Usuario.associate = function (models) {
-        Usuario.belongsTo(models.UserTypes, {
-            foreingKey: 'type_id',
-            as: 'user_type'
-        })
-    }
+    // Usuario.associate = function (models) {
+    //     Usuario.hasOne(models.UserTypes, {
+    //         foreingKey: 'type_id',
+    //         as: 'user_type'
+    //     })
+    //     Usuario.hasMany(models.Productos, {
+    //         foreingKey: ,
+    //         as:   
+    //     })
+    // }
 
     return Usuario
 }
