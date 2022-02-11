@@ -1,21 +1,39 @@
 const { validationResult } = require('express-validator')
 const db = require('../database/models')
+const { Op } = require('sequelize')
+
 
 module.exports = {
     list: (req,res) => {
-        db.Productos.findAll({
-            //include: [{association: 'categoria', association: 'marca', association: 'creador'}]
-        })
-        .then(producto => {
-            res.render(
-                'products/products',
-                {productos: producto}
-            )
-        })
-        .catch(error => {
-            console.log(error.message)
-            res.send('error :' + error.message)
-        })
+        let string = req.query.search
+        if (string != '') {
+            db.Productos.findAll({
+                where: {
+                    [Op.like]: string
+                }
+            })
+            .then(producto => {
+                res.render(
+                    'products/products',
+                    {productos: producto}
+                )
+            })
+            .catch(error => console.log(error.message))
+        } else {
+            db.Productos.findAll({
+                //include: [{association: 'categoria', association: 'marca', association: 'creador'}]
+            })
+            .then(producto => {
+                res.render(
+                    'products/products',
+                    {productos: producto}
+                )
+            })
+            .catch(error => {
+                console.log(error.message)
+                res.send('error :' + error.message)
+            })
+        }
     },
     detail: (req,res) => {
         db.Productos.findByPk(req.params.id)
