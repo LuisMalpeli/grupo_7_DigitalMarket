@@ -69,12 +69,14 @@ CREATE TABLE products (
   currency varchar(255)  NOT NULL,
   price FLOAT unsigned NOT NULL,
   img varchar(255),
+  /*
   category_id int(10),
   created_by int(10),
   brand_id int(10),
-  /*category_id int(10) FOREIGN KEY REFERENCES product_categories(id),
+  category_id int(10) FOREIGN KEY REFERENCES product_categories(id),
   created_by int(10) FOREIGN KEY REFERENCES users(id),
-  brand_id int(10) FOREIGN KEY REFERENCES product_brands(id),*/
+  brand_id int(10) FOREIGN KEY REFERENCES product_brands(id),
+  */
   PRIMARY KEY (id),
   CONSTRAINT FK_products_categories FOREIGN KEY (category_id) REFERENCES product_categories (id),
   CONSTRAINT FK_products_users FOREIGN KEY (created_by) REFERENCES users (id),

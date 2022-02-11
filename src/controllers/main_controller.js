@@ -2,7 +2,7 @@ const db = require('../database/models')
 
 const mainController = {
     index : (req,res) => {
-        db.Producto.findAll()
+        db.Productos.findAll()
         .then(products => {
             let respuesta = {
                 meta: {
@@ -12,8 +12,15 @@ const mainController = {
                 data: products
             }
                 res.json(respuesta);
-            })
+        })
             //res.render('index', {productos: respuesta.data})
+        .catch(error => console.log(error))
+    },
+    login: function(req, res) {
+        res.render('login')
+    },
+    register: function(req, res) {
+        res.render('register')
     }
 }
 

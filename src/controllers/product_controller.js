@@ -1,8 +1,8 @@
 const db = require('../database/models')
 
-const productController = {
+module.exports = {
     list: (req,res) => {
-        db.Producto.findAll({
+        db.Productos.findAll({
             include: [{association: 'categoria', association: 'marca', association: 'creador'}]
         })
         .then(producto => {
@@ -10,6 +10,10 @@ const productController = {
                 'products/products',
                 producto
             )
+        })
+        .catch(error => {
+            console.log(error.message)
+            res.send('error :' + error.message)
         })
     },
     detail: (req,res) => {
@@ -100,5 +104,3 @@ const productController = {
         res.send('Envío del formulario eliminación de un producto')
     },
 }
-
-module.exports = productController
