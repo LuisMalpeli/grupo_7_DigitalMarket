@@ -1,15 +1,20 @@
 const { validationResult } = require('express-validator')
 const db = require('../database/models')
-const { Op } = require('sequelize')
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 
 module.exports = {
     list: (req,res) => {
-        let string = req.query.search
-        if (string != '') {
+        // busqueda con query
+        if (req.query.search != '') {
             db.Productos.findAll({
                 where: {
-                    [Op.like]: string
+                    [Op.or] : {
+                        title: {[Op.like]: '%' + req.query.search + '%'},
+                        description: {[Op.like]: '%' + req.query.search + '%'},
+                        model: {[Op.like]: '%' + req.query.search + '%'}
+                    }
                 }
             })
             .then(producto => {
@@ -20,6 +25,7 @@ module.exports = {
             })
             .catch(error => console.log(error.message))
         } else {
+            // mostrar todos los productos
             db.Productos.findAll({
                 //include: [{association: 'categoria', association: 'marca', association: 'creador'}]
             })
