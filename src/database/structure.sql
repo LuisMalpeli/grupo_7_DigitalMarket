@@ -11,8 +11,6 @@ USE dh_grupo7;
 DROP TABLE IF EXISTS user_type;
 CREATE TABLE user_type (
   id int(10) AUTO_INCREMENT NOT NULL ,
-  created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
   user_type varchar(255)  NOT NULL,
   PRIMARY KEY (id)
  );
@@ -23,8 +21,6 @@ CREATE TABLE user_type (
 DROP TABLE IF EXISTS product_categories;
 CREATE TABLE product_categories (
   id int(10) NOT NULL AUTO_INCREMENT,
-  created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
   category_name varchar(255)  NOT NULL,
   PRIMARY KEY (id)
  );
@@ -35,8 +31,6 @@ CREATE TABLE product_categories (
 DROP TABLE IF EXISTS product_brands;
 CREATE TABLE product_brands (
   id int(10) NOT NULL AUTO_INCREMENT,
-  created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
   brand_name varchar(255) NOT NULL,
   PRIMARY KEY (id)
  ); 
@@ -47,18 +41,15 @@ CREATE TABLE product_brands (
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   id int(10) AUTO_INCREMENT NOT NULL,
-  created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
-  user_name varchar(255) NOT NULL,
-  first_name varchar(255) NOT NULL,
-  last_name varchar(255) NOT NULL,
+  userName varchar(255) NOT NULL,
+  fullName varchar(255) NOT NULL,
   gender varchar(255) NOT NULL, 
   email varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
-  avatar varchar(255) DEFAULT "default-user.png",
+  avatar varchar(255),
   type_id int(10) NOT NULL,
   PRIMARY KEY (id),
-  CONSTRAINT UC_users UNIQUE (user_name, email),
+  CONSTRAINT UC_users UNIQUE (userName, email),
   CONSTRAINT FK_user_user_type FOREIGN KEY (type_id) REFERENCES user_type (id)
 );
 
@@ -69,8 +60,6 @@ CREATE TABLE users (
 DROP TABLE IF EXISTS products;
 CREATE TABLE products (
   id int(10) NOT NULL AUTO_INCREMENT,
-  created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
   title varchar(255) NOT NULL,
   description varchar(3500) NOT NULL,
   model varchar(255) NOT NULL,
@@ -79,13 +68,15 @@ CREATE TABLE products (
   discount FLOAT,
   currency varchar(255)  NOT NULL,
   price FLOAT unsigned NOT NULL,
-  img varchar(255)  DEFAULT "default-product.png",
+  img varchar(255),
+  /*
   category_id int(10),
   created_by int(10),
   brand_id int(10),
-  /*category_id int(10) FOREIGN KEY REFERENCES product_categories(id),
+  category_id int(10) FOREIGN KEY REFERENCES product_categories(id),
   created_by int(10) FOREIGN KEY REFERENCES users(id),
-  brand_id int(10) FOREIGN KEY REFERENCES product_brands(id),*/
+  brand_id int(10) FOREIGN KEY REFERENCES product_brands(id),
+  */
   PRIMARY KEY (id),
   CONSTRAINT FK_products_categories FOREIGN KEY (category_id) REFERENCES product_categories (id),
   CONSTRAINT FK_products_users FOREIGN KEY (created_by) REFERENCES users (id),
@@ -115,8 +106,6 @@ CREATE TABLE products (
 DROP TABLE IF EXISTS shopping_cart;
 CREATE TABLE shopping_cart (
   id int(10) NOT NULL AUTO_INCREMENT,
-  created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
   product_id int(10) NOT NULL,
   user_id int(10)  NOT NULL,
   PRIMARY KEY (id),
@@ -179,6 +168,7 @@ UNLOCK TABLES;
 --*/
 LOCK TABLES product_brands WRITE;
 INSERT INTO product_brands VALUES 
+
 (1,NULL,NULL,"Redragon"),
 (2,NULL,NULL,"Seagate"),
 (3,NULL,NULL,"Thermaltake"),
@@ -212,4 +202,5 @@ INSERT INTO products (id,title,description,model,product_type,currency,price,img
 (7,"SSD 970 EVO NVMe M.2 500GB","Prepárate para vivir una experiencia PC de última generación. El SSD 970 EVO te ofrece unas velocidades de lectura y escritura sorprendentemente rápidas, una fiabilidad líder en el mercado, así como distintas capacidades de hasta 2 TB*. La última tecnología V-NAND, la nueva controladora Phoenix y tecnología Intelligent TurboWrite con las que disfrutarás al máximo de los juegos de alta gama y la edición gráfica 3D y 4K.","970 EVO NVMe M.2 500GB",6,"ARS",15000,null),
 (8,"Monitor Odyssey G9 DQHD de 49' con pantalla curva 1000R","Las escenas vívidas te rodearán sin dejarte salir. Experimenta un nivel de juego absolutamente superior a todo lo que has visto antes. La pantalla 1000R de 49' ultraamplia llena tu visión periférica y te envuelve como si fueras el personaje del juego.","Odyssey G9 DQHD de 49'",16,"ARS",100000,null),
 (9,"AMD Radeon™ RX 6900 XT","La tarjeta XT gráfica AMD Radeon™ RX 6800 XT, potenciada con la arquitectura AMD RDNA™ 2 y equipada con 80 potentes unidades de procesamiento mejoradas, 128MB de la flamante tecnología AMD Infinity Cache y 16GB de memoria GDDR6 dedicada, está diseñada para alcanzar velocidades de cuadros ultraaltas y jugar en 4K con una calidad deslumbrante.","RX 6900 XT",7,"USD",1000,null),
-(10,"Intel® Core™ i9-12900E","El procesador Intel® Core™ de 12ª generación para equipos de desktop redefine el desempeño de la arquitectura x86. Presentamos nuestra nueva arquitectura híbrida de desempeño, 1 que combina los núcleos de desempeño con los núcleos de eficiencia para potenciar el gaming, la productividad y la creación. Estos procesadores innovadores ayudan al sistema operativo al optimizar de manera inteligente las cargas de trabajo para garantizar la ubicación óptima de los núcleos para la ejecución y preparan el camino para futuros saltos en el diseño del procesador. Disfruta de la gama completa de las innovaciones de plataforma más recientes, como la primera preparación PCIe 5.0 y la memoria DDR5. Sumérgete en una experiencia visual impresionante con los gráficos UHD Intel®, con HDR de hasta 8K y la capacidad de ver 4 pantallas 4K simultáneas. Los procesadores Intel® Core™ de 12ª Generación para equipos de desktop están disponibles en una amplia variedad de opciones para obtener máxima flexibilidad. De este modo, puedes elegir las características térmicas y de desempeño que necesites para jugar, trabajar y crear como nunca antes.","i9-12900E",4,"ARS",190000,null)
+(10,"Intel® Core™ i9-12900E","El procesador Intel® Core™ de 12ª generación para equipos de desktop redefine el desempeño de la arquitectura x86. Presentamos nuestra nueva arquitectura híbrida de desempeño, 1 que combina los núcleos de desempeño con los núcleos de eficiencia para potenciar el gaming, la productividad y la creación. Estos procesadores innovadores ayudan al sistema operativo al optimizar de manera inteligente las cargas de trabajo para garantizar la ubicación óptima de los núcleos para la ejecución y preparan el camino para futuros saltos en el diseño del procesador. Disfruta de la gama completa de las innovaciones de plataforma más recientes, como la primera preparación PCIe 5.0 y la memoria DDR5. Sumérgete en una experiencia visual impresionante con los gráficos UHD Intel®, con HDR de hasta 8K y la capacidad de ver 4 pantallas 4K simultáneas. Los procesadores Intel® Core™ de 12ª Generación para equipos de desktop están disponibles en una amplia variedad de opciones para obtener máxima flexibilidad. De este modo, puedes elegir las características térmicas y de desempeño que necesites para jugar, trabajar y crear como nunca antes.","i9-12900E",4,"ARS",190000,null);
+UNLOCK TABLES;

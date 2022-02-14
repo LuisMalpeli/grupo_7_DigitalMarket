@@ -7,11 +7,13 @@
     display: flex;
     width: 100%; 
     justify-content: space-around;
-    padding: 3rem;
+    margin-top: 0.5rem;
 }
     .home-banner img {
         width:80%;
     }
+
+
 /*Fin de sección del banner*/
 
 body {
@@ -23,7 +25,7 @@ main {
     align-items: center;
 }
 .productos {
-    width: 95%;
+    width: 80%;
     margin-top: 20px;
 }
 .seccion-ofertas, .seccion-intereses {

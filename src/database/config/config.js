@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "dh_grupo7",
+    "database": "dh_grupo7_2",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -16,7 +16,7 @@ module.exports = {
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "dh_grupo7",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

@@ -16,20 +16,33 @@ module.exports = (sequelize, dataTypes) => {
         },
         email: {
             type: dataTypes.STRING
-            
         },
-        pass:{
+        password:{
             type: dataTypes.STRING
         },
         avatar: {
             type: dataTypes.STRING
+        },
+        type_id: {
+            type: dataTypes.INTEGER
         }
-
-
     };
     const config = {
-
+        tableName: 'users',
+        timestamps: false
     };
     const Usuario = sequelize.define('Usuarios',data, config);
+
+    Usuario.associate = function (models) {
+        Usuario.hasOne(models.UserTypes, {
+            foreingKey: 'type_id',
+            as: 'user_type'
+        })
+    //     Usuario.hasMany(models.Productos, {
+    //         foreingKey: ,
+    //         as:   
+    //     })
+    }
+
     return Usuario
 }

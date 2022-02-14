@@ -10,6 +10,7 @@ window.onload = function() {
 
     const darkMode = document.querySelector('.dark-mode')
 
+    // menu adaptativo
     menu.addEventListener('click', (e) => {
         e.preventDefault()
         menuJs.classList.toggle('mostrar-menu')
@@ -18,6 +19,7 @@ window.onload = function() {
         menuJs.classList.remove('mostrar-menu')
     })
 
+    // modo oscuro
     let dmCheck = document.querySelector('.dark-mode i')
     darkMode.addEventListener('click', ()=> {
         dmCheck.classList.toggle('fa-square')

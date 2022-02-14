@@ -1,22 +1,52 @@
-const { Model } = require('sequelize/dist')
+const { validationResult } = require('express-validator')
 const db = require('../database/models')
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
-const productController = {
+
+module.exports = {
     list: (req,res) => {
-        db.Producto.findAll()
-        .then(producto => {
-            res.render(
-                'products/products',
-                producto
-            )
-        })
+        // busqueda con query
+        if (req.query.search != undefined) {
+            db.Productos.findAll({
+                where: {
+                    [Op.or] : {
+                        title: {[Op.like]: '%' + req.query.search + '%'},
+                        description: {[Op.like]: '%' + req.query.search + '%'},
+                        model: {[Op.like]: '%' + req.query.search + '%'}
+                    }
+                }
+            })
+            .then(producto => {
+                res.render(
+                    'products/products',
+                    {productos: producto}
+                )
+            })
+            .catch(error => console.log(error.message))
+        } else {
+            // mostrar todos los productos
+            db.Productos.findAll({
+                //include: [{association: 'categoria', association: 'marca', association: 'creador'}]
+            })
+            .then(producto => {
+                res.render(
+                    'products/products',
+                    {productos: producto}
+                )
+            })
+            .catch(error => {
+                console.log(error.message)
+                res.send('error :' + error.message)
+            })
+        }
     },
     detail: (req,res) => {
-        db.Producto.findByPk(req.params.id)
+        db.Productos.findByPk(req.params.id)
         .then(producto => {
             res.render(
                 'products/productDetail',
-                producto
+               {productos: producto}
             )
         })
     },
@@ -27,38 +57,76 @@ const productController = {
         res.render('products/productCreate')
     },
     createSend: (req,res) => {
-        db.Producto.create({
-            title: req.body.title,
-            description: req.body.description,
-            model: req.body.model,
-            product_type: req.body.product_type,
-            has_discount: req.body.has_discount,
-            discount: req.body.discount,
-            currency: req.body.currency,
-            price: req.body.price,
-            img: req.body.img,
-        })
-        .then(() => {
-            return res.redirect('/')
-        })
+        const errores = validationResult(req)
+        if (errores.errors.length > 0) {
+            return res.render('products/productCreate', {errors: errores.mapped()})
+        } else {
+            let nuevoProducto = {
+                title: req.body.title,
+                description: req.body.description,
+                model: req.body.model,
+                product_type: req.body.product_type,
+                currency: req.body.currency,
+                price: req.body.price,
+                img: req.file == undefined ? "fff.jpg" : req.file.filename,
+            }
+            db.Productos.create(nuevoProducto)
+            .then(
+                res.redirect('/')
+            )
+            .catch(error => console.log(error.message))
+        }
     },
     edit: (req, res) => {
-        db.Producto.findByPk(req.params.id)
-        .then(product => {
+        db.Productos.findByPk(req.params.id)
+        .then(producto => {
             res.render(
                 'products/productEdit', 
-                product
+                {productos: producto}
             )
         })
+        .catch(error => console.log)
 		
 	},
     editSend:function(req,res) {
-        
+        const errores = validationResult(req)
+        if (errores.errors.length > 0) {
+            return res.render(
+                'products/productEdit', 
+                {
+                    errors: errores.mapped(), 
+                    productos:{
+                        id: Number.parseInt(req.params.id),
+                    ...req.body
+                    }
+                }
+            )
+        } else {
+             // editar producto
+            db.Productos.update(
+                {
+                    id: req.params.id,
+                    ...req.body,
+                    has_discount:req.body.has_discount == 0 ? false : true,
+                    discount:Number.parseInt(req.body.discount),
+                    price:Number.parseInt(req.body.price),
+                    img: req.file != undefined ? req.file.filename : "default-product.png" 
+                },
+                {
+                    where: {
+                    id: req.params.id
+                }
+           })
+           .then(res.redirect('/'))
+            .catch(error=>{console.log(error.message)})
+        }
     },
     delete:function(req,res) {
-        db.Producto.delete(req.params.id)
-        res.send('Envío del formulario eliminación de un producto')
+        db.Productos.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(res.redirect('/'))
     },
 }
-
-module.exports = productController

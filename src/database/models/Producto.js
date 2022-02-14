@@ -11,15 +11,12 @@ module.exports = (sequelize, dataTypes) => {
         description: {
             type: dataTypes.STRING
         },
-        // marca: {
-        //     type: dataTypes.STRING
-        // },
         model: {
             type: dataTypes.STRING
             
         },
-        product_type:{
-            type: dataTypes.STRING
+        product_type: {
+            type: dataTypes.INTEGER
         },
         has_discount: {
             type: dataTypes.INTEGER
@@ -35,14 +32,29 @@ module.exports = (sequelize, dataTypes) => {
         },
         img: {
             type: dataTypes.STRING
+        },
+        user_id: {
+            type: dataTypes.INTEGER
         }
     };
+
     const config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        tableName: 'products',
+        timestamps: false
     };
+
     const Producto = sequelize.define('Productos',data, config);
+
+    // Producto.associate = function (models) {
+    //     Producto.hasOne(models.Categorias, {
+    //         foreingKey: 'product_type',
+    //         as: 'categoria'
+    //     })
+    //     Producto.hasOne(models.Usuarios, {
+    //         foreingKey: 'user_id',
+    //         as: 'creador'
+    //     })
+    // }
+
     return Producto
 }
