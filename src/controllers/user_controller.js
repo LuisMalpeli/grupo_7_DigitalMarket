@@ -30,8 +30,7 @@ module.exports = {
             }
             db.Usuarios.create(nuevoUsuario)
             .then(
-                alert('Registro exitoso'),
-                res.redirect('/')
+                res.redirect('success')
             )
             .catch(error => console.log(error.message))
         }
@@ -67,7 +66,7 @@ module.exports = {
                         res.cookie('recordarme',usuario.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
                     }
                     // envia a perfil
-                    res.redirect('/')
+                    res.redirect('profile')
                 } else {
                     // email-password incorrectas
                     res.render(

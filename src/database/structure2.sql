@@ -51,8 +51,8 @@ CREATE TABLE users (
   password varchar(255) NOT NULL,
   avatar varchar(255),
   type_id int(10) NOT NULL,
-  PRIMARY KEY (id)
-  -- CONSTRAINT FK_user_user_type FOREIGN KEY (type_id) REFERENCES user_type (id)
+  PRIMARY KEY (id),
+  CONSTRAINT FK_user_user_type FOREIGN KEY (type_id) REFERENCES user_type (id)
 );
 
 
