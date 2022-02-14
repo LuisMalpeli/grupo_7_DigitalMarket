@@ -7,7 +7,7 @@ const Op = Sequelize.Op;
 module.exports = {
     list: (req,res) => {
         // busqueda con query
-        if (req.query.search != '') {
+        if (req.query.search != undefined) {
             db.Productos.findAll({
                 where: {
                     [Op.or] : {

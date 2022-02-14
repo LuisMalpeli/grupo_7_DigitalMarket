@@ -4,7 +4,7 @@ module.exports = [
     //Validar Products CREATE
     check('title')
         .notEmpty().withMessage('* Debe completar el campo titulo ').bail()
-        .isLength({min:3, max:30}).withMessage('* El titulo debe tener un minimo de 3 caracteres y maximo de 30')
+        .isLength({min:3, max:70}).withMessage('* El titulo debe tener un minimo de 3 caracteres y maximo de 70')
     ,
     check('description')
         .notEmpty().withMessage('* Debe completar el campo descripcion').bail()

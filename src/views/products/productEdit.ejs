@@ -61,15 +61,25 @@
                             <% } %> >
                         <label for="Procesador">Procesador</label>
                         <br>
-                        <input type="radio" id="GPU" name="product_type" value="GPU" <% if (productos.product_type == 'GPU') { %> 
+                        <input type="radio" id="Placas de Video" name="product_type" value="Placas de Video" <% if (productos.product_type == 'Placas de Video') { %> 
                             checked
                             <% } %> >
-                        <label for="GPU">GPU</label>
+                        <label for="Placas de Video">Placas de Video</label>
                         <br> 
-                        <input type="radio" id="RAM" name="product_type" value="RAM" <% if (productos.product_type == 'RAM') { %> 
+                        <input type="radio" id="Memorias RAM" name="product_type" value="Memorias RAM" <% if (productos.product_type == 'Memorias RAM') { %> 
                             checked
                             <% } %> >
-                        <label for="RAM">RAM</label>
+                        <label for="Memorias RAM">Memorias RAM</label>
+                        <br>
+                        <input type="radio" id="Almacenamiento" name="product_type" value="Almacenamiento" <% if (productos.product_type == 'Almacenamiento') { %> 
+                            checked
+                            <% } %> >
+                        <label for="Almacenamiento">Almacenamiento</label>
+                        <br>
+                        <input type="radio" id="Otros" name="product_type" value="Otros" <% if (productos.product_type == 'Otros') { %> 
+                            checked
+                            <% } %> >
+                        <label for="Otros">Otros</label>
                         <br>
                     </div>
                     <br>
