@@ -145,25 +145,25 @@ UNLOCK TABLES;
 LOCK TABLES product_brands WRITE;
 INSERT INTO product_brands VALUES 
 
-(1,NULL,NULL,"Redragon"),
-(2,NULL,NULL,"Seagate"),
-(3,NULL,NULL,"Thermaltake"),
-(4,NULL,NULL,"Viewsonic"),
-(5,NULL,NULL,"Wacom"),
-(6,NULL,NULL,"Amd"),
-(7,NULL,NULL,"Nvidia"),
-(9,NULL,NULL,"Gigabyte"),
-(10,NULL,NULL,"Hannever"),
-(11,NULL,NULL,"HyperX"),
-(12,NULL,NULL,"Msi"),
-(13,NULL,NULL,"Kingston"),
-(14,NULL,NULL,"LG"),
-(15,NULL,NULL,"Samsung"),
-(16,NULL,NULL,"Asus"),
-(17,NULL,NULL,"Lenovo"),
-(18,NULL,NULL,"Dell"),
-(19,NULL,NULL,"HP"),
-(20,NULL,NULL,"Philips")
+(1,"Redragon"),
+(2,"Seagate"),
+(3,"Thermaltake"),
+(4,"Viewsonic"),
+(5,"Wacom"),
+(6,"Amd"),
+(7,"Nvidia"),
+(9,"Gigabyte"),
+(10,"Hannever"),
+(11,"HyperX"),
+(12,"Msi"),
+(13,"Kingston"),
+(14,"LG"),
+(15,"Samsung"),
+(16,"Asus"),
+(17,"Lenovo"),
+(18,"Dell"),
+(19,"HP"),
+(20,"Philips")
 ;
 UNLOCK TABLES;
 
