@@ -45,16 +45,16 @@ module.exports = (sequelize, dataTypes) => {
 
     const Producto = sequelize.define('Productos',data, config);
 
-    // Producto.associate = function (models) {
-    //     Producto.hasOne(models.Categorias, {
-    //         foreingKey: 'product_type',
-    //         as: 'categoria'
-    //     })
-    //     Producto.hasOne(models.Usuarios, {
-    //         foreingKey: 'user_id',
-    //         as: 'creador'
-    //     })
-    // }
+    Producto.associate = function (models) {
+        Producto.hasOne(models.Categorias, {
+            foreingKey: 'product_type',
+            as: 'categoria'
+        })
+        Producto.hasOne(models.Usuarios, {
+            foreingKey: 'user_id',
+            as: 'creador'
+        })
+    }
 
     return Producto
 }
