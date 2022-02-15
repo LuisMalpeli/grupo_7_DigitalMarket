@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Usuario.associate = function (models) {
         Usuario.hasOne(models.UserTypes, {
-            foreingKey: 'type_id',
+            foreignKey: 'type_id', //foreingKey
             as: 'user_type'
         })
     //     Usuario.hasMany(models.Productos, {
