@@ -38,10 +38,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'type_id', //foreingKey
             as: 'user_type'
         })
-    //     Usuario.hasMany(models.Productos, {
-    //         foreingKey: ,
-    //         as:   
-    //     })
+        Usuario.hasMany(models.Productos, {
+            foreingKey: 'user_id',
+            as: 'productos_enVenta'
+        })
     }
 
     return Usuario
