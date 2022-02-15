@@ -98,3 +98,6 @@ falta 17/1
 24/1
     script structure.sql
     modelos de database
+
+14/2
+    se termino el sprint 6
