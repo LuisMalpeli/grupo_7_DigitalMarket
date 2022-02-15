@@ -47,11 +47,11 @@ module.exports = (sequelize, dataTypes) => {
 
     Producto.associate = function (models) {
         Producto.hasOne(models.Categorias, {
-            foreingKey: 'product_type',
+            foreignKey: 'product_type',
             as: 'categoria'
         })
         Producto.hasOne(models.Usuarios, {
-            foreingKey: 'user_id',
+            foreignKey: 'user_id',
             as: 'creador'
         })
     }
