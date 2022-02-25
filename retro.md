@@ -27,3 +27,5 @@ SE ESTAN PROBANDO COSAS EN EL CARRITO...
 daily 6/12 -> se agrego en el archivo daily.md lo que se resolvio durante la semana
 
 daily 13/12 -> se agrego en el archivo daily.md lo que se resolvio durante la semana
+
+daily 14/2 -> se agrego en el archivo daily.md lo que se resolvio durante la semana

@@ -15,12 +15,12 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Categoria = sequelize.define('Categorias',data, config);
 
-    // Categoria.associate = function (models) {
-    //     Categoria.hasMany(models.Productos, {
-    //         foreingKey: 'id',
-    //         as: 'productos'
-    //     })
-    // }
+    Categoria.associate = function (models) {
+        Categoria.hasMany(models.Productos, {
+            foreignKey: 'id',
+            as: 'productos'
+        })
+    }
 
     return Categoria
 }

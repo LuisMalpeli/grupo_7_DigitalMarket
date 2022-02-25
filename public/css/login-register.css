@@ -16,6 +16,7 @@
     }
         .titulo-cuenta {
             font-size: 45px;
+            margin-bottom: 1rem;
         }
         .info-usuario form {
             height:auto;
@@ -28,12 +29,13 @@
         }
         .info-usuario form label {
             padding-bottom: 10px;
-            padding-top: 15px;
         }
             .errores {
                 /*codigo de errors*/
-                color:red;
-                font-size: 20px;
+                color:red; 
+                display:none; 
+                align-items:flex-start; 
+                margin: 0
             }
             .datos {
                 width:90%;

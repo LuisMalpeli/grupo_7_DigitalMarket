@@ -59,8 +59,9 @@ module.exports = {
             })
             .then(usuario => {
                 // comprobar password
-                if (bcrypt.compareSync(req.body.password, usuario.password) != undefined) {
+                if (bcrypt.compareSync(req.body.password, usuario.password)) {
                     // cookies
+                    usuario.password = "Creiste que encontraste algo?"
                     req.session.usuarioLogueado = usuario
                     if (req.body.recordarme != undefined) {
                         res.cookie('recordarme',usuario.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
@@ -90,7 +91,7 @@ module.exports = {
 
     profile: function(req,res){
         db.Usuarios.findOne({
-            where: {email: req.session.usuarioLogueado}
+            where: {email: req.session.usuarioLogueado.email}
         })
         .then(usuario => {
             res.render('users/userProfile', {usuario : usuario})

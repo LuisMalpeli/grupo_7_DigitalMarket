@@ -8,34 +8,47 @@
         <div class="login-register-user"> 
             <div class="detail-cuenta">
                 <h3 class="titulo-cuenta">
-                    Ya soy cliente
+                    Iniciar sesion
                 </h3> 
                     <div class="info-usuario"> 
-                        <form action="/user/login" method="post">
+                        <form action="/user/login" id="formulario" method="post" novalidate>
 
-                            <input class="datos" type="email" name="email" placeholder="Ingrese su E-mail"> 
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p>
-                            <input class="datos" type="password" name="password" placeholder="Ingrese su Contraseña">
-                            <p style="color: red;"> <%= typeof errors != 'undefined' && errors.password ? errors.password.msg : null %> </p><br>
+                            <div id="label-email" style="display: flex;">
+                                <label for="email" style="display: flex; align-items: center; padding-top: 0;">Ingrese su Email: </label>
+                                <p class="errores"></p>
+                            </div>
+                            <input class="datos" type="email" name="email" id="email" placeholder="E-mail"> 
+                            <br>
+                            <!-- <p style="color: red;"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p> -->
+                            <div id="label-password" style="display: flex;"> 
+                                <label for="email">Ingrese su contraseña: </label>
+                                <p class="errores"></p>
+                            </div>
+                            <input class="datos" type="password" name="password" id="password" placeholder="Contraseña">
+                            <br>
+                            <!-- <p style="color: red;"> <%= typeof errors != 'undefined' && errors.password ? errors.password.msg : null %> </p><br> -->
 
-                            
                             <div class="caja-checkbox">
                                 <span>Recordar usuario</span>
                                 <input type= "checkbox" name="recordarme" value="recordarme">
                                 <br> <br>
                             </div>
+
                             <div class="button-user">
                                 <input class="boton" type="submit" value= "Ingresar"> 
                             </div>
+
                             <div class="opcioncontra">
                                 <a href="">¿Olvidaste tu contraseña?</a>
                                 <a href="/user/register" class="crear-cuenta">Crear cuenta</a>
                             </div>
+
                         </form>
                     </div>
             </div>
         </div>
     </main>
+    <script src="/js/login.js"></script>
     <%- include('../partials/footer') %>  
 </body>
 </html>
