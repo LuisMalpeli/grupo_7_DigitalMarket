@@ -1,5 +1,6 @@
 <%- include('../partials/head', {title: 'Editar'}) %>
 <link rel="stylesheet" href="/css/products-edit.css">
+<script src="/js/products.js"></script>
 <title>Crear Producto</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
                 <span name="h3"> <%= productos.title%></span>
             </h3>
             <div class="info-register">
-                <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formulario">
                     <span>Nombre del producto:</span> 
                     <br>
                     <% if(locals.errors && errors.title) { %>
@@ -125,6 +126,11 @@
                         <button type="submit" class="boton-agregar">Guardar</button>
                     </div>
                 </form>
+                <div>
+                    <ul id="area-errores">
+
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

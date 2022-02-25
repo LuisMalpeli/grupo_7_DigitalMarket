@@ -28,6 +28,14 @@ module.exports = {
                 // automaticamente asigna el tipo de usuario 'pro' 
                 type_id: 3
             }
+            // REVISA MAILS REPETIDOS - REVISAR
+            // db.Usuarios.findOne({
+            //     where: {email: req.body.email}
+            // })
+            // .then(usuario => {
+            //     res.redirect('users/register')
+            // })
+            // .catch(error => console.log(error.message))
             db.Usuarios.create(nuevoUsuario)
             .then(
                 res.redirect('success')

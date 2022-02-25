@@ -1,6 +1,7 @@
  <%- include('../partials/head', {title: 'Register'}) %>
     <link rel="stylesheet" href="/css/login-register.css">
     <title>Registrarse</title>
+    <script src="/js/register.js"></script>
 </head>
 <body>
     <body>
@@ -12,7 +13,7 @@
                         Crear cuenta
                     </h3>
                     <div class="info-usuario">
-                        <form action="/user/register" method="POST" enctype="multipart/form-data">
+                        <form id="formulario" action="/user/register" method="POST" enctype="multipart/form-data" novalidate>
 
                             <label for="userName">Ingrese su usuario: </label>
                             <input class="datos <%= locals.errors && errors.userName ? "con-error": null %>" type="text" name= "userName" placeholder="Usuario" value="<%= locals.oldData ? oldData.userName: null %>">    
@@ -33,6 +34,7 @@
                                 <% for(let i = 0; i < generoKeys.length; i++) {%>
                                     <label><%=generoKeys[i]%>
                                         <input
+                                            
                                             type="radio"
                                             name= "gender"
                                             value="<%=generoKeys[i] %>"
@@ -75,7 +77,10 @@
 
                         </form>
                     </div>
-                   
+                    <div>
+                        <ul id="area-errores">
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>
