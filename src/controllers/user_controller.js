@@ -29,18 +29,18 @@ module.exports = {
                 type_id: 3
             }
             // REVISA MAILS REPETIDOS - REVISAR
-            // db.Usuarios.findOne({
-            //     where: {email: req.body.email}
-            // })
-            // .then(usuario => {
-            //     res.redirect('users/register')
-            // })
-            // .catch(error => console.log(error.message))
-            db.Usuarios.create(nuevoUsuario)
-            .then(
-                res.redirect('success')
-            )
+            db.Usuarios.findOne({
+                where: {email: req.body.email}
+            })
+            .then(usuario => {
+                console.log(usuario)
+            })
             .catch(error => console.log(error.message))
+            // db.Usuarios.create(nuevoUsuario)
+            // .then(
+            //     res.redirect('success')
+            // )
+            // .catch(error => console.log(error.message))
         }
     },
 

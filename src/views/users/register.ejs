@@ -13,6 +13,14 @@
                         Crear cuenta
                     </h3>
                     <div class="info-usuario">
+                        <div>
+                            <ul id="area-errores" style="list-style: none;">
+                                <li name="fullName" id="fullName" style="color: red;"></li>
+                                <li name="email" id="email" style="color: red;"></li>
+                                <li name="password" id="password" style="color: red;"></li>
+                                <li name="avatar" id="avatar" style="color: red;"></li>
+                            </ul>
+                        </div>
                         <form id="formulario" action="/user/register" method="POST" enctype="multipart/form-data" novalidate>
 
                             <label for="userName">Ingrese su usuario: </label>
@@ -76,10 +84,6 @@
                             </div>
 
                         </form>
-                    </div>
-                    <div>
-                        <ul id="area-errores">
-                        </ul>
                     </div>
                 </div>
             </div>

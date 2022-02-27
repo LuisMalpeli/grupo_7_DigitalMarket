@@ -12,6 +12,13 @@
                     Agregar Producto
                 </h3>
                 <div class="info-register">
+                    <div>
+                        <ul id="area-errores" style="list-style: none;">
+                            <li name="title" id="title" style="color: red;"></li>
+                            <li name="description" id="description" style="color: red;"></li>
+                            <li name="img" id="img" style="color: red;"></li>
+                        </ul>
+                    </div>
                     <form action="/products/create" method="POST" enctype="multipart/form-data" id="formulario">
                         <label>Nombre del producto:</label> 
                         <br>
@@ -25,7 +32,7 @@
                         <% if(locals.errors && errors.description) { %>
                             <p class= "errores"> <%= errors.description.msg %> </p>
                         <% } %>
-                        <textarea class="input-producto" rows= "10" cols="50" name= "description" value="<%= locals.oldData ? oldData.description: null %>"></textarea>  
+                        <input class="input-producto" name= "description" value="<%= locals.oldData ? oldData.description: null %>"></input>  
                         <br>
                         <!-- <span>Marca: </span>
                         <br>

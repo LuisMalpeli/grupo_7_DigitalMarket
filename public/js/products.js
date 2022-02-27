@@ -1,34 +1,53 @@
 window.onload = function () {
     const form = document.querySelector('#formulario')
-    const title = form.querySelector('input[name="title"]')
-    const description = form.querySelector('textarea[name="description"]')
-    const imagen = form.querySelector('.img')
-    const errores = []
-    var boolean = true
+    const ul = document.querySelector('#area-errores')
+
+    function validar(elemento) {   
+
+        let li = ul.querySelector(`#${elemento.getAttribute('name')}`)
+        const jpg_jpeg = new RegExp(/\.jpe?g/i)
+        const png = new RegExp(/\.png/i)
+        const gif = new RegExp(/\.gif/i)
+       
+        switch (elemento.getAttribute('name')) {
+            case 'title':
+                if (elemento.value == '') {
+                    li.innerText = 'El campo Titulo no puede estar vacio'
+                } else if (elemento.value.length < 5) {
+                    li.innerText = 'El campo Titulo debe tener mas de 5 caracteres'
+                } else {
+                    li.innerText = ''
+                }
+            break
+            case 'description':
+                if (elemento.value == '') {
+                    li.innerText = 'El campo Descripcion no puede estar vacio'
+                } else if (elemento.value.length < 20) {
+                    li.innerText = 'El campo Descripcion debe tener mas de 20 caracteres'
+                } else {
+                    li.innerText = ''
+                }
+            break
+            case 'img':
+                if ( !((jpg_jpeg.test(elemento.value)) || (gif.test(elemento.value)) || (png.test(elemento.value)))) {
+                    li.innerText = 'La imagen debe ser de un formato valido (.jpg, .jpeg, .png, .gif)'
+                } else {
+                    li.innerText = ''
+                }
+            break
+        }  6
+    }
+
+    form.addEventListener('change', () => {
+        form.querySelectorAll('input').forEach(elemento => {
+            validar(elemento)
+        })
+    })
 
     form.addEventListener('submit', (e) => {
-        
-        if (title.value == '') {
-            errores.push('El campo Titulo no puede estar vacios')
-        } else {
-            if (title.value < 5) {
-                errores.push('El campo titulo debe tener mas de 5 caracteres')
-            }
-        }
-        if (description.value < 20) {
-            errores.push('El campo descripcion debe tener mas de 20 caracteres')
-        }
-        if ((imagen.value.includes('.jpg')) || (imagen.value.includes('.jpeg')) || (imagen.value.includes('.png')) || (imagen.value.includes('.gif'))) {
-            errores.forEach(error => {
-                document.querySelector('#area-errores').innerHTML += `<li style="color:red;">${error}</li>`
-            })
-        } else if (boolean) {
-            boolean = false
-            errores.push('La imagen debe ser de un formato valido (JPG, JPEG, PNG, GIF)')
-            errores.forEach(error => {
-                document.querySelector('#area-errores').innerHTML += `<li style="color:red;">${error}</li>`
-            })
-        }
         e.preventDefault()
+        form.querySelectorAll('input').forEach(elemento => {
+            validar(elemento)
+        })
     })
 }

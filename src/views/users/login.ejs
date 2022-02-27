@@ -11,6 +11,14 @@
                     Iniciar sesion
                 </h3> 
                     <div class="info-usuario"> 
+                        <div>
+                            <ul id="area-errores" style="list-style: none;">
+                                <li name="fullName" id="fullName" style="color: red;"></li>
+                                <li name="email" id="email" style="color: red;"></li>
+                                <li name="password" id="password" style="color: red;"></li>
+                                <li name="avatar" id="avatar" style="color: red;"></li>
+                            </ul>
+                        </div>
                         <form action="/user/login" id="formulario" method="post" novalidate>
 
                             <div id="label-email" style="display: flex;">
@@ -37,12 +45,10 @@
                             <div class="button-user">
                                 <input class="boton" type="submit" value= "Ingresar"> 
                             </div>
-
                             <div class="opcioncontra">
                                 <a href="">¿Olvidaste tu contraseña?</a>
                                 <a href="/user/register" class="crear-cuenta">Crear cuenta</a>
                             </div>
-
                         </form>
                     </div>
             </div>
