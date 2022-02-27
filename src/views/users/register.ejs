@@ -21,7 +21,7 @@
                                 <li name="avatar" id="avatar" style="color: red;"></li>
                             </ul>
                         </div>
-                        <form id="formulario" action="/user/register" method="POST" enctype="multipart/form-data" novalidate>
+                        <form id="formulario" action="/user/register" method="POST" enctype="multipart/form-data">
 
                             <label for="userName">Ingrese su usuario: </label>
                             <input class="datos <%= locals.errors && errors.userName ? "con-error": null %>" type="text" name= "userName" placeholder="Usuario" value="<%= locals.oldData ? oldData.userName: null %>">    
