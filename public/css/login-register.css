@@ -125,7 +125,7 @@
                 }
             /*-----------------------------------*/
 
-/*---------------------Sección de confirmación de registro de usuario----------------------------------*/
+
 .success-container {
     width: 100%;
     display: flex;
@@ -146,6 +146,22 @@
     color: rgb(58,206,58);
     
 }
+/*--------------------- errores ----------------------------------*/
+.caja-de-errores {
+    width: 80%;
+    display: grid;
+    justify-content: center;
+}
+    .area-errores {
+        padding: 0;
+        color: red;
+        font-family: sans-serif;
+        list-style: disc;
+        display: none;
+    }
+        .area-errores li {
+            
+        }
 /*----------------------------------------------------------------------------*/
 @media (min-width: 576px){
     .login-register-user {

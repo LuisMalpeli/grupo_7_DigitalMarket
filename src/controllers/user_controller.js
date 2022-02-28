@@ -12,6 +12,7 @@ module.exports = {
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
             // con erorres de credenciales5
+            console.log('errores')
             return res.render(
                 'users/register', 
                 {
@@ -29,13 +30,24 @@ module.exports = {
                 type_id: 3
             }
             // REVISA MAILS REPETIDOS - REVISAR
-            db.Usuarios.findOne({
-                where: {email: req.body.email}
-            })
-            .then(usuario => {
-                console.log(usuario)
-            })
-            .catch(error => console.log(error.message))
+            // db.Usuarios.findOne({
+            //     where: {email: req.body.email}
+            // })
+            // .then(usuario => {
+            //     if (usuario === null) {
+            //         res.redirect('success')
+            //     } else {
+                    
+            //         return res.render(
+            //             'users/register', 
+            //             {
+            //                 errors: errores.mapped(),
+            //                 oldData: req.body
+            //             }
+            //         ) 
+            //     }
+            // })
+            // .catch(error => console.log(error.message))
             // db.Usuarios.create(nuevoUsuario)
             // .then(
             //     res.redirect('success')

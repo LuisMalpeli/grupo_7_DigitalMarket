@@ -1,10 +1,13 @@
 window.onload = function() {
+    console.log('link')
+
     const form = document.querySelector("#formulario")
     const ul = document.querySelector('#area-errores')
-    const imagen = form.querySelector('.avatar')
 
     function validar(elemento) {   
- 
+        
+        console.log('validando...')
+
         const jpg_jpeg = new RegExp(/\.jpe?g/i)
         const png = new RegExp(/\.png/i)
         const gif = new RegExp(/\.gif/i)
@@ -19,6 +22,7 @@ window.onload = function() {
                     li.innerText = 'El campo Nombre y apellido debe tener mas de 2 caracteres'
                 } else {
                     li.innerText = ''
+                    valido = false
                 }
             break
             case 'email':
@@ -28,6 +32,7 @@ window.onload = function() {
                     li.innerText = 'El campo Email no es valido (falta @)'
                 } else {
                     li.innerText = ''
+                    valido = false
                 }
             break
             case 'password':
@@ -37,6 +42,7 @@ window.onload = function() {
                     li.innerText = 'El campo Contrasena debe tener mas de 8 caracteres'
                 } else {
                     li.innerText = ''
+                    valido = false
                 }
             break
         }  
@@ -46,20 +52,24 @@ window.onload = function() {
                 li.innerText = 'La imagen debe ser de un formato valido (.jpg, .jpeg, .png, .gif)'
             } else {
                 li.innerText = ''
+                valido = false
             }
         }    
     }
 
-    form.addEventListener('change', () => {
-        form.querySelectorAll('input').forEach(elemento => {
-            validar(elemento)
-        })
+    form.addEventListener('change', (e) => {
+        let elemento = e.path[0]
+        validar(elemento)
     })
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault()
+        let valido = true
         form.querySelectorAll('input').forEach(elemento => {
             validar(elemento)
         })
+        if (!valido) {
+            ul.style.display = block
+            e.preventDefault()
+        } 
     })
 }
