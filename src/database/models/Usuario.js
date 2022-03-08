@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
     const Usuario = sequelize.define('Usuarios',data, config);
 
     Usuario.associate = function (models) {
-        Usuario.hasOne(models.UserTypes, {
+        Usuario.belongsTo(models.UserTypes, {
             foreignKey: 'type_id',
             as: 'user_type'
         })

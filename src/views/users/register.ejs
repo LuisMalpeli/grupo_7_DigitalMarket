@@ -77,8 +77,11 @@
                             <label>Ingrese una foto de perfil: </label> 
                             <div class="avatar-container">
                                 <div class="file-search"></div>
-                                <input class="avatar" type="file" name="avatar">
+                                <input class="avatar" type="file" name="avatar"> 
                             </div>
+                            <% if(locals.errors && errors.avatar) { %>
+                                <p class="errores"> <%= errors.avatar.msg %> </p>
+                            <% } %>  
                             <div class="button-user">
                                 <input class="boton" type="submit" value= "registrar">
                             </div>

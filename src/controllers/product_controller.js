@@ -85,7 +85,7 @@ module.exports = {
                 {productos: producto}
             )
         })
-        .catch(error => console.log)
+        .catch(error => console.log(error));
 		
 	},
     editSend:function(req,res) {

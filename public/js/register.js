@@ -8,7 +8,7 @@ window.onload = function() {
         const jpg_jpeg = new RegExp(/\.jpe?g/i)
         const png = new RegExp(/\.png/i)
         const gif = new RegExp(/\.gif/i)
-
+    }
         let li = ul.querySelector(`#${elemento.getAttribute('name')}`)
        
         switch (elemento.getAttribute('name')) {
@@ -48,8 +48,7 @@ window.onload = function() {
                 li.innerText = ''
             }
         }    
-    }
-
+     
     form.addEventListener('change', () => {
         form.querySelectorAll('input').forEach(elemento => {
             validar(elemento)
