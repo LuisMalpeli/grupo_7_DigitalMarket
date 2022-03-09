@@ -2,18 +2,17 @@ const multer  = require('multer')
 const path = require('path')
 const productPath = path.resolve(__dirname,'../../public/img/productos') 
 const userPath = path.resolve(__dirname,'../../public/img/users')
+const extValidator = require('../helpers/extensionValidator')
 
 const uploadFilter = function (req, file, cb) {
-  let extPermitidas = ['.png','.jpg','.jpeg','.gif']
-  let extValida = extPermitidas.find(element => element == path.extname(file.originalname));
-  if (!extValida) {
-    ///Si extValida es undefined, quiere decir que la extensión no está permitida
-    cb(null, false); //Los archivos serán rechazados
-  }else {
+  if(extValidator.fileCheck(file.originalname)){
+    //La función retorna true si la extensión es válida
     cb(null, true); //Los archivos serán aceptados
+  } else {
+    //La función retornará false si la extensión NO es valida
+    cb(null,false); //Los archivos serán rechazados
   }
-
-}
+} 
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

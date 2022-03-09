@@ -2,6 +2,8 @@ const db = require('../database/models')
 const bcrypt = require('bcryptjs')
 const {validationResult}  = require('express-validator');
 const path = require('path');
+const extValidator = require('../helpers/extensionValidator')
+
 
 module.exports = {
     register: function(req,res) {
@@ -9,6 +11,16 @@ module.exports = {
     },
 
     registerSend: function(req,res) {
+        function registerErrors(err){
+            //Esta función se encarga de renderizar el formulario de register con los errores recibidos en la variable err
+            res.render(
+                'users/register', 
+                {
+                    errors: err,
+                    oldData: req.body
+                }
+            )
+        }
         // Inicia la variable errores almacenando el resultado de la validación de express-validator
         /*Errores validados:
             Nombre y Apellido:
@@ -24,13 +36,8 @@ module.exports = {
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
             // Si hay errores, retorna la vista con los errores y la data que completó el usuario
-            return res.render(
-                'users/register', 
-                {
-                    errors: errores.mapped(),
-                    oldData: req.body
-                }
-            )
+            return registerErrors(errores.mapped())
+            
         } else {
             // Si express-validator no retorna con errores quedan chequear los parámetros no incluidos en express-validator
             // Valida que el campo de mail no exista en la base de datos (evita repetición)
@@ -41,54 +48,31 @@ module.exports = {
             .then(usuario => {
                 if (usuario){
                 //Si se encuentra el usuario ((usuario)=True), retorna el formulario con el error correspondiente y la data completada por el usuario
-                    return res.render(
-                        'users/register', 
-                        {errors: 
-                            {
-                                email: {msg: 'Ya existe un usuario registrado con este email. Por favor ingrese otro'}, 
-                            },
-                            oldData: req.body
-                        }
-                    )
-
+                    return registerErrors({email: {msg: 'Ya existe un usuario registrado con este email. Por favor ingrese otro'}})
                 }
-                return false //retorna false para salir de la promesa
+                if(extValidator.errorMsg !== null) {
+                    //extValidator.errorMsg tendrá el mensaje de error resultante de la validación de multer
+                    //Si tiene null quiere decir que el archivo es válido
+                    return registerErrors({avatar: {msg: extValidator.errorMsg}})
+                }
+                //Si no hay errores, almacena los datos del usuario a crear en la variable nuevoUsuario
+                let nuevoUsuario = {
+                    ...req.body,
+                    avatar: req.file == undefined ? "default-user.png" : req.file.filename,
+                    password: bcrypt.hashSync(req.body.password,10),
+                    // automaticamente asigna el tipo de usuario 'user' 
+                    type_id: 2
+                }
+                if(nuevoUsuario){
+                    db.Usuarios.create(nuevoUsuario)
+                    .then(
+                        res.redirect('success')
+                    )
+                    .catch(error => console.log(error.message))
+                }
             })
             .catch(error => console.log(error.message));
-            //Validación de extensión de archivos para imágen
-            let extensionesPermitidas = ['.png','.jpg','.jpeg','.gif']
-            if(req.file !== undefined){
-                //Si req.file no es undefined, quiere decir que hay un archivo adjunto
-                //ext almacenará la extensión del archivo usando el índice 1 del split
-                let ext = path.extname(req.file.originalname);
-                let extValida = extensionesPermitidas.find(element => element == ext);
-                if (!extValida) {
-                    //Si extValida es undefined, quiere decir que la extensión no está permitida
-                    return res.render(
-                        'users/register', 
-                        {errors: 
-                            {
-                                avatar: {msg: 'Los formatos permitidos para la imagen son .png, .jpg, .jpeg y .gif'}, 
-                            },
-                            oldData: req.body
-                        }
-                    )
-                }
-                
-            }
-            //Almacena los datos del usuario a crear en la variable nuevoUsuario
-            let nuevoUsuario = {
-                ...req.body,
-                avatar: req.file == undefined ? "default-user.png" : req.file.filename,
-                password: bcrypt.hashSync(req.body.password,10),
-                // automaticamente asigna el tipo de usuario 'pro' 
-                type_id: 3
-            }
-            db.Usuarios.create(nuevoUsuario)
-            .then(
-                 res.redirect('success')
-            )
-            .catch(error => console.log(error.message))
+            
         }
     },
 

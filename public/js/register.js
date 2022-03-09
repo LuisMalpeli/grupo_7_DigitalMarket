@@ -2,6 +2,7 @@ window.onload = function() {
     const form = document.querySelector("#formulario")
     const ul = document.querySelector('#area-errores')
     const imagen = form.querySelector('.avatar')
+    
 
     function validar(elemento) {   
  
