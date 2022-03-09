@@ -64,6 +64,7 @@ module.exports = {
                     type_id: 2
                 }
                 if(nuevoUsuario){
+                //Si el nuevoUsuario fue creado, entonces incuirlo en la BBDD
                     db.Usuarios.create(nuevoUsuario)
                     .then(
                         res.redirect('success')
