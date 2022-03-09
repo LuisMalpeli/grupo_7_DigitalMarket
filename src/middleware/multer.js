@@ -2,7 +2,17 @@ const multer  = require('multer')
 const path = require('path')
 const productPath = path.resolve(__dirname,'../../public/img/productos') 
 const userPath = path.resolve(__dirname,'../../public/img/users')
+const extValidator = require('../helpers/extensionValidator')
 
+const uploadFilter = function (req, file, cb) {
+  if(extValidator.fileCheck(file.originalname)){
+    //La función retorna true si la extensión es válida
+    cb(null, true); //Los archivos serán aceptados
+  } else {
+    //La función retornará false si la extensión NO es valida
+    cb(null,false); //Los archivos serán rechazados
+  }
+} 
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -15,14 +25,17 @@ const storage = multer.diskStorage({
         cb(null, productPath)
       }
       
-    },
+    }, 
     filename: function (req, file, cb) {
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
       cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname))
     }
   })
   
-  const upload = multer({ storage: storage })
+  const upload = multer({ 
+    storage: storage,
+    fileFilter: uploadFilter
+  })
 
 
 module.exports = upload
