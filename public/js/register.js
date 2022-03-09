@@ -4,11 +4,13 @@ window.onload = function() {
     const imagen = form.querySelector('.avatar')
     
 
-
-    
     
     const errores = []   
     const camposConError = []
+
+    const jpg_jpeg = new RegExp(/\.jpe?g/i)
+    const png = new RegExp(/\.png/i)
+    const gif = new RegExp(/\.gif/i)
 
     function validarInput (elemento){
         //console.log(elemento.value)
@@ -36,26 +38,14 @@ window.onload = function() {
                     errores.push({password:'El campo Contraseña debe tener mas de 8 caracteres'})
                 }
                 break
+            case 'avatar':
+                if ( !((jpg_jpeg.test(elemento.value)) || (gif.test(elemento.value)) || (png.test(elemento.value)))) {
+                    errores.push({avatar:'La imagen debe ser de un formato valido (.jpg, .jpeg, .png, .gif)'})
+                }
+                break
         }
     }
-    function validar(elemento) {   
-        
-        const jpg_jpeg = new RegExp(/\.jpe?g/i)
-        const png = new RegExp(/\.png/i)
-        const gif = new RegExp(/\.gif/i)
 
-        let li = ul.querySelector(`#${elemento.getAttribute('name')}`)
-        
-         
-
-       /* if (elemento.getAttribute('name') == 'avatar') {
-            if ( !((jpg_jpeg.test(elemento.value)) || (gif.test(elemento.value)) || (png.test(elemento.value)))) {
-                li.innerText = 'La imagen debe ser de un formato valido (.jpg, .jpeg, .png, .gif)'
-            } else {
-                li.innerText = ''
-            }
-        } */    
-    }
      
     /* form.addEventListener('change', () => {
         
@@ -68,6 +58,7 @@ window.onload = function() {
         e.preventDefault()
         errores.length = 0 //Resetea el array de errores
         form.querySelectorAll('input').forEach(elemento => {
+            //La validación del input creará el array de errores
             validarInput(elemento)
         })
         
@@ -75,6 +66,7 @@ window.onload = function() {
             camposConError.length = 0; //inicia nuevamente los campos con error (camposConError almacena los nombres de los input que tienen error)
             //el forEach completa el array de campos con error según las keys de cada objeto en el array de errores
             errores.forEach(error => camposConError.push(Object.keys(error)[0])); //Cada posición del array contendrá solo 1 error
+            //Object.keys(objeto) creará un array con las keys del objeto
             
             let inputFields = document.querySelectorAll('.user-input'); //toma el div donde se encuentran los inputs
             let campoConError = null
