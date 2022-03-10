@@ -22,38 +22,6 @@
                             </ul>
                         </div>
                         <form id="formulario" action="/user/register" method="POST" enctype="multipart/form-data">
-<<<<<<< HEAD
-
-                            <label for="userName">Ingrese su usuario: </label>
-                            <input class="datos <%= locals.errors && errors.userName ? "con-error": null %>" type="text" name= "userName" placeholder="Usuario" value="<%= locals.oldData ? oldData.userName: null %>">    
-                            <% if(locals.errors && errors.userName) { %>
-                                <p class="errores"> <%= errors.userName.msg %> </p>
-                            <% } %>                    
-                            
-                            <label for="">Ingrese su nombre y apellido: </label>
-                            <input class="datos <%= locals.errors && errors.fullName ? "con-error": null %>" type="text" name= "fullName" placeholder="Nombre y apellido" value="<%= locals.oldData ? oldData.fullName: null %>">
-                            <% if(locals.errors && errors.fullName) { %>
-                                <p class="errores"> <%= errors.fullName.msg %> </p>
-                            <% } %>     
-                            
-                            
-                            <label>Seleccione su genero: </label> <br>
-                            <% const generoKeys = ["Hombre","Mujer","Otro"] %> 
-                            <div class="opciones-genero">
-                                <% for(let i = 0; i < generoKeys.length; i++) {%>
-                                    <label><%=generoKeys[i]%>
-                                        <input
-                                            
-                                            type="radio"
-                                            name= "gender"
-                                            value="<%=generoKeys[i] %>"
-                                            <%= locals.oldData && (oldData.gender == generoKeys[i]) ? 'checked': null %>
-                                        >
-                                    </label>
-                                    
-                                <%} %> 
-                                
-=======
                             <div class="user-input">
                                 <label for="userName">Ingrese su usuario: </label>
                                 <input class="datos <%= locals.errors && errors.userName ? "con-error": null %>" type="text" name= "userName" placeholder="Usuario" value="<%= locals.oldData ? oldData.userName: null %>">    
@@ -67,7 +35,6 @@
                                 <% if(locals.errors && errors.fullName) { %>
                                     <p class="errores"> <%= errors.fullName.msg %> </p>
                                 <% } %>     
->>>>>>> 1cd0b3ffe913efab7e2f512ab964af49ffc2b983
                             </div>
 
                             <div class="user-input">
