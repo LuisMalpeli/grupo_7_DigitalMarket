@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "dh_grupo7_2",
-    "host": "127.0.0.1",
+    "username": "grupo7_",
+    "password": "grupo7digitalmarket",
+    "database": "grupo7_digitalmarket",
+    "host": "mysql-grupo7.alwaysdata.net",
     "dialect": "mysql"
   },//de desarrollo
   "test": {

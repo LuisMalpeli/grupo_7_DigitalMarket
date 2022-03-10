@@ -3,7 +3,7 @@ window.onload = function() {
     const form = document.querySelector('#formulario')
     const ul = document.querySelector('#area-errores')
 
-    function validar(elemento) {   
+    /* function validar(elemento) {   
 
         let li = ul.querySelector(`#${elemento.getAttribute('name')}`)
        
@@ -39,5 +39,5 @@ window.onload = function() {
         form.querySelectorAll('input').forEach(elemento => {
             validar(elemento)
         })
-    })
+    }) */
 }

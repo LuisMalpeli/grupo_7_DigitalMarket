@@ -101,3 +101,7 @@ falta 17/1
 
 14/2
     se termino el sprint 6
+9/3
+    Validaciones: Completadas las validaciones del formulario de register
+    Hay que replicar las validacioens de back y front para los demás formularios requeridos (login y productos)
+    Agregar msg de error en la img crear y editar producto
