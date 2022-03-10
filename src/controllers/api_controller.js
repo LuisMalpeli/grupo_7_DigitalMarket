@@ -20,7 +20,7 @@ module.exports = {
         })
     },
     userDelete:(req,res) => {
-
+        
     },
     productList: (req,res) => {
         db.Productos.findAll()
