@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-/*Sección del banner. Por ahora hay un placeholder de mercadoliebre*/
+/*Sección del banner. Por ahora hay un placeholder de mercadoliebre
 .home-banner {
     display: flex;
     width: 100%; 
@@ -10,18 +10,40 @@
     margin-top: 0.5rem;
 }
     .home-banner img {
-        width:80%;
-    }
+        width:100%;
+    }*/
 
-
-/*Fin de sección del banner*/
-
+/* Fin de sección del banner*/
+/*modo claro/oscuro button*/
+.oscuro { 
+    background-color: #1f1f1f; 
+    color: #f1eded; 
+  }
+   
+  .claro { 
+    background-color: #ffffff; 
+    color: #000000; 
+  } 
+   
+  p {
+    text-align: justify;
+  }
+/*fin modo claro/oscuro button*/
 body {
     background-color: var(--color-gris);
 }
+.parrafo-logo {
+    color:#2d4e6a;
+}
+
 main {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+.imagen-genesis {
+    width: 80%;
+    height: 135px;
     align-items: center;
 }
 .productos {
@@ -107,8 +129,9 @@ main {
         flex-wrap: wrap;
         width: 100%;
     }
+  
 }
-@media (max-width: 770px) {
+@media (max-width: 769px) {
     .contenedor-ofertas {
         display: flex;
         flex-direction: row;
@@ -116,8 +139,17 @@ main {
         flex-wrap: wrap;
         width: 100%;
     }
+    .imagen-genesis {
+        display: none;
+        
+    }
 }
-@media (min-width: 1500px) {
+@media (min-width: 769px) {
+    .imagen-genesis {
+        width: 100%;
+        height: 135px;
+        align-items: center;
+    }
     .promociones {
         width: 90%;
         margin-bottom: 2rem;
@@ -202,5 +234,6 @@ main {
                     .app-bg img {
                         height: 200px;
                     }
+                    
 }
     

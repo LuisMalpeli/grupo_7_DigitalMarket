@@ -66,7 +66,7 @@ header {
                 padding: 0.6rem 0;
             }
                 .barra-busqueda {
-                    background-color: #FFF;
+                    background-color:white ;
                     border: none;
                     border-radius: 4px 0 0 4px;
                     padding: 0;
@@ -92,7 +92,8 @@ header {
                 .busqueda i {
                     border-radius: 0 4px 4px 0;
                     padding: 0.6rem;
-                    color: var(--color-grisOscuro);
+                    /*color: var(--color-grisOscuro);*/
+                    color:#01f603;
                     height: 90%;
                     display: flex;  
                     align-items: center;
@@ -100,6 +101,7 @@ header {
                 } 
                 .busqueda button:hover {
                     background-color: #aaaaaa;
+                    
                 }
     .links-carrito {
         display: flex;
@@ -111,7 +113,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: #01f603;
         padding: 1rem;
         margin-bottom: 0.5rem;
     }
@@ -126,7 +128,7 @@ header {
             margin-right: 1rem;
         }
             .link-user i {
-                color: #FFF;
+                color: var(--color-azul);
                 font-size: 32px;
             }
             .link-user img {
@@ -142,7 +144,8 @@ header {
         }
             .botones-login-register span {
                 width: 100%;
-                color: white;
+                /*color: white;*/
+                color:#01f603;
             }  
             .links span {
                 display: flex;
@@ -153,7 +156,8 @@ header {
             .login-options {
                 width: 50%;
                 text-decoration: none;
-                color: var(--color-gris);
+                /*color: var(--color-gris);*/
+                color:#01f603;
                 padding: 0.5rem 0.8rem;
                 border-radius: 0.5rem;
                 transition: all 100ms;
@@ -176,7 +180,8 @@ header {
                 cursor: pointer;
             }
             .link-cart i {
-                color: var(--color-gris);
+               /* color: var(--color-gris);*/
+               color:#2d4e6a;
                 font-size: 32px;
                 margin: 0.5rem;
             }
@@ -267,13 +272,15 @@ header {
             text-decoration: none;
         }
         .boton-nav span, .boton-nav a, .boton-nav i{
-            color: #FFF;
+            /*color: #FFF;*/
+            color:#01f603;
         }
         .boton-nav:hover {
             text-decoration: underline;
         } 
         .link-nav:hover {
-            color: #146dbb;
+            /*color: #146dbb;*/
+            color:#01f603;
         }
     .dropdown {
         position: relative;
@@ -331,6 +338,7 @@ header {
 main {
     /*height: 50rem;*/
     background: var(--color-gris);
+
     display: flex;
     justify-content: center;
 }
@@ -340,9 +348,11 @@ main {
 footer {
     display: flex;
     flex-direction: column;
-    background: #2d4e6a;
+    /*background: #2d4e6a;*/
+    background:  var(--color-azulOscuro);
     /*background-color: var(--color-azul);*/
     color: white;
+   
 }
 .promociones-footer {
     display: flex;
@@ -356,7 +366,8 @@ footer {
         height: fit-content;
     }
         .footer-titulo {
-            color: var(--color-gris);
+            /*color: var(--color-gris);*/
+            color:  var(--color-azul);
             font-size: large;
             display: flex;
             justify-content: center;
@@ -376,7 +387,7 @@ footer {
             }
             .footer-lista-a {
                 text-decoration: none;
-                color: #fff;
+                color: #01f603;
                 font-size: medium;
                 cursor: pointer;
             }
@@ -388,7 +399,8 @@ footer {
     justify-content: center;
 }
 .copyright p {
-    color: var(--color-azulGris);
+    /*color: var(--color-azulGris);*/
+    color: var(--color-azul) ;
 }
 .pb-6 {
     padding-bottom: 40px !important;
