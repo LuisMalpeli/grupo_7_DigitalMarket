@@ -6,6 +6,7 @@ const path = require('path');
 module.exports = {
     errorMsg:null, //errorMsg almacenará el mensaje de error en caso de ocurrir
     fileCheck: function (file) {
+        this.errorMsg = null
         //fileCheck es la función encargada de hacer la validación de extensiones
         const extensionesValidas = ['.png','.jpg','.jpeg','.gif']
         let ext = path.extname(file);
@@ -16,7 +17,6 @@ module.exports = {
                 return false
 
             }
-            this.errorMsg = null
             return true
         
     }

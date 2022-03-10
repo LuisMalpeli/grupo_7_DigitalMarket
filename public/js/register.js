@@ -13,8 +13,7 @@ window.onload = function() {
     const gif = new RegExp(/\.gif/i)
 
     function validarInput (elemento){
-        //console.log(elemento.value)
-        //console.log(elemento.name)
+ 
         switch (elemento.getAttribute('name')) {
             
             case 'fullName':
@@ -39,8 +38,10 @@ window.onload = function() {
                 }
                 break
             case 'avatar':
-                if ( !((jpg_jpeg.test(elemento.value)) || (gif.test(elemento.value)) || (png.test(elemento.value)))) {
-                    errores.push({avatar:'La imagen debe ser de un formato valido (.jpg, .jpeg, .png, .gif)'})
+                if (elemento.value !== ''){
+                    if ( !((jpg_jpeg.test(elemento.value)) || (gif.test(elemento.value)) || (png.test(elemento.value)))) {
+                        errores.push({avatar:'La imagen debe ser de un formato valido (.jpg, .jpeg, .png, .gif)'})
+                    }
                 }
                 break
         }
@@ -61,12 +62,13 @@ window.onload = function() {
             //La validación del input creará el array de errores
             validarInput(elemento)
         })
-        
+
         if (errores.length > 1) {
             camposConError.length = 0; //inicia nuevamente los campos con error (camposConError almacena los nombres de los input que tienen error)
             //el forEach completa el array de campos con error según las keys de cada objeto en el array de errores
             errores.forEach(error => camposConError.push(Object.keys(error)[0])); //Cada posición del array contendrá solo 1 error
             //Object.keys(objeto) creará un array con las keys del objeto
+            //esto arrojará un output del estilo [fullName, email, avatar, password]
             
             let inputFields = document.querySelectorAll('.user-input'); //toma el div donde se encuentran los inputs
             let campoConError = null
@@ -76,14 +78,24 @@ window.onload = function() {
                 nombreCampo = field.querySelector('input').name //Toma el nombre del input dentro del div evaluado
                 
                 //Busca si el input actual es parte del array con errores
-                campoConError = camposConError.find(campo => campo == nombreCampo)
+                campoConError = camposConError.find(campo => campo == nombreCampo) 
                 
+                let parrafo = field.querySelector('p');
                 if (campoConError) {
                     //si campoConError retorna con un valor distinto de undefined, quiere decir que el campo tiene errores
                     //msjError almacenará el mensaje del error que coincida con el campo que estamos mirando ahora
                     let msjError = errores.find(objetoError => Object.keys(objetoError)[0] == campoConError)[campoConError];
                     //Agrega un párrafo con error al final del div indicando el mensaje de error correspondiente
-                    field.innerHTML += `<p class="errores">${msjError}</p>`
+                    
+                    if (parrafo !== null) {
+                        parrafo.innerText = msjError
+                    } else {
+                        field.innerHTML += `<p class="errores">${msjError}</p>`
+                    }
+                } else {
+                    if (parrafo !== null) {
+                        parrafo.parentNode.removeChild(parrafo)
+                    }
                 }
             })
 
