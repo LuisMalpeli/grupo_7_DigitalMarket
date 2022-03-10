@@ -1,4 +1,6 @@
 window.onload = function() {
+    console.log('link')
+
     const form = document.querySelector("#formulario")
     const ul = document.querySelector('#area-errores')
     const imagen = form.querySelector('.avatar')

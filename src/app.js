@@ -9,6 +9,8 @@ const path = require('path')
 const mainRouter = require('./routes/mainRouter')
 const productRouter = require('./routes/productsRouter')
 const userRouter = require('./routes/usersRouter')
+const apiRouter = require('./routes/apiRouter')
+
 const recordarmeMiddleware = require('./middleware/recordarme')
 const userIsLogged = require ('./middleware/userLoggedMiddleware')
 
@@ -41,6 +43,7 @@ app.use(express.static(path.resolve(__dirname,'../public')));
 app.use(recordarmeMiddleware);
 app.use (userIsLogged);
 
-app.use('/',mainRouter)
+app.use('/', mainRouter)
 app.use('/products', productRouter)
-app.use('/user',userRouter)
+app.use('/user', userRouter)
+app.use('/api', apiRouter)

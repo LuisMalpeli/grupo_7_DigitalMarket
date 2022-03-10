@@ -2,7 +2,7 @@
 
 DROP DATABASE IF EXISTS dh_grupo7_2;
 CREATE DATABASE dh_grupo7_2;
-USE dh_grupo7_2;
+USE grupo7_digitalmarket;
 
 SET FOREIGN_KEY_CHECKS=0; -- to disable them
 SET FOREIGN_KEY_CHECKS=1; -- to re-enable them
