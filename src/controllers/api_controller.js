@@ -9,7 +9,7 @@ module.exports = {
             return res.json({
                 count: users.lenght,
                 // countByCategory ---> no entendi que quiere que haga
-                users: Array.from(users)
+                data: Array.from(users)
             })
         })
     },
@@ -20,7 +20,7 @@ module.exports = {
         })
     },
     userDelete:(req,res) => {
-        
+
     },
     productList: (req,res) => {
         db.Productos.findAll()
@@ -28,7 +28,7 @@ module.exports = {
             return res.json({
                 count: products.lenght,
                 // countByCategory ---> no entendi que quiere que haga
-                products: Array.from(products)
+                data: Array.from(products)
             })
         })
     },
