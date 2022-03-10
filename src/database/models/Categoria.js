@@ -24,3 +24,5 @@ module.exports = (sequelize, dataTypes) => {
 
     return Categoria
 }
+
+// cada modelo le explica a Sequelize como es nuestra BD de cada tabla por unica vez, y asi usar los métodos y prestaciones de Sequelize.

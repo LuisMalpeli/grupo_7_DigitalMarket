@@ -38,7 +38,8 @@
             </button>
           </div>
           <!-- fin banner carusel con class de bootstrap-->
-
+          
+        <!--inicio productos-->
         <div class="productos">
             <div class="seccion-ofertas">
                 <div>
@@ -49,7 +50,7 @@
                         <% if ((productos[i].has_discount) && (productos[i].discount != 0)) { %>
                             <article class = "cuadro-oferta">
                                 <% if (productos[i].has_discount == true) { %>
-                                    <i class="fas fa-exclamation-circle"></i>
+                                    <!--<i class="fas fa-exclamation-circle"></i>-->
                                 <% } %>
                                 <div class = "cuadro-oferta-imagenes">
                                     <a href="/products/<%=productos[i].id%>">
@@ -57,7 +58,7 @@
                                     </a>
                                 </div>
                                 <div class = "cuadro-oferta-texto">
-                                    <!--<i class="fas fa-cart-plus"></i>-->
+                                    <i class="fas fa-cart-plus"></i>
                                     <div class="precio-descuento">
                                         <p class = "precio">$<%= productos[i].price %></p>
                                         <% if ((productos[i].has_discount == true) && (productos[i].discount != 0)) { %>
