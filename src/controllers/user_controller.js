@@ -82,17 +82,21 @@ module.exports = {
     },
 
     loginSend: function(req, res) {
+        function registerErrors(err){
+            //Esta función se encarga de renderizar el formulario de register con los errores recibidos en la variable err
+            res.render(
+                'users/login', 
+                {
+                    errors: err,
+                    oldData: req.body
+                }
+            )
+        }
         // validar credenciales
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
             // con erorres de credenciales
-            return res.render(
-                'users/login', 
-                {
-                    errors: errores.mapped(),
-                    oldData: req.body
-                }
-            )
+            return registerErrors(errores.mapped())
         } else {
             // sin errores de credenciales
             db.Usuarios.findOne({
@@ -100,26 +104,29 @@ module.exports = {
             })
             .then(usuario => {
                 // comprobar password
-                if (bcrypt.compareSync(req.body.password, usuario.password)) {
-                    // cookies
-                    usuario.password = "Creiste que encontraste algo?"
-                    req.session.usuarioLogueado = usuario
-                    if (req.body.recordarme != undefined) {
-                        res.cookie('recordarme',usuario.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
-                    }
-                    // envia a perfil
-                    res.redirect('profile')
+                if (usuario){
+                    if (bcrypt.compareSync(req.body.password, usuario.password)) {
+                        // cookies
+                        usuario.password = "Creiste que encontraste algo?"
+                        req.session.usuarioLogueado = usuario
+                        if (req.body.recordarme != undefined) {
+                            res.cookie('recordarme',usuario.email,{maxAge:1000*60*5})//(1000*60 = 1 min)
+                        }
+                        // envia a perfil
+                        res.redirect('profile')
+                    } else {
+                        return registerErrors({
+                            email: {msg: 'Las creendenciales son incorrectas'}, 
+                            password: {msg: 'Las creendenciales son incorrectas'}
+                        })
+                    }   
                 } else {
                     // email-password incorrectas
-                    res.render(
-                        'users/login', 
-                        {errors: 
-                            {
-                                email: {msg: 'Las creendenciales son incorrectas'}, 
-                                pass: {msg: 'Las creendenciales son incorrectas'}
-                            } 
-                        }
-                    )
+                    return registerErrors({
+                        email: {msg: 'Las creendenciales son incorrectas'}, 
+                        password: {msg: 'Las creendenciales son incorrectas'}
+                    })
+                    
                 }
             })
             .catch(error => console.log(error.message))

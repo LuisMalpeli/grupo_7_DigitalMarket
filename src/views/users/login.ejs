@@ -21,18 +21,22 @@
                         </div>
                         <form action="/user/login" id="formulario" method="post">
 
-                            <div id="label-email" style="display: flex;">
+                            <div class="user-input" id="label-email" >
                                 <label for="email" style="display: flex; align-items: center; padding-top: 0;">Ingrese su Email: </label>
-                                <p class="errores"></p>
+                                <input class="datos" type="email" name="email" id="email" placeholder="E-mail"> 
+                                <% if(locals.errors && errors.email) { %>
+                                    <p class="errores"> <%= errors.email.msg %> </p>
+                                <% } %>     
                             </div>
-                            <input class="datos" type="email" name="email" id="email" placeholder="E-mail"> 
                             <br>
                             <!-- <p style="color: red;"> <%= typeof errors != 'undefined' && errors.email ? errors.email.msg : null %> </p> -->
-                            <div id="label-password" style="display: flex;"> 
+                            <div class="user-input" id="label-password"> 
                                 <label for="email">Ingrese su contraseña: </label>
-                                <p class="errores"></p>
+                                <input class="datos" type="password" name="password" id="password" placeholder="Contraseña">
+                                <% if(locals.errors && errors.password) { %>
+                                    <p class="errores"> <%= errors.password.msg %> </p>
+                                <% } %>  
                             </div>
-                            <input class="datos" type="password" name="password" id="password" placeholder="Contraseña">
                             <br>
                             <!-- <p style="color: red;"> <%= typeof errors != 'undefined' && errors.password ? errors.password.msg : null %> </p><br> -->
 
