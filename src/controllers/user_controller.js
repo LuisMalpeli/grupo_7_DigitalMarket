@@ -36,6 +36,13 @@ module.exports = {
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
             // Si hay errores, retorna la vista con los errores y la data que completó el usuario
+            //Borra la imagen que multer genera
+            fs.unlink(req.file.path,(error) => {
+                if (error) {
+                    console.error(error)
+                    return
+                }
+            })
             return registerErrors(errores.mapped())
             
         } else {
