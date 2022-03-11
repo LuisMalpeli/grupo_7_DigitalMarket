@@ -85,4 +85,11 @@ module.exports = {
             return res.json(response)
         })
     },
+    categoriesList:(req,res) => {
+        db.Categorias.findAll()
+        .then(categories => {
+            return res.json(categories)
+        })
+        .catch(error => console.log(error.message))
+    }
 }

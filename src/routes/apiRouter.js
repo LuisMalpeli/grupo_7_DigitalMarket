@@ -11,4 +11,6 @@ router.post('/products',apiController.productCreate)
 router.post('/products/:id',apiController.productUpdate)
 router.delete('/products/:id',apiController.productDelete)
 
+router.get('/categories',apiController.categoriesList)
+
 module.exports = router
