@@ -53,6 +53,10 @@ header {
         .logo img {
             width: 100%;
         }
+        .brand {
+            color:#01f603;
+            
+        }
         .busqueda {
             display: flex;
             justify-content: space-around;

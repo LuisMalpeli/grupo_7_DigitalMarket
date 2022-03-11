@@ -1,4 +1,5 @@
 const { validationResult } = require('express-validator')
+const fs = require('fs')
 const db = require('../database/models')
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
@@ -91,27 +92,40 @@ module.exports = {
     editSend:function(req,res) {
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
+            //Borra la imagen que multer genera
+            if (req.file !== undefined) {
+                fs.unlink(req.file.path,(error) => {
+                    if (error) {
+                        console.error(error)
+                        return
+                    }
+                })
+            }
             return res.render(
                 'products/productEdit', 
                 {
                     errors: errores.mapped(), 
-                    productos:{
-                        id: Number.parseInt(req.params.id),
+                    productos: req.body
+                    /* {
+                        //id: Number.parseInt(req.params.id),
                     ...req.body
-                    }
+                    } */
                 }
             )
         } else {
              // editar producto
+             let productToUpdate = {
+                ...req.body,
+                has_discount:req.body.has_discount == 0 ? false : true,
+                discount:Number.parseInt(req.body.discount),
+                price:Number.parseInt(req.body.price),
+             }
+             if (req.file !== undefined) {
+                 productToUpdate.img = req.file.filename
+             }
+
             db.Productos.update(
-                {
-                    id: req.params.id,
-                    ...req.body,
-                    has_discount:req.body.has_discount == 0 ? false : true,
-                    discount:Number.parseInt(req.body.discount),
-                    price:Number.parseInt(req.body.price),
-                    img: req.file != undefined ? req.file.filename : "default-product.png" 
-                },
+                productToUpdate,
                 {
                     where: {
                     id: req.params.id
