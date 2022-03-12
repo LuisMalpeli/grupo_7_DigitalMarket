@@ -97,7 +97,7 @@ header {
   border-radius: 0 4px 4px 0;
   padding: 0.6rem;
   /*color: var(--color-grisOscuro);*/
-  color: #01f603;
+  color: var(--color-azulOscuro);
   height: 90%;
   display: flex;
   align-items: center;
@@ -361,7 +361,7 @@ footer {
 }
 .footer-titulo {
   /*color: var(--color-gris);*/
-  color: var(--color-azul);
+  color: var(--color-blanco);
   font-size: large;
   display: flex;
   justify-content: center;
