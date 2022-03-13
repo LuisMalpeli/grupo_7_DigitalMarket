@@ -32,17 +32,31 @@ module.exports = {
     },
     productList: (req,res) => {
         db.Productos.findAll(({
-            attributes: ['id','title','description']
+            attributes: ['id','title','description','product_type']
         }))
         .then(products => {
+            // CountByCategories (?)
+            let aux = []
+            db.Categorias.findAll()
+            .then(categories => {
+                Array.from(categories).forEach(elemento => {
+                    aux[elemento.id] = 0
+                })
+
+                console.log(aux)
+            })
+            
+            // fin CountByCategories (?)
+
             let datos = {
                 count: products.length,
-                // countByCategory ---> no entendi que quiere que haga
                 data: Array.from(products)
             }
+
             datos.data.forEach(elemento => {
                 elemento.dataValues['detail'] = url + `/products/${elemento.id}`
             })
+            
             return res.json(datos)
         })
     },
@@ -88,7 +102,10 @@ module.exports = {
     categoriesList:(req,res) => {
         db.Categorias.findAll()
         .then(categories => {
-            return res.json(categories)
+            return res.json({
+                count: categories.length,
+                data: Array.from(categories)
+            })
         })
         .catch(error => console.log(error.message))
     }
