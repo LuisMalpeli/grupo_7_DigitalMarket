@@ -19,7 +19,7 @@ window.onload = function() {
         menuJs.classList.remove('mostrar-menu')
     })
 
-    // modo oscuro
+    /****  modo oscuro
     let dmCheck = document.querySelector('.dark-mode i')
     darkMode.addEventListener('click', ()=> {
         dmCheck.classList.toggle('fa-square')
@@ -32,6 +32,6 @@ window.onload = function() {
             main.style.backgroundColor = 'var(--color-gris)'
             footer.style.backgroundColor = 'var(--color-azul)' 
         }
-    })
+    })******/
 }
 
