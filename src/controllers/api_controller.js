@@ -31,9 +31,11 @@ module.exports = {
         })
     },
     productList: (req,res) => {
-        db.Productos.findAll(({
-            attributes: ['id','title','description','product_type']
-        }))
+        db.Productos.findAll(
+            /* ({
+            attributes: ['id','title','description']
+            }) */
+        )
         .then(products => {
             // CountByCategories (?)
             let aux = []
