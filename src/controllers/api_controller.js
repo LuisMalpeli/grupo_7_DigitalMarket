@@ -70,9 +70,7 @@ module.exports = {
     },
     productCreate: (req,res) => {
         db.Productos.create(req.body)
-        .then(product => {
-            res.redirect('/')
-        })
+        .then(res.redirect('/'))
     },
     productUpdate: (req,res) => {
         let productToUpdate = {
