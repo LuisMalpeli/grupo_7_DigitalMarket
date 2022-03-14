@@ -173,9 +173,9 @@
         list-style: disc;
         display: none;
     }
-        .area-errores li {
+       /* .area-errores li {
             
-        }
+        }*/
 /*----------------------------------------------------------------------------*/
 
 @media (max-width: 576px){

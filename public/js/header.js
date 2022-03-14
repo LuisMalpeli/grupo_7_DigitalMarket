@@ -8,9 +8,10 @@ window.onload = function() {
     const menu = document.querySelector('.user-adap')
     const menuJs = document.querySelector('.menu-js')
 
-    const darkMode = document.querySelector('.dark-mode')
+    //const darkMode = document.querySelector('.dark-mode')
 
     // menu adaptativo
+    
     menu.addEventListener('click', (e) => {
         e.preventDefault()
         menuJs.classList.toggle('mostrar-menu')
@@ -19,7 +20,7 @@ window.onload = function() {
         menuJs.classList.remove('mostrar-menu')
     })
 
-    /****  modo oscuro
+    /*modo oscuro
     let dmCheck = document.querySelector('.dark-mode i')
     darkMode.addEventListener('click', ()=> {
         dmCheck.classList.toggle('fa-square')
@@ -32,6 +33,6 @@ window.onload = function() {
             main.style.backgroundColor = 'var(--color-gris)'
             footer.style.backgroundColor = 'var(--color-azul)' 
         }
-    })******/
+    })*/
 }
 
