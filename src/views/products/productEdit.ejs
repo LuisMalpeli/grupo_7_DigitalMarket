@@ -12,135 +12,136 @@
                 <span name="h3">Editar Producto: <%= productos.title %></span>
             </h3>
             <div class="info-register">
-                <div>
-                    <ul id="area-errores" style="list-style: none;">
-                        <li name="title" id="title" style="color: red;"></li>
-                        <li name="description" id="description" style="color: red;"></li>
-                        <li name="img" id="img" style="color: red;"></li>
-                    </ul>
-                </div>
+
                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formulario">
-                    <span>Nombre del producto:</span> 
-                    <br>
-                    <% if(locals.errors && errors.title) { %>
-                        <p class= "errores"> <%= errors.title.msg %> </p>
-                    <% } %> 
-                    <input type="text" name= "title" class="input-producto" value="<%= productos.title %>">
-                    <br>
-                    <span>Descripcion del producto:</span>
-                    <br>
-                    <% if(locals.errors && errors.description) { %>
-                        <p class= "errores"> <%= errors.description.msg %> </p>
-                    <% } %> 
-                    <textarea class="input-producto" rows= "10" cols="50" name= "description"><%= productos.description %></textarea>
-                    <br>
-                    <!-- <span>Marca: </span>
-                    <br>
-                    <% if(locals.errors && errors.marca) { %>
-                        <p class= "errores"> <%= errors.marca.msg %> </p>
-                    <% } %> 
-                    <input type="text" name="marca" class="input-producto" value="<%= productos.marca %>">
-                    <br> -->
-                    <span>Modelo: </span>
-                    <br>
-                    <% if(locals.errors && errors.model) { %>
-                        <p class= "errores"> <%= errors.model.msg %> </p>
-                    <% } %> 
-                    <input type="text" name="model" class="input-producto" value="<%= productos.model %>">                                                  
-                    <br>
-                    <div class="caja">
-                        <span>Imagen:</span>
-                        <input class="img" type="file" name= "img">    
+                    <div class="user-input">
+                        <span>Nombre del producto:</span> 
+                        <br>
+                        <input type="text" name= "title" class="input-producto" value="<%= productos.title %>">
+                        <br>
+                        <% if(locals.errors && errors.title) { %>
+                            <p class= "errores"> <%= errors.title.msg %> </p>
+                        <% } %>
                     </div>
-                    <div class="categoria">
-                        <span>Seleccione la categoria del producto:</span>
-                        <% if(locals.errors && errors.product_type) { %>
-                            <p class= "errores"> <%= errors.product_type.msg %> </p>
+                    <div class="user-input">
+                        <span>Descripcion del producto:</span>
+                        <br>
+                        <textarea class="input-producto" rows= "10" cols="50" name= "description"><%= productos.description %></textarea>
+                        <% if(locals.errors && errors.description) { %>
+                            <p class= "errores"> <%= errors.description.msg %> </p>
                         <% } %> 
-                        <div class="div-radio">
-                        <input type="radio" id="Motherboard" name="product_type" value="Motherboard" <% if (productos.product_type == 'Motherboard') { %> 
-                            checked
-                            <% } %> >
-                        <label for="Motherboard">Motherboard</label>
-                        <br>
-                        <input type="radio" id="Procesador" name="product_type" value="Procesador" <% if (productos.product_type == 'Procesador') { %> 
-                            checked
-                            <% } %> >
-                        <label for="Procesador">Procesador</label>
-                        <br>
-                        <input type="radio" id="Placas de Video" name="product_type" value="Placas de Video" <% if (productos.product_type == 'Placas de Video') { %> 
-                            checked
-                            <% } %> >
-                        <label for="Placas de Video">Placas de Video</label>
-                        <br> 
-                        <input type="radio" id="Memorias RAM" name="product_type" value="Memorias RAM" <% if (productos.product_type == 'Memorias RAM') { %> 
-                            checked
-                            <% } %> >
-                        <label for="Memorias RAM">Memorias RAM</label>
-                        <br>
-                        <input type="radio" id="Almacenamiento" name="product_type" value="Almacenamiento" <% if (productos.product_type == 'Almacenamiento') { %> 
-                            checked
-                            <% } %> >
-                        <label for="Almacenamiento">Almacenamiento</label>
-                        <br>
-                        <input type="radio" id="Otros" name="product_type" value="Otros" <% if (productos.product_type == 'Otros') { %> 
-                            checked
-                            <% } %> >
-                        <label for="Otros">Otros</label>
                         <br>
                     </div>
-                    <br>
+                    <div class="user-input">
+                        <span>Modelo: </span>
+                        <br>
+                        <input type="text" name="model" class="input-producto" value="<%= productos.model %>">                                                  
+                        <% if(locals.errors && errors.model) { %>
+                            <p class= "errores"> <%= errors.model.msg %> </p>
+                        <% } %> 
+                        <br>
+                    </div>
+                    <div class="user-input">
+                        <div class="caja">
+                            <span>Imagen:</span>
+                            <input class="img" type="file" name= "img">    
+                        </div>
+                    </div>
+                    <div class="user-input">
+                        <div class="categoria">
+                            <span>Seleccione la categoria del producto:</span>
+                            <% if(locals.errors && errors.product_type) { %>
+                                <p class= "errores"> <%= errors.product_type.msg %> </p>
+                            <% } %> 
+                            <div class="div-radio">
+                            <input type="radio" id="Motherboard" name="product_type" value="Motherboard" <% if (productos.product_type == 'Motherboard') { %> 
+                                checked
+                                <% } %> >
+                            <label for="Motherboard">Motherboard</label>
+                            <br>
+                            <input type="radio" id="Procesador" name="product_type" value="Procesador" <% if (productos.product_type == 'Procesador') { %> 
+                                checked
+                                <% } %> >
+                            <label for="Procesador">Procesador</label>
+                            <br>
+                            <input type="radio" id="Placas de Video" name="product_type" value="Placas de Video" <% if (productos.product_type == 'Placas de Video') { %> 
+                                checked
+                                <% } %> >
+                            <label for="Placas de Video">Placas de Video</label>
+                            <br> 
+                            <input type="radio" id="Memorias RAM" name="product_type" value="Memorias RAM" <% if (productos.product_type == 'Memorias RAM') { %> 
+                                checked
+                                <% } %> >
+                            <label for="Memorias RAM">Memorias RAM</label>
+                            <br>
+                            <input type="radio" id="Almacenamiento" name="product_type" value="Almacenamiento" <% if (productos.product_type == 'Almacenamiento') { %> 
+                                checked
+                                <% } %> >
+                            <label for="Almacenamiento">Almacenamiento</label>
+                            <br>
+                            <input type="radio" id="Otros" name="product_type" value="Otros" <% if (productos.product_type == 'Otros') { %> 
+                                checked
+                                <% } %> >
+                            <label for="Otros">Otros</label>
+                            <br>
+                        </div>
+                        <br>
+                    </div>
                     <div class="discount-promo">
-                        <span>Aplicar promocion: </span>
-                        <% if(locals.errors && errors.has_discount) { %>
-                            <p class= "errores"> <%= errors.has_discount.msg %> </p>
-                        <% } %> 
-                        <select name="has_discount" id="has_discount">
-                            <option value="1"<% if(productos.has_discount==true){%>
-                                selected
-                                <%}%>>Si</option>
-                            <option value="0"<% if(productos.has_discount==false){%>
-                                selected
-                                <%}%>>No</option>
-                        </select>
-                        <br>
-                        <span>Porcentaje (%) de descuento</span>
-                        <% if(locals.errors && errors.discount) { %>
-                            <p class= "errores"> <%= errors.discount.msg %> </p>
-                        <% } %> 
-                        <input type="text" name="discount" class="discount" value="<%=productos.discount%>">
-                    </div>
-                    <div class="precio">
-                        <span>Precio del producto:</span>
-                        <br>
-                        <% if(locals.errors && errors.price) { %>
-                            <p class= "errores"> <%= errors.price.msg %> </p>
-                        <% } %> 
-                        <div class="moneda-precio">
-                            <select name="currency" id="moneda">
-                                <option value="USD"<% if(productos.currency=="USD"){%>
+                        <div class="user-input">
+                            <span>Aplicar promocion: </span>
+                            <% if(locals.errors && errors.has_discount) { %>
+                                <p class= "errores"> <%= errors.has_discount.msg %> </p>
+                            <% } %> 
+                            <select name="has_discount" id="has_discount">
+                                <option value="1"<% if(productos.has_discount==true){%>
                                     selected
-                                    <%}%>>USD</option>
-                                <option value="ARS"<% if(productos.currency=="ARS"){%>
+                                    <%}%>>Si</option>
+                                <option value="0"<% if(productos.has_discount==false){%>
                                     selected
-                                    <%}%>>ARS</option>
+                                    <%}%>>No</option>
                             </select>
-                            <input type="number" name="price" class="precio-producto"value="<%=productos.price %>">
-                        </div> 
+                            <br>
+                        </div>
+                        <div class="user-input">
+                        <span>Porcentaje (%) de descuento</span>
+                            <input type="text" name="discount" class="discount" value="<%=productos.discount%>">
+                            <% if(locals.errors && errors.discount) { %>
+                                <p class= "errores"> <%= errors.discount.msg %> </p>
+                            <% } %> 
+                        </div>
+                    </div>
+                    <div class="user-input">
+                        <div class="precio">
+                            <span>Precio del producto:</span>
+                            <br>
+                            <div class="moneda-precio">
+                                <select name="currency" id="moneda">
+                                    <option value="USD"<% if(productos.currency=="USD"){%>
+                                        selected
+                                        <%}%>>USD
+                                    </option>
+                                        <option value="ARS"<% if(productos.currency=="ARS"){%>
+                                            selected
+                                            <%}%>>ARS
+                                        </option>
+                                </select>
+                                <input type="number" name="price" class="precio-producto"value="<%=productos.price %>">
+                                <% if(locals.errors && errors.price) { %>
+                                    <p class= "errores"> <%= errors.price.msg %> </p>
+                                <% } %> 
+                            </div> 
+                        </div>
                     </div>
                     <div class="boton-agregar-div"> 
                         <button type="submit" class="boton-agregar">Guardar</button>
                     </div>
                 </form>
-                <div>
-                    <ul id="area-errores">
-
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
 </main>
 <%- include('../partials/footer') %>
+<script src="/js/products.js"></script>
 </body>
 </html>

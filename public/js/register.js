@@ -1,5 +1,5 @@
 window.onload = function() {
-    console.log('link')
+    
 
     const form = document.querySelector("#formulario")
     const ul = document.querySelector('#area-errores')
@@ -14,7 +14,7 @@ window.onload = function() {
     const png = new RegExp(/\.png/i)
     const gif = new RegExp(/\.gif/i)
 
-    function validarInput (elemento){
+    function validar (elemento){
  
         switch (elemento.getAttribute('name')) {
             
@@ -50,22 +50,17 @@ window.onload = function() {
     }
 
      
-    /* form.addEventListener('change', () => {
-        
-        form.querySelectorAll('input').forEach(elemento => {
-            validar(elemento)
-        })
-    }) */
+
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         errores.length = 0 //Resetea el array de errores
         form.querySelectorAll('input').forEach(elemento => {
             //La validación del input creará el array de errores
-            validarInput(elemento)
+            validar(elemento)
         })
 
-        if (errores.length > 1) {
+        if (errores.length > 0) {
             camposConError.length = 0; //inicia nuevamente los campos con error (camposConError almacena los nombres de los input que tienen error)
             //el forEach completa el array de campos con error según las keys de cada objeto en el array de errores
             errores.forEach(error => camposConError.push(Object.keys(error)[0])); //Cada posición del array contendrá solo 1 error
