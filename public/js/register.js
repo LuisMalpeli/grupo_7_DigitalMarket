@@ -50,12 +50,7 @@ window.onload = function() {
     }
 
      
-    /* form.addEventListener('change', () => {
-        
-        form.querySelectorAll('input').forEach(elemento => {
-            validar(elemento)
-        })
-    }) */
+
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
