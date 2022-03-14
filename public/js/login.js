@@ -31,7 +31,7 @@ window.onload = function() {
         form.querySelectorAll('input').forEach(elemento => {
             validar(elemento)
         })
-        if (errores.length > 1) {
+        if (errores.length > 0) {
             camposConError.length = 0; //inicia nuevamente los campos con error (camposConError almacena los nombres de los input que tienen error)
             //el forEach completa el array de campos con error según las keys de cada objeto en el array de errores
             errores.forEach(error => camposConError.push(Object.keys(error)[0])); //Cada posición del array contendrá solo 1 error
