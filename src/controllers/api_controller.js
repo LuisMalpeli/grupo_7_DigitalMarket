@@ -71,10 +71,7 @@ module.exports = {
     productCreate: (req,res) => {
         db.Productos.create(req.body)
         .then(product => {
-            return res.json({
-                data: product,
-                status: 'OK'
-            })
+            res.redirect('/')
         })
     },
     productUpdate: (req,res) => {
