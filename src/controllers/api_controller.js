@@ -70,27 +70,23 @@ module.exports = {
     },
     productCreate: (req,res) => {
         db.Productos.create(req.body)
-        .then(product => {
-            res.redirect('/')
-        })
+        .then(res.redirect('/'))
     },
     productUpdate: (req,res) => {
         let productToUpdate = {
-            ...req.body,
-            has_discount:req.body.has_discount == 0 ? false : true,
-            discount:Number.parseInt(req.body.discount),
+            title:req.body.title,
+            description:req.body.description,
+            model:req.body.model,
+            img:req.body.img,
             price:Number.parseInt(req.body.price),
         }
-        if (req.file !== undefined) {
-            productToUpdate.img = req.file.filename
-        }
+
+        console.log(req.body)
         db.Productos.update(productToUpdate,
         {
             where: {id: req.params.id}
         })
-        .then(product => {
-            res.redirect('/')
-        })
+        .then(res.redirect('/'))
     },
     productDelete:(req,res) => {
         db.Productos.destroy({
