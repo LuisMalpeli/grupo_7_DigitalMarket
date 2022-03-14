@@ -7,7 +7,7 @@ router.get('/users/:id',apiController.userId)
 
 router.get('/products',apiController.productList)
 router.get('/products/:id',apiController.productId)
-router.post('/products',apiController.productCreate)
+router.post('/products/crear',apiController.productCreate)
 router.post('/products/:id',apiController.productUpdate)
 router.delete('/products/:id',apiController.productDelete)
 
