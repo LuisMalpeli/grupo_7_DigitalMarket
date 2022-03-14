@@ -75,19 +75,21 @@ module.exports = {
         })
     },
     productUpdate: (req,res) => {
-        db.Productos.update({
-            id: req.params.id,
-            ...req.body, 
+        let productToUpdate = {
+            ...req.body,
             has_discount:req.body.has_discount == 0 ? false : true,
             discount:Number.parseInt(req.body.discount),
             price:Number.parseInt(req.body.price),
-            img: req.file != undefined ? req.file.filename : "default-product.png" 
-        },
+        }
+        if (req.file !== undefined) {
+            productToUpdate.img = req.file.filename
+        }
+        db.Productos.update(productToUpdate,
         {
             where: {id: req.params.id}
         })
         .then(product => {
-            return res.json(product)
+            res.redirect('/')
         })
     },
     productDelete:(req,res) => {

@@ -114,15 +114,15 @@ module.exports = {
             )
         } else {
              // editar producto
-             let productToUpdate = {
+            let productToUpdate = {
                 ...req.body,
                 has_discount:req.body.has_discount == 0 ? false : true,
                 discount:Number.parseInt(req.body.discount),
                 price:Number.parseInt(req.body.price),
-             }
-             if (req.file !== undefined) {
-                 productToUpdate.img = req.file.filename
-             }
+            }
+            if (req.file !== undefined) {
+                productToUpdate.img = req.file.filename
+            }
 
             db.Productos.update(
                 productToUpdate,
