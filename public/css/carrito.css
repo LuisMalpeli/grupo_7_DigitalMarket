@@ -80,6 +80,11 @@ table tr {
     padding-left: 16px;
 }
 
+.modulo-derecha ul {
+    padding-left: 0;
+    margin-left: 0;
+}
+
 .contenedor-total h3 {
     font-size: 18px;
     border-bottom: 1px solid #ccc;
@@ -132,6 +137,21 @@ table tr {
   main {
       padding: 0;
   }
+  .cart { width: 100%; flex-direction: column; }
+  .modulo-izquierda, .modulo-derecha {
+    display: block;
+    flex: 100%; 
+    width: 100%;
+    }
+    .modulo-derecha  {
+        padding-left: 0;
+        margin-left: 0;
+        border-left: 0;
+    }
+  .modulo-derecha ul {
+    margin: 6px 0;
+    padding: 0;
+    }
   .main-content {
       flex-direction: column;
       width: 100%;
@@ -161,5 +181,9 @@ table tr {
       font-size: 16px;
       margin: 20px 10px;
   }
+}
+
+@media screen and (max-width:550px) {
+    
 }
 
