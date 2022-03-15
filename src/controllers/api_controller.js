@@ -11,7 +11,6 @@ module.exports = {
         .then(users => {
             return res.json({
                 count: users.length,
-                // countByCategory ---> no entendi que quiere que haga
                 data: Array.from(users)
             })
         })
