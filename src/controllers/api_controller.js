@@ -86,7 +86,7 @@ module.exports = {
             where: {id: req.params.id}
         })
         .then(res.redirect('/'))
-    },
+    }, 
     productDelete:(req,res) => {
         db.Productos.destroy({
             where: {id: req.params.id}
