@@ -2,7 +2,7 @@ Integrantes:
     Javier Fernández ; 
     Nicolas Gonzales Pedrini ; 
     Leimer Delgado ; 
-    Luis Malpeli
+    Luis Malpeli ;
 
 Descripción:
     Tienda online inspirada en:
