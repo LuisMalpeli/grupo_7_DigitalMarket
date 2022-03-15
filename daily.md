@@ -1,4 +1,3 @@
-
 Resumen de tareas completadas:
 
 Retrospectiva => realizado.
@@ -11,29 +10,29 @@ Formulario de registro y login => ...
 Página formulario de creación y edición de productos en formato .ejs con estilos e imágenes => ...
 
 Daily 6/12 :
-    CRUD de productos
-    Merge de css repetidos
-    arreglo de estilos en paginas ya hechas
+CRUD de productos
+Merge de css repetidos
+arreglo de estilos en paginas ya hechas
 
 Daily 13/12
-    Revision de la entrega del sprint 4
+Revision de la entrega del sprint 4
 
 27/12 - RETRO DEL SPRINT 5
-    Vistas:
-        •    Creada la vista de success ante la registración
-        •    Creada la vista de perfil de usuario  Dummie
-        •    Modificado el header para mostrar as opciones de login/register solo si el usuario no está logueado.
-        o    Si está logueado muestra la información del usuario junto con las opciones:
-            "Mi Cuenta"
-            "Logout"
-        •    login.ejs: Cambiado el checkbox a "Recordar usuario"
-        o    renombrado a "recordarme"
-        •    register.ejs:
-        o    Agregada la función de recordar los campos completados en caso de no tener error
-        o    Cambiado el formato de las cajas para que se muestren en rojo si hay errores (más llamativo)
-        o    Cambio en los párrafos para que aparezcan de forma variable. Si no hay errores ni siquiera ocupan   espacio en la pantalla (habría que ajustar el css que los tenía invisibles)
-        o    El formulario deja almacenada la información anterior en caso de error en los formularios
-            No pude hacer que guarde la selección del género
+Vistas:
+• Creada la vista de success ante la registración
+• Creada la vista de perfil de usuario  Dummie
+• Modificado el header para mostrar as opciones de login/register solo si el usuario no está logueado.
+o Si está logueado muestra la información del usuario junto con las opciones:
+ "Mi Cuenta"
+ "Logout"
+• login.ejs: Cambiado el checkbox a "Recordar usuario"
+o renombrado a "recordarme"
+• register.ejs:
+o Agregada la función de recordar los campos completados en caso de no tener error
+o Cambiado el formato de las cajas para que se muestren en rojo si hay errores (más llamativo)
+o Cambio en los párrafos para que aparezcan de forma variable. Si no hay errores ni siquiera ocupan espacio en la pantalla (habría que ajustar el css que los tenía invisibles)
+o El formulario deja almacenada la información anterior en caso de error en los formularios
+ No pude hacer que guarde la selección del género
 
     Controller de Usuarios:
         •    Agregada la creación de una cookie que guarda el mail del usuario (si el mismo indicó que quiere ser recordado)
@@ -49,24 +48,24 @@ Daily 13/12
         •    Agregada variabilidad en el path. Las imagenes se estaban routeando todas a productos, armé un if que si la imagen es un avatar, la guarde en usuarios
 
 7/12
-    problemas con productDetail - no se veia bien en movil
-    correccion a los precios y descuentos en index y productDetail
+problemas con productDetail - no se veia bien en movil
+correccion a los precios y descuentos en index y productDetail
 
 8/12 - 9/12
-    vistas adaptativas
-    hecho el middleware validator-product
-    finaliza precios y descuentos en 'todos los productos' e 'index'
+vistas adaptativas
+hecho el middleware validator-product
+finaliza precios y descuentos en 'todos los productos' e 'index'
 
 10/12
-    revisado barra de busqueda con @media menor a 450px
-    terminado 'perfil'
+revisado barra de busqueda con @media menor a 450px
+terminado 'perfil'
 
 falta
-    revisar icono de descuento en index y en todos los productos
-    revisar error* -> sacar validator del editSend
-    validator product edit 
+revisar icono de descuento en index y en todos los productos
+revisar error\* -> sacar validator del editSend
+validator product edit
 
-    *REVISAR PRODUCT EDIT -> sacar validator del editSend 
+    *REVISAR PRODUCT EDIT -> sacar validator del editSend
 
         ReferenceError: C:\Users\malpe\Desktop\Proyectos\DigitalHouse\integrador2\src\views\products\productEdit.ejs:14
             12|             </h3>
@@ -75,7 +74,7 @@ falta
 
         >> 14|                 <form action="/products/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-            15|                     <span>Nombre del producto:</span> 
+            15|                     <span>Nombre del producto:</span>
 
             16|                     <br>
 
@@ -84,24 +83,26 @@ falta
     productos is not defined
 
     -> no le llega el objeto producto cuando el validator encuentra un error en el if del controller
-    
+
 17/1
-    terminamos sprint 5
+terminamos sprint 5
 
 falta 17/1
-    notificacion de descuento -> rectangulo con el descuento adentro
-    revisar header y poner a user en vez de menu en el index @media (width < px) -> menu hamburguesa del header (celu - tablet)
+notificacion de descuento -> rectangulo con el descuento adentro
+revisar header y poner a user en vez de menu en el index @media (width < px) -> menu hamburguesa del header (celu - tablet)
 
 19/1
-    diagrama de base de dato
-    
+diagrama de base de dato
+
 24/1
-    script structure.sql
-    modelos de database
+script structure.sql
+modelos de database
 
 14/2
-    se termino el sprint 6
+se termino el sprint 6
+se termino el sprint 7
 9/3
-    Validaciones: Completadas las validaciones del formulario de register
-    Hay que replicar las validacioens de back y front para los demás formularios requeridos (login y productos)
-    Agregar msg de error en la img crear y editar producto
+Validaciones de back-end y front-end terminadas (se termino el sprint 7)
+
+14/3
+se termino el sprint 8 (Dashboard en React) este es el link https://github.com/LeimerDAgelvis/Dashboard
