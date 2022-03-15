@@ -5,9 +5,15 @@ var url = 'http://localhost:3000/api'
 
 module.exports = {
     userList: (req,res) => {
-        db.Usuarios.findAll({
-            attributes: ['id','fullName','email']
-        })
+        db.Usuarios.findAll(
+            {
+            include: {
+                model:db.UserTypes,
+                as: 'user_type'
+            }
+            /* attributes: ['id','fullName','email'] */
+            }
+        )
         .then(users => {
             return res.json({
                 count: users.length,
@@ -27,6 +33,16 @@ module.exports = {
         })
         .then((response) => {
             return res.json(response)
+        })
+    },
+    userTypeUpdate:(req, res) => {
+        console.log(req.body)
+        let userToUpdate = {
+            email:req.body.email,
+            type_id:req.body.type_id
+        }
+        db.Usuarios.update(userToUpdate,{
+            where:{email:userToUpdate.email}
         })
     },
     productList: (req,res) => {
@@ -80,7 +96,6 @@ module.exports = {
             price:Number.parseInt(req.body.price),
         }
 
-        console.log(req.body)
         db.Productos.update(productToUpdate,
         {
             where: {id: req.params.id}
@@ -97,6 +112,16 @@ module.exports = {
     },
     categoriesList:(req,res) => {
         db.Categorias.findAll()
+        .then(categories => {
+            return res.json({
+                count: categories.length,
+                data: Array.from(categories)
+            })
+        })
+        .catch(error => console.log(error.message))
+    },
+    userCategoriesList:(req, res) => {
+        db.UserTypes.findAll()
         .then(categories => {
             return res.json({
                 count: categories.length,
