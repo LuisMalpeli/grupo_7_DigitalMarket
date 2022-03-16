@@ -5,6 +5,8 @@ const apiController = require('../controllers/api_controller')
 router.get('/users',apiController.userList)
 router.get('/users/:id',apiController.userId)
 
+router.delete('/users/:id',apiController.userDelete)
+
 router.get('/products',apiController.productList)
 router.get('/products/:id',apiController.productId)
 
