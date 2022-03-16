@@ -13,7 +13,7 @@ router.put('/products/edit/:id',apiController.productUpdate)
 router.delete('/products/:id',apiController.productDelete)
 
 router.get('/categories',apiController.categoriesList)
-router.get('/userCategories',apiController.userCategoriesList)
+router.get('/userCategories',apiController.userTypesList)
 router.put('/userCategories', apiController.userTypeUpdate)
 
 module.exports = router

@@ -120,12 +120,12 @@ module.exports = {
         })
         .catch(error => console.log(error.message))
     },
-    userCategoriesList:(req, res) => {
+    userTypesList:(req, res) => {
         db.UserTypes.findAll()
-        .then(categories => {
+        .then(usertypes => {
             return res.json({
-                count: categories.length,
-                data: Array.from(categories)
+                count: usertypes.length,
+                data: Array.from(usertypes)
             })
         })
         .catch(error => console.log(error.message))
