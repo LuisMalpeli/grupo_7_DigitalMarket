@@ -64,7 +64,7 @@ module.exports = {
                 'products/productCreate',
                 {
                     errors: errores.mapped(),
-                    oldData: req.body
+                    productos: req.body
                 
                 })
         } else {

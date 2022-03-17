@@ -16,7 +16,7 @@
                         <div class="user-input">
                             <label>Nombre del producto:</label> 
                             <br>
-                            <input class="input-producto" type="text" name="title" value="<%= locals.oldData ? oldData.title: null %>">        
+                            <input class="input-producto" type="text" name="title" value="<%= locals.productos ? productos.title: null %>">        
                             <% if(locals.errors && errors.title) { %>
                                 <p class= "errores"> <%= errors.title.msg %> </p>
                             <% } %> 
@@ -24,7 +24,7 @@
                         <div class="user-input">
                             <span>Descripcion del producto:</span>
                             <br>
-                            <textarea class="input-producto" rows= "10" cols="50" name="description"><%= locals.oldData ? oldData.description: null %></textarea>
+                            <textarea class="input-producto" rows= "10" cols="50" name="description"><%= locals.productos ? productos.description: null %></textarea>
                             <% if(locals.errors && errors.description) { %>
                                 <p class= "errores"> <%= errors.description.msg %> </p>
                             <% } %>
@@ -32,7 +32,7 @@
                         <div class="user-input">
                             <span>Modelo: </span>
                             <br>  
-                            <input class="input-producto" type="text" name="model" value="<%= locals.oldData ? oldData.model: null %>">                               
+                            <input class="input-producto" type="text" name="model" value="<%= locals.productos ? productos.model: null %>">                               
                             <% if(locals.errors && errors.model) { %>
                                 <p class= "errores"> <%= errors.model.msg %> </p>
                             <% } %>        
@@ -86,7 +86,7 @@
                                 <% } %>
                                 <div class="user-input">
                                     <label for="precio">Precio:</label>
-                                    <input type="text" name="price" class="precio-producto" value="<%= locals.oldData ? oldData.price: null %>">
+                                    <input type="text" name="price" class="precio-producto" value="<%= locals.productos ? productos.price: null %>">
                                     <% if(locals.errors && errors.price) { %>
                                         <p class= "errores"> <%= errors.price.msg %> </p>
                                     <% } %>
