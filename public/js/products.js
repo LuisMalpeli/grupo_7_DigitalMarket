@@ -4,17 +4,16 @@ window.onload = function () {
     const errores = [];
     const camposConError = []
 
-    function validar(elemento) {   
+    function validar(elemento) {  
         const jpg_jpeg = new RegExp(/\.jpe?g/i)
         const png = new RegExp(/\.png/i)
         const gif = new RegExp(/\.gif/i)
-       
         switch (elemento.getAttribute('name')) {
             case 'title':
                 if (elemento.value == '') {
-                    errores.push({title:'El campo Titulo no puede estar vacio'})
+                    errores.push({title:'El campo Nombre no puede estar vacio'})
                 } else if (elemento.value.length < 5) {
-                    errores.push({title:'El campo Titulo debe tener mas de 5 caracteres'})
+                    errores.push({title:'El campo Nombre debe tener mas de 5 caracteres'})
                 } 
             break
             case 'description':
@@ -42,15 +41,17 @@ window.onload = function () {
 
 
     form.addEventListener('submit', (e) => {
+        e.preventDefault()
         errores.length = 0 //Resetea el array de errores
         form.querySelectorAll('input').forEach(elemento => {
             validar(elemento)
         })
         //Valida el campo de textarea también
-        validar(form.querySelector('textarea'))
+        if (form.querySelector('textarea') != null){
+            validar(form.querySelector('textarea'))
+        }
 
-        if (errores.length > 0) {
-            e.preventDefault()
+        if (errores.length > 0) {      
             camposConError.length = 0; //inicia nuevamente los campos con error (camposConError almacena los nombres de los input que tienen error)
             //el forEach completa el array de campos con error según las keys de cada objeto en el array de errores
             errores.forEach(error => camposConError.push(Object.keys(error)[0])); //Cada posición del array contendrá solo 1 error

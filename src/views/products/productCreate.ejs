@@ -12,71 +12,64 @@
                     Agregar Producto
                 </h3>
                 <div class="info-register">
-                    <div>
-                        <ul id="area-errores" style="list-style: none;">
-                            <li name="title" id="title" style="color: red;"></li>
-                            <li name="description" id="description" style="color: red;"></li>
-                            <li name="img" id="img" style="color: red;"></li>
-                        </ul>
-                    </div>
                     <form action="/products/create" method="POST" enctype="multipart/form-data" id="formulario">
-                        <label>Nombre del producto:</label> 
-                        <br>
-                        <% if(locals.errors && errors.title) { %>
-                            <p class= "errores"> <%= errors.title.msg %> </p>
-                        <% } %> 
-                        <input class="input-producto" type="text" name= "title" value="<%= locals.oldData ? oldData.title: null %>">        
-                        <br>
-                        <span>Descripcion del producto:</span>
-                        <br>
-                        <% if(locals.errors && errors.description) { %>
-                            <p class= "errores"> <%= errors.description.msg %> </p>
-                        <% } %>
-                        <input class="input-producto" name= "description" value="<%= locals.oldData ? oldData.description: null %>"></input>  
-                        <br>
-                        <!-- <span>Marca: </span>
-                        <br>
-                        <% if(locals.errors && errors.marca) { %>
-                            <p class= "errores"> <%= errors.marca.msg %> </p>
-                        <% } %>
-                        <input class="input-producto" type="text" name= "marca" value="<%= locals.oldData ? oldData.marca: null %>">    
-                        <br> -->
-                        <span>Modelo: </span>
-                        <br>  
-                        <% if(locals.errors && errors.model) { %>
-                            <p class= "errores"> <%= errors.model.msg %> </p>
-                        <% } %>        
-                        <input class="input-producto" type="text" name= "model" value="<%= locals.oldData ? oldData.model: null %>">                               
-                        <br> 
-                        <div class="caja">
-                            <span>Imagen:</span>
-                            <input class="img" type="file" name= "img">    
+                        <div class="user-input">
+                            <label>Nombre del producto:</label> 
+                            <br>
+                            <input class="input-producto" type="text" name="title" value="<%= locals.oldData ? oldData.title: null %>">        
+                            <% if(locals.errors && errors.title) { %>
+                                <p class= "errores"> <%= errors.title.msg %> </p>
+                            <% } %> 
+                        </div>
+                        <div class="user-input">
+                            <span>Descripcion del producto:</span>
+                            <br>
+                            <textarea class="input-producto" rows= "10" cols="50" name="description"><%= locals.oldData ? oldData.description: null %></textarea>
+                            <% if(locals.errors && errors.description) { %>
+                                <p class= "errores"> <%= errors.description.msg %> </p>
+                            <% } %>
+                        </div>
+                        <div class="user-input">
+                            <span>Modelo: </span>
+                            <br>  
+                            <input class="input-producto" type="text" name="model" value="<%= locals.oldData ? oldData.model: null %>">                               
+                            <% if(locals.errors && errors.model) { %>
+                                <p class= "errores"> <%= errors.model.msg %> </p>
+                            <% } %>        
                         </div>
                         <div class="caja">
-                            <span>Seleccione la categoria del producto:</span>
-                            <% if(locals.errors && errors.product_type) { %>
-                                <p class= "errores"> <%= errors.product_type.msg %> </p>
-                            <% } %>
-                            <div class="div-radio">
-                                <input type="radio" name="product_type" value="Motherboard">
-                                <label for="Motherboard">Motherboard</label>
-                                <br>
-                                <input type="radio" name="product_type" value="Procesadores">
-                                <label for="Procesador">Procesador</label>
-                                <br>
-                                <input type="radio" name="product_type" value="Placas de Video">
-                                <label for="Placas de Video">Placas de Video</label>
-                                <br>
-                                <input type="radio" name="product_type" value="Memorias RAM">
-                                <label for="RAM">RAM</label>
-                                <br>
-                                <input type="radio" name="product_type" value="Almacenamiento">
-                                <label for="Almacenamiento">Almacenamiento</label>
-                                <br>
-                                <input type="radio" name="product_type" value="Otros">
-                                <label for="Otros">Otros</label>
-                                <br>
-                                
+                            <div class="user-input">
+                                <span>Imagen:</span>
+                                <input class="img" type="file" name="img">    
+                            </div>
+                        </div>
+                        <div class="caja">
+                            <div class="user-input">
+                                <span>Seleccione la categoria del producto:</span>
+                                <% if(locals.errors && errors.product_type) { %>
+                                    <p class= "errores"> <%= errors.product_type.msg %> </p>
+                                <% } %>
+                                <div class="div-radio">
+                                    <input type="radio" name="product_type" value="Motherboard">
+                                    <label for="Motherboard">Motherboard</label>
+                                    <br>
+                                    <input type="radio" name="product_type" value="Procesadores">
+                                    <label for="Procesador">Procesador</label>
+                                    <br>
+                                    <input type="radio" name="product_type" value="Placas de Video">
+                                    <label for="Placas de Video">Placas de Video</label>
+                                    <br>
+                                    <input type="radio" name="product_type" value="Memorias RAM">
+                                    <label for="RAM">RAM</label>
+                                    <br>
+                                    <input type="radio" name="product_type" value="Almacenamiento">
+                                    <label for="Almacenamiento">Almacenamiento</label>
+                                    <br>
+                                    <input type="radio" name="product_type" value="Otros">
+                                    <label for="Otros">Otros</label>
+                                    <br>
+                                    
+                                </div>
                             </div>
                         </div>
                         <div class="caja">
@@ -85,34 +78,30 @@
                                 <label for="moneda">Moneda:</label>
                                 <select name="currency" id="moneda">
                                     <option value="" unchecked>$$$</option>
-                                    <option value="BIT">BIT</option>
                                     <option value="USD">USD</option>
-                                    <option value="EUR">EUR</option>
                                     <option value="ARS">ARS</option>
                                 </select>
                                 <% if(locals.errors && errors.currency) { %>
                                     <p class= "errores"> <%= errors.currency.msg %> </p>
                                 <% } %>
-                                <label for="precio">Precio:</label>
-                                <input type="text" name="price" class="precio-producto">
-                                <% if(locals.errors && errors.price) { %>
-                                    <p class= "errores"> <%= errors.price.msg %> </p>
-                                <% } %>
+                                <div class="user-input">
+                                    <label for="precio">Precio:</label>
+                                    <input type="text" name="price" class="precio-producto" value="<%= locals.oldData ? oldData.price: null %>">
+                                    <% if(locals.errors && errors.price) { %>
+                                        <p class= "errores"> <%= errors.price.msg %> </p>
+                                    <% } %>
+                                </div>
                             </div> 
                         </div>
                         <div class="boton-agregar-div"> 
                             <button type="submit" class="boton-agregar">Agregar producto</button>
                         </div>
                     </form>
-                    <div>
-                        <ul id="area-errores">
-
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
     </main>
     <%- include('../partials/footer') %>
 </body>
+<script src="/js/products.js"></script>
 </html>

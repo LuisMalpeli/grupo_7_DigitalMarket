@@ -60,7 +60,13 @@ module.exports = {
     createSend: (req,res) => {
         const errores = validationResult(req)
         if (errores.errors.length > 0) {
-            return res.render('products/productCreate', {errors: errores.mapped()})
+            return res.render(
+                'products/productCreate',
+                {
+                    errors: errores.mapped(),
+                    oldData: req.body
+                
+                })
         } else {
             let nuevoProducto = {
                 title: req.body.title,
@@ -69,7 +75,9 @@ module.exports = {
                 product_type: req.body.product_type,
                 currency: req.body.currency,
                 price: req.body.price,
-                img: req.file == undefined ? "fff.jpg" : req.file.filename,
+            }
+            if (req.file !== undefined) {
+                nuevoProducto.img = req.file.filename
             }
             db.Productos.create(nuevoProducto)
             .then(
@@ -106,10 +114,6 @@ module.exports = {
                 {
                     errors: errores.mapped(), 
                     productos: req.body
-                    /* {
-                        //id: Number.parseInt(req.params.id),
-                    ...req.body
-                    } */
                 }
             )
         } else {
