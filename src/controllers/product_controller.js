@@ -75,10 +75,9 @@ module.exports = {
                 product_type: req.body.product_type,
                 currency: req.body.currency,
                 price: req.body.price,
+                img: req.file == undefined ? 'default-product.png' : req.file.filename
             }
-            if (req.file !== undefined) {
-                nuevoProducto.img = req.file.filename
-            }
+
             db.Productos.create(nuevoProducto)
             .then(
                 res.redirect('/')
