@@ -51,8 +51,73 @@ module.exports = {
             )
         })
     },
+    addtoCart:(req, res) => {
+        db.Productos.findByPk(req.params.id)
+        .then(producto => {
+            let productToCart = {
+                product_id: producto.id,
+                user_id: 1 //Por ahora crea por default todos los productos bajo el usuario nro 1
+            }
+            db.Carrito.create(productToCart)
+            .then(res.redirect('/products/cart'))
+            .catch(error => console.log(error.message))
+        })
+        .catch(error => console.log(error.message))
+    },
+    deleteFromCart:(req, res) =>{
+        db.Carrito.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(res.redirect('/products/cart'))
+        .catch(error => console.log(error.message))
+    },
     cart: (req, res) => {
-        res.render('products/cart');
+        db.Carrito.findAll({
+            include: {
+                model: db.Productos,
+                as: 'productoDelCarrito'
+            }
+        })
+        .then(itemsDelCarrito => {
+            let productosParaLaVista = [] //Inicializa el array de productos que se pasará a la vista
+            itemsDelCarrito.forEach(item => {
+                productosParaLaVista.push(
+                    //Este objeto normaliza los nombres que resultan de la query a la BBDD para manejarlos en la vista
+                    {
+                    title: item.productoDelCarrito.title,
+                    img: item.productoDelCarrito.img,
+                    price: item.productoDelCarrito.price,
+                    has_discount: item.productoDelCarrito.has_discount,
+                    discount: item.productoDelCarrito.discount,
+                    cartId: item.id
+                    }
+                )
+            })
+            let costoEnvio = 500
+            let productsTotal = 0 // Inica la variable que calcula el precio total de los productos del carrito
+            let totalCarrito = 0
+            productosParaLaVista.forEach(producto => {
+                if (producto.has_discount == 1) {
+                    //Si el producto tiene descuento, agrega el precio descontado
+                    productsTotal += producto.price * (producto.discount/100)
+                } else {
+                    productsTotal += producto.price // Agrega el precio del producto al carrito
+                }
+            })
+            if (productosParaLaVista.length > 0) {
+                totalCarrito = productsTotal + costoEnvio
+            }
+            res.render(
+                'products/cart',
+                {
+                    cart: productosParaLaVista,
+                    costoEnvio: costoEnvio,
+                    precioTotal: totalCarrito,
+                }
+                );
+        })
     },
     create: (req,res) => {
         res.render('products/productCreate')

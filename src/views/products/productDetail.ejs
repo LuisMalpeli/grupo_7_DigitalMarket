@@ -37,10 +37,12 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <div class="boton">
-                        <button type="submit">Agregar al carrito</button>
-                    </div>
                 </form>
+                <div class="boton">
+                    <form action="/products/addToCart/<%= productos.id %>" method="POST">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
+                </div>
                 <div class="edit-delete">
                     <form action="/products/edit/<%= productos.id %>" method="GET" >
                         <button type="submit" class="action-button-edit">EDITAR PRODUCTO</button>

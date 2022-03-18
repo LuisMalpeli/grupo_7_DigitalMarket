@@ -6,71 +6,105 @@
     <%- include('../partials/header') %>
     <main>
         <div class="cart">
-            <div class="modulo-izquierda"> 
-                <table>
-                    <thead>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Producto</td>
-                            <td>Precio</td>
-                            <td>Cantidad</td>
-                            <td>Subtotal</td>
+            <% if (locals.cart && cart.length > 0) { %>
+                <div class="modulo-izquierda"> 
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Producto</td>
+                                    <td>Precio</td>
+                                    <td>Cantidad</td>
+                                    <td>Subtotal</td>
+                                </tr>
+                            </thead>
+                            <% cart.forEach(item => { %>
+                                <tr>
+                                    <td class="borrar-container">
+                                        <span class="borrar-item">
+                                            <!-- <a href="" class="no-link"><i class="fas fa-shopping-cart"></i></a> -->
+                                            <a href="/products/deleteFromCart/<%=item.cartId%>" class="no-link" value=<%=item.cartId%>><i class="fas fa-regular fa-circle-minus"></i></a>
+                                            <!--Por ahora comentado porque no parece estar funcionando -->
+                                        </span>
+                                    </td>
+                                    <% let srcFodler = '/img/productos/'%>
+                                    <td> <img src=<%=srcFodler+item.img %>> </td>
+                                    <td> <%=item.title %> </td>
+                                    <% if (item.has_discount) { %>
+                                        <td> <%=item.price * item.discount / 100 %> </td>
+                                    <% } else { %>
+                                        <td> <%=item.price %> </td>
+                                    <%} %>
+                                    <% let cantidad = 1%>
+                                    <td><%= cantidad %></td>
+                                    <% if (item.has_discount) { %>
+                                        <td> <%=item.price * item.discount / 100 * cantidad%> </td>
+                                    <% } else { %>
+                                        <td> <%=item.price * cantidad%> </td>
+                                    <%} %>
+                                    
+                                    
+                                </tr>
+                            <%})  %>
+                        
+    <!--                     <tr>
+                            <td class="borrar-container"><span class="borrar-item">&times;</span></td>
+                            <td><img src="/img/productos/corei7.png"></td>
+                            <td>Intel Core i7 8303K</td>
+                            <td>$8.999</td>
+                            <td>1</td>
+                            <td>$8.999</td>
                         </tr>
-                    </thead>
-                    <tr>
-                        <td class="borrar-container"><span class="borrar-item">&times;</span></td>
-                        <td><img src="/img/productos/corei7.png"></td>
-                        <td>Intel Core i7 8303K</td>
-                        <td>$8.999</td>
-                        <td>1</td>
-                        <td>$8.999</td>
-                    </tr>
-                    
-                    <tr>
-                        <td class="borrar-container"><span class="borrar-item">&times;</span></td>
-                        <td><img src="/img/productos/gabinete.png"></td>
-                        <td>Gabinete Gamer Ultra</td>
-                        <td>$5.799</td>
-                        <td>1</td>
-                        <td>$5.799</td>
-                    </tr>
-                    
-                    <tr>
-                        <td class="borrar-container"><span class="borrar-item">&times;</span></td>
-                        <td><img src="/img/productos/teclado.png"></td>
-                        <td>Teclado y Mouse Gamer</td>
-                        <td>$2.899</td>
-                        <td>1</td>
-                        <td>$2899</td>
-                    </tr>
-
-                </table>
-            </div>
-                
-            <div class="modulo-derecha">
-                <div class="contenedor-total">
-                    <h3>Total del Carrito</h3>
-                    <ul>
-                        <li>
-                            <strong>Subtotal</strong>
-                            <span>$17.697,00</span>
-                        </li>
-                        <li>
-                            <strong>Envio</strong>
-                            <span>$500,00</span>
-                        </li>
-                        <li>
-                            <strong>Total a pagar</strong>
-                            <span>$18.197,00</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="button button-primario">Finalizar Compra</a> 
+                        
+                        <tr>
+                            <td class="borrar-container"><span class="borrar-item">&times;</span></td>
+                            <td><img src="/img/productos/gabinete.png"></td>
+                            <td>Gabinete Gamer Ultra</td>
+                            <td>$5.799</td>
+                            <td>1</td>
+                            <td>$5.799</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="borrar-container"><span class="borrar-item">&times;</span></td>
+                            <td><img src="/img/productos/teclado.png"></td>
+                            <td>Teclado y Mouse Gamer</td>
+                            <td>$2.899</td>
+                            <td>1</td>
+                            <td>$2899</td>
+                        </tr>
+    -->
+                    </table>
                 </div>
-            </div>
+                
+                <div class="modulo-derecha">
+                    <div class="contenedor-total">
+                        <h3>Total del Carrito</h3>
+                        <ul>
+                            <li>
+                                <strong>Subtotal</strong>
+                                <span><%=precioTotal%></span>
+                            </li>
+                            <li>
+                                <strong>Envio</strong>
+                                <span><%=costoEnvio%></span>
+                            </li>
+                            <li>
+                                <strong>Total a pagar</strong>
+                                <span><%=precioTotal%></span>
+                            </li>
+                        </ul>
+                        <a href="#" class="button button-primario">Finalizar Compra</a> 
+                    </div>
+                </div>
+            <% } else { %>
+                <h1 class="no-items">No hay productos en el carrito</h1>
+            <%} %>
 
         </div>
     </main> 
     <%- include('../partials/footer') %>  
 </body>
+<!-- <script src="/js/cart.js"></script> -> desvinculado a propósito -->
 </html>

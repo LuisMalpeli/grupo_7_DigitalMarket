@@ -3,7 +3,15 @@
    License: none (public domain)
   Resetea los estilos para que en todos los navegadores tenga el mismo formato de contenido y se vea por igual en ellos.
 */
-
+:root {
+    --color-azulOscuro: #000000;
+    --color-azul: #2d4e6a;
+    --color-azulGris: #94a2af;
+    --color-gris: #e7e8e9;
+    --color-grisOscuro: #1f1f1f;
+    --color-blanco: #fff;
+    --color-header: #fff;
+  }
 body {
 	line-height: 1;
     font-family: sans-serif;
@@ -31,6 +39,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 
 
 
@@ -71,7 +80,12 @@ table td {
 table tr {
     border-bottom: 1px solid #ccc;
 }
-
+.no-items {
+    color: var(--color-azulGris);
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+}
 .modulo-derecha {
     width: 30%;
     flex: 30%;
@@ -113,7 +127,10 @@ table tr {
     color: #555; 
 }
 
-
+.no-link {
+    text-decoration:none;
+    color:inherit
+}
 
 .contenedor-total ul li:last-child {
     font-size: 16px;

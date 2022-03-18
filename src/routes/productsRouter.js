@@ -31,5 +31,9 @@ router.get('/edit/:id', productController.edit);
 //  2-Envío del formulario
 router.put('/:id', upload.single('img'), validatorEdit, productController.editSend);//REVISAR VALIDATOR
 
+//Agregar un producto al carrito
+router.post('/addToCart/:id',productController.addtoCart)
+//eliminar un producto del carrito
+router.get('/deleteFromCart/:id', productController.deleteFromCart)
 
 module.exports = router
