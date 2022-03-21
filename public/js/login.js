@@ -6,8 +6,6 @@ window.onload = function() {
     const camposConError = []
 
     function validar(elemento) {   
-
-       
         switch (elemento.getAttribute('name')) {
             case 'email':
                 if (elemento.value == '') {
@@ -28,6 +26,7 @@ window.onload = function() {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
+        errores.length = 0 //Resetea el array de errores
         form.querySelectorAll('input').forEach(elemento => {
             validar(elemento)
         })
