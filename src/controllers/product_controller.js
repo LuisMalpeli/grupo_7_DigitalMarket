@@ -74,14 +74,17 @@ module.exports = {
         .catch(error => console.log(error.message))
     },
     cart: (req, res) => {
+        let costoEnvio = 500
+        let productsTotal = 0 // Inica la variable que calcula el precio total de los productos del carrito
+        let totalCarrito = 0
+        let productosParaLaVista = [] //Inicializa el array de productos que se pasará a la vista
         db.Carrito.findAll({
             include: {
                 model: db.Productos,
                 as: 'productoDelCarrito'
             }
         })
-        .then(itemsDelCarrito => {
-            let productosParaLaVista = [] //Inicializa el array de productos que se pasará a la vista
+        .then(itemsDelCarrito => { //retornará un array con los items del carrito 
             itemsDelCarrito.forEach(item => {
                 productosParaLaVista.push(
                     //Este objeto normaliza los nombres que resultan de la query a la BBDD para manejarlos en la vista
@@ -95,18 +98,16 @@ module.exports = {
                     }
                 )
             })
-            let costoEnvio = 500
-            let productsTotal = 0 // Inica la variable que calcula el precio total de los productos del carrito
-            let totalCarrito = 0
-            productosParaLaVista.forEach(producto => {
-                if (producto.has_discount == 1) {
-                    //Si el producto tiene descuento, agrega el precio descontado
-                    productsTotal += producto.price * (producto.discount/100)
-                } else {
-                    productsTotal += producto.price // Agrega el precio del producto al carrito
-                }
-            })
             if (productosParaLaVista.length > 0) {
+                productosParaLaVista.forEach(producto => {
+                    if (producto.has_discount == 1) {
+                        //Si el producto tiene descuento, agrega el precio descontado
+                        productsTotal += producto.price * (producto.discount/100)
+                    } else {
+                        productsTotal += producto.price // Agrega el precio del producto al carrito
+                    }
+                })
+                //Arma el total del carrito incluyendo el envío
                 totalCarrito = productsTotal + costoEnvio
             }
             res.render(
@@ -118,6 +119,7 @@ module.exports = {
                 }
                 );
         })
+        .catch (error => console.log(error))
     },
     create: (req,res) => {
         res.render('products/productCreate')
