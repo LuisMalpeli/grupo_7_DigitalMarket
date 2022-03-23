@@ -18,7 +18,7 @@
                                 <span class="aplica-descuento">$ <%=  productos.price%></span>
                                 <span class="descuento"><%= productos.discount%>% OFF</span>
                             </div>
-                            <span>$ <%= productos.price - (productos.price / productos.discount)%></span>
+                            <span>$ <%= productos.price * (1 - productos.discount / 100)%></span>
                         </div>
                     <% } else { %>    
                         <div class="precio">

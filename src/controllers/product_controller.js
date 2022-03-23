@@ -102,7 +102,7 @@ module.exports = {
                 productosParaLaVista.forEach(producto => {
                     if (producto.has_discount == 1) {
                         //Si el producto tiene descuento, agrega el precio descontado
-                        productsTotal += producto.price * (producto.discount/100)
+                        productsTotal += producto.price * (1 - producto.discount/100)
                     } else {
                         productsTotal += producto.price // Agrega el precio del producto al carrito
                     }
@@ -114,6 +114,7 @@ module.exports = {
                 'products/cart',
                 {
                     cart: productosParaLaVista,
+                    totalProductos: productsTotal,
                     costoEnvio: costoEnvio,
                     precioTotal: totalCarrito,
                 }
