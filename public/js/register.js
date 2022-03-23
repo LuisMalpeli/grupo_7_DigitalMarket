@@ -17,7 +17,13 @@ window.onload = function() {
     function validar (elemento){
  
         switch (elemento.getAttribute('name')) {
-            
+            case 'userName':
+                if (elemento.value == '') {
+                    errores.push({userName: 'El campo Nombre de usuario no puede estar vacio'})
+                } else if (elemento.value.length < 2) {
+                    errores.push({userName: 'El campo Nombre de usuario debe tener entre 2 y 20 caracteres'})
+                }
+                break
             case 'fullName':
                 if (elemento.value == '') {
                     errores.push({fullName: 'El campo Nombre y apellido no puede estar vacio'})

@@ -1,8 +1,9 @@
 const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 const {validationResult}  = require('express-validator');
-const path = require('path');
-const extValidator = require('../helpers/extensionValidator');
+const extValidator = require('../helpers/extensionValidator')
+const fs = require('fs')
+
 
 // realiza las validaciones correspondientes y manda a la vista res. render o redirect y('...').
 module.exports = {
@@ -37,12 +38,15 @@ module.exports = {
         if (errores.errors.length > 0) {
             // Si hay errores, retorna la vista con los errores y la data que completó el usuario
             //Borra la imagen que multer genera
-            fs.unlink(req.file.path,(error) => {
-                if (error) {
-                    console.error(error)
-                    return
-                }
-            })
+            if (req.file !== undefined) {
+                //El usuario subió una imagen, pero hay que borrarla
+                fs.unlink(req.file.path,(error) => {
+                    if (error) {
+                        console.error(error)
+                        return
+                    }
+                })
+            }
             return registerErrors(errores.mapped())
             
         } else {
