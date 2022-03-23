@@ -1,18 +1,18 @@
 window.onload = function() {
     
 
-    const form = document.querySelector("#formulario")
-    const ul = document.querySelector('#area-errores')
-    const imagen = form.querySelector('.avatar')
+    const form = document.querySelector("#formulario");
+    const ul = document.querySelector('#area-errores');
+    const imagen = form.querySelector('.avatar');
     
 
     
-    const errores = []   
-    const camposConError = []
+    const errores = [];   
+    const camposConError = [];
 
-    const jpg_jpeg = new RegExp(/\.jpe?g/i)
-    const png = new RegExp(/\.png/i)
-    const gif = new RegExp(/\.gif/i)
+    const jpg_jpeg = new RegExp(/\.jpe?g/i);
+    const png = new RegExp(/\.png/i);
+    const gif = new RegExp(/\.gif/i);
 
     function validar (elemento){
  
@@ -102,4 +102,4 @@ window.onload = function() {
         }
         
     })
-}
+};

@@ -1,5 +1,5 @@
 const {check} = require('express-validator')
-
+// validación para creación de usuario
 module.exports = [
     //Validar Users
     check('userName')

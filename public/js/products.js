@@ -1,8 +1,8 @@
 window.onload = function () {
-    const form = document.querySelector('#formulario')
+    const form = document.querySelector('#formulario');
 
     const errores = [];
-    const camposConError = []
+    const camposConError = [];
 
     function validar(elemento) {  
         const jpg_jpeg = new RegExp(/\.jpe?g/i)
@@ -106,4 +106,4 @@ window.onload = function () {
             form.submit();
         }
     })
-}
+};

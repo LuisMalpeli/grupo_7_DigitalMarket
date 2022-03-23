@@ -36,4 +36,4 @@ db.Sequelize = Sequelize;
 
 module.exports = db;
 
-// este archivo realiza la coneccion con la base de datos y exporta una variable llamada db, la cual vamos a usar para hacer todas las consultas a la base de datos //
+// este archivo realiza la coneccion con la base de datos usando propiedades de Sequelize y exporta una variable llamada db, la cual vamos a usar para hacer todas las consultas a la base de datos //

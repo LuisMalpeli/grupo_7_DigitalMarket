@@ -25,3 +25,5 @@ module.exports = [
     check('price')
         .notEmpty().withMessage('* Debe completar el campo precio').bail()
 ]
+
+// validacion del formulario que no este vacio y max y min

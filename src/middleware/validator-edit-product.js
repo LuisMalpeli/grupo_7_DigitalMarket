@@ -1,5 +1,5 @@
-const {check} = require('express-validator')
-
+const {check} = require('express-validator') // se pide el modulo EV y haciendo uso de la desectructuración pedir el metodo check.
+// validación para creación de producto
 module.exports = [
     //Validar Products EDIT
     check('title')

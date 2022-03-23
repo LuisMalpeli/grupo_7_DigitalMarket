@@ -1,10 +1,10 @@
-const db = require('../database/models')
-const bcrypt = require('bcryptjs')
+const db = require('../database/models');
+const bcrypt = require('bcryptjs');
 const {validationResult}  = require('express-validator');
 const path = require('path');
-const extValidator = require('../helpers/extensionValidator')
+const extValidator = require('../helpers/extensionValidator');
 
-
+// realiza las validaciones correspondientes y manda a la vista res. render o redirect y('...').
 module.exports = {
     register: function(req,res) {
         res.render('users/register') 
@@ -160,4 +160,4 @@ module.exports = {
         req.session.destroy();
         return res.redirect ('/');
     }
-}
+};

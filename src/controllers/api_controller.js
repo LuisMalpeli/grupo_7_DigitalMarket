@@ -1,7 +1,7 @@
-const db = require('../database/models')
+const db = require('../database/models');
 const Sequelize = require("sequelize");
 
-var url = 'http://localhost:3000/api'
+var url = 'http://localhost:3000/api';
 
 module.exports = {
     userList: (req,res) => {
@@ -130,4 +130,4 @@ module.exports = {
         })
         .catch(error => console.log(error.message))
     }
-}
+};

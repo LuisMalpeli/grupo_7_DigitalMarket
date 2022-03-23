@@ -1,4 +1,4 @@
-const db = require('../database/models')
+const db = require('../database/models');
 
 const mainController = {
     index : (req,res) => {
@@ -14,6 +14,6 @@ const mainController = {
     register: function(req, res) {
         res.render('register')
     }
-}
+}; // se ve un método por cada una de las rutas mencionadas.
 
-module.exports = mainController
+module.exports = mainController;

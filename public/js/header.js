@@ -1,12 +1,12 @@
-window.onload = function() {
+window.onload = function() { //evento onload se usa para ejecutar una función de JavaScript tan pronto como una página haya cargado.(eventos que accede el usuario?)
 //Menu header
-    const body = document.querySelector('body')
-    const header = document.querySelector('header')
-    const main = document.querySelector('main')
-    const footer = document.querySelector('footer')
+    const body = document.querySelector('body');
+    const header = document.querySelector('header');
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
 
-    const menu = document.querySelector('.user-adap')
-    const menuJs = document.querySelector('.menu-js')
+    const menu = document.querySelector('.user-adap');
+    const menuJs = document.querySelector('.menu-js');
 
     //const darkMode = document.querySelector('.dark-mode')
 
@@ -15,10 +15,10 @@ window.onload = function() {
     menu.addEventListener('click', (e) => {
         e.preventDefault()
         menuJs.classList.toggle('mostrar-menu')
-    })
+    });
     menuJs.addEventListener('mouseleave', (e)=> {
         menuJs.classList.remove('mostrar-menu')
-    })
+    });
 
     /*modo oscuro
     let dmCheck = document.querySelector('.dark-mode i')
@@ -34,5 +34,5 @@ window.onload = function() {
             footer.style.backgroundColor = 'var(--color-azul)' 
         }
     })*/
-}
+};
 

@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     const Usuario = sequelize.define('Usuarios',data, config);
-
+    // Asociacion de la tabla de usuarios con producto ventas
     Usuario.associate = function (models) {
         Usuario.belongsTo(models.UserTypes, {
             foreignKey: 'type_id',
@@ -45,4 +45,4 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     return Usuario
-}
+};

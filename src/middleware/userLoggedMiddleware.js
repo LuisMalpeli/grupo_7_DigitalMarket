@@ -11,4 +11,4 @@ function userIsLogged (req, res, next) {
     next ();
 }
 
-module.exports = userIsLogged
+module.exports = userIsLogged;

@@ -3,7 +3,7 @@ window.onload = function() {
     const form = document.querySelector('#formulario');
 
     const errores = [];
-    const camposConError = []
+    const camposConError = [];
 
     function validar(elemento) {   
 
@@ -12,7 +12,7 @@ window.onload = function() {
             case 'email':
                 if (elemento.value == '') {
                     errores.push({email:'El campo Email no puede estar vacio'})
-                } else if (!elemento.value.includes('@')) { // false si no lo encontro
+                } else if (!elemento.value.includes('@')) { // false si no lo encontro al @.
                     errores.push({email: 'El campo Email no es valido (falta @)'})
                 }
             break
@@ -73,4 +73,4 @@ window.onload = function() {
         }
 
     })
-}
+};

@@ -23,4 +23,4 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     return Marca
-}
+};

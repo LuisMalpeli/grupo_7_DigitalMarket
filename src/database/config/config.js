@@ -20,6 +20,6 @@ module.exports = {
     "host": "127.0.0.1",
     "dialect": "mysql"
   }// para producción
-}
+};
 
 // se tiene que poner el module.exports para poder exportar toda la configuracion de sequelizerc //

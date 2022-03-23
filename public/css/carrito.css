@@ -85,6 +85,9 @@ table tr {
     font-size: 3rem;
     display: block;
     text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+    
 }
 .modulo-derecha {
     width: 30%;

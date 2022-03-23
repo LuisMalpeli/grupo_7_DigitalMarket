@@ -1,19 +1,19 @@
-const { validationResult } = require('express-validator')
-const fs = require('fs')
-const db = require('../database/models')
+const { validationResult } = require('express-validator');
+const fs = require('fs');
+const db = require('../database/models');
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
-
+// el método del controlador de productos me da como resultado final un res render o res redirect u db. producto
 module.exports = {
     list: (req,res) => {
-        // busqueda con query
+        // busqueda con query(barra de busqueda del header)
         if (req.query.search != undefined) {
             db.Productos.findAll({
-                where: {
-                    [Op.or] : {
+                where: {         // aca el where filtra la consulta
+                    [Op.or] : {  // op.or qué es ?  // (someAttribute = 5) OR (someAttribute = 6)
                         title: {[Op.like]: '%' + req.query.search + '%'},
-                        description: {[Op.like]: '%' + req.query.search + '%'},
+                        description: {[Op.like]: '%' + req.query.search + '%'},   //[Op.like]: '%hat',      // LIKE '%hat'
                         model: {[Op.like]: '%' + req.query.search + '%'}
                     }
                 }
@@ -123,16 +123,16 @@ module.exports = {
         res.render('products/productCreate')
     },
     createSend: (req,res) => {
-        const errores = validationResult(req)
+        const errores = validationResult(req)/// se ejecuta la validacion yel controlador recibe toda la validacion a travez del validatorResult 
         if (errores.errors.length > 0) {
             return res.render(
                 'products/productCreate',
                 {
-                    errors: errores.mapped(),
+                    errors: errores.mapped(),// si tenien errores envia los errores mapeados al front
                     productos: req.body
                 
                 })
-        } else {
+        } else {// si no empieza a mapear con los datos que me vienen del request del body y su atributo.
             let nuevoProducto = {
                 title: req.body.title,
                 description: req.body.description,
@@ -143,11 +143,11 @@ module.exports = {
                 img: req.file == undefined ? 'default-product.png' : req.file.filename
             }
 
-            db.Productos.create(nuevoProducto)
+            db.Productos.create(nuevoProducto)//graba el registro en la ddbb , se crea el nuevo producto con lo mapeado y redirecciona a la pagina principal
             .then(
                 res.redirect('/')
             )
-            .catch(error => console.log(error.message))
+            .catch(error => console.log(error.message))// manda algun error en la comunicacion( ej: 400 error de negocio o en la gama d elos 500 cuando es un erro propio del servidor, no esta disponible)
         }
     },
     edit: (req, res) => {
@@ -211,4 +211,4 @@ module.exports = {
         })
         .then(res.redirect('/'))
     },
-}
+};

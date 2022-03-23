@@ -1,3 +1,4 @@
+// el tipo de dato de cada columna de la tabla con sus propiedadaes, esto es el modelo
 module.exports = (sequelize, dataTypes) => {
     const data = {
         id:{
@@ -45,7 +46,8 @@ module.exports = (sequelize, dataTypes) => {
 
     const Producto = sequelize.define('Productos',data, config);
 
-    Producto.associate = function (models) {
+    // asociaciones de la tabla producto con categorias, usuarios y carrito.
+    Producto.associate = function (models) { 
         Producto.belongsTo(models.Categorias, {
             foreignKey: 'product_type',
             as: 'categoria'
