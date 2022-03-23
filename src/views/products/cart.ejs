@@ -39,7 +39,7 @@
                                     <% let cantidad = 1%>
                                     <td><%= cantidad %></td>
                                     <% if (item.has_discount) { %>
-                                        <td> <%=item.price * item.discount / 100 * cantidad%> </td>
+                                        <td> <%=item.price * (1 - item.discount / 100) * cantidad%> </td>
                                     <% } else { %>
                                         <td> <%=item.price * cantidad%> </td>
                                     <%} %>
