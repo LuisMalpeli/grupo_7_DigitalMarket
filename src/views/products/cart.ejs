@@ -32,7 +32,7 @@
                                     <td> <img src=<%=srcFodler+item.img %>> </td>
                                     <td> <%=item.title %> </td>
                                     <% if (item.has_discount) { %>
-                                        <td> <%=item.price * item.discount / 100 %> </td>
+                                        <td> <%=item.price * (1 - item.discount / 100) %> </td>
                                     <% } else { %>
                                         <td> <%=item.price %> </td>
                                     <%} %>
@@ -84,7 +84,7 @@
                         <ul>
                             <li>
                                 <strong>Subtotal</strong>
-                                <span><%=precioTotal%></span>
+                                <span><%=totalProductos%></span>
                             </li>
                             <li>
                                 <strong>Envio</strong>

@@ -111,6 +111,7 @@ main {
 }
 .nombre-producto {
   padding-left: 5%;
+  padding-right: 5%;
   text-decoration: none;
   color: black;
   margin-top: 5px;

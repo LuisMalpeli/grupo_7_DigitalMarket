@@ -21,10 +21,12 @@
                             <div class = "cuadro-oferta-texto">
                                 <!--<i class="fas fa-cart-plus"></i>-->
                                 <div class="precio-descuento">
-                                    <p class = "precio">$<%= productos[i].price %></p>
-                                    <% if ((productos[i].has_promotion == true) && (productos[i].discount != 0)) { %>
+                                    <% if ((productos[i].has_discount == true) && (productos[i].discount != 0)) { %>
+                                        <p class = "precio">$<%= productos[i].price * (1 - productos[i].discount /100) %></p>
                                         <p class = "descuento"><%= productos[i].discount%>% OFF</p>
-                                    <% } %>
+                                    <% } else { %>
+                                        <p class = "precio">$<%= productos[i].price %></p>
+                                    <%} %>
                                 </div>
                                 <p class="nombre-producto"><%= productos[i].title %></p>
                             </div>
