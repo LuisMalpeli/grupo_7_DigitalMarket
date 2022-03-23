@@ -161,7 +161,7 @@ module.exports = {
 
     logout: function(req, res) {
         res.clearCookie('recordarme');
-        req.session.destroy();
-        return res.redirect ('/');
+        req.session.destroy();// destruye la sesion
+        return res.redirect ('/');// renderiza el home 
     }
 };

@@ -70,7 +70,7 @@ module.exports = {
                 data: Array.from(products)
             }
 
-            datos.data.forEach(elemento => {
+            datos.data.forEach(elemento => {// itera en e y te los devuelve
                 elemento.dataValues['detail'] = url + `/products/${elemento.id}`
             })
             

@@ -12,7 +12,7 @@ router.get('/register', guestMiddleware, userController.register);//res.render('
 router.post('/register', upload.single('avatar'), validatorReg, userController.registerSend);//res.redirect('success') y db.Usuarios.create(nuevoUsuario).
 
 //Login de usuario
-router.get('/login', guestMiddleware, userController.login); // manda al registro de usuario =>  res.render('users/login')
+router.get('/login', guestMiddleware, userController.login); // manda al registro de usuario/res.render('users/login')
 
 router.post('/login', validatorLogin, userController.loginSend);// envia los datos ingresados en el registro a la base de datos y res.render('users/login')
     

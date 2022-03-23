@@ -7,11 +7,11 @@ const validatorEdit = require('../middleware/validator-edit-product')
 
 
 
-//Capturo lo que venga a products y le muestro la lista de productos completa, barra de busqueda del header.ejs
+//Capturo lo que venga a products y le muestro la lista de productos completa, barra de busqueda del header
 router.get('/', productController.list);
 
-//Creación de un producto:
 
+//Creación de un producto:
 
 //  1-Vista del formulario de productos a crear
 router.get('/create', productController.create); //Mostrar el formulario para crear el producto a la vista =>GET
