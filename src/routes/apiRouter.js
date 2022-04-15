@@ -20,3 +20,6 @@ router.get('/userCategories',apiController.userTypesList);//return res.json
 router.put('/userCategories', apiController.userTypeUpdate);//  req => db.Usuarios.update
 // cada ruta de las APIS me devuelve un JSON o vista.
 module.exports = router;
+
+//JavaScript nos provee las funcionalidades de FETCH. Las cuales son de gran utilidad ya que nos permiten,(solicitudes asincrónicas del lado del front-end para hacer peticiones a dist APIS)
+// de una manera sencilla y rápida, establecer una comunicación con un servidor a través de los distintos endpoints que nos provea su API.

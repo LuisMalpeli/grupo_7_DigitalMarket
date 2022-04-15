@@ -32,7 +32,7 @@ module.exports = {
             where: {id: req.params.id}
         })
         .then((response) => {
-            return res.json(response)
+            return res.json(response)// le da valor 1
         })
     },
     userTypeUpdate:(req, res) => {

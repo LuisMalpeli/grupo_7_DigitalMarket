@@ -1,3 +1,4 @@
+
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const db = require('../database/models');
@@ -11,7 +12,7 @@ module.exports = {
         if (req.query.search != undefined) {
             db.Productos.findAll({
                 where: {         // aca el where filtra la consulta
-                    [Op.or] : {  // op.or qué es ?  // (someAttribute = 5) OR (someAttribute = 6)
+                    [Op.or] : {  // Op (sequelize) Operador del where,fltra // (someAttribute = 5) OR (someAttribute = 6)
                         title: {[Op.like]: '%' + req.query.search + '%'},
                         description: {[Op.like]: '%' + req.query.search + '%'},   //[Op.like]: '%hat',      // LIKE '%hat'
                         model: {[Op.like]: '%' + req.query.search + '%'}
@@ -74,17 +75,20 @@ module.exports = {
         .catch(error => console.log(error.message))
     },
     cart: (req, res) => {
-        let costoEnvio = 500
-        let productsTotal = 0 // Inica la variable que calcula el precio total de los productos del carrito
-        let totalCarrito = 0
-        let productosParaLaVista = [] //Inicializa el array de productos que se pasará a la vista
+
+        let costoEnvio = 500;
+        let productsTotal = 0;// Inica la variable que calcula el precio total de los productos del carrito
+        let totalCarrito = 0;
+        let productosParaLaVista = []; //Inicializa el array de productos que se pasará a la vista
+        
         db.Carrito.findAll({
             include: {
                 model: db.Productos,
                 as: 'productoDelCarrito'
             }
         })
-        .then(itemsDelCarrito => { //retornará un array con los items del carrito 
+        .then(itemsDelCarrito => {
+             //retornará un array con los items del carrito 
             itemsDelCarrito.forEach(item => {
                 productosParaLaVista.push(
                     //Este objeto normaliza los nombres que resultan de la query a la BBDD para manejarlos en la vista

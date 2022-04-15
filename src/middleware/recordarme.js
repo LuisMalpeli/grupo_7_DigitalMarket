@@ -12,7 +12,7 @@ function recordarmeMiddleware(req, res, next) {
         })
         .then(usuario => {
             let usuarioALoguear = usuario
-            //almacena el usuario a loguear dentro de session  
+            //almacena el usuario "a loguear" dentro de session  
             req.session.usuarioLogueado = usuarioALoguear
         })
         .catch(error => console.log(error.message))

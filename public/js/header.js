@@ -1,4 +1,5 @@
-window.onload = function() { //evento onload se usa para ejecutar una función de JavaScript tan pronto como una página haya cargado.(eventos que accede el usuario?)
+window.onload = function() { //evento onload (dónde? Cuándo? y función)...se usa para ejecutar una función de JavaScript tan pronto como una página haya cargado.(eventos que accede el usuario?)
+    // queremos que ejecute el evento en toda la ventana(window) y cuando se cargue(onload), qué quiero que haga nuestro código = function(){}
 //Menu header
     const body = document.querySelector('body');
     const header = document.querySelector('header');
@@ -14,9 +15,9 @@ window.onload = function() { //evento onload se usa para ejecutar una función d
     
     menu.addEventListener('click', (e) => {
         e.preventDefault()
-        menuJs.classList.toggle('mostrar-menu')
+        menuJs.classList.toggle('mostrar-menu') //toggle: cambia un estilo a otro???
     });
-    menuJs.addEventListener('mouseleave', (e)=> {
+    menuJs.addEventListener('mouseleave', (e)=> {  //'mouseleave'???
         menuJs.classList.remove('mostrar-menu')
     });
 
@@ -34,5 +35,6 @@ window.onload = function() { //evento onload se usa para ejecutar una función d
             footer.style.backgroundColor = 'var(--color-azul)' 
         }
     })*/
+    
 };
 

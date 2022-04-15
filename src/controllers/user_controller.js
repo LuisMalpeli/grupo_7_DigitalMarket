@@ -66,7 +66,7 @@ module.exports = {
                     //Si tiene null quiere decir que el archivo es válido
                     return registerErrors({avatar: {msg: extValidator.errorMsg}})
                 }
-                //Si no hay errores, almacena los datos del usuario a crear en la variable nuevoUsuario
+                //----------------Si no hay errores, almacena los datos del usuario a crear en la variable nuevoUsuario---------//
                 let nuevoUsuario = {
                     ...req.body,
                     avatar: req.file == undefined ? "default-user.png" : req.file.filename,
@@ -75,7 +75,7 @@ module.exports = {
                     type_id: 2
                 }
                 if(nuevoUsuario){
-                //Si el nuevoUsuario fue creado, entonces incuirlo en la BBDD
+                //---------------------------------Si el nuevoUsuario fue creado, entonces incuirlo en la BBDD------------------------//
                     db.Usuarios.create(nuevoUsuario)
                     .then(
                         res.redirect('success')
@@ -117,7 +117,7 @@ module.exports = {
                 // comprobar password
                 if (usuario){
                     if (bcrypt.compareSync(req.body.password, usuario.password)) {
-                        // cookies
+                        //-------------------------------cookies bcrypt--------------------------------------------------//
                         usuario.password = "Creiste que encontraste algo?"
                         req.session.usuarioLogueado = usuario
                         if (req.body.recordarme != undefined) {
@@ -143,11 +143,11 @@ module.exports = {
             .catch(error => console.log(error.message))
         }
     },
-
+//--------- usuario registrado---------//
     userRegistered:function(req,res) {   
         res.render('users/success')
     }, 
-
+// ---------perfil de usuario logueado------//
     profile: function(req,res){
         db.Usuarios.findOne({
             where: {email: req.session.usuarioLogueado.email}
@@ -158,7 +158,7 @@ module.exports = {
         .catch(error => console.log(error.message))
         
     },
-
+// ------ salgo de mi perfil, borra la cookie y destruye seseion para redireccionar al home-------//
     logout: function(req, res) {
         res.clearCookie('recordarme');
         req.session.destroy();// destruye la sesion

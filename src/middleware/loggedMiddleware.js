@@ -7,6 +7,6 @@ function loggedMiddleware (req, res, next) {
     next ();
 }
 
-module.exports = loggedMiddleware;
+module.exports = loggedMiddleware;// ingresa a su perfil el usuario 
 
 

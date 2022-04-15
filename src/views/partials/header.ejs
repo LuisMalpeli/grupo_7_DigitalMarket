@@ -1,47 +1,50 @@
 <header>
     <!--------header-------->
     <div class="barra-superior">
-        <div class = "logo-busqueda"> 
+
+        <div class = "logo-busqueda"> <!--------logo de busqueda-------->
             <div class="logo">
                 <a href="/"><img src="/img/g7logo.jpg" alt="logo"></a> 
             </div>
             <p class="brand">G7 HARDWARE</p>
          
-            <div class="busqueda">
+            <div class="busqueda"><!--------Barra de busqueda-------->
                 <form action="/products/" method="GET" class="busqueda-form">
                     <input type="text" placeholder="Buscar productos..." name="search" class="barra-busqueda">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
         </div>
+        <!------------------------------------------link usuario logueado/adaptativo---------------------------------------->
         <div class="links-adaptativo">
-
             <% if(locals.isLogged) { %>
-                <div class="link-user  user-adap"><img src="/img/users/<%= locals.usuarioLogueado.avatar %>"></div>
-            <% } else { %>     
+                <div class="link-user  user-adap"><img src="/img/users/<%= locals.usuarioLogueado.avatar %>"></div><!------ imagen impresa usuario logueado si el usuario esta registrado------->
+            <% } else { %>     <!--------caso contrario-------->
                 <div class="link-user user-adap"><i class="fas fa-user"></i></div>
             <% } %> 
             
             <div class="menu-js">
                 <span>Menu</span>
-                <%  if (locals.isLogged) { %>
+                <%  if (locals.isLogged) { %><!--------si el usuario esta logueado-------->
                     <ul>
                         <li><a href="/user/profile">Perfil</a></li>
-                        <li><a href="/products/create">Vender</a></li>
+                        <li><a href="/products/create">Vender</a></li><!--------muestro perfil del usuario, vender y logout-------->
                         <li><a href="user/logout">Cerrar sesion</a></li>
                     </ul>
                 <% } else { %>
                     <ul>
-                        <li><a href="/user/register">Registrarse</a></li>
+                        <li><a href="/user/register">Registrarse</a></li><!--------caso contrario menu de home register y login -------->
                         <li><a href="user/login">Iniciar sesion</a></li>
                     </ul>
                 <% } %>
-                 <!--------Se saco el modo oscuro-------->
-                <!-------<div class="dark-mode"><i class="far fa-square"></i>Modo oscuro</div>-------->
             </div>
         </div>
+        <!------------------------------------------ fin link usuario logueado/adaptativo---------------------------------------->
+         <!--------Se saco el modo oscuro-------->
+                <!-------<div class="dark-mode"><i class="far fa-square"></i>Modo oscuro</div>-------->
+
         <div class="links-carrito">
-            <div class="login-register">
+            <div class="login-register"><!---------------------------------logueado en carrito, su header------------------------------------------>
                 <% if(locals.isLogged) { %>
                     <a href="/" class="link-user"><img src="/img/users/<%= locals.usuarioLogueado.avatar %>"></a>
                     <div class="botones-login-register">
@@ -51,11 +54,11 @@
                             <span> / </span>
                             <a href="/user/logout" class="login-options" id="register">Logout</a>
                         </div>
-                    </div>
+                    </div><!-----------------------------------------usuario logueado con su perfil y cerrar sesión-------------------------------------->
                 <% } else { %> 
                     <a href="/" class="link-user"><i class="fas fa-user"></i></a>
                     <div class="botones-login-register">
-                        <span>Bienvenido!</span>
+                        <span>Bienvenido!</span><!--------no logueado-------->
                         <div class="links">
                             <a href="/user/login" class="login-options" id="login">Login</a>
                             <span>/</span>
@@ -63,15 +66,17 @@
                         </div>
                     </div>
                 <%} %> 
+               
             </div>
+
             <div class="link-cart">
-                <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a><!--------hipervinculo a página del carrito-------->
             </div>            
         </div>
+
     </div>
-    <!--------header-------->
-    <!--------nav-------->
-    <div class="barra-inferior">
+    
+    <div class="barra-inferior"><!--------nav-------->
         <div class="menu-nav">
             <!-- <div class="dropdown">
                 <span class="drop">Categorias</span>
@@ -89,7 +94,7 @@
                 <a href="/products" class="link-nav">Todos los productos</a>
             </div>
             <div class="boton-nav">
-                <a href="/products/create" class="link-nav">Vender</a>
+                <a href="/products/create" class="link-nav">Vender</a><!--------manda a la pagina de creación de un producto-------->
             </div>
         </div>  
         <!-- <div class="menu-nav2">
